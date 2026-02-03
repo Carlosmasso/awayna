@@ -17,6 +17,15 @@ function formatDate(dateString: string): string {
 export function DestinationDates({ destination }: DestinationDatesProps) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
 
+  const handleReserve = () => {
+    if (selectedDate && typeof window !== "undefined" && window.openBookingModal) {
+      window.openBookingModal({
+        destination: destination.name,
+        dateId: selectedDate
+      })
+    }
+  }
+
   return (
     <section className="py-16 bg-secondary/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -100,6 +109,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
             size="lg" 
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
             disabled={!selectedDate}
+            onClick={handleReserve}
           >
             {selectedDate ? "Reservar plaza" : "Selecciona una fecha"}
           </Button>

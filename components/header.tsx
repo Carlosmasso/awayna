@@ -90,19 +90,6 @@ export function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center gap-3">
-            <Button 
-              className={scrolled 
-                ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90" 
-                : "bg-primary hover:bg-primary/90 text-primary-foreground"
-              }
-              onClick={() => {
-                if (typeof window !== "undefined" && window.openBookingModal) {
-                  window.openBookingModal()
-                }
-              }}
-            >
-              Reservar Viaje
-            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -134,19 +121,6 @@ export function Header() {
               <Link href="/sobre-nosotros" className="px-3 py-2 text-sm font-medium hover:bg-muted rounded-lg" onClick={() => setMobileMenuOpen(false)}>
                 Sobre Nosotros
               </Link>
-              <div className="border-t border-border/50 pt-4 mt-2">
-                <Button 
-                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
-                  onClick={() => {
-                    setMobileMenuOpen(false);
-                    if (typeof window !== "undefined" && window.openBookingModal) {
-                      window.openBookingModal()
-                    }
-                  }}
-                >
-                  Reservar Viaje
-                </Button>
-              </div>
             </div>
           </div>
         )}
