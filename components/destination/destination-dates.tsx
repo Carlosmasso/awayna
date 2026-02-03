@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Calendar, Users, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { useBooking } from "@/components/booking-context"
 import type { Destination } from "@/lib/destinations-data"
 
 interface DestinationDatesProps {
@@ -15,24 +16,16 @@ function formatDate(dateString: string): string {
 }
 
 export function DestinationDates({ destination }: DestinationDatesProps) {
+  const { openBooking } = useBooking()
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
-  console.log({destination})
+
   const handleReserve = () => {
     if (!selectedDate) return
     
-    const openModal = () => {
-      if (typeof window !== "undefined" && window.openBookingModal) {
-        window.openBookingModal({
-          destination: destination.name,
-          dateId: selectedDate
-        })
-      } else {
-        // Retry después de 100ms si no está disponible
-        setTimeout(openModal, 100)
-      }
-    }
-    
-    openModal()
+    openBooking({
+      destination: destination.name,
+      dateId: selectedDate
+    })
   }
 
   return (

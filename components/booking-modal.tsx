@@ -1,52 +1,34 @@
 "use client"
 
 import React from "react"
-import { useState } from "react"
 import { X, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-
-// Global reference to open the modal
-declare global {
-  interface Window {
-    openBookingModal?: (data?: { destination?: string; dateId?: string }) => void
-  }
-}
+import { useBooking } from "@/components/booking-context"
 
 export function BookingModal() {
-  const [isOpen, setIsOpen] = useState(false)
-  const [step, setStep] = useState(1)
-  const [formData, setFormData] = useState({
+  const { isOpen, closeBooking, bookingData } = useBooking()
+  const [step, setStep] = React.useState(1)
+  const [formData, setFormData] = React.useState({
     fullName: "",
     email: "",
     phone: "",
-    destination: "",
-    date: "",
+    destination: bookingData?.destination || "",
+    date: bookingData?.dateId || "",
     participants: "1",
     specialRequests: "",
   })
 
-  // Expose the open function globally
   React.useEffect(() => {
-    // Pequeño delay para asegurar que se registra
-    const timer = setTimeout(() => {
-      window.openBookingModal = (data?: { destination?: string; dateId?: string }) => {
-        setStep(1) // Reset to step 1
-        if (data?.destination) {
-          setFormData(prev => ({ ...prev, destination: data.destination || "", date: "" }))
-        }
-        if (data?.dateId) {
-          setFormData(prev => ({ ...prev, date: data.dateId || "" }))
-        }
-        setIsOpen(true)
-      }
-    }, 0)
-    
-    return () => {
-      clearTimeout(timer)
-      delete window.openBookingModal
+    if (isOpen) {
+      setStep(1)
+      setFormData(prev => ({
+        ...prev,
+        destination: bookingData?.destination || "",
+        date: bookingData?.dateId || "",
+      }))
     }
-  }, [])
+  }, [isOpen, bookingData])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -62,7 +44,7 @@ export function BookingModal() {
       const message = `Hola! Me gustaría reservar un viaje con Awayna. Datos: ${formData.fullName}, ${formData.email}, ${formData.phone}, Destino: ${formData.destination}, Fecha: ${formData.date}, Participantes: ${formData.participants}`
       const whatsappUrl = `https://wa.me/+34XXXXXXXXX?text=${encodeURIComponent(message)}`
       window.open(whatsappUrl, "_blank")
-      setIsOpen(false)
+      closeBooking()
       setStep(1)
       setFormData({
         fullName: "",
@@ -79,14 +61,14 @@ export function BookingModal() {
   if (!isOpen) return null
 
   return (
-    <div id="booking-modal" className="fixed inset-0 bg-foreground/50 z-50 flex items-center justify-center p-4">
+    <div className="fixed inset-0 bg-foreground/50 z-50 flex items-center justify-center p-4">
       <div className="bg-background rounded-2xl shadow-2xl max-w-md w-full max-h-[90vh] overflow-y-auto">
         
         {/* Header */}
         <div className="sticky top-0 bg-primary text-primary-foreground p-6 flex items-center justify-between">
           <h2 className="text-2xl font-bold">Reserva tu viaje</h2>
           <button
-            onClick={() => setIsOpen(false)}
+            onClick={() => closeBooking()}
             className="hover:bg-primary-foreground/20 rounded-lg p-1"
           >
             <X className="h-6 w-6" />
