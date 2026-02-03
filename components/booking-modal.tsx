@@ -1,11 +1,17 @@
 "use client"
 
 import React from "react"
-
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { X, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+
+// Global reference to open the modal
+declare global {
+  interface Window {
+    openBookingModal?: () => void
+  }
+}
 
 export function BookingModal() {
   const [isOpen, setIsOpen] = useState(false)
@@ -20,12 +26,12 @@ export function BookingModal() {
     specialRequests: "",
   })
 
-  useEffect(() => {
-    const handleOpenModal = () => setIsOpen(true)
-    const element = document.getElementById("booking-modal")
-    if (element) {
-      element.addEventListener("open-modal", handleOpenModal)
-      return () => element.removeEventListener("open-modal", handleOpenModal)
+  // Expose the open function globally
+  React.useEffect(() => {
+    window.openBookingModal = () => setIsOpen(true)
+    
+    return () => {
+      delete window.openBookingModal
     }
   }, [])
 

@@ -96,9 +96,8 @@ export function Header() {
                 : "bg-primary hover:bg-primary/90 text-primary-foreground"
               }
               onClick={() => {
-                const modal = document.getElementById('booking-modal');
-                if (modal) {
-                  modal.dispatchEvent(new CustomEvent('open-modal'));
+                if (typeof window !== "undefined" && window.openBookingModal) {
+                  window.openBookingModal()
                 }
               }}
             >
@@ -140,9 +139,8 @@ export function Header() {
                   className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    const modal = document.getElementById('booking-modal');
-                    if (modal) {
-                      modal.dispatchEvent(new CustomEvent('open-modal'));
+                    if (typeof window !== "undefined" && window.openBookingModal) {
+                      window.openBookingModal()
                     }
                   }}
                 >
