@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Calendar, Users, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import {BookingModal} from "@/components/booking-modal"
+import { BookingModal } from "@/components/booking-modal"
 import type { Destination } from "@/lib/destinations-data"
 
 interface DestinationDatesProps {
@@ -17,7 +17,7 @@ function formatDate(dateString: string): string {
 
 export function DestinationDates({ destination }: DestinationDatesProps) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
-  const [showModal, setShowModal] = useState<boolean  | false>(false)
+  const [showModal, setShowModal] = useState<{ destination: string; dateId: string } | null>(null)
 
   const handleReserve = () => {
     if (!selectedDate) return
@@ -122,7 +122,13 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
         </div>
       </div>
     </section>
-    {showModal && <BookingModal destination={showModal?.destination} dateId={showModal?.dateId}/>}
+    {showModal && (
+      <BookingModal 
+        destination={showModal.destination} 
+        dateId={showModal.dateId}
+        onClose={() => setShowModal(null)}
+      />
+    )}
     </>
   )
 }

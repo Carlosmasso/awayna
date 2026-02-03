@@ -4,31 +4,24 @@ import React from "react"
 import { X, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { useBooking } from "@/components/booking-context"
 
-export function BookingModal() {
-  const { isOpen, closeBooking, bookingData } = useBooking()
+interface BookingModalProps {
+  destination: string
+  dateId: string
+  onClose?: () => void
+}
+
+export function BookingModal({ destination, dateId, onClose }: BookingModalProps) {
   const [step, setStep] = React.useState(1)
   const [formData, setFormData] = React.useState({
     fullName: "",
     email: "",
     phone: "",
-    destination: bookingData?.destination || "",
-    date: bookingData?.dateId || "",
+    destination: destination,
+    date: dateId,
     participants: "1",
     specialRequests: "",
   })
-
-  React.useEffect(() => {
-    if (isOpen) {
-      setStep(1)
-      setFormData(prev => ({
-        ...prev,
-        destination: bookingData?.destination || "",
-        date: bookingData?.dateId || "",
-      }))
-    }
-  }, [isOpen, bookingData])
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -44,21 +37,9 @@ export function BookingModal() {
       const message = `Hola! Me gustaría reservar un viaje con Awayna. Datos: ${formData.fullName}, ${formData.email}, ${formData.phone}, Destino: ${formData.destination}, Fecha: ${formData.date}, Participantes: ${formData.participants}`
       const whatsappUrl = `https://wa.me/+34XXXXXXXXX?text=${encodeURIComponent(message)}`
       window.open(whatsappUrl, "_blank")
-      closeBooking()
-      setStep(1)
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        destination: "",
-        date: "",
-        participants: "1",
-        specialRequests: "",
-      })
+      onClose?.()
     }
   }
-
-  if (!isOpen) return null
 
   return (
     <div className="fixed inset-0 bg-foreground/50 z-50 flex items-center justify-center p-4">
@@ -68,7 +49,7 @@ export function BookingModal() {
         <div className="sticky top-0 bg-primary text-primary-foreground p-6 flex items-center justify-between">
           <h2 className="text-2xl font-bold">Reserva tu viaje</h2>
           <button
-            onClick={() => closeBooking()}
+            onClick={() => onClose?.()}
             className="hover:bg-primary-foreground/20 rounded-lg p-1"
           >
             <X className="h-6 w-6" />
@@ -131,35 +112,6 @@ export function BookingModal() {
           {step === 2 && (
             <>
               <div>
-                <label className="block text-sm font-medium mb-2">Destino</label>
-                <select
-                  name="destination"
-                  value={formData.destination}
-                  onChange={handleChange}
-                  required
-                  className="w-full h-10 px-3 rounded-lg border border-border bg-background"
-                >
-                  <option value="">Selecciona un destino</option>
-                  <option value="filipinas">Filipinas</option>
-                  <option value="vietnam">Vietnam</option>
-                  <option value="tailandia">Tailandia</option>
-                  <option value="japon">Japon</option>
-                  <option value="islandia">Islandia</option>
-                  <option value="costa-rica">Costa Rica</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-sm font-medium mb-2">Fecha preferida</label>
-                <Input
-                  type="month"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  required
-                  className="w-full"
-                />
-              </div>
-              <div>
                 <label className="block text-sm font-medium mb-2">Numero de participantes</label>
                 <select
                   name="participants"
@@ -172,11 +124,6 @@ export function BookingModal() {
                   ))}
                 </select>
               </div>
-            </>
-          )}
-
-          {step === 3 && (
-            <>
               <div>
                 <label className="block text-sm font-medium mb-2">Solicitudes especiales</label>
                 <textarea
@@ -188,15 +135,27 @@ export function BookingModal() {
                   className="w-full px-3 py-2 rounded-lg border border-border bg-background resize-none"
                 />
               </div>
+            </>
+          )}
+
+          {step === 3 && (
+            <>
               <div className="bg-secondary p-4 rounded-lg">
-                <h3 className="font-medium mb-2">Resumen</h3>
-                <div className="space-y-1 text-sm text-muted-foreground">
+                <h3 className="font-medium mb-3">Resumen de tu reserva</h3>
+                <div className="space-y-2 text-sm">
                   <p><strong>Nombre:</strong> {formData.fullName}</p>
                   <p><strong>Email:</strong> {formData.email}</p>
+                  <p><strong>Teléfono:</strong> {formData.phone}</p>
                   <p><strong>Destino:</strong> {formData.destination}</p>
                   <p><strong>Participantes:</strong> {formData.participants}</p>
+                  {formData.specialRequests && (
+                    <p><strong>Solicitudes:</strong> {formData.specialRequests}</p>
+                  )}
                 </div>
               </div>
+              <p className="text-xs text-muted-foreground">
+                Serás redirigido a WhatsApp para confirmar tu reserva. Nuestro equipo se pondrá en contacto contigo en las próximas 24 horas.
+              </p>
             </>
           )}
 
@@ -219,7 +178,7 @@ export function BookingModal() {
               {step === 3 ? (
                 <>
                   <Check className="h-4 w-4 mr-2" />
-                  Reservar por WhatsApp
+                  Confirmar por WhatsApp
                 </>
               ) : (
                 "Siguiente"

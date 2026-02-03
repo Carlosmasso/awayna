@@ -3,7 +3,6 @@ import type { Metadata } from 'next'
 import { DM_Sans, Space_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ScrollToTop } from '@/components/scroll-to-top'
-import { BookingProvider } from '@/components/booking-context'
 import './globals.css'
 
 const _dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
@@ -40,11 +39,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`font-sans antialiased`}>
-        <BookingProvider>
-          <ScrollToTop />
-          {children}
-          <Analytics />
-        </BookingProvider>
+        <ScrollToTop />
+        {children}
+        <Analytics />
       </body>
     </html>
   )
