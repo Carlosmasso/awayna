@@ -18,17 +18,19 @@ function formatDate(dateString: string): string {
 export function DestinationDates({ destination }: DestinationDatesProps) {
   const { openBooking } = useBooking()
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
+  const [showModal, setShowModal] = useState<boolean  | false>(false)
 
   const handleReserve = () => {
     if (!selectedDate) return
     
-    openBooking({
+    setShowModal({
       destination: destination.name,
       dateId: selectedDate
     })
   }
 
   return (
+    <>
     <section className="py-16 bg-secondary/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
@@ -121,5 +123,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
         </div>
       </div>
     </section>
+    {showModal && <BookingModal destination={showModal?.destination} dateId={showModal?.dateId}/>}
+    </>
   )
 }
