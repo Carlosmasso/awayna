@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Calendar, Users, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import { BookingModal } from "@/components/booking-modal"
 import type { Destination } from "@/lib/destinations-data"
 
 interface DestinationDatesProps {
@@ -16,8 +17,19 @@ function formatDate(dateString: string): string {
 
 export function DestinationDates({ destination }: DestinationDatesProps) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
+  const [showModal, setShowModal] = useState<{ destination: string; dateId: string } | null>(null)
+
+  const handleReserve = () => {
+    if (!selectedDate) return
+    
+    setShowModal({
+      destination: destination.name,
+      dateId: selectedDate
+    })
+  }
 
   return (
+    <>
     <section className="py-16 bg-secondary/20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
@@ -100,6 +112,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
             size="lg" 
             className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
             disabled={!selectedDate}
+            onClick={handleReserve}
           >
             {selectedDate ? "Reservar plaza" : "Selecciona una fecha"}
           </Button>
@@ -109,5 +122,13 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
         </div>
       </div>
     </section>
+    {showModal && (
+      <BookingModal 
+        destination={showModal.destination} 
+        dateId={showModal.dateId}
+        onClose={() => setShowModal(null)}
+      />
+    )}
+    </>
   )
 }

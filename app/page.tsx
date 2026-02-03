@@ -8,7 +8,6 @@ import { Testimonials } from "@/components/testimonials";
 import { CtaSection } from "@/components/cta-section";
 import { Footer } from "@/components/footer";
 import { CookieBanner } from "@/components/cookie-banner";
-import { BookingModal } from "@/components/booking-modal";
 import { WhatsAppButton } from "@/components/whatsapp-button";
 
 export default function Home() {
@@ -26,7 +25,6 @@ export default function Home() {
       </main>
       <Footer />
       <CookieBanner />
-      <BookingModal />
       <WhatsAppButton />
     </div>
   );
