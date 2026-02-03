@@ -28,18 +28,22 @@ export function BookingModal() {
 
   // Expose the open function globally
   React.useEffect(() => {
-    window.openBookingModal = (data?: { destination?: string; dateId?: string }) => {
-      setStep(1) // Reset to step 1
-      if (data?.destination) {
-        setFormData(prev => ({ ...prev, destination: data.destination || "", date: "" }))
+    // Pequeño delay para asegurar que se registra
+    const timer = setTimeout(() => {
+      window.openBookingModal = (data?: { destination?: string; dateId?: string }) => {
+        setStep(1) // Reset to step 1
+        if (data?.destination) {
+          setFormData(prev => ({ ...prev, destination: data.destination || "", date: "" }))
+        }
+        if (data?.dateId) {
+          setFormData(prev => ({ ...prev, date: data.dateId || "" }))
+        }
+        setIsOpen(true)
       }
-      if (data?.dateId) {
-        setFormData(prev => ({ ...prev, date: data.dateId || "" }))
-      }
-      setIsOpen(true)
-    }
+    }, 0)
     
     return () => {
+      clearTimeout(timer)
       delete window.openBookingModal
     }
   }, [])

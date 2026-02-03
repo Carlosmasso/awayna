@@ -18,12 +18,21 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
 
   const handleReserve = () => {
-    if (selectedDate && typeof window !== "undefined" && window.openBookingModal) {
-      window.openBookingModal({
-        destination: destination.name,
-        dateId: selectedDate
-      })
+    if (!selectedDate) return
+    
+    const openModal = () => {
+      if (typeof window !== "undefined" && window.openBookingModal) {
+        window.openBookingModal({
+          destination: destination.name,
+          dateId: selectedDate
+        })
+      } else {
+        // Retry después de 100ms si no está disponible
+        setTimeout(openModal, 100)
+      }
     }
+    
+    openModal()
   }
 
   return (
