@@ -95,6 +95,12 @@ export function Header() {
                 ? "bg-primary-foreground text-primary hover:bg-primary-foreground/90" 
                 : "bg-primary hover:bg-primary/90 text-primary-foreground"
               }
+              onClick={() => {
+                const modal = document.getElementById('booking-modal');
+                if (modal) {
+                  modal.dispatchEvent(new CustomEvent('open-modal'));
+                }
+              }}
             >
               Reservar Viaje
             </Button>
@@ -130,7 +136,16 @@ export function Header() {
                 Sobre Nosotros
               </Link>
               <div className="border-t border-border/50 pt-4 mt-2">
-                <Button className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
+                <Button 
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                  onClick={() => {
+                    setMobileMenuOpen(false);
+                    const modal = document.getElementById('booking-modal');
+                    if (modal) {
+                      modal.dispatchEvent(new CustomEvent('open-modal'));
+                    }
+                  }}
+                >
                   Reservar Viaje
                 </Button>
               </div>
