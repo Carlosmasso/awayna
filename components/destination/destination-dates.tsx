@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Calendar, Users, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import {BookingModal} from "@/components/BookingModal"
 import type { Destination } from "@/lib/destinations-data"
 
 interface DestinationDatesProps {
