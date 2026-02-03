@@ -16,7 +16,7 @@ function formatDate(dateString: string): string {
 
 export function DestinationDates({ destination }: DestinationDatesProps) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
-
+  console.log({destination})
   const handleReserve = () => {
     if (!selectedDate) return
     
