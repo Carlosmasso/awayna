@@ -6,19 +6,15 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useBooking } from "@/components/booking-context"
 
-interface Props {
-  destination: Destination,
-  dateId: number
-}
-
-export function BookingModal({destination, dateId} : Props) {
+export function BookingModal() {
+  const { isOpen, closeBooking, bookingData } = useBooking()
   const [step, setStep] = React.useState(1)
   const [formData, setFormData] = React.useState({
     fullName: "",
     email: "",
     phone: "",
-    destination: destination || "",
-    date: dateId || "",
+    destination: bookingData?.destination || "",
+    date: bookingData?.dateId || "",
     participants: "1",
     specialRequests: "",
   })
@@ -28,8 +24,8 @@ export function BookingModal({destination, dateId} : Props) {
       setStep(1)
       setFormData(prev => ({
         ...prev,
-        destination: destination || "",
-        date: dateId || "",
+        destination: bookingData?.destination || "",
+        date: bookingData?.dateId || "",
       }))
     }
   }, [isOpen, bookingData])
