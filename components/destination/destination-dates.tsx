@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { Calendar, Users, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { useBooking } from "@/components/booking-context"
 import type { Destination } from "@/lib/destinations-data"
 
 interface DestinationDatesProps {
@@ -16,7 +15,6 @@ function formatDate(dateString: string): string {
 }
 
 export function DestinationDates({ destination }: DestinationDatesProps) {
-  const { openBooking } = useBooking()
   const [selectedDate, setSelectedDate] = useState<string | null>(null)
   const [showModal, setShowModal] = useState<boolean  | false>(false)
 
