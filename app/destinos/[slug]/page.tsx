@@ -63,12 +63,12 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
               </ul>
             </div> */}
             <DestinationItinerary destination={destination} />
+            <DestinationIncludes destination={destination} />
           </div>  
           <div className="lg:col-span-5">
             <DestinationDates destination={destination} />
           </div>  
         </div>  
-        <DestinationIncludes destination={destination} />
         <DestinationPracticalInfo destination={destination} />
         <DestinationFaqs destination={destination} />
       </main>
