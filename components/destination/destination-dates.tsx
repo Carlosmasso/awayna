@@ -41,7 +41,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-12 gap-4 max-w-4xl mx-auto">
           {destination.availableDates.map((tripDate) => {
             const isSelected = selectedDate === tripDate.id
             const isLowSpots = tripDate.spots <= 4
