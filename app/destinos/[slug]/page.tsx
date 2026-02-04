@@ -70,9 +70,9 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         <div className="grid lg:grid-cols-12">
           <div className="lg:col-span-6">
             <div className="p-8">
-                 <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-10">
-            Itinerario dia a dia
-          </h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">
+                Itinerario dia a dia
+              </h2>
               <div className="grid grid-cols-2 gap-6">
                 {destination.components.map((component, index) => (
                   <div key={index} className="flex items-center justify-between">
