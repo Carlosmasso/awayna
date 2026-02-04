@@ -10,6 +10,7 @@ import { DestinationPracticalInfo } from "@/components/destination/destination-p
 import { DestinationDates } from "@/components/destination/destination-dates"
 import { DestinationFaqs } from "@/components/destination/destination-faqs"
 import { CookieBanner } from "@/components/cookie-banner"
+import { Check } from "lucide-react"
 
 export async function generateStaticParams() {
   const slugs = getAllDestinationSlugs()
