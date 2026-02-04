@@ -555,6 +555,14 @@ export const destinations: Destination[] = [
       "Ceremonia del te",
       "Noche en ryokan tradicional"
     ],
+    components: [
+      { name: "Cultura", rating: 5 },
+      { name: "Naturaleza", rating: 4.5 },
+      { name: "Gastronomía", rating: 5 },
+      { name: "Aventura", rating: 3.5 },
+      { name: "Relajación", rating: 4.5 },
+      { name: "Playas", rating: 2.5 }
+    ],
     description: "Japon es un pais de contrastes fascinantes donde conviven rascacielos futuristas con templos milenarios, robots con geishas, sushi de mercado con alta gastronomia. Este viaje recorre lo esencial del pais del sol naciente con el JR Pass, descubriendo la magia de una cultura unica que te cambiara para siempre.",
     itinerary: [
       {
@@ -689,8 +697,16 @@ export const destinations: Destination[] = [
       "Circulo Dorado completo",
       "Glaciar Vatnajokull",
       "Playa negra de Vik",
-      "Blue Lagoon",
-      "Avistamiento de ballenas"
+      "Laguna glaciar de Jokulsarlon",
+      "Cascadas espectaculares"
+    ],
+    components: [
+      { name: "Naturaleza", rating: 5 },
+      { name: "Aventura", rating: 4.5 },
+      { name: "Fotografía", rating: 5 },
+      { name: "Relajación", rating: 3.5 },
+      { name: "Gastronomía", rating: 3.5 },
+      { name: "Playas", rating: 3.5 }
     ],
     description: "Islandia es como visitar otro planeta sin salir de la Tierra. Geiseres, volcanes, glaciares, auroras boreales, cascadas imposibles y paisajes que quitan el aliento. Este viaje recorre la mitica Ring Road sur, donde cada curva esconde una postal. Prepara la camara y el asombro.",
     itinerary: [
@@ -796,7 +812,7 @@ export const destinations: Destination[] = [
     galleryImages: [
       "/images/trip-costarica.jpg",
       "/images/trip-filipinas.jpg",
-      "/images/trip-thailand.jpg",
+      "/images/trip-thailand.jpg"
     ],
     duration: "10 dias",
     rating: 4.8,
@@ -809,7 +825,15 @@ export const destinations: Destination[] = [
       "Avistamiento de perezosos",
       "Rafting en el Pacuare",
       "Playas del Caribe",
-      "Tortugas marinas (segun temporada)"
+      "Parque Nacional Manuel Antonio"
+    ],
+    components: [
+      { name: "Naturaleza", rating: 5 },
+      { name: "Aventura", rating: 5 },
+      { name: "Playas", rating: 4.5 },
+      { name: "Fauna", rating: 5 },
+      { name: "Relajación", rating: 4 },
+      { name: "Gastronomía", rating: 3.5 }
     ],
     description: "Costa Rica es pura vida en estado puro. Este pequeno pais centroamericano concentra una biodiversidad increible: volcanes activos, selvas tropicales, playas caribenas y pacifico, y fauna unica. Desde el imponente Arenal hasta las tranquilas aguas de Puerto Viejo, viviremos la aventura y la naturaleza en su maxima expresion.",
     itinerary: [
@@ -821,45 +845,45 @@ export const destinations: Destination[] = [
       },
       {
         day: 2,
-        title: "Volcan Arenal",
-        description: "Viaje a La Fortuna, dominada por el majestuoso volcan Arenal. Tarde de puentes colgantes en la selva con vistas al volcan. Noche en aguas termales.",
-        highlights: ["Volcan Arenal", "Puentes colgantes", "Aguas termales"]
+        title: \"Volcan Arenal",
+        description: \"Viaje a La Fortuna, dominada por el majestuoso volcan Arenal. Tarde de puentes colgantes en la selva con vistas al volcan. Noche en aguas termales.",
+        highlights: ["Volcan Arenal", \"Puentes colgantes", "Aguas termales"]\
       },
       {
-        day: 3,
-        title: "Aventura en Arenal",
-        description: "Dia de actividades: rapel en cascada, tubing por el rio o caminata por senderos de lava. Tarde libre para disfrutar de La Fortuna.",
-        highlights: ["Rapel cascada", "Tubing", "Senderos volcanicos"]
+        day: 3,\
+        title: \"Aventura en Arenal",\
+        description: \"Dia de actividades: rapel en cascada, tubing por el rio o caminata por senderos de lava. Tarde libre para disfrutar de La Fortuna.",
+        highlights: ["Rapel cascada", \"Tubing", \"Senderos volcanicos"]\
+      },\
+      {\
+        day: 4,\
+        title: \"Monteverde",\
+        description: \"Viaje escenico a Monteverde, el bosque nuboso mas famoso del mundo. Tour nocturno para ver animales activos: ranas, serpientes, kinkajous.",
+        highlights: ["Bosque nuboso", \"Tour nocturno", "Fauna nocturna"]\
       },
       {
-        day: 4,
-        title: "Monteverde",
-        description: "Viaje escenico a Monteverde, el bosque nuboso mas famoso del mundo. Tour nocturno para ver animales activos: ranas, serpientes, kinkajous.",
-        highlights: ["Bosque nuboso", "Tour nocturno", "Fauna nocturna"]
+        day: 5,\
+        title: \"Reserva Monteverde",\
+        description: \"Caminata por la reserva con guia naturalista. Avistamiento de quetzales (con suerte), monos, perezosos y colibries. Tirolinas opcionales sobre el dosel.",
+        highlights: ["Reserva natural\", \"Quetzal\", "Tirolinas"]
       },
-      {
-        day: 5,
-        title: "Reserva Monteverde",
-        description: "Caminata por la reserva con guia naturalista. Avistamiento de quetzales (con suerte), monos, perezosos y colibries. Tirolinas opcionales sobre el dosel.",
-        highlights: ["Reserva natural", "Quetzal", "Tirolinas"]
+      {\
+        day: 6,\
+        title: \"Hacia el Caribe",
+        description: \"Cruzamos el pais hacia la costa caribe. Parada en el rio Pacuare para rafting nivel II-III entre selva y cascadas. Llegada a Puerto Viejo.",
+        highlights: ["Rafting Pacuare", "Selva", \"Puerto Viejo"]
       },
-      {
-        day: 6,
-        title: "Hacia el Caribe",
-        description: "Cruzamos el pais hacia la costa caribe. Parada en el rio Pacuare para rafting nivel II-III entre selva y cascadas. Llegada a Puerto Viejo.",
-        highlights: ["Rafting Pacuare", "Selva", "Puerto Viejo"]
+      {\
+        day: 7,\
+        title: \"Caribe puro",
+        description: \"Dia libre en las playas caribenas. Playa Cocles para surf, Punta Uva para snorkel, o simplemente hamaca con coco. Vibra reggae garantizada.",
+        highlights: ["Playas Caribe", "Surf", \"Vibra reggae\"]\
       },
-      {
-        day: 7,
-        title: "Caribe puro",
-        description: "Dia libre en las playas caribenas. Playa Cocles para surf, Punta Uva para snorkel, o simplemente hamaca con coco. Vibra reggae garantizada.",
-        highlights: ["Playas Caribe", "Surf", "Vibra reggae"]
-      },
-      {
-        day: 8,
-        title: "Refugio de perezosos",
-        description: "Visita al santuario de perezosos de Cahuita. Snorkel en el Parque Nacional Cahuita con arrecifes y peces tropicales. Cena caribena.",
-        highlights: ["Santuario perezosos", "Snorkel Cahuita", "Comida caribena"]
+      {\
+        day: 8,\
+        title: \"Refugio de perezosos",\
+        description: \"Visita al santuario de perezosos de Cahuita. Snorkel en el Parque Nacional Cahuita con arrecifes y peces tropicales. Cena caribena.",
+        highlights: [\"Santuario perezosos", "Snorkel Cahuita\", \"Comida caribena"]
       },
       {
         day: 9,
@@ -875,15 +899,15 @@ export const destinations: Destination[] = [
       }
     ],
     included: [
-      "9 noches alojamiento hoteles/lodges selva",
-      "Desayunos diarios + 3 almuerzos + 3 cenas",
-      "Transporte privado todo el viaje",
-      "Puentes colgantes Arenal",
-      "Tour nocturno Monteverde",
-      "Rafting rio Pacuare",
-      "Entrada Parque Nacional Cahuita",
-      "Visita santuario perezosos",
-      "Coordinador Awayna",
+      \"9 noches alojamiento hoteles/lodges selva\",
+      \"Desayunos diarios + 3 almuerzos + 3 cenas\",
+      "Transporte privado todo el viaje",\
+      \"Puentes colgantes Arenal",
+      \"Tour nocturno Monteverde",
+      \"Rafting rio Pacuare",
+      \"Entrada Parque Nacional Cahuita",
+      \"Visita santuario perezosos",
+      \"Coordinador Awayna",
       "Seguro de viaje"
     ],
     notIncluded: [
