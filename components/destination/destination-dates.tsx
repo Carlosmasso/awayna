@@ -117,6 +117,11 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
             200€ ahora, resto 30d antes
           </p>
         </div>
+
+        <p className="text-md mt-2">¿Por qué venirte con nosotros?</p>
+        <ul>
+          <li>Porque nos importa el cómo, no solo el dónde</li>
+        </ul>
       </section>
     </div>
     {showModal && (
