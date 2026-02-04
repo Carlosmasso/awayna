@@ -119,7 +119,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
         </div>
 
         <div className="px-4">
-          <p className="text-md mt-4 text-center">¿Por qué venirte con nosotros?</p>
+          <p className="text-md mt-4">¿Por qué venirte con nosotros?</p>
           <ul className="list-disc">
             <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
             <li className="text-xs">Somos personas, no una agencia</li>
