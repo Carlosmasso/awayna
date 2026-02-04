@@ -30,7 +30,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
 
   return (
     <>
-    <div className="sticky top-24 rigth-32">
+    <div className="sticky top-24 mr-32">
       <section className="p-4 bg-secondary/10 rounded-lg border border-border/50">
         <div className="text-center mb-3">
           <h3 className="text-sm font-semibold text-foreground">
