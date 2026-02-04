@@ -1,12 +1,27 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { DM_Sans, Space_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ScrollToTop } from '@/components/scroll-to-top'
 import './globals.css'
 
-const _dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
-const _spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+// Import New Order font from Google Fonts
+import localFont from 'next/font/local'
+
+const newOrder = localFont({
+  src: [
+    {
+      path: '../public/fonts/new-order-regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/new-order-bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-new-order',
+})
 
 export const metadata: Metadata = {
   title: 'Awayna | Viajes en Grupo para Aventureros',
@@ -38,7 +53,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <body className={`${newOrder.variable} font-sans antialiased`}>
         <ScrollToTop />
         {children}
         <Analytics />
