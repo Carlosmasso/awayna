@@ -30,19 +30,15 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
 
   return (
     <>
-    <div className="sticky top-24">
-      <section className="py-8 bg-secondary/20 h-full rounded-xl">
-        <div className="px-4 sm:px-6">
-        <div className="text-center mb-10">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
+    <div className="sticky top-24 p-8">
+      <section className="p-4 bg-secondary/10 rounded-lg border border-border/50">
+        <div className="text-center mb-3">
+          <h3 className="text-sm font-semibold text-foreground">
             Fechas disponibles
-          </h2>
-          <p className="text-muted-foreground">
-            Elige la fecha que mejor te venga. Recuerda que los grupos son reducidos.
-          </p>
+          </h3>
         </div>
 
-        <div className="grid sm:grid-cols-1 gap-4 max-w-4xl mx-auto">
+        <div className="space-y-2">
           {destination.availableDates.map((tripDate) => {
             const isSelected = selectedDate === tripDate.id
             const isLowSpots = tripDate.spots <= 4
@@ -54,40 +50,40 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
                 key={tripDate.id}
                 onClick={() => !isSoldOut && setSelectedDate(tripDate.id)}
                 disabled={isSoldOut}
-                className={`relative p-5 rounded-xl border-2 text-left transition-all ${
+                className={`relative w-full p-3 rounded-lg border text-left transition-all ${
                   isSelected
-                    ? "border-primary bg-primary/5"
+                    ? "border-primary bg-primary/8"
                     : isSoldOut
-                    ? "border-border/50 bg-muted/50 opacity-60 cursor-not-allowed"
-                    : "border-border hover:border-primary/50 bg-card"
+                    ? "border-border/30 bg-muted/30 opacity-50 cursor-not-allowed"
+                    : "border-border/40 hover:border-primary/40 bg-card/50"
                 }`}
               >
                 {/* Selected indicator */}
                 {isSelected && (
-                  <div className="absolute top-3 right-3 w-6 h-6 rounded-full bg-primary flex items-center justify-center">
-                    <Check className="h-4 w-4 text-primary-foreground" />
+                  <div className="absolute top-2 right-2 w-4 h-4 rounded-full bg-primary flex items-center justify-center">
+                    <Check className="h-3 w-3 text-primary-foreground" />
                   </div>
                 )}
 
                 {/* Dates */}
-                <div className="flex items-center gap-2 mb-3">
-                  <Calendar className="h-4 w-4 text-muted-foreground" />
-                  <span className="font-semibold text-foreground">
-                    {formatDate(tripDate.startDate)} - {formatDate(tripDate.endDate)}
+                <div className="flex items-center gap-1.5 mb-1.5">
+                  <Calendar className="h-3 w-3 text-muted-foreground flex-shrink-0" />
+                  <span className="text-xs font-medium text-foreground">
+                    {formatDate(tripDate.startDate)}
                   </span>
                 </div>
 
-                {/* Spots */}
-                <div className="mb-3">
-                  <div className="flex items-center justify-between mb-1.5">
-                    <div className="flex items-center gap-1.5">
-                      <Users className={`h-4 w-4 ${isLowSpots ? "text-primary" : "text-muted-foreground"}`} />
-                      <span className={`text-sm font-medium ${isLowSpots ? "text-primary" : "text-foreground"}`}>
-                        {isSoldOut ? "Completo" : isLowSpots ? `Ultimas ${tripDate.spots} plazas!` : `${tripDate.spots} plazas`}
+                {/* Spots indicator */}
+                <div className="mb-1.5">
+                  <div className="flex items-center justify-between mb-1">
+                    <div className="flex items-center gap-1">
+                      <Users className={`h-3 w-3 ${isLowSpots ? "text-primary" : "text-muted-foreground"}`} />
+                      <span className={`text-xs ${isLowSpots ? "text-primary font-medium" : "text-muted-foreground"}`}>
+                        {isSoldOut ? "Lleno" : `${tripDate.spots}/${tripDate.totalSpots}`}
                       </span>
                     </div>
                   </div>
-                  <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+                  <div className="h-1 bg-muted rounded-full overflow-hidden">
                     <div 
                       className={`h-full rounded-full transition-all ${isSoldOut ? "bg-muted-foreground" : isLowSpots ? "bg-primary" : "bg-secondary"}`}
                       style={{ width: `${spotsPercentage}%` }}
@@ -96,10 +92,10 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
                 </div>
 
                 {/* Price */}
-                <div className="flex items-baseline gap-2">
-                  <span className="text-2xl font-bold text-foreground">{tripDate.price}€</span>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-lg font-bold text-foreground">{tripDate.price}€</span>
                   {tripDate.originalPrice && (
-                    <span className="text-sm text-muted-foreground line-through">{tripDate.originalPrice}€</span>
+                    <span className="text-xs text-muted-foreground line-through">{tripDate.originalPrice}€</span>
                   )}
                 </div>
               </button>
@@ -108,21 +104,32 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
         </div>
 
         {/* CTA */}
-        <div className="mt-10 text-center">
+        <div className="mt-3 text-center">
           <Button 
-            size="lg" 
-            className="bg-primary hover:bg-primary/90 text-primary-foreground px-8"
+            size="sm"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
             disabled={!selectedDate}
             onClick={handleReserve}
           >
-            {selectedDate ? "Reservar plaza" : "Selecciona una fecha"}
+            {selectedDate ? "Reservar" : "Selecciona fecha"}
           </Button>
-          <p className="text-sm text-muted-foreground mt-3">
-            Reserva por solo 200€ y paga el resto 30 dias antes
+          <p className="text-xs text-muted-foreground mt-2">
+            200€ ahora, resto 30d antes
           </p>
         </div>
-      </div>
-    </section>
+
+        <div className="px-2">
+          <p className="text-md mt-4 font-bold">¿Por qué venirte con nosotros?</p>
+          <ul className="list-disc ml-4 mt-2">
+            <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
+            <li className="text-xs">Somos personas, no una agencia</li>
+            <li className="text-xs">Colaboramos con gente local</li>
+            <li className="text-xs">Estarás 24/7 acompañad@ de nosotros</li>
+            <li className="text-xs">Conocedores del camino</li>
+            <li className="text-xs">Alojamiento con mimo</li>
+          </ul>
+        </div>
+      </section>
     </div>
     {showModal && (
       <BookingModal 
