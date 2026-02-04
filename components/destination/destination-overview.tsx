@@ -29,7 +29,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
             </p>
             
             {/* Highlights */}
-            <div className="bg-secondary/30 rounded-2xl p-8">
+            {/* <div className="bg-secondary/30 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-foreground mb-6">
                 Lo que viviremos
               </h3>
@@ -43,7 +43,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
                   </li>
                 ))}
               </ul>
-            </div>
+            </div> */}
           </div>
 
           {/* Right: Image Gallery (4 cols) */}
