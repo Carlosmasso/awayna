@@ -35,20 +35,18 @@ function StarRating({ rating }: { rating: number }) {
 
 export function DestinationComponents({ components }: DestinationComponentsProps) {
   return (
-    <section className="py-16 bg-background">
+    <section className="py-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">
           ¿Es de mi rollo?
         </h2>
-        <div className="max-w-3xl mx-auto">
-          <div className="grid grid-cols-2 gap-6">
-            {components.map((component, index) => (
-              <div key={index} className="flex items-center justify-between">
-                <span className="text-foreground font-medium">{component.name}</span>
-                <StarRating rating={component.rating} />
-              </div>
-            ))}
-          </div>
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {components.map((component, index) => (
+            <div key={index} className="flex items-center justify-between">
+              <span className="text-foreground font-medium">{component.name}</span>
+              <StarRating rating={component.rating} />
+            </div>
+          ))}
         </div>
       </div>
     </section>
