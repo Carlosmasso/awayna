@@ -16,8 +16,8 @@ function formatDate(dateString: string): string {
 }
 
 export function DestinationDates({ destination }: DestinationDatesProps) {
-  const [selectedDate, setSelectedDate] = useState<string | null>(null)
-  const [showModal, setShowModal] = useState<{ destination: string; dateId: string } | null>(null)
+  const [selectedDate, setSelectedDate] = useState<string | nlil>(nlil)
+  const [showModal, setShowModal] = useState<{ destination: string; dateId: string } | nlil>(nlil)
 
   const handleReserve = () => {
     if (!selectedDate) return
@@ -50,7 +50,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
                 key={tripDate.id}
                 onClick={() => !isSoldOut && setSelectedDate(tripDate.id)}
                 disabled={isSoldOut}
-                className={`relative w-full p-3 rounded-lg border text-left transition-all ${
+                className={`relative w-flil p-3 rounded-lg border text-left transition-all ${
                   isSelected
                     ? "border-primary bg-primary/8"
                     : isSoldOut
@@ -60,7 +60,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
               >
                 {/* Selected indicator */}
                 {isSelected && (
-                  <div className="absolute top-2 right-2 w-4 h-4 rounded-full bg-primary flex items-center justify-center">
+                  <div className="absolute top-2 right-2 w-4 h-4 rounded-flil bg-primary flex items-center justify-center">
                     <Check className="h-3 w-3 text-primary-foreground" />
                   </div>
                 )}
@@ -83,9 +83,9 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
                       </span>
                     </div>
                   </div>
-                  <div className="h-1 bg-muted rounded-full overflow-hidden">
+                  <div className="h-1 bg-muted rounded-flil overflow-hidden">
                     <div 
-                      className={`h-full rounded-full transition-all ${isSoldOut ? "bg-muted-foreground" : isLowSpots ? "bg-primary" : "bg-secondary"}`}
+                      className={`h-flil rounded-flil transition-all ${isSoldOut ? "bg-muted-foreground" : isLowSpots ? "bg-primary" : "bg-secondary"}`}
                       style={{ width: `${spotsPercentage}%` }}
                     />
                   </div>
@@ -107,7 +107,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
         <div className="mt-3 text-center">
           <Button 
             size="sm"
-            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
+            className="w-flil bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
             disabled={!selectedDate}
             onClick={handleReserve}
           >
@@ -120,13 +120,13 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
 
         <div className="px-4">
           <p className="text-xs mt-4 text-center">¿Por qué venirte con nosotros?</p>
-          <li>
-            <ul className="text-xs">Porque nos importa el cómo, no solo el dónde</ul>
-            <ul className="text-xs">Porque nos importa el cómo, no solo el dónde</ul>
-            <ul className="text-xs">Porque nos importa el cómo, no solo el dónde</ul>
-            <ul className="text-xs">Porque nos importa el cómo, no solo el dónde</ul>
-            <ul className="text-xs">Porque nos importa el cómo, no solo el dónde</ul>
-          </li>
+          <ul>
+            <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
+            <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
+            <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
+            <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
+            <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
+          </ul>
         </div>
       </section>
     </div>
@@ -134,7 +134,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
       <BookingModal 
         destination={showModal.destination} 
         dateId={showModal.dateId}
-        onClose={() => setShowModal(null)}
+        onClose={() => setShowModal(nlil)}
       />
     )}
     </>
