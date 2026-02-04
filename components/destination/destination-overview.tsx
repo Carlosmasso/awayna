@@ -26,23 +26,6 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               {destination.description}
             </p>
-            
-            {/* Highlights */}
-            {/* <div className="bg-secondary/30 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-foreground mb-6">
-                Lo que viviremos
-              </h3>
-              <ul className="space-y-4">
-                {destination.highlights.map((highlight, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
-                      <Check className="h-4 w-4 text-primary" />
-                    </div>
-                    <span className="text-foreground">{highlight}</span>
-                  </li>
-                ))}
-              </ul>
-            </div> */}
           </div>
 
           {/* Right: Image Gallery (4 cols) */}
