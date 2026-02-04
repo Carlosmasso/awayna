@@ -35,7 +35,7 @@ function StarRating({ rating }: { rating: number }) {
 
 export function DestinationComponents({ components }: DestinationComponentsProps) {
   return (
-    <section className="p-8">
+    <section className="py-16 bg-background">
       <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">
         ¿Es de mi rollo?
       </h2>
