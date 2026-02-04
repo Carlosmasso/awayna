@@ -126,7 +126,6 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
             <ul className="text-xs">Porque nos importa el cómo, no solo el dónde</ul>
             <ul className="text-xs">Porque nos importa el cómo, no solo el dónde</ul>
             <ul className="text-xs">Porque nos importa el cómo, no solo el dónde</ul>
-
           </li>
         </div>
       </section>
