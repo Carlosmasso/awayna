@@ -16,12 +16,12 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <TravelCategories />
-        <FeaturedTrips />
+        {/* <TravelCategories />
+        <FeaturedTrips /> */}
         <DestinationsGrid />
-        <StatsSection />
-        <Testimonials />
-        <CtaSection />
+        {/* <StatsSection />
+        <Testimonials /> */}
+        {/* <CtaSection /> */}
       </main>
       <Footer />
       <CookieBanner />

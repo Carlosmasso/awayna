@@ -88,10 +88,6 @@ export function Header() {
             </Button>
           </div>
 
-          {/* Desktop CTA */}
-          <div className="hidden md:flex items-center gap-3">
-          </div>
-
           {/* Mobile Menu Button */}
           <button
             type="button"

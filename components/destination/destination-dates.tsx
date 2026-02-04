@@ -30,7 +30,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
 
   return (
     <>
-    <section className="py-16 bg-secondary/20">
+    <section className="py-16 bg-secondary/20 h-full rounded-l-lg">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
@@ -41,7 +41,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-1 gap-4 max-w-4xl mx-auto">
           {destination.availableDates.map((tripDate) => {
             const isSelected = selectedDate === tripDate.id
             const isLowSpots = tripDate.spots <= 4

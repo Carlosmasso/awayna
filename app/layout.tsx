@@ -1,12 +1,8 @@
 import React from "react"
 import type { Metadata } from 'next'
-import { DM_Sans, Space_Grotesk } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { ScrollToTop } from '@/components/scroll-to-top'
 import './globals.css'
-
-const _dmSans = DM_Sans({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
-const _spaceGrotesk = Space_Grotesk({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
 
 export const metadata: Metadata = {
   title: 'Awayna | Viajes en Grupo para Aventureros',
@@ -38,7 +34,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-sans antialiased`}>
+      <head>
+        {/* Adobe Fonts */}
+        <link rel="stylesheet" href="https://use.typekit.net/YOUR_KIT_ID.css" />
+      </head>
+      <body className="font-sans antialiased">
         <ScrollToTop />
         {children}
         <Analytics />
