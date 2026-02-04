@@ -123,9 +123,10 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
           <ul className="list-disc">
             <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
             <li className="text-xs">Somos personas, no una agencia</li>
-            <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
-            <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
-            <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
+            <li className="text-xs">Colaboramos con gente local</li>
+            <li className="text-xs">Estarás 24/7 acompañad@ de nosotros</li>
+            <li className="text-xs">Conocedores del camino</li>
+            <li className="text-xs">Alojamiento con mimo</li>
           </ul>
         </div>
       </section>
