@@ -30,8 +30,9 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
 
   return (
     <>
-    <section className="py-16 bg-secondary/20 h-full rounded-l-lg">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div className="sticky top-24">
+      <section className="py-8 bg-secondary/20 h-full rounded-xl">
+        <div className="px-4 sm:px-6">
         <div className="text-center mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
             Fechas disponibles
@@ -122,6 +123,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
         </div>
       </div>
     </section>
+    </div>
     {showModal && (
       <BookingModal 
         destination={showModal.destination} 
