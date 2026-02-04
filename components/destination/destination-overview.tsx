@@ -7,15 +7,13 @@ interface DestinationOverviewProps {
 }
 
 export function DestinationOverview({ destination }: DestinationOverviewProps) {
-  // Use destination images for gallery, fallback to placeholder
-  const galleryImages = destination.images?.slice(0, 4) || [
+  // Use destination gallery images for gallery, fallback to placeholder
+  const galleryImages = destination.galleryImages?.slice(0, 4) || [
     destination.image,
     destination.image,
     destination.image,
     destination.image,
   ]
-
-  console.log(galleryImages, destination)
 
   return (
     <section className="py-16 bg-background">
@@ -31,7 +29,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
             </p>
             
             {/* Highlights */}
-            {/* <div className="bg-secondary/30 rounded-2xl p-8">
+            <div className="bg-secondary/30 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-foreground mb-6">
                 Lo que viviremos
               </h3>
@@ -45,7 +43,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
                   </li>
                 ))}
               </ul>
-            </div> */}
+            </div>
           </div>
 
           {/* Right: Image Gallery (4 cols) */}
