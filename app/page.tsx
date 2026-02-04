@@ -21,7 +21,7 @@ export default function Home() {
         <DestinationsGrid />
         {/* <StatsSection />
         <Testimonials /> */}
-        <CtaSection />
+        {/* <CtaSection /> */}
       </main>
       <Footer />
       <CookieBanner />
