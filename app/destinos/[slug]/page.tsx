@@ -46,6 +46,21 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         <DestinationOverview destination={destination} />
         <div className="grid lg:grid-cols-12 gap-12">
           <div className="lg:col-span-7">
+            <div className="bg-secondary/30 rounded-2xl p-8">
+              <h3 className="text-xl font-bold text-foreground mb-6">
+                Lo que viviremos
+              </h3>
+              <ul className="space-y-4">
+                {destination.highlights.map((highlight, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
+                      <Check className="h-4 w-4 text-primary" />
+                    </div>
+                    <span className="text-foreground">{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
             <DestinationItinerary destination={destination} />
           </div>  
           <div className="lg:col-span-5">
