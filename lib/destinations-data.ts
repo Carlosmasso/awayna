@@ -15,6 +15,11 @@ export interface TripDate {
   originalPrice?: number
 }
 
+export interface TripComponent {
+  name: string
+  rating: number // 0-5
+}
+
 export interface Destination {
   slug: string
   name: string
@@ -28,6 +33,7 @@ export interface Destination {
   originalPrice?: number
   continent: string
   highlights: string[]
+  components: TripComponent[]
   description: string
   itinerary: Itinerary[]
   included: string[]
@@ -68,6 +74,14 @@ export const destinations: Destination[] = [
       "Noche en bungalow sobre el agua",
       "Trekking a cascadas escondidas",
       "Atardeceres desde barcos tradicionales"
+    ],
+    components: [
+      { name: "Playas", rating: 5 },
+      { name: "Snorkel/Buceo", rating: 5 },
+      { name: "Naturaleza", rating: 5 },
+      { name: "Aventura", rating: 4.5 },
+      { name: "Relajación", rating: 4 },
+      { name: "Gastronomía", rating: 3.5 }
     ],
     description: "Filipinas es un archipielago de mas de 7.000 islas con algunas de las playas mas espectaculares del planeta. En este viaje exploraremos Palawan, votada como la isla mas bonita del mundo, navegando entre acantilados de caliza, lagunas turquesas y playas de arena blanca. Desde El Nido hasta Coron, descubriremos pecios de la Segunda Guerra Mundial, nadaremos con tortugas y viviremos la hospitalidad filipina en su maxima expresion.",
     itinerary: [
@@ -230,6 +244,14 @@ export const destinations: Destination[] = [
       "Mercados flotantes del Mekong",
       "Street food tour en Hanoi"
     ],
+    components: [
+      { name: "Naturaleza", rating: 5 },
+      { name: "Gastronomía", rating: 5 },
+      { name: "Cultura", rating: 4.5 },
+      { name: "Aventura", rating: 4 },
+      { name: "Relajación", rating: 3.5 },
+      { name: "Playas", rating: 3 }
+    ],
     description: "Vietnam es un pais que enamora desde el primer momento. En este viaje de norte a sur recorreremos sus paisajes mas iconicos: desde las miticas aguas de Ha Long Bay hasta los canales del Delta del Mekong, pasando por la magica Hoi An y la frenetica Saigon. Descubriremos templos ancestrales, probaremos la mejor comida callejera del mundo y conectaremos con la hospitalidad vietnamita.",
     itinerary: [
       {
@@ -380,6 +402,14 @@ export const destinations: Destination[] = [
       "Clase de cocina thai",
       "Phi Phi Islands en barco",
       "Full moon party (opcional)"
+    ],
+    components: [
+      { name: "Cultura", rating: 5 },
+      { name: "Gastronomía", rating: 5 },
+      { name: "Playas", rating: 4.5 },
+      { name: "Aventura", rating: 4 },
+      { name: "Naturaleza", rating: 4 },
+      { name: "Relajación", rating: 4.5 }
     ],
     description: "Tailandia es la puerta de entrada perfecta al sudeste asiatico. Este viaje combina lo mejor del pais: la energia de Bangkok con sus templos y mercados, la espiritualidad del norte en Chiang Mai, y el paraiso tropical de las islas del sur. Probaremos la mejor comida thai, visitaremos elefantes de forma etica y bailaremos bajo la luna llena.",
     itinerary: [
