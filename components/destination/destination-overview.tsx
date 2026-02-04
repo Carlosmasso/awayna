@@ -18,12 +18,11 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
   return (
     <section className="py-16 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold text-foreground mb-6">
+          Sobre este viaje
+        </h2>
         <div className="grid lg:grid-cols-12 gap-12">
-          {/* Left: Description (8 cols) */}
           <div className="lg:col-span-5">
-            <h2 className="text-3xl font-bold text-foreground mb-6">
-              Sobre este viaje
-            </h2>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               {destination.description}
             </p>
