@@ -51,7 +51,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
             </p>
 
             {/* Components with ratings */}
-            <div className="bg-secondary/30 rounded-2xl p-8">
+            {/* <div className="bg-secondary/30 rounded-2xl p-8">
               <h3 className="text-xl font-bold text-foreground mb-6">
                 Componentes del viaje
               </h3>
@@ -63,7 +63,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
           </div>
 
           {/* Right: Image Gallery (4 cols) */}
