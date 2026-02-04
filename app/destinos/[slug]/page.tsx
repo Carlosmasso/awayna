@@ -44,8 +44,15 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
       <main>
         <DestinationHero destination={destination} />
         <DestinationOverview destination={destination} />
-        <DestinationDates destination={destination} />
+        <div className="grid lg:grid-cols-12 gap-12">
+          <div className="lg:col-span-5">
+
         <DestinationItinerary destination={destination} />
+        </div>  
+        <div className="lg:col-span-5">
+        <DestinationDates destination={destination} />
+</div>  
+        </div>  
         <DestinationIncludes destination={destination} />
         <DestinationPracticalInfo destination={destination} />
         <DestinationFaqs destination={destination} />
