@@ -68,7 +68,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         <DestinationHero destination={destination} />
         <DestinationOverview destination={destination} />
         <div className="grid lg:grid-cols-12">
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-7">
             <div className="p-8">
               <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">
                 ¿Es de mi rollo?
@@ -85,7 +85,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
             <DestinationItinerary destination={destination} />
             <DestinationIncludes destination={destination} />
           </div>  
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-5">
             <DestinationDates destination={destination} />
           </div>  
         </div>  
