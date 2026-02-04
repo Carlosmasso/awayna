@@ -4,25 +4,6 @@ import { Analytics } from '@vercel/analytics/next'
 import { ScrollToTop } from '@/components/scroll-to-top'
 import './globals.css'
 
-// Import New Order font from Google Fonts
-import localFont from 'next/font/local'
-
-const newOrder = localFont({
-  src: [
-    {
-      path: '../public/fonts/new-order-regular.woff2',
-      weight: '400',
-      style: 'normal',
-    },
-    {
-      path: '../public/fonts/new-order-bold.woff2',
-      weight: '700',
-      style: 'normal',
-    },
-  ],
-  variable: '--font-new-order',
-})
-
 export const metadata: Metadata = {
   title: 'Awayna | Viajes en Grupo para Aventureros',
   description: 'Descubre el mundo con gente como tu. Awayna organiza viajes en grupo para jovenes aventureros de 25 a 45 anos.',
@@ -53,7 +34,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${newOrder.variable} font-sans antialiased`}>
+      <head>
+        {/* Adobe Fonts */}
+        <link rel="stylesheet" href="https://use.typekit.net/YOUR_KIT_ID.css" />
+      </head>
+      <body className="font-sans antialiased">
         <ScrollToTop />
         {children}
         <Analytics />

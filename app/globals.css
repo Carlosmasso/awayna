@@ -76,7 +76,7 @@
 }
 
 @theme inline {
-  --font-sans: var(--font-new-order, 'New Order', sans-serif);
+  --font-sans: 'new-order', sans-serif;
   --font-mono: 'Space Grotesk', 'Space Grotesk Fallback', sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
