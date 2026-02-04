@@ -119,9 +119,9 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
         </div>
 
         <p className="text-md mt-2">¿Por qué venirte con nosotros?</p>
-        <ul>
-          <li>Porque nos importa el cómo, no solo el dónde</li>
-        </ul>
+        <li>
+          <ul>Porque nos importa el cómo, no solo el dónde</ul>
+        </li>
       </section>
     </div>
     {showModal && (
