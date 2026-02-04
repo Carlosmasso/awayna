@@ -11,6 +11,7 @@ import { DestinationDates } from "@/components/destination/destination-dates"
 import { DestinationFaqs } from "@/components/destination/destination-faqs"
 import { CookieBanner } from "@/components/cookie-banner"
 import { Check } from "lucide-react"
+import { Star } from "lucide-react"
 
 export async function generateStaticParams() {
   const slugs = getAllDestinationSlugs()
