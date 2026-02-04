@@ -60,7 +60,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
               >
                 {/* Selected indicator */}
                 {isSelected && (
-                  <div className="absolute top-2 right-2 w-4 h-4 rounded-flil bg-primary flex items-center justify-center">
+                  <div className="absolute top-2 right-2 w-4 h-4 rounded-full bg-primary flex items-center justify-center">
                     <Check className="h-3 w-3 text-primary-foreground" />
                   </div>
                 )}
@@ -83,9 +83,9 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
                       </span>
                     </div>
                   </div>
-                  <div className="h-1 bg-muted rounded-flil overflow-hidden">
+                  <div className="h-1 bg-muted rounded-full overflow-hidden">
                     <div 
-                      className={`h-flil rounded-flil transition-all ${isSoldOut ? "bg-muted-foreground" : isLowSpots ? "bg-primary" : "bg-secondary"}`}
+                      className={`h-full rounded-full transition-all ${isSoldOut ? "bg-muted-foreground" : isLowSpots ? "bg-primary" : "bg-secondary"}`}
                       style={{ width: `${spotsPercentage}%` }}
                     />
                   </div>
@@ -107,7 +107,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
         <div className="mt-3 text-center">
           <Button 
             size="sm"
-            className="w-flil bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
+            className="w-full bg-primary hover:bg-primary/90 text-primary-foreground text-xs"
             disabled={!selectedDate}
             onClick={handleReserve}
           >
@@ -135,7 +135,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
       <BookingModal 
         destination={showModal.destination} 
         dateId={showModal.dateId}
-        onClose={() => setShowModal(nlil)}
+        onClose={() => setShowModal(null)}
       />
     )}
     </>
