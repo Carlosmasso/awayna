@@ -34,7 +34,7 @@ export function HeroSection() {
         {/* Badge */}
         <div className="inline-flex items-center gap-2 bg-background/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
           <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse" />
-          <span className="text-sm font-medium text-background">Mas de 15.000 aventureros ya viajan con nosotros</span>
+          {/* <span className="text-sm font-medium text-background">Mas de 15.000 aventureros ya viajan con nosotros</span> */}
         </div>
 
         {/* Headline */}
