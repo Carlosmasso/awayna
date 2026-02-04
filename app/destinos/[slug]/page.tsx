@@ -10,11 +10,33 @@ import { DestinationPracticalInfo } from "@/components/destination/destination-p
 import { DestinationDates } from "@/components/destination/destination-dates"
 import { DestinationFaqs } from "@/components/destination/destination-faqs"
 import { CookieBanner } from "@/components/cookie-banner"
-import { Check } from "lucide-react"
+import { Star } from "lucide-react"
 
 export async function generateStaticParams() {
   const slugs = getAllDestinationSlugs()
   return slugs.map((slug) => ({ slug }))
+}
+
+function StarRating({ rating }: { rating: number }) {
+  return (
+    <div className="flex items-center gap-1">
+      {[...Array(5)].map((_, i) => {
+        const fillPercentage = Math.min(Math.max(rating - i, 0), 1)
+        return (
+          <div key={i} className="relative w-4 h-4">
+            <Star className="w-4 h-4 text-muted-foreground" fill="currentColor" />
+            <div
+              className="absolute top-0 left-0 h-4 overflow-hidden"
+              style={{ width: `${fillPercentage * 100}%` }}
+            >
+              <Star className="w-4 h-4 text-primary" fill="currentColor" />
+            </div>
+          </div>
+        )
+      })}
+      <span className="text-xs text-muted-foreground ml-1">{rating.toFixed(1)}</span>
+    </div>
+  )
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
@@ -46,26 +68,24 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         <DestinationHero destination={destination} />
         <DestinationOverview destination={destination} />
         <div className="grid lg:grid-cols-12">
-          <div className="lg:col-span-7">
-            {/* <div className="bg-secondary/30 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-foreground mb-6">
-                Lo que viviremos
-              </h3>
-              <ul className="space-y-4">
-                {destination.highlights.map((highlight, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <div className="flex-shrink-0 w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center mt-0.5">
-                      <Check className="h-4 w-4 text-primary" />
-                    </div>
-                    <span className="text-foreground">{highlight}</span>
-                  </li>
+          <div className="lg:col-span-6">
+            <div className="p-8">
+              <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">
+                ¿Es de mi rollo?
+              </h2>
+              <div className="grid grid-cols-2 gap-6">
+                {destination.components.map((component, index) => (
+                  <div key={index} className="flex items-center justify-between">
+                    <span className="text-foreground font-medium">{component.name}</span>
+                    <StarRating rating={component.rating} />
+                  </div>
                 ))}
-              </ul>
-            </div> */}
+              </div>
+            </div>
             <DestinationItinerary destination={destination} />
             <DestinationIncludes destination={destination} />
           </div>  
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-6">
             <DestinationDates destination={destination} />
           </div>  
         </div>  
