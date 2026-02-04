@@ -16,8 +16,8 @@ function formatDate(dateString: string): string {
 }
 
 export function DestinationDates({ destination }: DestinationDatesProps) {
-  const [selectedDate, setSelectedDate] = useState<string | nlil>(nlil)
-  const [showModal, setShowModal] = useState<{ destination: string; dateId: string } | nlil>(nlil)
+  const [selectedDate, setSelectedDate] = useState<string | null>(null)
+  const [showModal, setShowModal] = useState<{ destination: string; dateId: string } | null>(null)
 
   const handleReserve = () => {
     if (!selectedDate) return
