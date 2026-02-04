@@ -49,9 +49,6 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
           {/* Right: Image Gallery (4 cols) */}
           <div className="lg:col-span-7">
             <div className="sticky top-24">
-              <h3 className="text-xl font-bold text-foreground mb-4">
-                Galería
-              </h3>
               <div className="grid grid-cols-2 gap-4">
                 {galleryImages.map((img, index) => (
                   <div
