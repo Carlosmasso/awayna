@@ -50,72 +50,72 @@ export function HeroSection() {
         </p>
 
         {/* Search Box */}
-        <div className="bg-background rounded-2xl p-2 shadow-2xl max-w-3xl mx-auto">
-          <div className="flex flex-col md:flex-row gap-2">
-            {/* Destination */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="flex-1 flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-muted transition-colors text-left">
-                  <MapPin className="h-5 w-5 text-primary shrink-0" />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs text-muted-foreground font-medium">Destino</p>
-                    <p className="text-sm font-semibold text-foreground truncate">{destination}</p>
-                  </div>
-                  <ChevronDown className="h-4 w-4 text-muted-foreground shrink-0" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56">
-                <DropdownMenuItem onClick={() => setDestination("Cualquier destino")}>Cualquier destino</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setDestination("Asia")}>Asia</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setDestination("Europa")}>Europa</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setDestination("America")}>America</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setDestination("Africa")}>Africa</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+        // <div className="bg-background rounded-2xl p-2 shadow-2xl max-w-3xl mx-auto">
+        //   <div className="flex flex-col md:flex-row gap-2">
+        //     {/* Destination */}
+        //     <DropdownMenu>
+        //       <DropdownMenuTrigger asChild>
+        //         <button className="flex-1 flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-muted transition-colors text-left">
+        //           <MapPin className="h-5 w-5 text-primary shrink-0" />
+        //           <div className="flex-1 min-w-0">
+        //             <p className="text-xs text-muted-foreground font-medium">Destino</p>
+        //             <p className="text-sm font-semibold text-foreground truncate">{destination}</p>
+        //           </div>
+        //           <ChevronDown className="h-4 w-4 text-muted-foreground shrink-0" />
+        //         </button>
+        //       </DropdownMenuTrigger>
+        //       <DropdownMenuContent align="start" className="w-56">
+        //         <DropdownMenuItem onClick={() => setDestination("Cualquier destino")}>Cualquier destino</DropdownMenuItem>
+        //         <DropdownMenuItem onClick={() => setDestination("Asia")}>Asia</DropdownMenuItem>
+        //         <DropdownMenuItem onClick={() => setDestination("Europa")}>Europa</DropdownMenuItem>
+        //         <DropdownMenuItem onClick={() => setDestination("America")}>America</DropdownMenuItem>
+        //         <DropdownMenuItem onClick={() => setDestination("Africa")}>Africa</DropdownMenuItem>
+        //       </DropdownMenuContent>
+        //     </DropdownMenu>
 
-            {/* Separator */}
-            <div className="hidden md:block w-px bg-border" />
+        //     {/* Separator */}
+        //     <div className="hidden md:block w-px bg-border" />
 
-            {/* Date */}
-            <DropdownMenu>
-              <DropdownMenuTrigger asChild>
-                <button className="flex-1 flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-muted transition-colors text-left">
-                  <Calendar className="h-5 w-5 text-primary shrink-0" />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs text-muted-foreground font-medium">Fecha</p>
-                    <p className="text-sm font-semibold text-foreground truncate">{date}</p>
-                  </div>
-                  <ChevronDown className="h-4 w-4 text-muted-foreground shrink-0" />
-                </button>
-              </DropdownMenuTrigger>
-              <DropdownMenuContent align="start" className="w-56">
-                <DropdownMenuItem onClick={() => setDate("Cuando sea")}>Cuando sea</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setDate("Febrero 2026")}>Febrero 2026</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setDate("Marzo 2026")}>Marzo 2026</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setDate("Semana Santa 2026")}>Semana Santa 2026</DropdownMenuItem>
-                <DropdownMenuItem onClick={() => setDate("Verano 2026")}>Verano 2026</DropdownMenuItem>
-              </DropdownMenuContent>
-            </DropdownMenu>
+        //     {/* Date */}
+        //     <DropdownMenu>
+        //       <DropdownMenuTrigger asChild>
+        //         <button className="flex-1 flex items-center gap-3 px-4 py-3 rounded-xl hover:bg-muted transition-colors text-left">
+        //           <Calendar className="h-5 w-5 text-primary shrink-0" />
+        //           <div className="flex-1 min-w-0">
+        //             <p className="text-xs text-muted-foreground font-medium">Fecha</p>
+        //             <p className="text-sm font-semibold text-foreground truncate">{date}</p>
+        //           </div>
+        //           <ChevronDown className="h-4 w-4 text-muted-foreground shrink-0" />
+        //         </button>
+        //       </DropdownMenuTrigger>
+        //       <DropdownMenuContent align="start" className="w-56">
+        //         <DropdownMenuItem onClick={() => setDate("Cuando sea")}>Cuando sea</DropdownMenuItem>
+        //         <DropdownMenuItem onClick={() => setDate("Febrero 2026")}>Febrero 2026</DropdownMenuItem>
+        //         <DropdownMenuItem onClick={() => setDate("Marzo 2026")}>Marzo 2026</DropdownMenuItem>
+        //         <DropdownMenuItem onClick={() => setDate("Semana Santa 2026")}>Semana Santa 2026</DropdownMenuItem>
+        //         <DropdownMenuItem onClick={() => setDate("Verano 2026")}>Verano 2026</DropdownMenuItem>
+        //       </DropdownMenuContent>
+        //     </DropdownMenu>
 
-            {/* Separator */}
-            <div className="hidden md:block w-px bg-border" />
+        //     {/* Separator */}
+        //     <div className="hidden md:block w-px bg-border" />
 
-            {/* Group Info */}
-            <div className="flex-1 flex items-center gap-3 px-4 py-3">
-              <Users className="h-5 w-5 text-primary shrink-0" />
-              <div className="flex-1 min-w-0">
-                <p className="text-xs text-muted-foreground font-medium">Grupo</p>
-                <p className="text-sm font-semibold text-foreground">25-45 anos</p>
-              </div>
-            </div>
+        //     {/* Group Info */}
+        //     <div className="flex-1 flex items-center gap-3 px-4 py-3">
+        //       <Users className="h-5 w-5 text-primary shrink-0" />
+        //       <div className="flex-1 min-w-0">
+        //         <p className="text-xs text-muted-foreground font-medium">Grupo</p>
+        //         <p className="text-sm font-semibold text-foreground">25-45 anos</p>
+        //       </div>
+        //     </div>
 
-            {/* Search Button */}
-            <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 rounded-xl">
-              <Search className="h-5 w-5 mr-2" />
-              Buscar
-            </Button>
-          </div>
-        </div>
+        //     {/* Search Button */}
+        //     <Button size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 rounded-xl">
+        //       <Search className="h-5 w-5 mr-2" />
+        //       Buscar
+        //     </Button>
+        //   </div>
+        // </div>
 
         {/* Trust Badges */}
         <div className="flex flex-wrap justify-center gap-6 mt-10 text-background/80">
