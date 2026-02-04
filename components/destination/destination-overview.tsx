@@ -42,7 +42,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-12 gap-12">
           {/* Left: Description (8 cols) */}
-          <div className="lg:col-span-8">
+          <div className="lg:col-span-5">
             <h2 className="text-3xl font-bold text-foreground mb-6">
               Sobre este viaje
             </h2>
@@ -67,7 +67,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
           </div>
 
           {/* Right: Image Gallery (4 cols) */}
-          <div className="lg:col-span-4">
+          <div className="lg:col-span-7">
             <div className="sticky top-24">
               <h3 className="text-xl font-bold text-foreground mb-4">
                 Galería
