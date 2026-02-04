@@ -16,8 +16,8 @@ export default function Home() {
       <Header />
       <main>
         <HeroSection />
-        <TravelCategories />
-        <FeaturedTrips />
+        {/* <TravelCategories />
+        <FeaturedTrips /> */}
         <DestinationsGrid />
         <StatsSection />
         <Testimonials />
