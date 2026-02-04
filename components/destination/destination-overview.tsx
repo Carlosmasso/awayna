@@ -21,7 +21,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
         <h2 className="text-3xl font-bold text-foreground mb-6">
           Sobre este viaje
         </h2>
-        <div className="grid lg:grid-cols-12 gap-12">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
           <div className="lg:col-span-5">
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               {destination.description}
