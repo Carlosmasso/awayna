@@ -36,7 +36,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
                   <div
                     key={index}
                     className={`relative rounded-xl overflow-hidden bg-muted ${
-                      index === 0 ? "col-span-2 h-48" : "h-24"
+                      index === 0 ? "col-span-2 h-60" : "h-36"
                     }`}
                   >
                     <Image
