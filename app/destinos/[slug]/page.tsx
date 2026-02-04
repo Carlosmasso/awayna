@@ -47,7 +47,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
         <DestinationOverview destination={destination} />
         <div className="grid lg:grid-cols-12">
           <div className="lg:col-span-7">
-            {/* <div className="bg-secondary/30 rounded-2xl p-8">
+            <div className="p-8">
               <h3 className="text-xl font-bold text-foreground mb-6">
                 Lo que viviremos
               </h3>
@@ -61,7 +61,7 @@ export default async function DestinationPage({ params }: { params: Promise<{ sl
                   </li>
                 ))}
               </ul>
-            </div> */}
+            </div>
             <DestinationItinerary destination={destination} />
             <DestinationIncludes destination={destination} />
           </div>  
