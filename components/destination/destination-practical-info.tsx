@@ -37,7 +37,7 @@ export function DestinationPracticalInfo({ destination }: DestinationPracticalIn
                 key={item.key}
                 className="p-5 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors"
               >
-                <div className="flex items-center gap-4">
+                <div className="flex items-center gap-4 h-full">
                   <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
                     <Icon className="h-5 w-5 text-primary" />
                   </div>
