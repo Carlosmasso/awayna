@@ -5,27 +5,7 @@ interface DestinationOverviewProps {
   destination: Destination
 }
 
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex items-center gap-1">
-      {[...Array(5)].map((_, i) => {
-        const fillPercentage = Math.min(Math.max(rating - i, 0), 1)
-        return (
-          <div key={i} className="relative w-4 h-4">
-            <Star className="w-4 h-4 text-muted-foreground" fill="currentColor" />
-            <div
-              className="absolute top-0 left-0 h-4 overflow-hidden"
-              style={{ width: `${fillPercentage * 100}%` }}
-            >
-              <Star className="w-4 h-4 text-primary" fill="currentColor" />
-            </div>
-          </div>
-        )
-      })}
-      <span className="text-xs text-muted-foreground ml-1">{rating.toFixed(1)}</span>
-    </div>
-  )
-}
+
 
 export function DestinationOverview({ destination }: DestinationOverviewProps) {
   // Use destination gallery images for gallery, fallback to placeholder
