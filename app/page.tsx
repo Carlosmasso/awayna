@@ -19,8 +19,8 @@ export default function Home() {
         {/* <TravelCategories />
         <FeaturedTrips /> */}
         <DestinationsGrid />
-        <StatsSection />
-        <Testimonials />
+        {/* <StatsSection />
+        <Testimonials /> */}
         <CtaSection />
       </main>
       <Footer />
