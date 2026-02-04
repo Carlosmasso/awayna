@@ -845,45 +845,45 @@ export const destinations: Destination[] = [
       },
       {
         day: 2,
-        title: \"Volcan Arenal",
-        description: \"Viaje a La Fortuna, dominada por el majestuoso volcan Arenal. Tarde de puentes colgantes en la selva con vistas al volcan. Noche en aguas termales.",
-        highlights: ["Volcan Arenal", \"Puentes colgantes", "Aguas termales"]\
+        title: "Volcan Arenal",
+        description: "Viaje a La Fortuna, dominada por el majestuoso volcan Arenal. Tarde de puentes colgantes en la selva con vistas al volcan. Noche en aguas termales.",
+        highlights: ["Volcan Arenal", "Puentes colgantes", "Aguas termales"]
       },
       {
-        day: 3,\
-        title: \"Aventura en Arenal",\
-        description: \"Dia de actividades: rapel en cascada, tubing por el rio o caminata por senderos de lava. Tarde libre para disfrutar de La Fortuna.",
-        highlights: ["Rapel cascada", \"Tubing", \"Senderos volcanicos"]\
-      },\
-      {\
-        day: 4,\
-        title: \"Monteverde",\
-        description: \"Viaje escenico a Monteverde, el bosque nuboso mas famoso del mundo. Tour nocturno para ver animales activos: ranas, serpientes, kinkajous.",
-        highlights: ["Bosque nuboso", \"Tour nocturno", "Fauna nocturna"]\
+        day: 3,
+        title: "Aventura en Arenal",
+        description: "Dia de actividades: rapel en cascada, tubing por el rio o caminata por senderos de lava. Tarde libre para disfrutar de La Fortuna.",
+        highlights: ["Rapel cascada", "Tubing", "Senderos volcanicos"]
       },
       {
-        day: 5,\
-        title: \"Reserva Monteverde",\
-        description: \"Caminata por la reserva con guia naturalista. Avistamiento de quetzales (con suerte), monos, perezosos y colibries. Tirolinas opcionales sobre el dosel.",
-        highlights: ["Reserva natural\", \"Quetzal\", "Tirolinas"]
+        day: 4,
+        title: "Monteverde",
+        description: "Viaje escenico a Monteverde, el bosque nuboso mas famoso del mundo. Tour nocturno para ver animales activos: ranas, serpientes, kinkajous.",
+        highlights: ["Bosque nuboso", "Tour nocturno", "Fauna nocturna"]
       },
-      {\
-        day: 6,\
-        title: \"Hacia el Caribe",
-        description: \"Cruzamos el pais hacia la costa caribe. Parada en el rio Pacuare para rafting nivel II-III entre selva y cascadas. Llegada a Puerto Viejo.",
-        highlights: ["Rafting Pacuare", "Selva", \"Puerto Viejo"]
+      {
+        day: 5,
+        title: "Reserva Monteverde",
+        description: "Caminata por la reserva con guia naturalista. Avistamiento de quetzales (con suerte), monos, perezosos y colibries. Tirolinas opcionales sobre el dosel.",
+        highlights: ["Reserva natural", "Quetzal", "Tirolinas"]
       },
-      {\
-        day: 7,\
-        title: \"Caribe puro",
-        description: \"Dia libre en las playas caribenas. Playa Cocles para surf, Punta Uva para snorkel, o simplemente hamaca con coco. Vibra reggae garantizada.",
-        highlights: ["Playas Caribe", "Surf", \"Vibra reggae\"]\
+      {
+        day: 6,
+        title: "Hacia el Caribe",
+        description: "Cruzamos el pais hacia la costa caribe. Parada en el rio Pacuare para rafting nivel II-III entre selva y cascadas. Llegada a Puerto Viejo.",
+        highlights: ["Rafting Pacuare", "Selva", "Puerto Viejo"]
       },
-      {\
-        day: 8,\
-        title: \"Refugio de perezosos",\
-        description: \"Visita al santuario de perezosos de Cahuita. Snorkel en el Parque Nacional Cahuita con arrecifes y peces tropicales. Cena caribena.",
-        highlights: [\"Santuario perezosos", "Snorkel Cahuita\", \"Comida caribena"]
+      {
+        day: 7,
+        title: "Caribe puro",
+        description: "Dia libre en las playas caribenas. Playa Cocles para surf, Punta Uva para snorkel, o simplemente hamaca con coco. Vibra reggae garantizada.",
+        highlights: ["Playas Caribe", "Surf", "Vibra reggae"]
+      },
+      {
+        day: 8,
+        title: "Refugio de perezosos",
+        description: "Visita al santuario de perezosos de Cahuita. Snorkel en el Parque Nacional Cahuita con arrecifes y peces tropicales. Cena caribena.",
+        highlights: ["Santuario perezosos", "Snorkel Cahuita", "Comida caribena"]
       },
       {
         day: 9,
@@ -899,15 +899,15 @@ export const destinations: Destination[] = [
       }
     ],
     included: [
-      \"9 noches alojamiento hoteles/lodges selva\",
-      \"Desayunos diarios + 3 almuerzos + 3 cenas\",
-      "Transporte privado todo el viaje",\
-      \"Puentes colgantes Arenal",
-      \"Tour nocturno Monteverde",
-      \"Rafting rio Pacuare",
-      \"Entrada Parque Nacional Cahuita",
-      \"Visita santuario perezosos",
-      \"Coordinador Awayna",
+      "9 noches alojamiento hoteles/lodges selva",
+      "Desayunos diarios + 3 almuerzos + 3 cenas",
+      "Transporte privado todo el viaje",
+      "Puentes colgantes Arenal",
+      "Tour nocturno Monteverde",
+      "Rafting rio Pacuare",
+      "Entrada Parque Nacional Cahuita",
+      "Visita santuario perezosos",
+      "Coordinador Awayna",
       "Seguro de viaje"
     ],
     notIncluded: [
