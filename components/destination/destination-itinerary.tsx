@@ -37,7 +37,7 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
                   <div className="absolute left-5 top-14 bottom-0 w-0.5 bg-border" />
                 )}
 
-                <div className="flex gap-4">
+                <div className="flex gap-4 items-baseline">
                   {/* Day number circle */}
                   <div className={`relative z-10 flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center text-sm font-bold ${
                     isExpanded ? "bg-primary text-primary-foreground" : "bg-secondary text-secondary-foreground"
