@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Homepage -->
+  <url>
+    <loc>https://awayna.com</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Main Pages -->
+  <url>
+    <loc>https://awayna.com/sobre-nosotros</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://awayna.com/viajar-con-nosotros</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Destination Pages -->
+  <url>
+    <loc>https://awayna.com/destinos/tailandia</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://awayna.com/images/thailand-1.jpg</image:loc>
+      <image:title>Viaje a Tailandia</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://awayna.com/destinos/vietnam</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://awayna.com/images/vietnam-1.jpg</image:loc>
+      <image:title>Viaje a Vietnam</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://awayna.com/destinos/filipinas</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://awayna.com/images/filipinas-1.jpg</image:loc>
+      <image:title>Viaje a Filipinas</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://awayna.com/destinos/japon</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://awayna.com/images/japan-1.jpg</image:loc>
+      <image:title>Viaje a Japón</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://awayna.com/destinos/islandia</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://awayna.com/images/iceland-1.jpg</image:loc>
+      <image:title>Viaje a Islandia</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://awayna.com/destinos/costa-rica</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://awayna.com/images/costarica-1.jpg</image:loc>
+      <image:title>Viaje a Costa Rica</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://awayna.com/destinos/marruecos</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://awayna.com/images/morocco-1.jpg</image:loc>
+      <image:title>Viaje a Marruecos</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://awayna.com/destinos/peru</loc>
+    <lastmod>2026-02-05</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://awayna.com/images/peru-1.jpg</image:loc>
+      <image:title>Viaje a Perú</image:title>
+    </image:image>
+  </url>
+</urlset>

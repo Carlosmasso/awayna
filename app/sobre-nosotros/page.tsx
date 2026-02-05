@@ -8,8 +8,14 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Sobre Nosotros | Awayna",
-  description: "Conoce a los fundadores de Awayna y nuestra mision de crear viajes en grupo unicos para jovenes aventureros.",
+  title: "Sobre Nosotros | Awayna - Fundadores de Viajes Auténticos",
+  description: "Conoce a Iván y Alejandro, los fundadores de Awayna. Descubre nuestra misión de crear viajes en grupo únicos para jóvenes aventureros. +2,500 viajeros felices.",
+  keywords: 'sobre awayna, fundadores viajes, historia awayna, equipo awayna, viajes experienciales',
+  openGraph: {
+    title: 'Sobre Nosotros | Awayna',
+    description: 'Conoce la historia detrás de Awayna y nuestro equipo apasionado por viajar.',
+    type: 'website',
+  },
 }
 
 const values = [
