@@ -30,8 +30,8 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
 
   return (
     <>
-    <div className="sticky top-24">
-      <section className="p-4 bg-secondary/10 rounded-l-lg border-2 border-secondary-100">
+    <div className="sticky top-32">
+      <section className="px-4 py-8 bg-secondary/10 md:rounded-l-lg md:border-2 md:border-secondary-100">
         <div className="text-center mb-3">
           <h3 className="text-sm font-semibold text-foreground">
             Fechas disponibles
@@ -119,14 +119,14 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
         </div>
 
         <div className="px-2">
-          <p className="text-md mt-4 font-bold">¿Por qué venirte con nosotros?</p>
+          <p className="mt-4 font-bold text-md text-primary">¿Por qué venirte con nosotros?</p>
           <ul className="list-disc ml-4 mt-2">
-            <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
-            <li className="text-xs">Somos personas, no una agencia</li>
-            <li className="text-xs">Colaboramos con gente local</li>
-            <li className="text-xs">Estarás 24/7 acompañad@ de nosotros</li>
-            <li className="text-xs">Conocedores del camino</li>
-            <li className="text-xs">Alojamiento con mimo</li>
+            <li className="text-sm">Porque nos importa el cómo, no solo el dónde</li>
+            <li className="text-sm">Somos personas, no una agencia</li>
+            <li className="text-sm">Colaboramos con gente local</li>
+            <li className="text-sm">Estarás 24/7 acompañad@ de nosotros</li>
+            <li className="text-sm">Conocedores del camino</li>
+            <li className="text-sm">Alojamiento con mimo</li>
           </ul>
         </div>
       </section>
