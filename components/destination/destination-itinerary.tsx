@@ -24,7 +24,7 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
           </p>
         </div>
 
-        <div className="max-w-3xl mx-auto">
+        <div className="mx-auto">
           {destination.itinerary.map((day, index) => {
             const isExpanded = expandedDay === day.day
             const isFirst = index === 0
