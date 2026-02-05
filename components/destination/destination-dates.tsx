@@ -121,12 +121,12 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
         <div className="px-2">
           <p className="mt-4 font-bold text-md">¿Por qué venirte con nosotros?</p>
           <ul className="list-disc ml-4 mt-2">
-            <li className="text-xs">Porque nos importa el cómo, no solo el dónde</li>
-            <li className="text-xs">Somos personas, no una agencia</li>
-            <li className="text-xs">Colaboramos con gente local</li>
-            <li className="text-xs">Estarás 24/7 acompañad@ de nosotros</li>
-            <li className="text-xs">Conocedores del camino</li>
-            <li className="text-xs">Alojamiento con mimo</li>
+            <li className="text-sm">Porque nos importa el cómo, no solo el dónde</li>
+            <li className="text-sm">Somos personas, no una agencia</li>
+            <li className="text-sm">Colaboramos con gente local</li>
+            <li className="text-sm">Estarás 24/7 acompañad@ de nosotros</li>
+            <li className="text-sm">Conocedores del camino</li>
+            <li className="text-sm">Alojamiento con mimo</li>
           </ul>
         </div>
       </section>
