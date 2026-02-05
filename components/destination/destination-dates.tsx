@@ -31,7 +31,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
   return (
     <>
     <div className="sticky top-24">
-      <section className="p-4 bg-secondary/10 md:rounded-l-lg md:border-secondary-100">
+      <section className="p-8 bg-secondary/10 md:rounded-l-lg md:border-secondary-100">
         <div className="text-center mb-3">
           <h3 className="text-sm font-semibold text-foreground">
             Fechas disponibles
