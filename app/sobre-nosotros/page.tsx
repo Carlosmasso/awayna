@@ -148,9 +148,7 @@ export default function SobreNosotros() {
                   <h3 className="text-xl font-bold text-foreground mb-1">Pablo Rodriguez</h3>
                   <p className="text-primary font-medium mb-3">Co-fundador & CEO</p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    Ex-consultor en una Big Four que un dia decidio que las hojas de Excel no eran lo suyo. 
-                    Ha visitado 47 paises y su mision es que cada viajero de Awayna vuelva con al menos 
-                    un amigo para toda la vida. Fan de los amaneceres en las montanas y de la comida callejera.
+                    Iván es cercano y chill, con espíritu aventurero y curiosidad infinita. Desde pequeño devoraba documentales, y eso le empujó a dejar su trabajo para salir a conocer el mundo cámara en mano. La fotografía es su forma de mirar y contar lo que vive. Su primer viaje en solitario fue a la India, donde se formó como instructor de yoga, algo que hoy lleva consigo a cada destino. Cree firmemente que cuando hay buena vibra, todo lo demás fluye solo.
                   </p>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <span className="flex items-center gap-1">
