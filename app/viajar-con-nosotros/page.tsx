@@ -4,10 +4,17 @@ import { Users, Compass, Home, Utensils, MapPin, Heart, ArrowRight, CheckCircle2
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { Button } from "@/components/ui/button"
+import type { Metadata } from "next"
 
-export const metadata = {
-  title: "Viajar con Awayna | Como es la experiencia",
-  description: "Descubre como es viajar con Awayna. Somos viajeros, no turistas. Grupos reducidos, experiencias autenticas y conexiones genuinas.",
+export const metadata: Metadata = {
+  title: "Cómo es Viajar con Awayna | Filosofía de Viajes Auténticos",
+  description: "Descubre cómo es viajar con Awayna. Somos viajeros, no turistas. Grupos reducidos, experiencias auténticas, conexiones genuinas. Vivir como un local, no como turista.",
+  keywords: 'como viajar con awayna, filosofia viajes, experiencias autenticas, viajes locales, grupos reducidos',
+  openGraph: {
+    title: 'Cómo es Viajar con Awayna',
+    description: 'Somos viajeros, no turistas. Descubre una nueva forma de viajar con Awayna.',
+    type: 'website',
+  },
 }
 
 const philosophyPoints = [

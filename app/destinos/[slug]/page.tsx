@@ -22,12 +22,32 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const destination = getDestinationBySlug(slug)
   
   if (!destination) {
-    return { title: "Destino no encontrado | Awayna" }
+    return { 
+      title: "Destino no encontrado | Awayna",
+      description: "El destino que buscas no existe."
+    }
   }
 
   return {
-    title: `${destination.name} | Awayna Viajes en Grupo`,
-    description: `${destination.tagline}. Viaje de ${destination.duration} desde ${destination.price}€. Descubre ${destination.name} con Awayna.`,
+    title: `Viaje a ${destination.name} | Awayna - ${destination.duration} días desde ${destination.price}€`,
+    description: `${destination.tagline}. Viaje de ${destination.duration} días desde ${destination.price}€. ${destination.overview}. Descubre ${destination.name} con Awayna.`,
+    keywords: `viaje a ${destination.name}, tour ${destination.name}, viajes ${destination.name}, experiencias ${destination.name}`,
+    openGraph: {
+      title: `Viaje a ${destination.name} | Awayna`,
+      description: `${destination.tagline}. Descubre ${destination.name} con un grupo de viajeros como tú.`,
+      type: 'website',
+      images: [
+        {
+          url: destination.images?.[0] || '/images/hero-adventure.jpg',
+          width: 1200,
+          height: 630,
+          alt: `Viaje a ${destination.name}`,
+        },
+      ],
+    },
+    alternates: {
+      canonical: `https://awayna.com/destinos/${slug}`,
+    },
   }
 }
 
