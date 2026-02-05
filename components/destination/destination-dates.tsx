@@ -50,7 +50,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
                 key={tripDate.id}
                 onClick={() => !isSoldOut && setSelectedDate(tripDate.id)}
                 disabled={isSoldOut}
-                className={`relative w-full p-3 rounded-lg border text-left transition-all items-baseline ${
+                className={`relative w-full p-3 rounded-lg border text-left transition-all ${
                   isSelected
                     ? "border-primary bg-primary/8"
                     : isSoldOut
