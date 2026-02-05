@@ -145,7 +145,7 @@ export default function SobreNosotros() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-1">Pablo Rodriguez</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-1">Iván Merenciano</h3>
                   <p className="text-primary font-medium mb-3">Co-fundador & CEO</p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                     Iván es cercano y chill, con espíritu aventurero y curiosidad infinita. Desde pequeño devoraba documentales, y eso le empujó a dejar su trabajo para salir a conocer el mundo cámara en mano. La fotografía es su forma de mirar y contar lo que vive. Su primer viaje en solitario fue a la India, donde se formó como instructor de yoga, algo que hoy lleva consigo a cada destino. Cree firmemente que cuando hay buena vibra, todo lo demás fluye solo.
@@ -174,13 +174,10 @@ export default function SobreNosotros() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-foreground mb-1">Carlos Martinez</h3>
+                  <h3 className="text-xl font-bold text-foreground mb-1">Alejandro Pérez</h3>
                   <p className="text-primary font-medium mb-3">Co-fundador & COO</p>
                   <p className="text-muted-foreground text-sm leading-relaxed mb-4">
-                    Ingeniero reconvertido en organizador de aventuras. Se encarga de que cada detalle 
-                    de los viajes sea perfecto, desde el primer email hasta el ultimo atardecer. 
-                    Experto en encontrar los restaurantes locales que no salen en ninguna guia 
-                    y en crear playlists para las furgonetas.
+                    Alex es sencillo y muy claro con lo que quiere en la vida. Ama la naturaleza, el aire libre y descubrir nuevas culturas, sobre todo si hay buena comida de por medio. Es hablador, divertido y con alma de explorador, necesita recorrer cada rincón de los destinos que visita. Tiene energía de sobra, así que el deporte siempre va en la mochila. Parece que improvisa y se deja llevar, pero en el fondo todo lo tiene bastante bien pensado. Un compañero de viaje fácil, curioso y con muy buen rollo. 
                   </p>
                   <div className="flex items-center gap-4 text-sm text-muted-foreground">
                     <span className="flex items-center gap-1">
