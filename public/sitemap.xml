@@ -31,7 +31,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://awayna.com/images/thailand-1.jpg</image:loc>
+      <image:loc>https://awayna.com/images/thailand/thailand-1.jpg</image:loc>
       <image:title>Viaje a Tailandia</image:title>
     </image:image>
   </url>
@@ -42,7 +42,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://awayna.com/images/vietnam-1.jpg</image:loc>
+      <image:loc>https://awayna.com/images/vietnam/vietnam-1.jpg</image:loc>
       <image:title>Viaje a Vietnam</image:title>
     </image:image>
   </url>
@@ -53,7 +53,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://awayna.com/images/filipinas-1.jpg</image:loc>
+      <image:loc>https://awayna.com/images/filipinas/filipinas-1.jpg</image:loc>
       <image:title>Viaje a Filipinas</image:title>
     </image:image>
   </url>
@@ -64,7 +64,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://awayna.com/images/japan-1.jpg</image:loc>
+      <image:loc>https://awayna.com/images/japan/japan-1.jpg</image:loc>
       <image:title>Viaje a Japón</image:title>
     </image:image>
   </url>
@@ -75,7 +75,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://awayna.com/images/iceland-1.jpg</image:loc>
+      <image:loc>https://awayna.com/images/iceland/iceland-1.jpg</image:loc>
       <image:title>Viaje a Islandia</image:title>
     </image:image>
   </url>
@@ -86,7 +86,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://awayna.com/images/costarica-1.jpg</image:loc>
+      <image:loc>https://awayna.com/images/costarica/costarica-1.jpg</image:loc>
       <image:title>Viaje a Costa Rica</image:title>
     </image:image>
   </url>
@@ -97,7 +97,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://awayna.com/images/morocco-1.jpg</image:loc>
+      <image:loc>https://awayna.com/images/morocco/morocco-1.jpg</image:loc>
       <image:title>Viaje a Marruecos</image:title>
     </image:image>
   </url>
@@ -108,7 +108,7 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://awayna.com/images/peru-1.jpg</image:loc>
+      <image:loc>https://awayna.com/images/peru/peru-1.jpg</image:loc>
       <image:title>Viaje a Perú</image:title>
     </image:image>
   </url>

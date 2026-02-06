@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     description: 'Viaja con gente como tú. Grupos reducidos, experiencias reales, conexiones genuinas. Descubre destinos como Tailandia, Vietnam, Filipinas, Japón, Islandia y Costa Rica.',
     images: [
       {
-        url: '/images/hero-adventure.jpg',
+        url: '/images/otros/hero-adventure.jpg',
         width: 1200,
         height: 630,
         alt: 'Awayna - Viajes en Grupo',
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Awayna | Viajes en Grupo Auténticos',
     description: 'Descubre el mundo con gente como tu. Grupos reducidos, experiencias reales.',
-    images: ['/images/hero-adventure.jpg'],
+    images: ['/images/otros/hero-adventure.jpg'],
     creator: '@awayna_viajes',
   },
   verification: {

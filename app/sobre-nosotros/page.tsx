@@ -74,7 +74,7 @@ export default function SobreNosotros() {
             <div className="relative max-w-4xl mx-auto">
               <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-2xl">
                 <Image
-                  src="/images/founders-adventure.jpg"
+                  src="/images/otros/founders-adventure.jpg"
                   alt="Fundadores de Awayna"
                   fill
                   className="object-cover"
@@ -144,7 +144,7 @@ export default function SobreNosotros() {
               <div className="bg-card rounded-3xl overflow-hidden shadow-lg border border-border group">
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
-                    src="/images/ceo-1.jpg"
+                    src="/images/otros/ceo-1.jpg"
                     alt="Pablo Rodriguez - Co-fundador de Awayna"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -173,7 +173,7 @@ export default function SobreNosotros() {
               <div className="bg-card rounded-3xl overflow-hidden shadow-lg border border-border group">
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
-                    src="/images/ceo-2.jpg"
+                    src="/images/otros/ceo-2.jpg"
                     alt="Carlos Martinez - Co-fundador de Awayna"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

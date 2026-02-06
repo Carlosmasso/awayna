@@ -9,42 +9,42 @@ const destinations = [
     name: "Filipinas",
     slug: "filipinas",
     trips: 4,
-    image: "/images/trip-filipinas.jpg",
+    image: "/images/filipinas/trip-filipinas.jpg",
     featured: true,
   },
   {
     name: "Vietnam",
     slug: "vietnam",
     trips: 3,
-    image: "/images/trip-vietnam.jpg",
+    image: "/images/vietnam/trip-vietnam.jpg",
     featured: true,
   },
   {
     name: "Tailandia",
     slug: "tailandia",
     trips: 5,
-    image: "/images/trip-thailand.jpg",
+    image: "/images/thailand/trip-thailand.jpg",
     featured: true,
   },
   {
     name: "Japon",
     slug: "japon",
     trips: 3,
-    image: "/images/trip-japan.jpg",
+    image: "/images/japan/japonportada.jpeg",
     featured: true,
   },
   {
     name: "Islandia",
     slug: "islandia",
     trips: 2,
-    image: "/images/trip-iceland.jpg",
+    image: "/images/iceland/trip-iceland.jpg",
     featured: false,
   },
   {
     name: "Costa Rica",
     slug: "costa-rica",
     trips: 2,
-    image: "/images/trip-costarica.jpg",
+    image: "/images/costarica/trip-costarica.jpg",
     featured: false,
   },
 ]
@@ -70,13 +70,14 @@ export function DestinationsGrid() {
             <Link
               key={destination.name}
               href={`/destinos/${destination.slug}`}
-              className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer"
+              className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer bg-muted"
             >
               <Image
                 src={destination.image || "/placeholder.svg"}
                 alt={destination.name}
                 fill
-                className="object-cover group-hover:scale-110 transition-transform duration-500"
+                className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                sizes="(max-width: 768px) 50vw, 33vw"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/80 via-foreground/20 to-transparent" />
               

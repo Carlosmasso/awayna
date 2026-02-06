@@ -71,7 +71,7 @@ export default function ViajarConNosotros() {
         <section className="relative min-h-[70vh] flex items-center">
           <div className="absolute inset-0">
             <Image
-              src="/images/founders-adventure.jpg"
+              src="/images/otros/founders-adventure.jpg"
               alt="Viajando con Awayna"
               fill
               className="object-cover"
@@ -136,7 +136,7 @@ export default function ViajarConNosotros() {
                 <div className="space-y-4">
                   <div className="aspect-[3/4] rounded-2xl overflow-hidden">
                     <Image
-                      src="/images/ceo-1.jpg"
+                      src="/images/otros/ceo-1.jpg"
                       alt="Pablo - Cofundador"
                       width={300}
                       height={400}
@@ -159,7 +159,7 @@ export default function ViajarConNosotros() {
                   </div>
                   <div className="aspect-[3/4] rounded-2xl overflow-hidden">
                     <Image
-                      src="/images/ceo-2.jpg"
+                      src="/images/otros/ceo-2.jpg"
                       alt="Carlos - Cofundador"
                       width={300}
                       height={400}
