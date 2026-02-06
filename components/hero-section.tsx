@@ -41,7 +41,7 @@ export function HeroSection() {
         </h1>
 
         {/* Subheadline */}
-        <p className="text-lg sm:text-xl text-background/90 max-w-2xl mx-auto mb-10 text-pretty">
+        <p className="text-xl sm:text-2xl text-background/90 max-w-2xl mx-auto mb-10 text-pretty">
           Sitios increíbles con gente que suma.
         </p>
 
