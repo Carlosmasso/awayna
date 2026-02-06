@@ -1,31 +1,33 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { Search, MapPin, Calendar, Users, ChevronDown } from "lucide-react"
-import { Button } from "@/components/ui/button"
+import { useState } from "react";
+import Image from "next/image";
+import { Search, MapPin, Calendar, Users, ChevronDown } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
+} from "@/components/ui/dropdown-menu";
 
 export function HeroSection() {
-  const [destination, setDestination] = useState("Cualquier destino")
-  const [date, setDate] = useState("Cuando sea")
+  const [destination, setDestination] = useState("Cualquier destino");
+  const [date, setDate] = useState("Cuando sea");
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
+      {/* Background Video */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero-adventure.jpg"
-          alt="Grupo de viajeros en una aventura"
-          fill
-          className="object-cover"
-          priority
-        />
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+        >
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-foreground/60 via-foreground/40 to-foreground/70" />
       </div>
 
@@ -33,14 +35,15 @@ export function HeroSection() {
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-background leading-tight tracking-tight text-balance mb-6">
-          Prepara la mochila,<br />
+          Prepara la mochila,
+          <br />
           <span className="text-primary">los amigos los ponemos nosotros</span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg sm:text-xl text-background/90 max-w-2xl mx-auto mb-10 text-pretty">
-          Descubre el mundo con viajeros como tu, de entre 25 y 45 anos. 
-          Grupos reducidos, experiencias unicas y recuerdos para toda la vida.
+          Descubre el mundo con viajeros como tu, de entre 25 y 45 anos. Grupos
+          reducidos, experiencias unicas y recuerdos para toda la vida.
         </p>
 
         {/* Trust Badges */}
@@ -67,5 +70,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
