@@ -35,15 +35,14 @@ export function HeroSection() {
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-background leading-tight tracking-tight text-balance mb-6">
-          Prepara la mochila,
+          Tú eliges el destino,
           <br />
-          <span className="text-primary">los amigos los ponemos nosotros</span>
+          <span className="text-primary">nosotros el plan</span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-lg sm:text-xl text-background/90 max-w-2xl mx-auto mb-10 text-pretty">
-          Descubre el mundo con viajeros como tu, de entre 25 y 45 anos. Grupos
-          reducidos, experiencias unicas y recuerdos para toda la vida.
+          Sitios increíbles con gente que suma.
         </p>
 
         {/* Trust Badges */}
