@@ -136,7 +136,7 @@ export default function ViajarConNosotros() {
                 <div className="space-y-4">
                   <div className="aspect-[3/4] rounded-2xl overflow-hidden">
                     <Image
-                      src="/images/otros/ceo-1.jpg"
+                      src="/images/otros/ivan.jpg"
                       alt="Pablo - Cofundador"
                       width={300}
                       height={400}
@@ -159,7 +159,7 @@ export default function ViajarConNosotros() {
                   </div>
                   <div className="aspect-[3/4] rounded-2xl overflow-hidden">
                     <Image
-                      src="/images/otros/ceo-2.jpg"
+                      src="/images/otros/alex.jpg"
                       alt="Carlos - Cofundador"
                       width={300}
                       height={400}

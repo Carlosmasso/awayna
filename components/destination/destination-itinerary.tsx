@@ -1,6 +1,7 @@
 "use client"
 
 import { useState } from "react"
+import Image from "next/image"
 import { ChevronDown, MapPin } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import type { Destination } from "@/lib/destinations-data"
@@ -67,6 +68,18 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
                     {/* Expanded content */}
                     {isExpanded && (
                       <div className="mt-3 p-5 rounded-xl bg-secondary/30 border border-border/50">
+                        {/* Image if available */}
+                        {day.image && (
+                          <div className="relative w-full h-64 rounded-lg overflow-hidden mb-4">
+                            <Image
+                              src={day.image}
+                              alt={`${day.title} - Día ${day.day}`}
+                              fill
+                              className="object-cover"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                            />
+                          </div>
+                        )}
                         <p className="text-muted-foreground leading-relaxed mb-4">
                           {day.description}
                         </p>

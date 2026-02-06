@@ -3,6 +3,7 @@ export interface Itinerary {
   title: string
   description: string
   highlights: string[]
+  image?: string
 }
 
 export interface TripDate {
@@ -389,7 +390,7 @@ export const destinations: Destination[] = [
       "/images/thailand/thailand-2.jpg",
       "/images/thailand/thailand-3.jpg",
     ],
-    duration: "12 dias",
+    duration: "13 dias",
     rating: 4.9,
     reviewCount: 156,
     price: 1197,
@@ -415,75 +416,94 @@ export const destinations: Destination[] = [
     itinerary: [
       {
         day: 1,
-        title: "Sawadee Bangkok!",
-        description: "Llegada a Bangkok. Recogida y traslado al hotel en el corazon de la ciudad. Tarde libre para recuperarse del vuelo. Cena de bienvenida con autentica comida thai.",
-        highlights: ["Llegada Bangkok", "Hotel centrico", "Cena bienvenida"]
+        title: "Llegada al paraíso: paseo gastronómico por Chinatown y Khao San Road",
+        description: "¡Bienvenidos a Tailandia! 🇹🇭 A vuestra llegada a Bangkok, os estaremos esperando en el aeropuerto, así que desde el primer momento podéis relajaros y dejaros llevar. Una vez reunido todo el grupo, ponemos rumbo a la gran ciudad. Tras acomodarnos en el alojamiento y una ducha reparadora, salimos directos al corazón de Bangkok para empezar el viaje como se merece: probando street food tailandés. Visitamos Chinatown, uno de los barrios más vibrantes y auténticos de la capital, famoso por sus puestos callejeros, aromas intensos y recetas tradicionales chinas y tailandesas. Después de deleitarnos con todo tipo de sabores asiáticos, subimos a un tuk tuk para dirigirnos a Khao San Road, la calle más animada de Bangkok, punto de encuentro de viajeros de todo el mundo. La noche continúa… hasta que el cuerpo aguante.",
+        highlights: ["Llegada Bangkok", "Chinatown", "Khao San Road", "Street food"],
+        image: "/images/thailand/itinerary/Foto_dia_1.jpg"
       },
       {
         day: 2,
-        title: "Bangkok imprescindible",
-        description: "Visita al Gran Palacio y Wat Phra Kaew (Buda Esmeralda). Wat Pho con el Buda reclinado gigante. Por la tarde, paseo en barco por los klongs (canales).",
-        highlights: ["Gran Palacio", "Wat Pho", "Canales en barco"]
+        title: "Bangkok Express",
+        description: "Nos despertamos con energía para descubrir los templos y monumentos más emblemáticos de la capital tailandesa. Visitamos el impresionante Gran Palacio Real, antigua residencia de los reyes de Siam; el Buda Reclinado (Wat Pho), uno de los más grandes del país; y los curiosos mercados de amuletos, donde nos perderemos entre puestos llenos de historia y simbolismo. Al mediodía, disfrutamos de la gastronomía local en un restaurante reconocido por la Guía Michelin, una experiencia que demuestra por qué Bangkok es una de las capitales gastronómicas del mundo. Cerramos con un bubble coffee y ponemos rumbo al aeropuerto para volar hacia el sur del país, destino Krabi, puerta de entrada al mar de Andamán.",
+        highlights: ["Gran Palacio Real", "Wat Pho", "Mercados de amuletos", "Restaurante Michelin"],
+        image: "/images/thailand/itinerary/Foto_dia_2.jpg"
       },
       {
         day: 3,
-        title: "Mercados y street food",
-        description: "Excursion al mercado flotante de Damnoen Saduak y el mercado sobre las vias del tren. Regreso a Bangkok para street food tour por Chinatown.",
-        highlights: ["Mercado flotante", "Mercado del tren", "Chinatown food"]
+        title: "Primer día de playas paradisíacas en Railay",
+        description: "Primer día en el sur y llega el momento de disfrutar del calor, el mar y la naturaleza. Subimos a una barca tradicional tailandesa con nuestro capitán de confianza para recorrer la espectacular costa del mar de Andamán. Nos esperan aguas cristalinas, snorkel, acantilados de piedra caliza y playas de película. Tras un atardecer inolvidable, regresamos a Ao Nang, una de las zonas con más ambiente del sudeste asiático. Limpios y descansados, es el momento perfecto para un masaje tradicional tailandés, una cena tranquila y postres locales para recargar energías.",
+        highlights: ["Railay Beach", "Snorkel", "Mar de Andamán", "Masaje tradicional"],
+        image: "/images/thailand/itinerary/Foto_dia_3.jpg"
       },
       {
         day: 4,
-        title: "Vuelo a Chiang Mai",
-        description: "Vuelo al norte, a Chiang Mai. Tarde explorando el casco antiguo y sus 300 templos. Noche en el famoso Night Bazaar.",
-        highlights: ["Vuelo Chiang Mai", "Casco antiguo", "Night Bazaar"]
+        title: "Bautizo de buceo entre corales multicolor",
+        description: "¡Buenos días! Hoy nos dirigimos a las famosas islas Phi Phi, uno de los grandes iconos de Tailandia. Nos espera una experiencia muy especial: bautismo de buceo en algunas de las aguas más transparentes del país. No importa si es tu primera vez: nuestro equipo profesional te acompañará en todo momento para que disfrutes con total seguridad de los arrecifes de coral y la vida marina. Tras la actividad, asistiremos a un combate de Muay Thai, el deporte nacional tailandés. Y para quienes aún tengan energía, la noche continúa en lo que muchos llaman la 'Ibiza tailandesa'.",
+        highlights: ["Phi Phi Islands", "Bautismo de buceo", "Muay Thai", "Vida nocturna"],
+        image: "/images/thailand/itinerary/Foto_dia_4.jpg"
       },
       {
         day: 5,
-        title: "Santuario de elefantes",
-        description: "Dia completo en un santuario etico de elefantes. Alimentamos, banamos y aprendemos sobre estos increibles animales rescatados del turismo irresponsable.",
-        highlights: ["Santuario etico", "Banar elefantes", "Aprender y cuidar"]
+        title: "Playas de película en Koh Phi Phi",
+        description: "Si ayer te supo a poco, hoy vamos a más. Recorremos en barca privada todos los rincones de Koh Phi Phi: playas habitadas por monos, lagunas naturales de agua turquesa y paisajes irreales. Aquí se han rodado películas mundialmente famosas, y entenderás por qué. Tras un día perfecto, regresamos a Krabi para descansar. Sabemos que cuesta despedirse de lugares así… pero la aventura continúa.",
+        highlights: ["Koh Phi Phi", "Lagunas turquesa", "Maya Bay", "Barca privada"],
+        image: "/images/thailand/itinerary/Foto_dia_5.jpg"
       },
       {
         day: 6,
-        title: "Doi Inthanon",
-        description: "Excursion al Doi Inthanon, la montana mas alta de Tailandia. Trekking suave por la jungla, cascadas y pagodas gemelas con vistas espectaculares.",
-        highlights: ["Montana mas alta", "Cascadas", "Trekking jungla"]
+        title: "Travesía hacia la jungla",
+        description: "Ponemos rumbo a uno de los lugares más especiales del viaje: el Parque Nacional de Khao Sok, uno de los bosques tropicales más antiguos y extensos del sudeste asiático. Selva pura, naturaleza salvaje y la posibilidad de cruzarnos con monos, serpientes o incluso elefantes. Aquí todo queda en manos del destino. Prepárate para descubrir uno de esos lugares que se quedan grabados para siempre.",
+        highlights: ["Khao Sok", "Jungla", "Fauna salvaje", "Aventura"],
+        image: "/images/thailand/itinerary/Foto_dia_6.jpg"
       },
       {
         day: 7,
-        title: "Clase de cocina thai",
-        description: "Visita al mercado local y clase de cocina thai. Aprendemos a hacer pad thai, curry verde y mango sticky rice. Tarde libre: masaje thai recomendado!",
-        highlights: ["Clase cocina", "Pad Thai casero", "Masaje thai"]
+        title: "Parque Nacional de Khao Sok y lago Cheow Lan",
+        description: "Cambiamos el agua salada del mar por el agua dulce del espectacular lago Cheow Lan, rodeado de montañas kársticas cubiertas de selva. Exploramos la zona como auténticos aventureros, visitando templos escondidos en la jungla, con respeto y calma, conociendo de cerca la vida de los monjes budistas. Después, navegamos por el lago acompañados de nuestro guía local, Peeranut, disfrutando de uno de los paisajes más relajantes del viaje.",
+        highlights: ["Lago Cheow Lan", "Templos en la jungla", "Monjes budistas", "Navegación"],
+        image: "/images/thailand/itinerary/Foto_dia_7.jpg"
       },
       {
         day: 8,
-        title: "Vuelo a las islas",
-        description: "Vuelo a Phuket o Krabi y traslado a nuestro resort en la playa. Tarde libre para disfrutar del Indico. Atardecer con cocktail en la arena.",
-        highlights: ["Vuelo al sur", "Resort playa", "Primer atardecer"]
+        title: "Despedida del sur de Tailandia",
+        description: "Antes de despedirnos del sur, realizamos rafting suave, una experiencia tranquila y divertida, descendiendo por un río rodeado de vegetación exuberante. Una actividad perfecta para desconectar y disfrutar del entorno sin prisas. Tras comer y darnos una ducha reparadora, nos dirigimos al aeropuerto de Krabi para volar hacia el norte del país.",
+        highlights: ["Rafting", "Vegetación exuberante", "Vuelo al norte"],
+        image: "/images/thailand/itinerary/Foto_dia_8.jpg"
       },
       {
         day: 9,
-        title: "Phi Phi Islands",
-        description: "Excursion en speedboat a las famosas islas Phi Phi. Maya Bay (la playa de 'La Playa'), snorkel con peces tropicales, almuerzo en Phi Phi Don.",
-        highlights: ["Maya Bay", "Phi Phi Don", "Snorkel"]
+        title: "¡Buenos días, Chiang Mai!",
+        description: "Amanecemos en Chiang Mai, nuestro lugar favorito del viaje. Cultura, tradición, gastronomía y hospitalidad se multiplican aquí por cien. Visitamos un santuario ético de elefantes, donde aprenderemos cómo se protege y cuida a estos animales de forma responsable (actividad opcional). Para quienes prefieran otra experiencia, tenemos alternativas igual de especiales. De vuelta a la ciudad, recorremos algunos de los templos más impresionantes del norte, muy diferentes a los del sur. Por la noche, cena incluida para probar el famoso Khao Soi, plato típico del norte… aviso: enamora.",
+        highlights: ["Chiang Mai", "Santuario elefantes", "Templos del norte", "Khao Soi"],
+        image: "/images/thailand/itinerary/Foto_dia_9.jpg"
       },
       {
         day: 10,
-        title: "Dia libre en el paraiso",
-        description: "Dia libre para disfrutar a tu ritmo: kayak, paddleboard, buceo, o simplemente hamaca y libro. Por la noche, cena en la playa.",
-        highlights: ["Relax total", "Actividades opcionales", "Cena playa"]
+        title: "Termas naturales y camino a Chiang Rai",
+        description: "Seguimos explorando Chiang Mai y visitamos uno de sus templos más emblemáticos, con vistas panorámicas de toda la ciudad. Tras la visita, ponemos rumbo a Chiang Rai, pero antes hacemos una parada para relajarnos en termas naturales, el plan perfecto para bajar pulsaciones. Por la tarde, llegada y noche en la mágica Chiang Rai.",
+        highlights: ["Templo panorámico", "Termas naturales", "Chiang Rai"],
+        image: "/images/thailand/itinerary/Foto_dia_10.jpg"
       },
       {
         day: 11,
-        title: "Ultimo dia thai",
-        description: "Manana libre. Traslado a Phuket para el vuelo a Bangkok. Ultima cena de despedida con el grupo recordando la aventura.",
-        highlights: ["Manana libre", "Vuelo Bangkok", "Cena despedida"]
+        title: "Los famosos templos de Chiang Rai",
+        description: "Chiang Rai es pequeña, pero culturalmente fascinante. Visitamos sus templos más icónicos: el Templo Azul o Wat Rong Suea Ten, un increíble edificio de tonalidades azules que alberga un Buda de más de seis metros de altura en su interior. Por otro lado iremos al famoso Templo Blanco o Wat Rong Khun, símbolo de la ciudad en el que nos adentraremos para maravillarnos con su decoración. Después vamos a ir a visitar el Gran Buda de Chiang Rai, una representación de la diosa Guanyin, la figura de la compasión en el budismo. Su estatua sentada alcanza los 40 metros de altura, está construida sobre una flor de loto y puede verse desde varios kilómetros de distancia. Cerramos el día con un masaje tradicional tailandés y una buena cena.",
+        highlights: ["Templo Azul", "Templo Blanco", "Gran Buda", "Masaje tradicional"],
+        image: "/images/thailand/itinerary/Foto_dia_11.jpg"
       },
       {
         day: 12,
-        title: "Khop khun, Thailand!",
-        description: "Traslado al aeropuerto de Bangkok para el vuelo de regreso a casa. Gracias por viajar con Awayna!",
-        highlights: ["Traslado aeropuerto", "Vuelo regreso"]
+        title: "Conociendo a los monjes budistas",
+        description: "Último día en el norte y uno de los más especiales. Madrugamos para hacer una ofrenda a los monjes, un gesto sencillo pero muy significativo. Compartimos tiempo con ellos en un templo remoto y continuamos el día con una familia local, disfrutando de comida sencilla, auténtica y llena de cariño. Una experiencia que confirma que este viaje no es uno más.",
+        highlights: ["Ofrenda a monjes", "Templo remoto", "Familia local", "Comida auténtica"],
+        image: "/images/thailand/itinerary/Foto_dia_12..jpg"
+      },
+      {
+        day: 13,
+        title: "¡Hasta pronto, Tailandia!",
+        description: "Regresamos a Bangkok para conectar con nuestros vuelos internacionales. Despedirse no es fácil, pero nos llevamos recuerdos, amistades y la certeza de que esta no será la última vez en Tailandia. Para quienes tengan el vuelo más tarde o al día siguiente, existe la opción de pasar una última noche en Bangkok junto al grupo.",
+        highlights: ["Regreso Bangkok", "Despedida", "Vuelos internacionales"],
+        image: "/images/thailand/itinerary/Foto_dia_13.jpg"
       }
     ],
     included: [
