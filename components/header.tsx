@@ -81,7 +81,7 @@ export function Header() {
             </DropdownMenu>
 
             <Button variant="ghost" className={scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : ""} asChild>
-              <Link href="/sobre-nosotros">Sobre Nosotros</Link>
+              <Link href="/sobre-nosotros">Conócenos</Link>
             </Button>
           </div>
 
