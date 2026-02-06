@@ -14,9 +14,9 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
   const [expandedDay, setExpandedDay] = useState<number | null>(1)
 
   return (
-    <section className="py-16 bg-background">
+    <section className="py-8 sm:py-16 bg-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10">
+        <div className="text-center mb-6 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
             Itinerario dia a dia
           </h2>

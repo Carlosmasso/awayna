@@ -48,23 +48,23 @@ export function DestinationHero({ destination }: DestinationHeroProps) {
                 <MapPin className="h-3 w-3 mr-1" />
                 {destination.continent}
               </Badge>
-              {discount > 0 && (
+              {/* {discount > 0 && (
                 <Badge className="bg-primary text-primary-foreground">
                   -{discount}% dto.
                 </Badge>
-              )}
+              )} */}
             </div>
 
             {/* Title */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-background mb-3 tracking-tight text-balance">
               {destination.name}
             </h1>
-            <p className="text-xl sm:text-2xl text-background/90 mb-6 font-medium">
+            <p className="text-xl sm:text-2xl text-background/90 font-medium">
               {destination.tagline}
             </p>
 
             {/* Meta Info */}
-            <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-background/90">
+            {/* <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-background/90">
               <div className="flex items-center gap-1.5">
                 <Clock className="h-5 w-5" />
                 <span className="font-medium">{destination.duration}</span>
@@ -81,7 +81,7 @@ export function DestinationHero({ destination }: DestinationHeroProps) {
                   <span className="text-lg text-background/60 line-through">{destination.originalPrice}€</span>
                 )}
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

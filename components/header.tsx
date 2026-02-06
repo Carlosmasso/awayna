@@ -41,7 +41,7 @@ export function Header() {
               alt="Awayna"
               width={140}
               height={50}
-              className="h-10 w-auto"
+              className="h-15 w-auto"
               priority
             />
           </Link>
@@ -81,9 +81,6 @@ export function Header() {
             </DropdownMenu>
 
             <Button variant="ghost" className={scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : ""} asChild>
-              <Link href="/#como-funciona">Viajar con nosotros</Link>
-            </Button>
-            <Button variant="ghost" className={scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : ""} asChild>
               <Link href="/sobre-nosotros">Sobre Nosotros</Link>
             </Button>
           </div>
@@ -100,22 +97,22 @@ export function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 border-t border-border/50">
+          <div className={`md:hidden py-4 border-t ${scrolled ? "border-primary-foreground/20" : "border-border/50"}`}>
             <div className="flex flex-col gap-2">
-              <div className="px-3 py-2 text-sm font-medium text-muted-foreground">Destinos</div>
-              <Link href="/destinos/filipinas" className="px-6 py-2 text-sm hover:bg-muted rounded-lg" onClick={() => setMobileMenuOpen(false)}>Filipinas</Link>
-              <Link href="/destinos/vietnam" className="px-6 py-2 text-sm hover:bg-muted rounded-lg" onClick={() => setMobileMenuOpen(false)}>Vietnam</Link>
-              <Link href="/destinos/tailandia" className="px-6 py-2 text-sm hover:bg-muted rounded-lg" onClick={() => setMobileMenuOpen(false)}>Tailandia</Link>
-              <Link href="/destinos/japon" className="px-6 py-2 text-sm hover:bg-muted rounded-lg" onClick={() => setMobileMenuOpen(false)}>Japon</Link>
-              <Link href="/destinos/islandia" className="px-6 py-2 text-sm hover:bg-muted rounded-lg" onClick={() => setMobileMenuOpen(false)}>Islandia</Link>
-              <Link href="/destinos/costa-rica" className="px-6 py-2 text-sm hover:bg-muted rounded-lg" onClick={() => setMobileMenuOpen(false)}>Costa Rica</Link>
-              <div className="border-t border-border/50 my-2" />
-              <Link href="/#como-funciona" className="px-3 py-2 text-sm font-medium hover:bg-muted rounded-lg flex items-center gap-2" onClick={() => setMobileMenuOpen(false)}>
+              <div className={`px-3 py-2 text-sm font-medium ${scrolled ? "text-primary-foreground/70" : "text-muted-foreground"}`}>Destinos</div>
+              <Link href="/destinos/filipinas" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Filipinas</Link>
+              <Link href="/destinos/vietnam" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Vietnam</Link>
+              <Link href="/destinos/tailandia" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Tailandia</Link>
+              <Link href="/destinos/japon" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Japon</Link>
+              <Link href="/destinos/islandia" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Islandia</Link>
+              <Link href="/destinos/costa-rica" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Costa Rica</Link>
+              <div className={`border-t my-2 ${scrolled ? "border-primary-foreground/20" : "border-border/50"}`} />
+              <Link href="/#como-funciona" className={`px-3 py-2 text-sm font-medium rounded-lg flex items-center gap-2 ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>
                 <Compass className="h-4 w-4" />
                 Viajar con nosotros
               </Link>
-              <Link href="/sobre-nosotros" className="px-3 py-2 text-sm font-medium hover:bg-muted rounded-lg" onClick={() => setMobileMenuOpen(false)}>
-                Sobre Nosotros
+              <Link href="/sobre-nosotros" className={`px-3 py-2 text-sm font-medium rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>
+                Conócenos
               </Link>
             </div>
           </div>
