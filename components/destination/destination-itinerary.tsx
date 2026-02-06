@@ -80,7 +80,7 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
                             />
                           </div>
                         )}
-                        <p className="text-muted-foreground leading-relaxed mb-4">
+                        <p className="text-sm leading-relaxed mb-4">
                           {day.description}
                         </p>
                         <div className="flex flex-wrap gap-2">
