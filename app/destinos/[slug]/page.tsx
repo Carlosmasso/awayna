@@ -38,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       type: 'website',
       images: [
         {
-          url: destination.images?.[0] || '/images/otros/hero-adventure.jpg',
+          url: destination?.heroImage || '/images/otros/hero-adventure.jpg',
           width: 1200,
           height: 630,
           alt: `Viaje a ${destination.name}`,
