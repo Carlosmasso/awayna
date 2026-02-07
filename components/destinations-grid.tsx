@@ -1,5 +1,6 @@
 "use client"
 
+import { useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
@@ -50,8 +51,18 @@ const destinations = [
 ]
 
 export function DestinationsGrid() {
+  useEffect(() => {
+    // Verificar si hay un hash en la URL cuando el componente se monta
+    if (window.location.hash === '#viajes') {
+      const element = document.getElementById('viajes')
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+  }, [])
+
   return (
-    <section className="py-20 bg-secondary">
+    <section id="viajes" className="py-20 bg-secondary scroll-mt-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">

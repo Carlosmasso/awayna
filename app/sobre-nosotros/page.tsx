@@ -184,7 +184,7 @@ export default function SobreNosotros() {
         </section>
 
         {/* Values Section */}
-        <section className="py-20 bg-foreground text-background">
+        {/* <section className="py-20 bg-foreground text-background">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-4">
@@ -213,10 +213,10 @@ export default function SobreNosotros() {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* Timeline Section */}
-        <section className="py-20">
+        {/* <section className="py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
@@ -286,7 +286,7 @@ export default function SobreNosotros() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA Section */}
         <section className="py-20 bg-primary/5">
