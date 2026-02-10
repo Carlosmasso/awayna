@@ -37,7 +37,7 @@ export async function generateMetadata({
 
   return {
     title: `Viaje a ${destination.name} | Awayna - ${destination.duration} días desde ${destination.price}€`,
-    description: `${destination.tagline}. Viaje de ${destination.duration} días desde ${destination.price}€. ${destination.overview}. Descubre ${destination.name} con Awayna.`,
+    description: `${destination.tagline}. Viaje de ${destination.duration} días desde ${destination.price}€. Descubre ${destination.name} con Awayna.`,
     keywords: `viaje a ${destination.name}, tour ${destination.name}, viajes ${destination.name}, experiencias ${destination.name}`,
     openGraph: {
       title: `Viaje a ${destination.name} | Awayna`,
