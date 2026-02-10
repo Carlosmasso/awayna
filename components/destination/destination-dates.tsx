@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Calendar, Users, Check } from "lucide-react";
+import { Calendar, Users, Check, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingModal } from "@/components/booking-modal";
 import type { Destination } from "@/lib/destinations-data";
@@ -51,6 +51,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
               const isSelected = selectedDate === tripDate.id;
               const isLowSpots = tripDate.spots <= 4;
               const isSoldOut = tripDate.spots === 0;
+              const occupancyPercentage = ((tripDate.totalSpots - tripDate.spots) / tripDate.totalSpots) * 100;
 
               return (
                 <button
@@ -72,10 +73,31 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
                     </div>
                   )}
 
-                  {/* Date and spots in one line */}
-                  <span className="text-sm sm:text-base font-medium text-foreground block mb-1">
-                    {formatDate(tripDate.startDate)}
-                  </span>
+                  {/* Date */}
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-sm sm:text-base font-medium text-foreground">
+                      {formatDate(tripDate.startDate)}
+                    </span>
+                    {isLowSpots && !isSoldOut && (
+                      <Flame className="h-4 w-4 text-primary" />
+                    )}
+                  </div>
+
+                  {/* Occupancy Bar */}
+                  <div className="mb-2">
+                    <div className="h-1.5 bg-muted rounded-full overflow-hidden">
+                      <div
+                        className={`h-full rounded-full transition-all ${
+                          isSoldOut
+                            ? "bg-muted-foreground"
+                            : isLowSpots
+                            ? "bg-primary"
+                            : "bg-secondary"
+                        }`}
+                        style={{ width: `${occupancyPercentage}%` }}
+                      />
+                    </div>
+                  </div>
 
                   {/* Price */}
                   <div className="flex items-center justify-between">

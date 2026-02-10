@@ -4,15 +4,15 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  /* Awayna Brand Colors: Blanco #EFECE7, Rojo #A61D2D, Negro #1C1C1C, Peach #D6B4A6 */
-  --background: #EFECE7;
+  /* Awayna Brand Colors: Blanco #F9F6EE, Rojo #A61D2D, Negro #1C1C1C, Peach #D6B4A6 */
+  --background: #F9F6EE;
   --foreground: #1C1C1C;
-  --card: #EFECE7;
+  --card: #F9F6EE;
   --card-foreground: #1C1C1C;
-  --popover: #EFECE7;
+  --popover: #F9F6EE;
   --popover-foreground: #1C1C1C;
   --primary: #A61D2D;
-  --primary-foreground: #EFECE7;
+  --primary-foreground: #F9F6EE;
   --secondary: #D6B4A6;
   --secondary-foreground: #1C1C1C;
   --muted: #E5E0DA;
@@ -20,7 +20,7 @@
   --accent: #D6B4A6;
   --accent-foreground: #1C1C1C;
   --destructive: #A61D2D;
-  --destructive-foreground: #EFECE7;
+  --destructive-foreground: #F9F6EE;
   --border: #D6B4A6;
   --input: #E5E0DA;
   --ring: #A61D2D;
@@ -30,10 +30,10 @@
   --chart-4: #8B1523;
   --chart-5: #E8C8BB;
   --radius: 0.75rem;
-  --sidebar: #EFECE7;
+  --sidebar: #F9F6EE;
   --sidebar-foreground: #1C1C1C;
   --sidebar-primary: #A61D2D;
-  --sidebar-primary-foreground: #EFECE7;
+  --sidebar-primary-foreground: #F9F6EE;
   --sidebar-accent: #D6B4A6;
   --sidebar-accent-foreground: #1C1C1C;
   --sidebar-border: #D6B4A6;
