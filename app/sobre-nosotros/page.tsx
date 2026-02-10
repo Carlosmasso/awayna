@@ -131,10 +131,6 @@ export default function SobreNosotros() {
                       <MapPin className="h-4 w-4" />
                       Albacete
                     </span>
-                    <span className="flex items-center gap-1">
-                      <Globe className="h-4 w-4" />
-                      8 países
-                    </span>
                   </div>
                 </div>
               </div>
@@ -171,10 +167,6 @@ export default function SobreNosotros() {
                     <span className="flex items-center gap-1">
                       <MapPin className="h-4 w-4" />
                       Albacete
-                    </span>
-                    <span className="flex items-center gap-1">
-                      <Globe className="h-4 w-4" />
-                      5 países
                     </span>
                   </div>
                 </div>

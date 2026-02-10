@@ -48,7 +48,7 @@ export default function Contacto() {
                     href="mailto:hola@awayna.com"
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
-                    hola@awayna.com
+                    info@awayna.com
                   </a>
                 </div>
 

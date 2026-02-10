@@ -67,11 +67,10 @@ export function DestinationsGrid() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-            Explora nuestros destinos
+            ¿Dónde nos vamos?
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Desde las playas paradisiacas de Asia hasta las auroras boreales de Islandia. 
-            Tu proxima aventura te esta esperando.
+            Viajes en grupo a destinos auténticos, colaborando con la gente local para empaparnos de su cultura y tradiciones.
           </p>
         </div>
 

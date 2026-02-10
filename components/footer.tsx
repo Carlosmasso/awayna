@@ -3,12 +3,23 @@ import Image from "next/image"
 import { Instagram, Facebook, Youtube, Twitter, Mail, Phone, MapPin, Globe } from "lucide-react"
 
 const footerLinks = {
-  soporte: [
+  destinos: [
+    { name: "Asia", href: "#" },
+    { name: "Europa", href: "#" },
+    { name: "America", href: "#" },
+    { name: "Africa", href: "#" },
+    { name: "Oceania", href: "#" },
+  ],
+  empresa: [
     { name: "Sobre nosotros", href: "/sobre-nosotros" },
+    { name: "Cómo funciona Awayna", href: "/como-funciona" },
+  ],
+  soporte: [
+    { name: "FAQ", href: "#" },
     { name: "Contacto", href: "/contacto" },
     { name: "Politica de cancelacion", href: "#" },
     { name: "Terminos y condiciones", href: "#" },
-    // { name: "Privacidad", href: "#" },
+    { name: "Privacidad", href: "#" },
   ],
 }
 
@@ -24,9 +35,9 @@ export function Footer() {
     <footer className="bg-foreground text-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Main Footer */}
-        <div className="py-16 grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div className="py-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand Column */}
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-2">
             <Link href="/" className="flex items-center mb-6">
               <Image
                 src="/logos/awayna-peach.svg"
@@ -71,8 +82,35 @@ export function Footer() {
             </div>
           </div>
 
+          {/* Links Columns */}
           <div>
-            <h3 className="font-semibold text-background mb-4">Info</h3>
+            <h3 className="font-semibold text-background mb-4">Destinos</h3>
+            <ul className="space-y-3">
+              {footerLinks.destinos.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-background mb-4">Empresa</h3>
+            <ul className="space-y-3">
+              {footerLinks.empresa.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors">
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 className="font-semibold text-background mb-4">Soporte</h3>
             <ul className="space-y-3">
               {footerLinks.soporte.map((link) => (
                 <li key={link.name}>
