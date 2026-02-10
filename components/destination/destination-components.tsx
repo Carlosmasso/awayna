@@ -36,7 +36,7 @@ function StarRating({ rating }: { rating: number }) {
 export function DestinationComponents({ components }: DestinationComponentsProps) {
   return (
     <section className="py-16">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl">
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">
           ¿Es de mi rollo?
         </h2>

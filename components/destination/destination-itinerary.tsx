@@ -15,7 +15,7 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
 
   return (
     <section className="py-8 sm:py-16 bg-background">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div>
         <div className="text-center mb-6 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
             Itinerario dia a dia
@@ -28,7 +28,6 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
         <div className="mx-auto">
           {destination.itinerary.map((day, index) => {
             const isExpanded = expandedDay === day.day
-            const isFirst = index === 0
             const isLast = index === destination.itinerary.length - 1
 
             return (

@@ -37,7 +37,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
 
   return (
     <>
-      <div className="sticky top-24 lg:top-28 px-4 sm:px-6 lg:px-8">
+      <div className="sticky top-24 lg:top-28">
         <section className="py-3 sm:py-6 bg-secondary/10 rounded-xl border border-border/50 shadow-md">
           <div className="px-3 sm:px-6">
             <div className="text-center mb-2 sm:mb-4">
