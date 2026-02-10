@@ -2,6 +2,7 @@ import { Header } from "@/components/header";
 import { HeroSection } from "@/components/hero-section";
 import { TravelCategories } from "@/components/travel-categories";
 import { FeaturedTrips } from "@/components/featured-trips";
+import { AboutSection } from "@/components/about-section";
 import { DestinationsGrid } from "@/components/destinations-grid";
 import { StatsSection } from "@/components/stats-section";
 import { Testimonials } from "@/components/testimonials";
@@ -31,6 +32,7 @@ export default function Home() {
         {/* <TravelCategories />
         <FeaturedTrips /> */}
         <DestinationsGrid />
+        <AboutSection />
         {/* <StatsSection />
         <Testimonials /> */}
         {/* <CtaSection /> */}

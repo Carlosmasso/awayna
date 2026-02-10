@@ -58,7 +58,7 @@ export function Footer() {
             <div className="space-y-3 text-sm text-background/70">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>hola@awayna.com</span>
+                <span>info@awayna.com</span>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
