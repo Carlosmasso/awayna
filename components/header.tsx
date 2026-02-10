@@ -83,6 +83,10 @@ export function Header() {
             <Button variant="ghost" className={scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : ""} asChild>
               <Link href="/sobre-nosotros">Conócenos</Link>
             </Button>
+            
+            <Button variant="ghost" className={scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : ""} asChild>
+              <Link href="/contacto">Contacto</Link>
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -113,6 +117,9 @@ export function Header() {
               </Link>
               <Link href="/sobre-nosotros" className={`px-3 py-2 text-sm font-medium rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>
                 Conócenos
+              </Link>
+              <Link href="/contacto" className={`px-3 py-2 text-sm font-medium rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>
+                Contacto
               </Link>
             </div>
           </div>
