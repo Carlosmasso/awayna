@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useRef } from "react"
 import Image from "next/image"
 import { ChevronDown, MapPin } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
@@ -12,6 +12,21 @@ interface DestinationItineraryProps {
 
 export function DestinationItinerary({ destination }: DestinationItineraryProps) {
   const [expandedDay, setExpandedDay] = useState<number | null>(1)
+  const dayRefs = useRef<{ [key: number]: HTMLDivElement | null }>({})
+
+  const handleDayClick = (dayNumber: number) => {
+    const isCurrentlyExpanded = expandedDay === dayNumber
+    setExpandedDay(isCurrentlyExpanded ? null : dayNumber)
+    
+    if (!isCurrentlyExpanded) {
+      setTimeout(() => {
+        dayRefs.current[dayNumber]?.scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'start' 
+        })
+      }, 100)
+    }
+  }
 
   return (
     <section className="py-8 sm:py-16 bg-background">
@@ -31,7 +46,11 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
             const isLast = index === destination.itinerary.length - 1
 
             return (
-              <div key={day.day} className="relative">
+              <div 
+                key={day.day} 
+                className="relative scroll-mt-24"
+                ref={(el) => { dayRefs.current[day.day] = el }}
+              >
                 {/* Timeline line */}
                 {!isLast && (
                   <div className="absolute left-5 top-14 bottom-0 w-0.5 bg-border" />
@@ -48,7 +67,7 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
                   {/* Content */}
                   <div className={`flex-1 pb-8 ${isLast ? "pb-0" : ""}`}>
                     <button
-                      onClick={() => setExpandedDay(isExpanded ? null : day.day)}
+                      onClick={() => handleDayClick(day.day)}
                       className="w-full text-left"
                     >
                       <div className="flex items-center justify-between gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors">
