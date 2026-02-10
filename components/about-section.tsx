@@ -20,6 +20,7 @@ export function AboutSection() {
                 alt="Iván Merenciano"
                 fill
                 className="object-cover"
+                sizes="144px"
               />
             </div>
 
@@ -28,6 +29,7 @@ export function AboutSection() {
                 src="/images/personal/alex.jpeg"
                 alt="Alejandro Pérez"
                 fill
+                sizes="144px"
                 className="object-cover"
               />
             </div>

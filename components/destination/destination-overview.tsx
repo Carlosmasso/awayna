@@ -122,6 +122,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
                       fill
                       className="object-cover"
                       priority={index === 0}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 50vw"
                     />
                   </div>
                 ))}
