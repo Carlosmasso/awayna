@@ -87,6 +87,7 @@ export default function RootLayout({
   return (
     <html lang="es">
       <head>
+        <link rel="stylesheet" href="https://use.typekit.net/uhc2fma.css"/>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#000000" />
