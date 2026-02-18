@@ -35,7 +35,7 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-30 h-30 flex items-start justify-center p-2 rotate-10.5">
+        <div className="w-30 h-30 flex items-start justify-center p-2 rotate-[10.5deg]">
           <img src="/logos/avion.svg" alt="Scroll down" />
         </div>
       </div>
