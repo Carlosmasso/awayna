@@ -311,7 +311,8 @@ export const destinations: Destination[] = [
   {
     slug: "vietnam",
     name: "Vietnam",
-    tagline: "De Hanoi a Ho Chi Minh entre arrozales y bahias",
+    tagline:
+      "De Hanoi, recorriendo Ninh Binh, la provincia de la costura y Ha giang loop. ",
     heroImage: "/images/vietnam/trip-vietnam.jpg",
     galleryImages: [
       "/images/vietnam/vietnam-1.jpg",
@@ -332,139 +333,140 @@ export const destinations: Destination[] = [
       "Street food tour en Hanoi",
     ],
     components: [
+      { name: "Relax", rating: 2 },
+      { name: "Actividad física", rating: 4 },
       { name: "Naturaleza", rating: 5 },
-      { name: "Gastronomía", rating: 5 },
-      { name: "Cultura", rating: 4.5 },
-      { name: "Aventura", rating: 4 },
-      { name: "Relajación", rating: 3.5 },
-      { name: "Playas", rating: 3 },
+      { name: "Cultural", rating: 5 },
+      { name: "Gastronómico", rating: 4 },
+      { name: "Nightlife", rating: 3 },
     ],
     description: [
-      "Vietnam es un país que enamora desde el primer momento. En este viaje de norte a sur recorreremos sus paisajes más icónicos: desde las míticas aguas de Ha Long Bay hasta los canales del Delta del Mekong, pasando por la mágica Hoi An y la frenética Saigón. Descubriremos templos ancestrales, probaremos la mejor comida callejera del mundo y conectaremos con la hospitalidad vietnamita.",
+      "Vietnam es un destino apetece siempre por su mezcla de vibraciones, el contraste entre el loco tráfico de Hanoi y la paz inesperada que te da Ninh Binh, donde el tiempo baja el ritmo y una barca tradicional se desliza en silencio entre montañas de piedra caliza y arrozales infinitos.",
+      "Vietnam es perderte durante tres días en la Ha Giang Loop, atravesando puertos de montaña imposibles y aldeas donde la vida sigue otro compás. Es despertarte en Sapa rodeado de niebla y terrazas verdes, compartir una cena casera en un homestay y entender que viajar también es conectar.",
+      "Este viaje está diseñado para quienes quieren algo más que ver paisajes bonitos. Aquí caminamos, navegamos, convivimos con comunidades locales y nos dejamos atravesar por una cultura intensa, resiliente y profundamente humana.",
+      "Durante 14 días recorreremos el norte de Vietnam combinando aventura, naturaleza brutal y momentos de calma que equilibran el alma. No vienes solo a descubrir Vietnam. Vienes a sentirlo.",
     ],
     itinerary: [
       {
         day: 1,
-        title: "Bienvenidos a Hanoi",
+        title: "Día 1 · 15 de octubre: Primer contacto con Vietnam: bienvenida a Hanoi",
         description: [
-          "Llegada a Hanoi, la capital milenaria. Recogida en aeropuerto y traslado al hotel en el Old Quarter. Paseo de orientacion y cena de bienvenida con pho tradicional.",
+          "Aterrizamos en Hanoi y, desde el primer momento, empezamos a sentir que estamos lejos de casa. El equipo de Awayna nos espera en el aeropuerto para organizarnos, conocernos y poner rumbo al alojamiento. Tras instalarnos y dejar las mochilas, salimos a dar nuestro primer paseo por la ciudad. Calles llenas de vida, motos que parecen bailar entre el tráfico, aromas intensos de comida callejera y una energía que no se parece a nada que hayas vivido antes. Cerramos el día con nuestra primera cena en grupo, rompiendo el hielo y empezando a construir lo que será una experiencia compartida muy potente."
         ],
-        highlights: ["Llegada a Hanoi", "Old Quarter", "Cena de bienvenida"],
+        highlights: ["Llegada a Hanoi", "Cena en grupo", "Paseo por la ciudad"],
       },
       {
         day: 2,
-        title: "Hanoi historico",
+        title: "Día 2 · 16 de octubre: Hanoi sin filtros, con Hung",
         description: [
-          "Tour por los highlights de Hanoi: Templo de la Literatura, Mausoleo de Ho Chi Minh, Pagoda del Pilar Unico. Por la tarde, street food tour por el casco antiguo.",
+          "Hoy nos adentramos en la Hanoi más auténtica de la mano de Hung, nuestro guía local y cómplice en esta aventura. Caminamos por mercados tradicionales, templos escondidos y barrios donde la vida sigue su propio ritmo, lejos del turismo masivo. Hung nos contará historias reales del país, anécdotas personales y detalles que ayudan a entender Vietnam desde dentro, no desde un libro. Por la noche, Awayna invita a cenar en un restaurante reconocido por la Guía Michelin, donde brindamos por el grupo y disfrutamos de una gastronomía que sorprende en cada plato."
         ],
-        highlights: ["Templo Literatura", "Ho Chi Minh", "Street food tour"],
+        highlights: ["Guía local Hung", "Mercados tradicionales", "Cena Michelin"],
       },
       {
         day: 3,
-        title: "Ninh Binh - Ha Long terrestre",
+        title: "Día 3 · 17 de octubre: Ninh Binh: el dragón despierta",
         description: [
-          "Excursion a Ninh Binh, conocida como la 'Ha Long en tierra'. Paseo en barca por Tam Coc entre formaciones karsticas y arrozales. Visita a la pagoda Bai Dinh.",
+          "Dejamos la ciudad y ponemos rumbo a Ninh Binh. Nuestro objetivo es el famoso mirador del Dragón, un lugar que exige esfuerzo, pero recompensa con creces. Subimos escalón a escalón, sintiendo el primer reto físico del viaje, hasta alcanzar una panorámica que deja sin palabras: montañas de piedra caliza, ríos serpenteantes y un paisaje que parece irreal. Por la tarde, cambiamos el ritmo con un trekking suave entre templos antiguos y senderos tranquilos, conectando con la historia del lugar y con una Vietnam mucho más serena."
         ],
-        highlights: ["Tam Coc en barca", "Arrozales", "Pagoda Bai Dinh"],
+        highlights: ["Mirador del Dragón", "Trekking", "Templos antiguos"],
       },
       {
         day: 4,
-        title: "Ha Long Bay - Embarque",
+        title: "Día 4 · 18 de octubre: Barcas, calma y vida local",
         description: [
-          "Viaje a Ha Long Bay y embarque en nuestro crucero tradicional. Navegamos entre miles de islotes karsticos mientras disfrutamos del almuerzo a bordo. Kayak al atardecer.",
+          "Nos levantamos temprano para disfrutar de un paseo en barca tradicional por uno de los escenarios naturales más impresionantes del viaje. Navegamos entre formaciones rocosas y arrozales, en un entorno que parece sacado de una película (y sí, aquí se rodó <em>King Kong</em>). Visitamos pequeños pueblos locales y aprendemos sobre la mezcla cultural que define esta región. Es un día para bajar revoluciones, observar y dejarse llevar. Por la tarde, nos acercamos a la zona más moderna de Hoa Lu, perfecta para seguir explorando la cocina callejera vietnamita."
         ],
-        highlights: ["Crucero Ha Long", "Kayak", "Noche a bordo"],
+        highlights: ["Barca tradicional", "Pueblos locales", "Hoa Lu"],
       },
       {
         day: 5,
-        title: "Ha Long Bay - Amanecer",
+        title: "Día 5 · 19 de octubre: Hacia el norte más salvaje",
         description: [
-          "Tai Chi al amanecer en la cubierta. Visita a cuevas y pueblos flotantes. Desembarque y vuelo a Da Nang. Traslado a Hoi An.",
+          "Hoy toca carretera. Dejamos atrás los paisajes tranquilos para avanzar hacia el norte más remoto del país. Durante el trayecto, el entorno cambia poco a poco y sentimos que nos estamos adentrando en una Vietnam menos conocida y más auténtica. Llegamos por la noche a la zona de Ha Giang, donde descansamos y nos preparamos mentalmente para la experiencia que viene. Mañana empieza algo grande."
         ],
-        highlights: ["Tai Chi", "Cuevas", "Vuelo a Da Nang"],
+        highlights: ["Viaje a Ha Giang", "Norte remoto", "Cambio de paisajes"],
       },
       {
         day: 6,
-        title: "Hoi An antigua",
+        title: "Días 6, 7 y 8: Ha Giang Loop: el corazón del viaje",
         description: [
-          "Dia explorando Hoi An, Patrimonio de la Humanidad. Puente Japones, casas de mercaderes, templos chinos. Tarde libre para hacerte ropa a medida.",
+          "Arranca la legendaria Ha Giang Loop, una de las rutas más espectaculares del sudeste asiático y el verdadero corazón de esta expedición. Durante tres días recorremos puertos de montaña imposibles, valles escondidos y aldeas de minorías étnicas donde el tiempo parece haberse detenido. Cada curva regala paisajes brutales y cada parada es una lección de humildad. Dormimos en alojamientos sencillos, auténticos y llenos de alma, apoyando directamente a las comunidades locales y compartiendo momentos que se quedan grabados para siempre."
         ],
-        highlights: ["Casco antiguo", "Puente Japones", "Ropa a medida"],
-      },
-      {
-        day: 7,
-        title: "Clase de cocina",
-        description: [
-          "Manana en el mercado local comprando ingredientes frescos. Clase de cocina vietnamita: aprendemos a hacer fresh rolls, banh mi y pho. Tarde libre en la playa.",
-        ],
-        highlights: ["Mercado local", "Clase cocina", "Playa An Bang"],
-      },
-      {
-        day: 8,
-        title: "My Son y vuelo a Saigon",
-        description: [
-          "Visita a las ruinas de My Son, el centro religioso del reino Champa. Por la tarde, vuelo a Ho Chi Minh City (Saigon). Paseo nocturno por la ciudad.",
-        ],
-        highlights: ["Ruinas My Son", "Vuelo a Saigon", "Ciudad de noche"],
+        highlights: ["Ha Giang Loop", "Montañas", "Aldeas étnicas", "Alojamientos locales"],
       },
       {
         day: 9,
-        title: "Saigon colonial",
+        title: "Día 9: Sapa y el abrazo de Mama Sumi",
         description: [
-          "Tour por Saigon: Palacio de la Reunificacion, Catedral de Notre Dame, Correos Centrales, mercado Ben Thanh. Por la tarde, barrio Cho Lon (Chinatown).",
+          "Tras completar la última etapa de la loop, ponemos rumbo a Sapa. Allí nos espera Mama Sumi, una mujer que representa como pocas la hospitalidad del norte de Vietnam. Nos instalamos en su homestay tradicional, rodeados de montañas y silencio. Por la noche compartimos una cena casera, preparada con ingredientes locales y mucho cariño. No es solo una cena, es una experiencia humana profunda que conecta al grupo de una forma especial."
         ],
-        highlights: ["Palacio Reunificacion", "Catedral", "Chinatown"],
+        highlights: ["Sapa", "Mama Sumi", "Homestay", "Cena casera"],
       },
       {
         day: 10,
-        title: "Tuneles de Cu Chi",
+        title: "Día 10 · 23 de octubre: Caminando entre arrozales infinitos",
         description: [
-          "Excursion a los Tuneles de Cu Chi, la red subterranea usada durante la guerra. Experiencia unica bajando a los tuneles. Regreso y noche libre en Saigon.",
+          "Acompañados por Mama Sumi, realizamos un trekking a través de valles, terrazas de arroz y pueblos tradicionales cercanos a Sapa. Caminamos por senderos que usan los locales en su día a día, lejos de rutas turísticas masificadas. Cada paso nos acerca más a la tierra, a la forma de vida de las etnias del norte y a una manera distinta de entender el mundo."
         ],
-        highlights: ["Tuneles Cu Chi", "Historia de Vietnam", "Noche libre"],
+        highlights: ["Trekking arrozales", "Pueblos tradicionales", "Vida local"],
       },
       {
         day: 11,
-        title: "Delta del Mekong",
+        title: "Día 11 · 24 de octubre: Del techo de Indochina a la noche de Hanoi",
         description: [
-          "Excursion al Delta del Mekong. Mercados flotantes de Cai Be, fabricas artesanales de caramelos y licor de arroz. Paseo en sampan por los canales.",
+          "Nos despedimos de la preciosa SaPa, pero no antes visitar el famoso Fansipan, el pico más alto de Indochina, su increíble teleférico nos subirá hasta el mismísimo pico. Tras esta experiencia, regresamos a Hanoi. Por la noche celebramos todo lo vivido en Beer Street, el lugar perfecto para brindar, reír y compartir historias alrededor de cerveza fría y comida callejera vietnamita."
         ],
-        highlights: ["Mercado flotante", "Sampan", "Fabricas locales"],
+        highlights: ["Fansipan", "Teleférico", "Beer Street", "Regreso a Hanoi"],
       },
       {
         day: 12,
-        title: "Ultimo dia en Vietnam",
+        title: "Día 12 · 25 de octubre: Ha Long Bay: un paisaje que se queda contigo",
         description: [
-          "Manana libre para ultimas compras o masaje vietnamita. Por la tarde, cena de despedida en un rooftop con vistas al skyline de Saigon.",
+          "Hoy visitamos uno de los lugares más icónicos del planeta, una de las siete maravillas naturales del mundo. Navegamos por la Bahía de Ha Long, rodeados de miles de formaciones kársticas que emergen del agua color esmeralda. Es un día para mirar, respirar y dejarse impresionar. El paisaje habla por sí solo, tras un precioso atardecer comenzamos nuestra vuelta a Hanoi."
         ],
-        highlights: ["Tiempo libre", "Cena despedida", "Rooftop bar"],
+        highlights: ["Ha Long Bay", "Formaciones kársticas", "Atardecer"],
       },
       {
         day: 13,
-        title: "Hasta pronto, Vietnam",
+        title: "Día 13 · 26 de octubre: Últimos pasos por Hanoi",
         description: [
-          "Traslado al aeropuerto para el vuelo de regreso. Nos despedimos con la promesa de volver.",
+          "Nuestro último día lo dedicamos a perdernos una vez más por Hanoi. Visitamos mercados, tiendas locales y rincones que se nos quedaron pendientes. Vamos a conocer la famosa Train Street, donde nos tomaremos un respiro directamente a metros de la via del tren. Es el momento ideal para comprar recuerdos con sentido, apoyar a los artesanos locales y sentarnos a asimilar todo lo vivido. Cerramos el viaje con una última cena en grupo, mochilas listas y muchas sonrisas cómplices."
         ],
-        highlights: ["Traslado aeropuerto", "Vuelo regreso"],
+        highlights: ["Train Street", "Mercados", "Cena final", "Compras locales"],
+      },
+      {
+        day: 14,
+        title: "Día 14 · 27 de octubre: Nos despedimos de Vietnam",
+        description: [
+          "Traslado al aeropuerto y vuelo de regreso a España. Nos vamos con la mochila llena de historias, aprendizajes y momentos compartidos. Vietnam queda atrás, pero el vínculo creado con el grupo y la esencia de este viaje nos acompañarán mucho tiempo. Y, como siempre pasa con Awayna, el próximo destino ya empieza a llamar."
+        ],
+        highlights: ["Vuelo de regreso", "Despedida", "Historias compartidas"],
       },
     ],
     included: [
-      "Vuelos internos (Hanoi-Da Nang, Da Nang-Saigon)",
-      "12 noches de alojamiento en hoteles 3-4*",
-      "1 noche en crucero Ha Long Bay",
-      "Desayunos diarios + 4 almuerzos + 3 cenas",
-      "Todos los tours y entradas mencionados",
-      "Clase de cocina en Hoi An",
-      "Coordinador Awayna",
-      "Seguro de viaje",
-      "Traslados",
+      "Recogida en el aeropuerto de Hanoi el día de la llegada (vuelos internacionales no incluidos, puedes llegar a cualquier hora del 15 de octubre)",
+      "Asistencia del coordinador durante todo el viaje a Vietnam",
+      "Alojamiento en habitaciones compartidas durante todo el viaje (hoteles y homestay tradicional)",
+      "Desayunos incluidos durante todo el itinerario",
+      "Cena de bienvenida en restaurante recomendado por la guía Michelin en Hanoi",
+      "Guía local en Hanoi para descubrir la ciudad desde dentro",
+      "Transporte privado durante todo el recorrido; Hanoi–Ninh Binh–Ha Giang–Sapa–Hanoi–Ha Long–Hanoi",
+      "Experiencia completa de la Ha Giang Loop durante 3 días con conductores locales, alojamientos, transporte, cenas, etc.",
+      "Paseo en barca tradicional en Ninh Binh entre arrozales y formaciones kársticas",
+      "Trekking por templos y senderos naturales en Ninh Binh",
+      "Homestay tradicional en Sapa",
+      "Cena casera tradicional en Sapa con productos locales durante dos noches",
+      "Trekking entre arrozales y aldeas étnicas en Sapa con guía local",
+      "Excursión a Ha Long Bay con navegación incluida",
+      "Mochila Awayna",
     ],
     notIncluded: [
-      "Vuelos internacionales",
-      "Visa Vietnam (aprox. 25€ e-visa)",
-      "Comidas no especificadas",
-      "Actividades opcionales",
-      "Propinas",
+      "Vuelos ida y vuelta desde España.",
+      "Comidas y bebidas no especificadas en el apartado anterior.",
+      "Cualquier otro servicio no especificado en el apartado anterior.",
+      "Teleférico a Fansipan (actividad de altura que dejamos para los más atrevidos).",
+      "Fondo común.",
     ],
     practicalInfo: {
       bestTime: "Marzo a Mayo y Septiembre a Noviembre",
@@ -477,19 +479,28 @@ export const destinations: Destination[] = [
     },
     faqs: [
       {
-        question: "Es seguro viajar a Vietnam?",
-        answer:
-          "Vietnam es uno de los paises mas seguros del sudeste asiatico. La gente es muy amable y los crimenes contra turistas son raros.",
+        question: "¿Qué tipo de experiencias viviremos en Vietnam?",
+        answer: "Vietnam es contraste puro. Caos bonito en Hanoi, arrozales infinitos en el norte, bahías de película y ciudades con historia en cada esquina.\n\nDormiremos en barco en la Bahía de Ha Long, recorreremos pueblos entre montañas, probaremos street food que te vuela la cabeza y entenderemos la historia del país desde dentro.\n\nNo es solo ver Vietnam. Es sentirlo. Con contexto, con guía local y con respeto por la cultura que nos abre la puerta."
       },
       {
-        question: "Necesito vacunas?",
-        answer:
-          "No hay vacunas obligatorias pero se recomiendan Hepatitis A/B y Tetanos. Consulta con tu centro de vacunacion internacional.",
+        question: "¿Hay que vacunarse para viajar a Vietnam?",
+        answer: "No hay vacunas obligatorias para viajeros desde España.\n\nSe suelen recomendar Hepatitis A y tétanos, y dependiendo del tipo de viaje, duración o zonas rurales, podrían sugerirse otras. Lo mejor es consultar en un centro de vacunación internacional unas semanas antes de salir para viajar tranquilo."
       },
       {
-        question: "Como es la comida?",
-        answer:
-          "Increible y muy variada. Si tienes restricciones alimentarias, no hay problema - hay opciones vegetarianas en todos los sitios.",
+        question: "¿Puedo alargar el viaje por mi cuenta?",
+        answer: "Sí, y es muy buena idea.\n\nPuedes quedarte más días en el norte explorando más trekkings, bajar al sur para descubrir el Delta del Mekong o terminar en alguna isla como Phu Quoc.\n\nTe damos recomendaciones y tips para que lo organices fácil, pero las noches extra y cambios en vuelos no están incluidos en el precio del viaje."
+      },
+      {
+        question: "¿Necesito visado para este viaje?",
+        answer: "Actualmente, para pasaporte español, Vietnam permite la entrada sin visado para estancias cortas (según normativa vigente en el momento del viaje).\n\nLas condiciones pueden cambiar, así que siempre recomendamos revisar la información oficial antes de salir.\n\nNecesitarás pasaporte con al menos 6 meses de validez desde la fecha de entrada."
+      },
+      {
+        question: "¿Qué tipo de alojamientos utilizamos?",
+        answer: "Hoteles de 3–4 estrellas bien ubicados y seleccionados por comodidad, limpieza y buen ambiente.\n\nTambién incluimos experiencias especiales, como noche en barco en Ha Long o alojamientos con encanto en zonas rurales.\n\nHabitaciones dobles o triples compartidas, con opción de suplemento individual si está disponible."
+      },
+      {
+        question: "¿Es un viaje muy físico?",
+        answer: "No necesitas estar en modo ultramaratón.\n\nIncluye caminatas suaves, algún trekking sencillo entre arrozales, paseos en barco y días activos, pero está pensado para personas sanas con condición física normal.\n\nSi tienes alguna condición médica específica, avísanos antes de reservar para adaptarlo en lo posible."
       },
     ],
     availableDates: [
