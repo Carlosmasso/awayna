@@ -349,15 +349,15 @@ export const destinations: Destination[] = [
     itinerary: [
       {
         day: 1,
-        title: "Día 1 · 15 de octubre: Primer contacto con Vietnam: bienvenida a Hanoi",
+        title: "Primer contacto con Vietnam: bienvenida a Hanoi",
         description: [
           "Aterrizamos en Hanoi y, desde el primer momento, empezamos a sentir que estamos lejos de casa. El equipo de Awayna nos espera en el aeropuerto para organizarnos, conocernos y poner rumbo al alojamiento. Tras instalarnos y dejar las mochilas, salimos a dar nuestro primer paseo por la ciudad. Calles llenas de vida, motos que parecen bailar entre el tráfico, aromas intensos de comida callejera y una energía que no se parece a nada que hayas vivido antes. Cerramos el día con nuestra primera cena en grupo, rompiendo el hielo y empezando a construir lo que será una experiencia compartida muy potente."
         ],
         highlights: ["Llegada a Hanoi", "Cena en grupo", "Paseo por la ciudad"],
       },
-      {
+      { 
         day: 2,
-        title: "Día 2 · 16 de octubre: Hanoi sin filtros, con Hung",
+        title: "Hanoi sin filtros, con Hung",
         description: [
           "Hoy nos adentramos en la Hanoi más auténtica de la mano de Hung, nuestro guía local y cómplice en esta aventura. Caminamos por mercados tradicionales, templos escondidos y barrios donde la vida sigue su propio ritmo, lejos del turismo masivo. Hung nos contará historias reales del país, anécdotas personales y detalles que ayudan a entender Vietnam desde dentro, no desde un libro. Por la noche, Awayna invita a cenar en un restaurante reconocido por la Guía Michelin, donde brindamos por el grupo y disfrutamos de una gastronomía que sorprende en cada plato."
         ],
@@ -365,7 +365,7 @@ export const destinations: Destination[] = [
       },
       {
         day: 3,
-        title: "Día 3 · 17 de octubre: Ninh Binh: el dragón despierta",
+        title: "Ninh Binh: el dragón despierta",
         description: [
           "Dejamos la ciudad y ponemos rumbo a Ninh Binh. Nuestro objetivo es el famoso mirador del Dragón, un lugar que exige esfuerzo, pero recompensa con creces. Subimos escalón a escalón, sintiendo el primer reto físico del viaje, hasta alcanzar una panorámica que deja sin palabras: montañas de piedra caliza, ríos serpenteantes y un paisaje que parece irreal. Por la tarde, cambiamos el ritmo con un trekking suave entre templos antiguos y senderos tranquilos, conectando con la historia del lugar y con una Vietnam mucho más serena."
         ],
@@ -373,7 +373,7 @@ export const destinations: Destination[] = [
       },
       {
         day: 4,
-        title: "Día 4 · 18 de octubre: Barcas, calma y vida local",
+        title: "Barcas, calma y vida local",
         description: [
           "Nos levantamos temprano para disfrutar de un paseo en barca tradicional por uno de los escenarios naturales más impresionantes del viaje. Navegamos entre formaciones rocosas y arrozales, en un entorno que parece sacado de una película (y sí, aquí se rodó <em>King Kong</em>). Visitamos pequeños pueblos locales y aprendemos sobre la mezcla cultural que define esta región. Es un día para bajar revoluciones, observar y dejarse llevar. Por la tarde, nos acercamos a la zona más moderna de Hoa Lu, perfecta para seguir explorando la cocina callejera vietnamita."
         ],
@@ -381,7 +381,7 @@ export const destinations: Destination[] = [
       },
       {
         day: 5,
-        title: "Día 5 · 19 de octubre: Hacia el norte más salvaje",
+        title: "Hacia el norte más salvaje",
         description: [
           "Hoy toca carretera. Dejamos atrás los paisajes tranquilos para avanzar hacia el norte más remoto del país. Durante el trayecto, el entorno cambia poco a poco y sentimos que nos estamos adentrando en una Vietnam menos conocida y más auténtica. Llegamos por la noche a la zona de Ha Giang, donde descansamos y nos preparamos mentalmente para la experiencia que viene. Mañana empieza algo grande."
         ],
@@ -389,7 +389,7 @@ export const destinations: Destination[] = [
       },
       {
         day: 6,
-        title: "Días 6, 7 y 8: Ha Giang Loop: el corazón del viaje",
+        title: "Ha Giang Loop: el corazón del viaje",
         description: [
           "Arranca la legendaria Ha Giang Loop, una de las rutas más espectaculares del sudeste asiático y el verdadero corazón de esta expedición. Durante tres días recorremos puertos de montaña imposibles, valles escondidos y aldeas de minorías étnicas donde el tiempo parece haberse detenido. Cada curva regala paisajes brutales y cada parada es una lección de humildad. Dormimos en alojamientos sencillos, auténticos y llenos de alma, apoyando directamente a las comunidades locales y compartiendo momentos que se quedan grabados para siempre."
         ],
@@ -397,7 +397,7 @@ export const destinations: Destination[] = [
       },
       {
         day: 9,
-        title: "Día 9: Sapa y el abrazo de Mama Sumi",
+        title: "Sapa y el abrazo de Mama Sumi",
         description: [
           "Tras completar la última etapa de la loop, ponemos rumbo a Sapa. Allí nos espera Mama Sumi, una mujer que representa como pocas la hospitalidad del norte de Vietnam. Nos instalamos en su homestay tradicional, rodeados de montañas y silencio. Por la noche compartimos una cena casera, preparada con ingredientes locales y mucho cariño. No es solo una cena, es una experiencia humana profunda que conecta al grupo de una forma especial."
         ],
@@ -405,7 +405,7 @@ export const destinations: Destination[] = [
       },
       {
         day: 10,
-        title: "Día 10 · 23 de octubre: Caminando entre arrozales infinitos",
+        title: "Caminando entre arrozales infinitos",
         description: [
           "Acompañados por Mama Sumi, realizamos un trekking a través de valles, terrazas de arroz y pueblos tradicionales cercanos a Sapa. Caminamos por senderos que usan los locales en su día a día, lejos de rutas turísticas masificadas. Cada paso nos acerca más a la tierra, a la forma de vida de las etnias del norte y a una manera distinta de entender el mundo."
         ],
@@ -413,7 +413,7 @@ export const destinations: Destination[] = [
       },
       {
         day: 11,
-        title: "Día 11 · 24 de octubre: Del techo de Indochina a la noche de Hanoi",
+        title: "Del techo de Indochina a la noche de Hanoi",
         description: [
           "Nos despedimos de la preciosa SaPa, pero no antes visitar el famoso Fansipan, el pico más alto de Indochina, su increíble teleférico nos subirá hasta el mismísimo pico. Tras esta experiencia, regresamos a Hanoi. Por la noche celebramos todo lo vivido en Beer Street, el lugar perfecto para brindar, reír y compartir historias alrededor de cerveza fría y comida callejera vietnamita."
         ],
@@ -421,7 +421,7 @@ export const destinations: Destination[] = [
       },
       {
         day: 12,
-        title: "Día 12 · 25 de octubre: Ha Long Bay: un paisaje que se queda contigo",
+        title: "Ha Long Bay: un paisaje que se queda contigo",
         description: [
           "Hoy visitamos uno de los lugares más icónicos del planeta, una de las siete maravillas naturales del mundo. Navegamos por la Bahía de Ha Long, rodeados de miles de formaciones kársticas que emergen del agua color esmeralda. Es un día para mirar, respirar y dejarse impresionar. El paisaje habla por sí solo, tras un precioso atardecer comenzamos nuestra vuelta a Hanoi."
         ],
@@ -429,7 +429,7 @@ export const destinations: Destination[] = [
       },
       {
         day: 13,
-        title: "Día 13 · 26 de octubre: Últimos pasos por Hanoi",
+        title: "Últimos pasos por Hanoi",
         description: [
           "Nuestro último día lo dedicamos a perdernos una vez más por Hanoi. Visitamos mercados, tiendas locales y rincones que se nos quedaron pendientes. Vamos a conocer la famosa Train Street, donde nos tomaremos un respiro directamente a metros de la via del tren. Es el momento ideal para comprar recuerdos con sentido, apoyar a los artesanos locales y sentarnos a asimilar todo lo vivido. Cerramos el viaje con una última cena en grupo, mochilas listas y muchas sonrisas cómplices."
         ],
@@ -437,7 +437,7 @@ export const destinations: Destination[] = [
       },
       {
         day: 14,
-        title: "Día 14 · 27 de octubre: Nos despedimos de Vietnam",
+        title: "Nos despedimos de Vietnam",
         description: [
           "Traslado al aeropuerto y vuelo de regreso a España. Nos vamos con la mochila llena de historias, aprendizajes y momentos compartidos. Vietnam queda atrás, pero el vínculo creado con el grupo y la esencia de este viaje nos acompañarán mucho tiempo. Y, como siempre pasa con Awayna, el próximo destino ya empieza a llamar."
         ],
