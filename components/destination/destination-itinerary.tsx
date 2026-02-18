@@ -98,9 +98,9 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
                             />
                           </div>
                         )}
-                        <p className="text-sm leading-relaxed mb-4">
-                          {day.description}
-                        </p>
+                        <p className="text-sm leading-relaxed mb-4"
+                          dangerouslySetInnerHTML={{ __html: day.description.join("<br/>") }}
+                        />
                         <div className="flex flex-wrap gap-2">
                           {day.highlights.map((highlight, i) => (
                             <Badge key={i} variant="secondary" className="bg-background">

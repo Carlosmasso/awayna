@@ -54,9 +54,20 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
           <h2 className="text-3xl font-bold text-foreground mb-6">
             Sobre este viaje
           </h2>
-          <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-            {destination.description}
-          </p>
+          {Array.isArray(destination.description)
+            ? destination.description.map((paragraph, idx) => (
+                <p
+                  key={idx}
+                  className="text-lg text-muted-foreground leading-relaxed"
+                  dangerouslySetInnerHTML={{ __html: paragraph }}
+                />
+              ))
+            : (
+                <p
+                  className="text-lg text-muted-foreground leading-relaxed mb-8"
+                  dangerouslySetInnerHTML={{ __html: destination.description }}
+                />
+              )}
 
           {/* Components with ratings */}
           {/* <div className="bg-secondary/30 rounded-2xl p-8">
