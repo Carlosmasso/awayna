@@ -1,6 +1,5 @@
 "use client";
 
-
 export function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -36,8 +35,8 @@ export function HeroSection() {
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-background/50 flex items-start justify-center p-2">
-          <div className="w-1 h-2 bg-background/50 rounded-full animate-pulse" />
+        <div className="w-30 h-30 flex items-start justify-center p-2 rotate-10.5">
+          <img src="/logos/avion.svg" alt="Scroll down" />
         </div>
       </div>
     </section>
