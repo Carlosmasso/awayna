@@ -351,97 +351,132 @@ export const destinations: Destination[] = [
         day: 1,
         title: "Primer contacto con Vietnam: bienvenida a Hanoi",
         description: [
-          "Aterrizamos en Hanoi y, desde el primer momento, empezamos a sentir que estamos lejos de casa. El equipo de Awayna nos espera en el aeropuerto para organizarnos, conocernos y poner rumbo al alojamiento. Tras instalarnos y dejar las mochilas, salimos a dar nuestro primer paseo por la ciudad. Calles llenas de vida, motos que parecen bailar entre el tráfico, aromas intensos de comida callejera y una energía que no se parece a nada que hayas vivido antes. Cerramos el día con nuestra primera cena en grupo, rompiendo el hielo y empezando a construir lo que será una experiencia compartida muy potente."
+          "Aterrizamos en Hanoi y, desde el primer momento, empezamos a sentir que estamos lejos de casa. El equipo de Awayna nos espera en el aeropuerto para organizarnos, conocernos y poner rumbo al alojamiento. Tras instalarnos y dejar las mochilas, salimos a dar nuestro primer paseo por la ciudad. Calles llenas de vida, motos que parecen bailar entre el tráfico, aromas intensos de comida callejera y una energía que no se parece a nada que hayas vivido antes. Cerramos el día con nuestra primera cena en grupo, rompiendo el hielo y empezando a construir lo que será una experiencia compartida muy potente.",
         ],
         highlights: ["Llegada a Hanoi", "Cena en grupo", "Paseo por la ciudad"],
+        image: "/images/vietnam/itinerary/VIETNAM-01.jpg",
       },
-      { 
+      {
         day: 2,
         title: "Hanoi sin filtros, con Hung",
         description: [
-          "Hoy nos adentramos en la Hanoi más auténtica de la mano de Hung, nuestro guía local y cómplice en esta aventura. Caminamos por mercados tradicionales, templos escondidos y barrios donde la vida sigue su propio ritmo, lejos del turismo masivo. Hung nos contará historias reales del país, anécdotas personales y detalles que ayudan a entender Vietnam desde dentro, no desde un libro. Por la noche, Awayna invita a cenar en un restaurante reconocido por la Guía Michelin, donde brindamos por el grupo y disfrutamos de una gastronomía que sorprende en cada plato."
+          "Hoy nos adentramos en la Hanoi más auténtica de la mano de Hung, nuestro guía local y cómplice en esta aventura. Caminamos por mercados tradicionales, templos escondidos y barrios donde la vida sigue su propio ritmo, lejos del turismo masivo. Hung nos contará historias reales del país, anécdotas personales y detalles que ayudan a entender Vietnam desde dentro, no desde un libro. Por la noche, Awayna invita a cenar en un restaurante reconocido por la Guía Michelin, donde brindamos por el grupo y disfrutamos de una gastronomía que sorprende en cada plato.",
         ],
-        highlights: ["Guía local Hung", "Mercados tradicionales", "Cena Michelin"],
+        highlights: [
+          "Guía local Hung",
+          "Mercados tradicionales",
+          "Cena Michelin",
+        ],
+        image: "/images/vietnam/itinerary/VIETNAM-02.jpg",
       },
       {
         day: 3,
         title: "Ninh Binh: el dragón despierta",
         description: [
-          "Dejamos la ciudad y ponemos rumbo a Ninh Binh. Nuestro objetivo es el famoso mirador del Dragón, un lugar que exige esfuerzo, pero recompensa con creces. Subimos escalón a escalón, sintiendo el primer reto físico del viaje, hasta alcanzar una panorámica que deja sin palabras: montañas de piedra caliza, ríos serpenteantes y un paisaje que parece irreal. Por la tarde, cambiamos el ritmo con un trekking suave entre templos antiguos y senderos tranquilos, conectando con la historia del lugar y con una Vietnam mucho más serena."
+          "Dejamos la ciudad y ponemos rumbo a Ninh Binh. Nuestro objetivo es el famoso mirador del Dragón, un lugar que exige esfuerzo, pero recompensa con creces. Subimos escalón a escalón, sintiendo el primer reto físico del viaje, hasta alcanzar una panorámica que deja sin palabras: montañas de piedra caliza, ríos serpenteantes y un paisaje que parece irreal. Por la tarde, cambiamos el ritmo con un trekking suave entre templos antiguos y senderos tranquilos, conectando con la historia del lugar y con una Vietnam mucho más serena.",
         ],
         highlights: ["Mirador del Dragón", "Trekking", "Templos antiguos"],
+        image: "/images/vietnam/itinerary/VIETNAM-03.jpg",
       },
       {
         day: 4,
         title: "Barcas, calma y vida local",
         description: [
-          "Nos levantamos temprano para disfrutar de un paseo en barca tradicional por uno de los escenarios naturales más impresionantes del viaje. Navegamos entre formaciones rocosas y arrozales, en un entorno que parece sacado de una película (y sí, aquí se rodó <em>King Kong</em>). Visitamos pequeños pueblos locales y aprendemos sobre la mezcla cultural que define esta región. Es un día para bajar revoluciones, observar y dejarse llevar. Por la tarde, nos acercamos a la zona más moderna de Hoa Lu, perfecta para seguir explorando la cocina callejera vietnamita."
+          "Nos levantamos temprano para disfrutar de un paseo en barca tradicional por uno de los escenarios naturales más impresionantes del viaje. Navegamos entre formaciones rocosas y arrozales, en un entorno que parece sacado de una película (y sí, aquí se rodó <em>King Kong</em>). Visitamos pequeños pueblos locales y aprendemos sobre la mezcla cultural que define esta región. Es un día para bajar revoluciones, observar y dejarse llevar. Por la tarde, nos acercamos a la zona más moderna de Hoa Lu, perfecta para seguir explorando la cocina callejera vietnamita.",
         ],
         highlights: ["Barca tradicional", "Pueblos locales", "Hoa Lu"],
+        image: "/images/vietnam/itinerary/VIETNAM-04.jpg",
       },
       {
         day: 5,
         title: "Hacia el norte más salvaje",
         description: [
-          "Hoy toca carretera. Dejamos atrás los paisajes tranquilos para avanzar hacia el norte más remoto del país. Durante el trayecto, el entorno cambia poco a poco y sentimos que nos estamos adentrando en una Vietnam menos conocida y más auténtica. Llegamos por la noche a la zona de Ha Giang, donde descansamos y nos preparamos mentalmente para la experiencia que viene. Mañana empieza algo grande."
+          "Hoy toca carretera. Dejamos atrás los paisajes tranquilos para avanzar hacia el norte más remoto del país. Durante el trayecto, el entorno cambia poco a poco y sentimos que nos estamos adentrando en una Vietnam menos conocida y más auténtica. Llegamos por la noche a la zona de Ha Giang, donde descansamos y nos preparamos mentalmente para la experiencia que viene. Mañana empieza algo grande.",
         ],
         highlights: ["Viaje a Ha Giang", "Norte remoto", "Cambio de paisajes"],
+        image: "/images/vietnam/itinerary/VIETNAM-05.jpg",
       },
       {
         day: 6,
         title: "Ha Giang Loop: el corazón del viaje",
         description: [
-          "Arranca la legendaria Ha Giang Loop, una de las rutas más espectaculares del sudeste asiático y el verdadero corazón de esta expedición. Durante tres días recorremos puertos de montaña imposibles, valles escondidos y aldeas de minorías étnicas donde el tiempo parece haberse detenido. Cada curva regala paisajes brutales y cada parada es una lección de humildad. Dormimos en alojamientos sencillos, auténticos y llenos de alma, apoyando directamente a las comunidades locales y compartiendo momentos que se quedan grabados para siempre."
+          "Arranca la legendaria Ha Giang Loop, una de las rutas más espectaculares del sudeste asiático y el verdadero corazón de esta expedición. Durante tres días recorremos puertos de montaña imposibles, valles escondidos y aldeas de minorías étnicas donde el tiempo parece haberse detenido. Cada curva regala paisajes brutales y cada parada es una lección de humildad. Dormimos en alojamientos sencillos, auténticos y llenos de alma, apoyando directamente a las comunidades locales y compartiendo momentos que se quedan grabados para siempre.",
         ],
-        highlights: ["Ha Giang Loop", "Montañas", "Aldeas étnicas", "Alojamientos locales"],
+        highlights: [
+          "Ha Giang Loop",
+          "Montañas",
+          "Aldeas étnicas",
+          "Alojamientos locales",
+        ],
+        image: "/images/vietnam/itinerary/VIETNAM-06.jpg",
       },
       {
         day: 9,
         title: "Sapa y el abrazo de Mama Sumi",
         description: [
-          "Tras completar la última etapa de la loop, ponemos rumbo a Sapa. Allí nos espera Mama Sumi, una mujer que representa como pocas la hospitalidad del norte de Vietnam. Nos instalamos en su homestay tradicional, rodeados de montañas y silencio. Por la noche compartimos una cena casera, preparada con ingredientes locales y mucho cariño. No es solo una cena, es una experiencia humana profunda que conecta al grupo de una forma especial."
+          "Tras completar la última etapa de la loop, ponemos rumbo a Sapa. Allí nos espera Mama Sumi, una mujer que representa como pocas la hospitalidad del norte de Vietnam. Nos instalamos en su homestay tradicional, rodeados de montañas y silencio. Por la noche compartimos una cena casera, preparada con ingredientes locales y mucho cariño. No es solo una cena, es una experiencia humana profunda que conecta al grupo de una forma especial.",
         ],
         highlights: ["Sapa", "Mama Sumi", "Homestay", "Cena casera"],
+        image: "/images/vietnam/itinerary/VIETNAM-09.jpg",
       },
       {
         day: 10,
         title: "Caminando entre arrozales infinitos",
         description: [
-          "Acompañados por Mama Sumi, realizamos un trekking a través de valles, terrazas de arroz y pueblos tradicionales cercanos a Sapa. Caminamos por senderos que usan los locales en su día a día, lejos de rutas turísticas masificadas. Cada paso nos acerca más a la tierra, a la forma de vida de las etnias del norte y a una manera distinta de entender el mundo."
+          "Acompañados por Mama Sumi, realizamos un trekking a través de valles, terrazas de arroz y pueblos tradicionales cercanos a Sapa. Caminamos por senderos que usan los locales en su día a día, lejos de rutas turísticas masificadas. Cada paso nos acerca más a la tierra, a la forma de vida de las etnias del norte y a una manera distinta de entender el mundo.",
         ],
-        highlights: ["Trekking arrozales", "Pueblos tradicionales", "Vida local"],
+        highlights: [
+          "Trekking arrozales",
+          "Pueblos tradicionales",
+          "Vida local",
+        ],
+        image: "/images/vietnam/itinerary/VIETNAM-10.jpg",
       },
       {
         day: 11,
         title: "Del techo de Indochina a la noche de Hanoi",
         description: [
-          "Nos despedimos de la preciosa SaPa, pero no antes visitar el famoso Fansipan, el pico más alto de Indochina, su increíble teleférico nos subirá hasta el mismísimo pico. Tras esta experiencia, regresamos a Hanoi. Por la noche celebramos todo lo vivido en Beer Street, el lugar perfecto para brindar, reír y compartir historias alrededor de cerveza fría y comida callejera vietnamita."
+          "Nos despedimos de la preciosa SaPa, pero no antes visitar el famoso Fansipan, el pico más alto de Indochina, su increíble teleférico nos subirá hasta el mismísimo pico. Tras esta experiencia, regresamos a Hanoi. Por la noche celebramos todo lo vivido en Beer Street, el lugar perfecto para brindar, reír y compartir historias alrededor de cerveza fría y comida callejera vietnamita.",
         ],
-        highlights: ["Fansipan", "Teleférico", "Beer Street", "Regreso a Hanoi"],
+        highlights: [
+          "Fansipan",
+          "Teleférico",
+          "Beer Street",
+          "Regreso a Hanoi",
+        ],
+        image: "/images/vietnam/itinerary/VIETNAM-11.jpg",
       },
       {
         day: 12,
         title: "Ha Long Bay: un paisaje que se queda contigo",
         description: [
-          "Hoy visitamos uno de los lugares más icónicos del planeta, una de las siete maravillas naturales del mundo. Navegamos por la Bahía de Ha Long, rodeados de miles de formaciones kársticas que emergen del agua color esmeralda. Es un día para mirar, respirar y dejarse impresionar. El paisaje habla por sí solo, tras un precioso atardecer comenzamos nuestra vuelta a Hanoi."
+          "Hoy visitamos uno de los lugares más icónicos del planeta, una de las siete maravillas naturales del mundo. Navegamos por la Bahía de Ha Long, rodeados de miles de formaciones kársticas que emergen del agua color esmeralda. Es un día para mirar, respirar y dejarse impresionar. El paisaje habla por sí solo, tras un precioso atardecer comenzamos nuestra vuelta a Hanoi.",
         ],
         highlights: ["Ha Long Bay", "Formaciones kársticas", "Atardecer"],
+        image: "/images/vietnam/itinerary/VIETNAM-12.jpg",
       },
       {
         day: 13,
         title: "Últimos pasos por Hanoi",
         description: [
-          "Nuestro último día lo dedicamos a perdernos una vez más por Hanoi. Visitamos mercados, tiendas locales y rincones que se nos quedaron pendientes. Vamos a conocer la famosa Train Street, donde nos tomaremos un respiro directamente a metros de la via del tren. Es el momento ideal para comprar recuerdos con sentido, apoyar a los artesanos locales y sentarnos a asimilar todo lo vivido. Cerramos el viaje con una última cena en grupo, mochilas listas y muchas sonrisas cómplices."
+          "Nuestro último día lo dedicamos a perdernos una vez más por Hanoi. Visitamos mercados, tiendas locales y rincones que se nos quedaron pendientes. Vamos a conocer la famosa Train Street, donde nos tomaremos un respiro directamente a metros de la via del tren. Es el momento ideal para comprar recuerdos con sentido, apoyar a los artesanos locales y sentarnos a asimilar todo lo vivido. Cerramos el viaje con una última cena en grupo, mochilas listas y muchas sonrisas cómplices.",
         ],
-        highlights: ["Train Street", "Mercados", "Cena final", "Compras locales"],
+        highlights: [
+          "Train Street",
+          "Mercados",
+          "Cena final",
+          "Compras locales",
+        ],
+        image: "/images/vietnam/itinerary/VIETNAM-13.jpg",
       },
       {
         day: 14,
         title: "Nos despedimos de Vietnam",
         description: [
-          "Traslado al aeropuerto y vuelo de regreso a España. Nos vamos con la mochila llena de historias, aprendizajes y momentos compartidos. Vietnam queda atrás, pero el vínculo creado con el grupo y la esencia de este viaje nos acompañarán mucho tiempo. Y, como siempre pasa con Awayna, el próximo destino ya empieza a llamar."
+          "Traslado al aeropuerto y vuelo de regreso a España. Nos vamos con la mochila llena de historias, aprendizajes y momentos compartidos. Vietnam queda atrás, pero el vínculo creado con el grupo y la esencia de este viaje nos acompañarán mucho tiempo. Y, como siempre pasa con Awayna, el próximo destino ya empieza a llamar.",
         ],
         highlights: ["Vuelo de regreso", "Despedida", "Historias compartidas"],
+        image: "/images/vietnam/itinerary/VIETNAM-14.jpg",
       },
     ],
     included: [
@@ -480,27 +515,33 @@ export const destinations: Destination[] = [
     faqs: [
       {
         question: "¿Qué tipo de experiencias viviremos en Vietnam?",
-        answer: "Vietnam es contraste puro. Caos bonito en Hanoi, arrozales infinitos en el norte, bahías de película y ciudades con historia en cada esquina.\n\nDormiremos en barco en la Bahía de Ha Long, recorreremos pueblos entre montañas, probaremos street food que te vuela la cabeza y entenderemos la historia del país desde dentro.\n\nNo es solo ver Vietnam. Es sentirlo. Con contexto, con guía local y con respeto por la cultura que nos abre la puerta."
+        answer:
+          "Vietnam es contraste puro. Caos bonito en Hanoi, arrozales infinitos en el norte, bahías de película y ciudades con historia en cada esquina.\n\nDormiremos en barco en la Bahía de Ha Long, recorreremos pueblos entre montañas, probaremos street food que te vuela la cabeza y entenderemos la historia del país desde dentro.\n\nNo es solo ver Vietnam. Es sentirlo. Con contexto, con guía local y con respeto por la cultura que nos abre la puerta.",
       },
       {
         question: "¿Hay que vacunarse para viajar a Vietnam?",
-        answer: "No hay vacunas obligatorias para viajeros desde España.\n\nSe suelen recomendar Hepatitis A y tétanos, y dependiendo del tipo de viaje, duración o zonas rurales, podrían sugerirse otras. Lo mejor es consultar en un centro de vacunación internacional unas semanas antes de salir para viajar tranquilo."
+        answer:
+          "No hay vacunas obligatorias para viajeros desde España.\n\nSe suelen recomendar Hepatitis A y tétanos, y dependiendo del tipo de viaje, duración o zonas rurales, podrían sugerirse otras. Lo mejor es consultar en un centro de vacunación internacional unas semanas antes de salir para viajar tranquilo.",
       },
       {
         question: "¿Puedo alargar el viaje por mi cuenta?",
-        answer: "Sí, y es muy buena idea.\n\nPuedes quedarte más días en el norte explorando más trekkings, bajar al sur para descubrir el Delta del Mekong o terminar en alguna isla como Phu Quoc.\n\nTe damos recomendaciones y tips para que lo organices fácil, pero las noches extra y cambios en vuelos no están incluidos en el precio del viaje."
+        answer:
+          "Sí, y es muy buena idea.\n\nPuedes quedarte más días en el norte explorando más trekkings, bajar al sur para descubrir el Delta del Mekong o terminar en alguna isla como Phu Quoc.\n\nTe damos recomendaciones y tips para que lo organices fácil, pero las noches extra y cambios en vuelos no están incluidos en el precio del viaje.",
       },
       {
         question: "¿Necesito visado para este viaje?",
-        answer: "Actualmente, para pasaporte español, Vietnam permite la entrada sin visado para estancias cortas (según normativa vigente en el momento del viaje).\n\nLas condiciones pueden cambiar, así que siempre recomendamos revisar la información oficial antes de salir.\n\nNecesitarás pasaporte con al menos 6 meses de validez desde la fecha de entrada."
+        answer:
+          "Actualmente, para pasaporte español, Vietnam permite la entrada sin visado para estancias cortas (según normativa vigente en el momento del viaje).\n\nLas condiciones pueden cambiar, así que siempre recomendamos revisar la información oficial antes de salir.\n\nNecesitarás pasaporte con al menos 6 meses de validez desde la fecha de entrada.",
       },
       {
         question: "¿Qué tipo de alojamientos utilizamos?",
-        answer: "Hoteles de 3–4 estrellas bien ubicados y seleccionados por comodidad, limpieza y buen ambiente.\n\nTambién incluimos experiencias especiales, como noche en barco en Ha Long o alojamientos con encanto en zonas rurales.\n\nHabitaciones dobles o triples compartidas, con opción de suplemento individual si está disponible."
+        answer:
+          "Hoteles de 3–4 estrellas bien ubicados y seleccionados por comodidad, limpieza y buen ambiente.\n\nTambién incluimos experiencias especiales, como noche en barco en Ha Long o alojamientos con encanto en zonas rurales.\n\nHabitaciones dobles o triples compartidas, con opción de suplemento individual si está disponible.",
       },
       {
         question: "¿Es un viaje muy físico?",
-        answer: "No necesitas estar en modo ultramaratón.\n\nIncluye caminatas suaves, algún trekking sencillo entre arrozales, paseos en barco y días activos, pero está pensado para personas sanas con condición física normal.\n\nSi tienes alguna condición médica específica, avísanos antes de reservar para adaptarlo en lo posible."
+        answer:
+          "No necesitas estar en modo ultramaratón.\n\nIncluye caminatas suaves, algún trekking sencillo entre arrozales, paseos en barco y días activos, pero está pensado para personas sanas con condición física normal.\n\nSi tienes alguna condición médica específica, avísanos antes de reservar para adaptarlo en lo posible.",
       },
     ],
     availableDates: [
