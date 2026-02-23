@@ -104,14 +104,14 @@ export default function SobreNosotros() {
                 <div className="relative aspect-[4/5] overflow-hidden">
                   <Image
                     src="/images/personal/ivan.jpg"
-                    alt="Iván Merenciano - Co-fundador de Awayna"
+                    alt="Iván Martínez - Co-fundador de Awayna"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-foreground mb-1">
-                    Iván Merenciano
+                    Iván Martínez
                   </h3>
                   <p className="text-primary font-medium mb-3">
                     Líder de expedición

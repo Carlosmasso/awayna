@@ -238,8 +238,10 @@ export const destinations: Destination[] = [
       "Entradas a parques y lagunas",
       "Coordinador Awayna durante todo el viaje",
       "Seguro de viaje completo",
+      "Seguro médico durante todo el viaje",
       "Traslados aeropuerto y entre islas",
       "Equipo de snorkel",
+      "Álbum videográfico del viaje",
     ],
     notIncluded: [
       "Vuelos internacionales",
@@ -248,6 +250,7 @@ export const destinations: Destination[] = [
       "Actividades opcionales",
       "Propinas",
       "Gastos personales",
+      "Fondo común.",
     ],
     practicalInfo: {
       bestTime: "Noviembre a Mayo (estacion seca)",
@@ -496,6 +499,8 @@ export const destinations: Destination[] = [
       "Trekking entre arrozales y aldeas étnicas en Sapa con guía local",
       "Excursión a Ha Long Bay con navegación incluida",
       "Mochila Awayna",
+      "Seguro médico durante todo el viaje",
+      "Álbum videográfico del viaje",
     ],
     notIncluded: [
       "Vuelos ida y vuelta desde España.",
@@ -786,12 +791,15 @@ export const destinations: Destination[] = [
       "Todas las entradas mencionadas",
       "Coordinador Awayna",
       "Seguro de viaje",
+      "Seguro médico durante todo el viaje",
+      "Álbum videográfico del viaje",
     ],
     notIncluded: [
       "Vuelos internacionales",
       "Comidas no especificadas",
       "Actividades opcionales",
       "Propinas",
+      "Fondo común.",
     ],
     practicalInfo: {
       bestTime: "Noviembre a Marzo (temporada seca)",
@@ -1056,12 +1064,15 @@ export const destinations: Destination[] = [
       "Entradas TeamLab y museos",
       "Coordinador Awayna",
       "Seguro de viaje",
+      "Seguro médico durante todo el viaje",
+      "Álbum videográfico del viaje",
     ],
     notIncluded: [
       "Vuelos internacionales",
       "Comidas no especificadas",
       "Transporte local en Tokio (metro)",
       "Actividades opcionales",
+      "Fondo común.",
     ],
     practicalInfo: {
       bestTime: "Marzo-Mayo (sakura) y Octubre-Noviembre (momiji)",
@@ -1242,12 +1253,15 @@ export const destinations: Destination[] = [
       "Caza de auroras (3 noches)",
       "Coordinador Awayna",
       "Seguro de viaje",
+      "Seguro médico durante todo el viaje",
+      "Álbum videográfico del viaje",
     ],
     notIncluded: [
       "Vuelos internacionales",
       "Comidas no especificadas",
       "Actividades opcionales (moto nieve, buceo Silfra)",
       "Propinas",
+      "Fondo común.",
     ],
     practicalInfo: {
       bestTime:
@@ -1436,12 +1450,15 @@ export const destinations: Destination[] = [
       "Visita santuario perezosos",
       "Coordinador Awayna",
       "Seguro de viaje",
+      "Seguro médico durante todo el viaje",
+      "Álbum videográfico del viaje",
     ],
     notIncluded: [
       "Vuelos internacionales",
       "Comidas no especificadas",
       "Actividades opcionales (tirolinas, buceo)",
       "Propinas",
+      "Fondo común.",
     ],
     practicalInfo: {
       bestTime:

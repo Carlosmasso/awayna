@@ -17,7 +17,7 @@ export function AboutSection() {
             <div className="relative w-36 h-36 sm:w-36 sm:h-36 rounded-full overflow-hidden border-2 border-primary/20">
               <Image
                 src="/images/personal/ivan.jpg"
-                alt="Iván Merenciano"
+                alt="Iván Martínez"
                 fill
                 className="object-cover"
                 sizes="144px"
