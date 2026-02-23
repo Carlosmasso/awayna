@@ -23,7 +23,7 @@ const trips = [
   },
   {
     id: 2,
-    image: "/images/trip-vietnam.jpg",
+    image: "/images/vietnam/hero.jpg",
     destination: "Vietnam",
     slug: "vietnam",
     title: "Vietnam 360: De Hanoi a Ho Chi Minh entre arrozales y bahias",

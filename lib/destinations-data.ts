@@ -313,11 +313,12 @@ export const destinations: Destination[] = [
     name: "Vietnam",
     tagline:
       "De Hanoi, recorriendo Ninh Binh, la provincia de la costura y Ha giang loop. ",
-    heroImage: "/images/vietnam/trip-vietnam.jpg",
+    heroImage: "/images/vietnam/hero.jpg",
     galleryImages: [
       "/images/vietnam/vietnam-1.jpg",
       "/images/vietnam/vietnam-2.jpg",
       "/images/vietnam/vietnam-3.jpg",
+      "/images/vietnam/vietnam-4.jpg",
     ],
     duration: "13 dias",
     rating: 4.8,
