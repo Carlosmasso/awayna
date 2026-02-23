@@ -1,6 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Instagram, Facebook, Youtube, Twitter, Mail, Phone, MapPin, Globe } from "lucide-react"
+import { phones } from "@/lib/info"
 
 const footerLinks = {
   destinos: [
@@ -59,7 +60,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>+34 900 123 456</span>
+                <span>{phones.map(({number}) => number).join(", ")}</span>
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" />

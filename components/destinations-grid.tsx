@@ -17,7 +17,7 @@ const destinations = [
     name: "Vietnam",
     slug: "vietnam",
     trips: 3,
-    image: "/images/vietnam/trip-vietnam.jpg",
+    image: "/images/vietnam/hero.jpg",
     featured: true,
   },
   {

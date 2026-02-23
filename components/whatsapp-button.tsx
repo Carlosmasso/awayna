@@ -1,5 +1,6 @@
 "use client"
 
+import { phones } from "@/lib/info"
 import { MessageCircle } from "lucide-react"
 import { useEffect, useState } from "react"
 
@@ -16,7 +17,7 @@ export function WhatsAppButton() {
 
   const handleClick = () => {
     const message = "Hola Awayna! Tengo dudas sobre vuestros viajes. ¿Podéis ayudarme?"
-    const whatsappUrl = `https://wa.me/+34XXXXXXXXX?text=${encodeURIComponent(message)}`
+    const whatsappUrl = `https://wa.me/${phones[0].number?.replace(/\s/g, "")}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
   }
 

@@ -4,6 +4,7 @@ import React from "react"
 import { X, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { phones } from "@/lib/info"
 
 interface BookingModalProps {
   destination: string
@@ -35,7 +36,7 @@ export function BookingModal({ destination, dateId, onClose }: BookingModalProps
     } else {
       // Enviar por WhatsApp
       const message = `Hola! Me gustaría reservar un viaje con Awayna. Datos: ${formData.fullName}, ${formData.email}, ${formData.phone}, Destino: ${formData.destination}, Fecha: ${formData.date}, Participantes: ${formData.participants}`
-      const whatsappUrl = `https://wa.me/+34XXXXXXXXX?text=${encodeURIComponent(message)}`
+      const whatsappUrl = `https://wa.me/${phones[0].number?.replace(/\s/g, "")}?text=${encodeURIComponent(message)}`
       window.open(whatsappUrl, "_blank")
       onClose?.()
     }

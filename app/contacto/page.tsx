@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Mail, Phone, MapPin } from "lucide-react";
 import type { Metadata } from "next";
+import { phones } from "@/lib/info";
 
 export const metadata: Metadata = {
   title: "Contacto | Awayna - Escríbenos",
@@ -57,14 +58,17 @@ export default function Contacto() {
                     <Phone className="h-6 w-6 text-primary" />
                   </div>
                   <h3 className="font-semibold text-foreground">WhatsApp</h3>
-                  <a
-                    href="https://wa.me/34123456789"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    +34 123 456 789
-                  </a>
+                  {phones.map(({number}) => (
+                    <a
+                      key={number}
+                      href={`https://wa.me/${number.replace(/\s/g, "")}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      {number}
+                    </a>
+                  ))}
                 </div>
 
                 <div className="flex flex-col items-center text-center gap-2">
