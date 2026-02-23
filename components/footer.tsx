@@ -2,15 +2,9 @@ import Link from "next/link"
 import Image from "next/image"
 import { Instagram, Facebook, Youtube, Twitter, Mail, Phone, MapPin, Globe } from "lucide-react"
 import { phones } from "@/lib/info"
+import { destinations } from "@/lib/destinations-data"
 
 const footerLinks = {
-  destinos: [
-    { name: "Asia", href: "#" },
-    { name: "Europa", href: "#" },
-    { name: "America", href: "#" },
-    { name: "Africa", href: "#" },
-    { name: "Oceania", href: "#" },
-  ],
   empresa: [
     { name: "Sobre nosotros", href: "/sobre-nosotros" },
     { name: "Cómo funciona Awayna", href: "/como-funciona" },
@@ -87,10 +81,11 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-background mb-4">Destinos</h3>
             <ul className="space-y-3">
-              {footerLinks.destinos.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors">
-                    {link.name}
+              {destinations.map((dest) => (
+                <li key={dest.slug}>
+                  <Link href={`/destinos/${dest.slug}`} className="text-background/70 hover:text-background transition-colors flex items-center gap-1.5">
+                    {dest.name}
+                    {dest.comingSoon && <span className="text-xs text-primary/80">Pronto</span>}
                   </Link>
                 </li>
               ))}

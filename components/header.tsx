@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import { destinations } from "@/lib/destinations-data"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -59,24 +60,16 @@ export function Header() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="start" className="w-48">
-                <DropdownMenuItem asChild>
-                  <Link href="/destinos/filipinas">Filipinas</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/destinos/vietnam">Vietnam</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/destinos/tailandia">Tailandia</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/destinos/japon">Japon</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/destinos/islandia">Islandia</Link>
-                </DropdownMenuItem>
-                <DropdownMenuItem asChild>
-                  <Link href="/destinos/costa-rica">Costa Rica</Link>
-                </DropdownMenuItem>
+                {destinations.map((dest) => (
+                  <DropdownMenuItem key={dest.slug} asChild>
+                    <Link href={`/destinos/${dest.slug}`} className="flex items-center justify-between">
+                      {dest.name}
+                      {dest.comingSoon && (
+                        <span className="text-xs text-primary font-medium ml-2">Pronto</span>
+                      )}
+                    </Link>
+                  </DropdownMenuItem>
+                ))}
               </DropdownMenuContent>
             </DropdownMenu>
 
@@ -104,12 +97,19 @@ export function Header() {
           <div className={`md:hidden py-4 border-t ${scrolled ? "border-primary-foreground/20" : "border-border/50"}`}>
             <div className="flex flex-col gap-2">
               <div className={`px-3 py-2 text-sm font-medium ${scrolled ? "text-primary-foreground/70" : "text-muted-foreground"}`}>Destinos</div>
-              <Link href="/destinos/filipinas" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Filipinas</Link>
-              <Link href="/destinos/vietnam" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Vietnam</Link>
-              <Link href="/destinos/tailandia" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Tailandia</Link>
-              <Link href="/destinos/japon" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Japon</Link>
-              <Link href="/destinos/islandia" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Islandia</Link>
-              <Link href="/destinos/costa-rica" className={`px-6 py-2 text-sm rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>Costa Rica</Link>
+              {destinations.map((dest) => (
+                <Link
+                  key={dest.slug}
+                  href={`/destinos/${dest.slug}`}
+                  className={`px-6 py-2 text-sm rounded-lg flex items-center justify-between ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`}
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {dest.name}
+                  {dest.comingSoon && (
+                    <span className="text-xs text-primary font-medium">Pronto</span>
+                  )}
+                </Link>
+              ))}
               <div className={`border-t my-2 ${scrolled ? "border-primary-foreground/20" : "border-border/50"}`} />
               <Link href="/#como-funciona" className={`px-3 py-2 text-sm font-medium rounded-lg flex items-center gap-2 ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>
                 <Compass className="h-4 w-4" />

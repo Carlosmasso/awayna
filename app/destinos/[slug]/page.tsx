@@ -13,6 +13,7 @@ import { DestinationPracticalInfo } from "@/components/destination/destination-p
 import { DestinationDates } from "@/components/destination/destination-dates";
 import { DestinationFaqs } from "@/components/destination/destination-faqs";
 import { DestinationComponents } from "@/components/destination/destination-components";
+import { DestinationComingSoon } from "@/components/destination/destination-coming-soon";
 import { CookieBanner } from "@/components/cookie-banner";
 
 export async function generateStaticParams() {
@@ -75,21 +76,29 @@ export default async function DestinationPage({
       <Header />
       <main>
         <DestinationHero destination={destination} />
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <DestinationOverview destination={destination} />
-          <div className="grid lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-8">
-              <DestinationComponents components={destination.components} />
-              <DestinationItinerary destination={destination} />
-              <DestinationIncludes destination={destination} />
-            </div>
-            <div className="lg:col-span-4">
-              <DestinationDates destination={destination} />
+        {destination.comingSoon ? (
+          <DestinationComingSoon destination={destination} />
+        ) : (
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <DestinationOverview destination={destination} />
+            <div className="grid lg:grid-cols-12 gap-12">
+              <div className="lg:col-span-8">
+                <DestinationComponents components={destination.components} />
+                <DestinationItinerary destination={destination} />
+                <DestinationIncludes destination={destination} />
+              </div>
+              <div className="lg:col-span-4">
+                <DestinationDates destination={destination} />
+              </div>
             </div>
           </div>
-        </div>
-        <DestinationPracticalInfo destination={destination} />
-        <DestinationFaqs destination={destination} />
+        )}
+        {!destination.comingSoon && (
+          <>
+            <DestinationPracticalInfo destination={destination} />
+            <DestinationFaqs destination={destination} />
+          </>
+        )}
       </main>
       <Footer />
       <CookieBanner />

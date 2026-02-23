@@ -38,8 +38,9 @@ const destinations = [
     name: "Islandia",
     slug: "islandia",
     trips: 2,
-    image: "/images/iceland/trip-iceland.jpg",
+    image: "/images/iceland/card.jpg",
     featured: false,
+    comingSoon: true,
   },
   {
     name: "Costa Rica",
@@ -47,6 +48,14 @@ const destinations = [
     trips: 2,
     image: "/images/costarica/trip-costarica.jpg",
     featured: false,
+  },
+  {
+    name: "Honduras",
+    slug: "honduras",
+    trips: 0,
+    image: "/images/honduras/portada.jpeg",
+    featured: false,
+    comingSoon: true,
   },
 ]
 
@@ -93,7 +102,11 @@ export function DestinationsGrid() {
               
               <div className="absolute inset-0 flex flex-col justify-end p-4">
                 <h3 className="font-semibold text-background text-lg">{destination.name}</h3>
-                <p className="text-sm text-background/80">{destination.trips} viajes</p>
+                {destination.comingSoon ? (
+                  <span className="text-sm text-background/90 font-medium bg-primary/70 rounded-full px-2 py-0.5 mt-1 w-fit">Próximamente</span>
+                ) : (
+                  <p className="text-sm text-background/80">{destination.trips} viajes</p>
+                )}
               </div>
 
               {/* Hover Overlay */}

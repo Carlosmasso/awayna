@@ -49,6 +49,7 @@ export interface Destination {
   };
   faqs: { question: string; answer: string }[];
   availableDates: TripDate[];
+  comingSoon?: boolean;
 }
 
 export const destinations: Destination[] = [
@@ -1146,11 +1147,22 @@ export const destinations: Destination[] = [
   {
     slug: "islandia",
     name: "Islandia",
+    comingSoon: true,
     tagline: "Aurora boreal, cascadas y paisajes de otro planeta",
-    heroImage: "/images/iceland/trip-iceland.jpg",
+    heroImage: "/images/iceland/hero.jpg",
     galleryImages: [
-      "/images/iceland/iceland-1.jpg",
-      "/images/iceland/trip-iceland.jpg",
+      "/images/iceland/1.jpg",
+      "/images/iceland/2.jpg",
+      "/images/iceland/3.jpg",
+      "/images/iceland/4.jpg",
+      "/images/iceland/5.jpg",
+      "/images/iceland/6.jpg",
+      "/images/iceland/7.jpg",
+      "/images/iceland/8.jpg",
+      "/images/iceland/9.jpg",
+      "/images/iceland/10.jpg",
+      "/images/iceland/11.jpg",
+      "/images/iceland/12.jpg",
     ],
     duration: "8 dias",
     rating: 4.9,
@@ -1512,6 +1524,45 @@ export const destinations: Destination[] = [
         price: 1649,
       },
     ],
+  },
+  {
+    slug: "honduras",
+    name: "Honduras",
+    comingSoon: true,
+    tagline: "Arrecifes de coral, selva virgen y cultura maya",
+    heroImage: "/images/honduras/portada.jpeg",
+    galleryImages: [
+      "/images/honduras/01.jpeg",
+      "/images/honduras/02.jpeg",
+      "/images/honduras/03.jpeg",
+      "/images/honduras/04.jpeg",
+      "/images/honduras/05.jpeg",
+      "/images/honduras/06.jpeg",
+      "/images/honduras/07.jpeg",
+      "/images/honduras/08.jpeg",
+      "/images/honduras/09.jpeg",
+    ],
+    duration: "Próximamente",
+    rating: 0,
+    reviewCount: 0,
+    price: 0,
+    continent: "América",
+    highlights: [],
+    components: [],
+    description: [],
+    itinerary: [],
+    included: [],
+    notIncluded: [],
+    practicalInfo: {
+      bestTime: "",
+      visa: "",
+      vaccines: "",
+      currency: "",
+      language: "",
+      timeZone: "",
+    },
+    faqs: [],
+    availableDates: [],
   },
 ];
 
