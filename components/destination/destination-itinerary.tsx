@@ -33,10 +33,10 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
       <div>
         <div className="text-center mb-6 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
-            Itinerario dia a dia
+            Itinerario día a día
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Un viaje cuidadosamente disenado para que vivas experiencias unicas cada dia
+            Un viaje cuidadosamente diseñado para que vivas experiencias únicas cada día
           </p>
         </div>
 
@@ -86,28 +86,32 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
                     {/* Expanded content */}
                     {isExpanded && (
                       <div className="mt-3 p-5 rounded-xl bg-secondary/30 border border-border/50">
-                        {/* Image if available */}
-                        {day.image && (
-                          <div className="relative w-full h-64 rounded-lg overflow-hidden mb-4">
-                            <Image
-                              src={day.image}
-                              alt={`${day.title} - Día ${day.day}`}
-                              fill
-                              className="object-cover"
-                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        <div className={`flex gap-5 ${day.image ? "flex-col sm:flex-row" : ""}`}>
+                          {/* Image if available */}
+                          {day.image && (
+                            <div className="relative flex-shrink-0 w-full sm:w-72 h-64 sm:h-auto sm:min-h-64 rounded-lg overflow-hidden">
+                              <Image
+                                src={day.image}
+                                alt={`${day.title} - Día ${day.day}`}
+                                fill
+                                className="object-cover"
+                                sizes="(max-width: 640px) 100vw, 288px"
+                              />
+                            </div>
+                          )}
+                          <div className="flex-1">
+                            <p className="text-sm leading-relaxed mb-4"
+                              dangerouslySetInnerHTML={{ __html: day.description.join("<br/>") }}
                             />
+                            <div className="flex flex-wrap gap-2">
+                              {day.highlights.map((highlight, i) => (
+                                <Badge key={i} variant="secondary" className="bg-background">
+                                  <MapPin className="h-3 w-3 mr-1" />
+                                  {highlight}
+                                </Badge>
+                              ))}
+                            </div>
                           </div>
-                        )}
-                        <p className="text-sm leading-relaxed mb-4"
-                          dangerouslySetInnerHTML={{ __html: day.description.join("<br/>") }}
-                        />
-                        <div className="flex flex-wrap gap-2">
-                          {day.highlights.map((highlight, i) => (
-                            <Badge key={i} variant="secondary" className="bg-background">
-                              <MapPin className="h-3 w-3 mr-1" />
-                              {highlight}
-                            </Badge>
-                          ))}
                         </div>
                       </div>
                     )}
