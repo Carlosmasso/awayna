@@ -20,15 +20,9 @@ export function DestinationFaqs({ destination }: DestinationFaqsProps) {
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
             Preguntas frecuentes
           </h2>
-          {destination.faqsIntro ? (
-            <p className="text-muted-foreground max-w-2xl mx-auto italic">
-              {destination.faqsIntro}
-            </p>
-          ) : (
-            <p className="text-muted-foreground">
-              Resolvemos tus dudas sobre este viaje
-            </p>
-          )}
+          <p className="text-muted-foreground max-w-2xl mx-auto italic">
+            {destination.faqsIntro || "Resolvemos tus dudas sobre este viaje"}
+          </p>
         </div>
 
         <div className="max-w-3xl mx-auto">
