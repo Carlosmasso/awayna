@@ -24,7 +24,7 @@ const destinations = [
     name: "Tailandia",
     slug: "tailandia",
     trips: 5,
-    image: "/images/thailand/trip-thailand.jpg",
+    image: "/images/thailand/card.jpg",
     featured: true,
   },
   {
