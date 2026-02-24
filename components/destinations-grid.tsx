@@ -43,13 +43,6 @@ const destinations = [
     comingSoon: true,
   },
   {
-    name: "Costa Rica",
-    slug: "costa-rica",
-    trips: 2,
-    image: "/images/costarica/trip-costarica.jpg",
-    featured: false,
-  },
-  {
     name: "Honduras",
     slug: "honduras",
     trips: 0,
