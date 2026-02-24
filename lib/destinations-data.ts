@@ -327,7 +327,6 @@ export const destinations: Destination[] = [
     heroImage: "/images/vietnam/hero.jpg",
     galleryImages: [
       "/images/vietnam/vietnam-1.jpg",
-      "/images/vietnam/vietnam-2.jpg",
       "/images/vietnam/vietnam-3.jpg",
       "/images/vietnam/vietnam-4.jpg",
       "/images/vietnam/vietnam-5.jpg",
@@ -945,14 +944,14 @@ export const destinations: Destination[] = [
       { name: "Nightlife", rating: 2 },
     ],
     description: [
-      "<strong>Si lo tuyo es viajar de verdad y no solo visitar sitios, este viaje a Japón es para ti.</strong>",
-      "Durante 13 noches nos sumergimos en un país de contrastes brutales, donde la tradición y el futuro conviven en la misma calle. Aquí no venimos a correr ni a tachar lugares: venimos a <strong>vivir Japón desde dentro</strong>, en grupo, con calma y con mucha curiosidad.",
+      "Si lo tuyo es viajar de verdad y no solo visitar sitios, este viaje a Japón es para ti.",
+      "Durante 13 noches nos sumergimos en un país de contrastes brutales, donde la tradición y el futuro conviven en la misma calle. Aquí no venimos a correr ni a tachar lugares: venimos a vivir Japón desde dentro, en grupo, con calma y con mucha curiosidad.",
       "Empezamos en Tokio, dejándonos llevar por su energía infinita, sus barrios imposibles y su caos perfectamente ordenado. De ahí damos un giro total hacia la naturaleza: costa salvaje en la península de Izu, onsen, silencio y paisajes volcánicos, antes de encontrarnos cara a cara con el mítico Fuji.",
       "Seguimos rumbo a Kansai, donde Osaka nos recibe con su espíritu callejero y su amor por la buena comida, Kyoto nos regala templos, rituales y paseos que parecen detenidos en el tiempo, y Nara nos baja aún más el ritmo entre naturaleza y espiritualidad.",
-      "<strong>Este es un viaje para explorar sin prisas</strong>, para compartir momentos cotidianos que se vuelven especiales, para perderse por calles secundarias y entender por qué Japón se siente tanto como se recuerda.",
-      "<strong>Japón no se explica.</strong>",
-      "<strong>Japón se vive.</strong>",
-      "<strong>Y mejor, juntos.</strong>",
+      "Este es un viaje para explorar sin prisas, para compartir momentos cotidianos que se vuelven especiales, para perderse por calles secundarias y entender por qué Japón se siente tanto como se recuerda.",
+      "Japón no se explica.",
+      "Japón se vive.",
+      "Y mejor, juntos.",
     ],
     itinerary: [
       {

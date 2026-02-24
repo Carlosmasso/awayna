@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Pause, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { Destination } from "@/lib/destinations-data";
 
 interface DestinationOverviewProps {
@@ -12,37 +12,57 @@ interface DestinationOverviewProps {
 export function DestinationOverview({ destination }: DestinationOverviewProps) {
   const galleryImages = destination.galleryImages || [];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [isAutoPlaying, setIsAutoPlaying] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  // Auto-play functionality
+  // Track which slide is visible via IntersectionObserver
   useEffect(() => {
-    if (!isAutoPlaying || isHovered || galleryImages.length <= 1) return;
+    const container = scrollRef.current;
+    if (!container) return;
 
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
-    }, 4000); // Cambia cada 4 segundos
-
-    return () => clearInterval(interval);
-  }, [isAutoPlaying, isHovered, galleryImages.length]);
-
-  const goToSlide = (index: number) => {
-    setCurrentIndex(index);
-  };
-
-  const goToPrevious = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + galleryImages.length) % galleryImages.length,
+    const items = Array.from(container.children) as HTMLElement[];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            setCurrentIndex(items.indexOf(entry.target as HTMLElement));
+          }
+        }
+      },
+      { root: container, threshold: 0.6 }
     );
+
+    items.forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [galleryImages.length]);
+
+  const [isUserInteracting, setIsUserInteracting] = useState(false);
+
+  const scrollTo = (index: number) => {
+    const container = scrollRef.current;
+    if (!container) return;
+    const item = container.children[index] as HTMLElement;
+    item?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
   };
 
-  const goToNext = () => {
-    setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
-  };
+  const prev = () => { setIsUserInteracting(true); scrollTo(Math.max(0, currentIndex - 1)); };
+  const next = () => { setIsUserInteracting(true); scrollTo(Math.min(galleryImages.length - 1, currentIndex + 1)); };
 
-  const toggleAutoPlay = () => {
-    setIsAutoPlaying(!isAutoPlaying);
-  };
+  // Auto-advance every 4s, pauses when user interacts
+  useEffect(() => {
+    if (isUserInteracting || galleryImages.length <= 1) return;
+    const timer = setTimeout(() => {
+      const nextIndex = (currentIndex + 1) % galleryImages.length;
+      scrollTo(nextIndex);
+    }, 4000);
+    return () => clearTimeout(timer);
+  }, [currentIndex, isUserInteracting, galleryImages.length]);
+
+  // Resume auto-play 6s after last user interaction
+  useEffect(() => {
+    if (!isUserInteracting) return;
+    const resume = setTimeout(() => setIsUserInteracting(false), 6000);
+    return () => clearTimeout(resume);
+  }, [isUserInteracting]);
 
   if (galleryImages.length === 0) return null;
 
@@ -68,112 +88,86 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
                   dangerouslySetInnerHTML={{ __html: destination.description }}
                 />
               )}
-
-          {/* Components with ratings */}
-          {/* <div className="bg-secondary/30 rounded-2xl p-8">
-              <h3 className="text-xl font-bold text-foreground mb-6">
-                Componentes del viaje
-              </h3>
-              <div className="grid grid-cols-2 gap-6">
-                {destination.components.map((component, index) => (
-                  <div key={index} className="flex items-center justify-between">
-                    <span className="text-foreground font-medium">{component.name}</span>
-                    <StarRating rating={component.rating} />
-                  </div>
-                ))}
-              </div>
-            </div> */}
         </div>
 
         {/* Right: Carousel Gallery (7 cols) */}
         <div className="lg:col-span-7">
           <div className="sticky top-24">
-            <div className="flex items-center justify-between mb-6">
+            {/* Header */}
+            <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-bold text-foreground">
                 Galería del viaje
               </h3>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <span>
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-muted-foreground">
                   {currentIndex + 1} / {galleryImages.length}
                 </span>
-                <button
-                  onClick={toggleAutoPlay}
-                  className="p-2 hover:bg-secondary/50 rounded-full transition-colors"
-                  aria-label={isAutoPlaying ? "Pausar" : "Reproducir"}
-                >
-                  {isAutoPlaying ? (
-                    <Pause className="w-4 h-4" />
-                  ) : (
-                    <Play className="w-4 h-4" />
-                  )}
-                </button>
+                <div className="flex gap-1.5">
+                  <button
+                    onClick={prev}
+                    disabled={currentIndex === 0}
+                    className="p-2 rounded-full bg-secondary/60 hover:bg-secondary disabled:opacity-30 transition-all"
+                    aria-label="Anterior"
+                  >
+                    <ChevronLeft className="w-4 h-4" />
+                  </button>
+                  <button
+                    onClick={next}
+                    disabled={currentIndex === galleryImages.length - 1}
+                    className="p-2 rounded-full bg-secondary/60 hover:bg-secondary disabled:opacity-30 transition-all"
+                    aria-label="Siguiente"
+                  >
+                    <ChevronRight className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
             </div>
 
-            {/* Main Carousel */}
+            {/* Scroll container — iOS-style snap */}
             <div
-              className="relative rounded-2xl overflow-hidden bg-muted group"
-              onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
+              ref={scrollRef}
+              className="flex overflow-x-auto gap-3 rounded-2xl pb-1"
+              onTouchStart={() => setIsUserInteracting(true)}
+              onMouseDown={() => setIsUserInteracting(true)}
+              style={{
+                scrollSnapType: "x mandatory",
+                WebkitOverflowScrolling: "touch",
+                scrollbarWidth: "none",
+                msOverflowStyle: "none",
+              }}
             >
-              {/* Image Container with Animation */}
-              <div className="relative h-[450px]">
-                {galleryImages.map((img, index) => (
-                  <div
-                    key={index}
-                    className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                      index === currentIndex
-                        ? "opacity-100 scale-100"
-                        : "opacity-0 scale-105"
-                    }`}
-                  >
-                    <Image
-                      src={img}
-                      alt={`${destination.name} - Imagen ${index + 1}`}
-                      fill
-                      className="object-cover"
-                      priority={index === 0}
-                      sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 50vw"
-                    />
-                  </div>
-                ))}
-
-                {/* Gradient Overlay for better visibility of controls */}
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/20" />
-              </div>
-
-              {/* Navigation Arrows */}
-              {galleryImages.length > 1 && (
-                <>
-                  <button
-                    onClick={goToPrevious}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-background/90 hover:bg-background rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    aria-label="Imagen anterior"
-                  >
-                    <ChevronLeft className="w-6 h-6" />
-                  </button>
-                  <button
-                    onClick={goToNext}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-background/90 hover:bg-background rounded-full shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110"
-                    aria-label="Imagen siguiente"
-                  >
-                    <ChevronRight className="w-6 h-6" />
-                  </button>
-                </>
-              )}
-
-              {/* Progress Bar */}
-              {isAutoPlaying && !isHovered && galleryImages.length > 1 && (
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-background/20">
-                  <div
-                    className="h-full bg-primary transition-all duration-100"
-                    style={{
-                      width: "100%",
-                      animation: "progress 4s linear infinite",
-                    }}
+              {galleryImages.map((img, index) => (
+                <div
+                  key={index}
+                  className="relative flex-none w-full aspect-[4/3] rounded-2xl overflow-hidden bg-muted"
+                  style={{ scrollSnapAlign: "start" }}
+                >
+                  <Image
+                    src={img}
+                    alt={`${destination.name} - Imagen ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 60vw, 50vw"
                   />
                 </div>
-              )}
+              ))}
+            </div>
+
+            {/* Dots */}
+            <div className="flex justify-center gap-1.5 mt-3">
+              {galleryImages.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => scrollTo(i)}
+                  className={`rounded-full transition-all duration-300 ${
+                    i === currentIndex
+                      ? "w-4 h-1.5 bg-foreground"
+                      : "w-1.5 h-1.5 bg-muted-foreground/30"
+                  }`}
+                  aria-label={`Ir a imagen ${i + 1}`}
+                />
+              ))}
             </div>
           </div>
         </div>
