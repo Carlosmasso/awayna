@@ -609,7 +609,7 @@ export const destinations: Destination[] = [
       "/images/thailand/thailand-5.jpg",
       "/images/thailand/thailand-6.jpg",
       "/images/thailand/thailand-7.jpg",
-      "/images/thailand/thailand-8.jpg",
+      "/images/thailand/thailand-8.jpeg",
       "/images/thailand/thailand-9.jpg",
       "/images/thailand/thailand-10.jpg",
     ],
