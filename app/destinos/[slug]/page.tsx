@@ -9,6 +9,7 @@ import { DestinationHero } from "@/components/destination/destination-hero";
 import { DestinationOverview } from "@/components/destination/destination-overview";
 import { DestinationItinerary } from "@/components/destination/destination-itinerary";
 import { DestinationIncludes } from "@/components/destination/destination-includes";
+import { DestinationFondoComun } from "@/components/destination/destination-fondo-comun";
 import { DestinationPracticalInfo } from "@/components/destination/destination-practical-info";
 import { DestinationDates } from "@/components/destination/destination-dates";
 import { DestinationFaqs } from "@/components/destination/destination-faqs";
@@ -86,6 +87,7 @@ export default async function DestinationPage({
                 <DestinationComponents components={destination.components} />
                 <DestinationItinerary destination={destination} />
                 <DestinationIncludes destination={destination} />
+                <DestinationFondoComun />
               </div>
               <div className="lg:col-span-4">
                 <DestinationDates destination={destination} />

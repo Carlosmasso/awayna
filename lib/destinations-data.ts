@@ -48,6 +48,7 @@ export interface Destination {
     timeZone: string;
   };
   faqs: { question: string; answer: string }[];
+  faqsIntro?: string;
   availableDates: TripDate[];
   comingSoon?: boolean;
 }
@@ -57,11 +58,21 @@ export const destinations: Destination[] = [
     slug: "filipinas",
     name: "Filipinas",
     tagline: "El Nido, Coron y las playas mas bonitas del mundo",
-    heroImage: "/images/filipinas/trip-filipinas.jpg",
+    heroImage: "/images/filipinas/hero.jpg",
     galleryImages: [
       "/images/filipinas/filipinas-1.jpg",
       "/images/filipinas/filipinas-2.jpg",
       "/images/filipinas/filipinas-3.jpg",
+      "/images/filipinas/filipinas-4.jpg",
+      "/images/filipinas/filipinas-5.jpg",
+      "/images/filipinas/filipinas-6.jpg",
+      "/images/filipinas/filipinas-7.jpg",
+      "/images/filipinas/filipinas-8.jpg",
+      "/images/filipinas/filipinas-9.jpg",
+      "/images/filipinas/filipinas-10.jpg",
+      "/images/filipinas/filipinas-11.jpg",
+      "/images/filipinas/filipinas-12.jpg",
+      "/images/filipinas/filipinas-13.jpg", 
     ],
     duration: "14 dias",
     rating: 4.9,
@@ -78,12 +89,12 @@ export const destinations: Destination[] = [
       "Atardeceres desde barcos tradicionales",
     ],
     components: [
-      { name: "Playas", rating: 5 },
-      { name: "Snorkel/Buceo", rating: 5 },
-      { name: "Naturaleza", rating: 5 },
-      { name: "Aventura", rating: 4.5 },
-      { name: "Relajación", rating: 4 },
-      { name: "Gastronomía", rating: 3.5 },
+      { name: "Relax", rating: 4 },
+      { name: "Actividad física", rating: 3 },
+      { name: "Naturaleza", rating: 4 },
+      { name: "Cultural", rating: 2 },
+      { name: "Gastronómico", rating: 3 },
+      { name: "Nightlife", rating: 3 },
     ],
     description: [
       "Filipinas es un archipiélago de más de 7.000 islas con algunas de las playas más espectaculares del planeta. En este viaje exploraremos Palawan, votada como la isla más bonita del mundo, navegando entre acantilados de caliza, lagunas turquesas y playas de arena blanca. Desde El Nido hasta Coron, descubriremos pecios de la Segunda Guerra Mundial, nadaremos con tortugas y viviremos la hospitalidad filipina en su máxima expresión.",
@@ -91,166 +102,151 @@ export const destinations: Destination[] = [
     itinerary: [
       {
         day: 1,
-        title: "Llegada a Manila",
+        title: "La vibrante capital",
         description: [
-          "Llegada al aeropuerto de Manila donde nos recibira nuestro coordinador. Traslado al hotel y tiempo libre para descansar. Por la noche, cena de bienvenida y presentacion del grupo.",
+          "Tu aventura comienza aterrizando en la vibrante capital, donde te recibiremos en el aeropuerto para trasladarte a tu alojamiento. <strong>Manila es el choque cultural perfecto</strong> para empezar a entender la energía del archipiélago antes de nuestra primera noche en grupo.",
         ],
         highlights: [
           "Recogida en aeropuerto",
-          "Cena de bienvenida",
-          "Conocer al grupo",
+          "Primera noche en grupo",
+          "Manila",
         ],
+        image: "/images/filipinas/itinerary/1.jpg",
       },
       {
         day: 2,
-        title: "Vuelo a El Nido",
+        title: "Del bullicio al relax de Moalboal",
         description: [
-          "Vuelo domestico a El Nido, la joya de Palawan. Llegada y check-in en nuestro resort frente a la playa. Tarde libre para explorar el pueblo y primer atardecer en el paraiso.",
+          "Volamos temprano hacia <strong>Cebú</strong> y nos trasladamos a <strong>Moalboal</strong>, un rincón donde el tiempo parece detenerse. Es el lugar ideal para \"bajar pulsaciones\" y conectar con tus compañeros en nuestra <strong>cena grupal Filipina</strong>, perfecta para romper el hielo y empezar a conocernos más como grupo.",
         ],
         highlights: [
-          "Vuelo escenico",
-          "Resort frente al mar",
-          "Explorar El Nido",
+          "Vuelo a Cebú",
+          "Moalboal",
+          "Cena grupal filipina",
         ],
+        image: "/images/filipinas/itinerary/2.jpg",
       },
       {
         day: 3,
-        title: "Island Hopping Tour A",
+        title: "Inmersión en el azul y conquista del Pico Osmeña",
         description: [
-          "El tour mas famoso de El Nido. Visitaremos la Big Lagoon, Small Lagoon (en kayak), Secret Lagoon y Shimizu Island. Almuerzo picnic en la playa y snorkel en aguas cristalinas.",
+          "Hoy descubrirás por qué Filipinas es un paraíso submarino. Disfrutaremos de un bautizo de buceo en el mejor lugar posible; si cuentas con cursos de buceo, serán dos <strong>Fun dives</strong> los que realicemos en este paraíso acuático. Tras un festín de comida local en la playa, cambiaremos las aletas por las zapatillas para subir al <strong>Pico Osmeña</strong>; sus colinas escarpadas ofrecen una de las <strong>vistas más irreales y fotogénicas de toda la isla</strong>.",
         ],
         highlights: [
-          "Big & Small Lagoon",
-          "Kayak en lagunas",
-          "Snorkel",
-          "Almuerzo en la playa",
+          "Bautizo de buceo",
+          "Fun dives",
+          "Pico Osmeña",
+          "Comida local en la playa",
         ],
+        image: "/images/filipinas/itinerary/3.jpg",
       },
       {
         day: 4,
-        title: "Island Hopping Tour C",
+        title: "Encuentros sobrecogedores en Bohol",
         description: [
-          "Exploramos las islas del norte con playas escondidas y formaciones rocosas impresionantes. Visitamos Hidden Beach, Helicopter Island y Star Beach con tiempo para nadar y relajarnos.",
+          "Cruzamos a la vecina <strong>Bohol</strong> para vivir una de las experiencias más emocionantes del planeta: nadar cerca de los majestuosos <strong>tiburones ballena</strong>. El día se completa explorando cascadas escondidas en un entorno de naturaleza exuberante, regresando a Cebú con la sensación de haber presenciado un <strong>espectáculo natural único</strong>.",
         ],
-        highlights: ["Hidden Beach", "Helicopter Island", "Playas virgenes"],
+        highlights: ["Bohol", "Tiburones ballena", "Cascadas", "Naturaleza exuberante"],
+        image: "/images/filipinas/itinerary/4.jpg",
       },
       {
         day: 5,
-        title: "Nacpan Beach y Las Cabanas",
+        title: "Palawan, la última frontera",
         description: [
-          "Dia de playa en Nacpan, una de las playas mas largas y bonitas de Filipinas. Por la tarde, atardecer desde el mirador de Las Cabanas con zipline opcional.",
+          "Volamos a <strong>Palawan</strong> y recorremos por carretera el camino hacia el norte desde Puerto Princesa. Buscaremos que el trayecto se haga menos pesado presenciando cascadas y pueblos tradicionales filipinos durante todo el viaje hacia <strong>El Nido</strong>, donde cenaremos y conoceremos la vibra nocturna que tiene este pequeño pueblo costero.",
         ],
-        highlights: [
-          "Nacpan Beach",
-          "Playa de 4km",
-          "Atardecer en Las Cabanas",
-        ],
+        highlights: ["Vuelo a Palawan", "Puerto Princesa", "Cascadas", "El Nido"],
+        image: "/images/filipinas/itinerary/5.jpg",
       },
       {
         day: 6,
-        title: "Expedition a Coron",
+        title: "El Nido a tu aire: adrenalina o \"chill\"",
         description: [
-          "Navegamos en ferry rapido hacia Coron, atravesando el estrecho de Linapacan con sus islas virgenes. Llegada y check-in en nuestro hotel con vistas a la bahia.",
+          "Amanecemos en un escenario de película donde tú eliges el ritmo: relajarte haciendo snorkel y jugando volleyball, o desafiar tus límites en una <strong>vía ferrata sobre acantilados de piedra caliza</strong>. Cerramos el día con una <strong>barbacoa en la playa y cervezas bajo las estrellas</strong>, la definición pura de la vida isleña.",
         ],
-        highlights: ["Ferry escenico", "Islas virgenes", "Coron Town"],
+        highlights: ["Snorkel", "Volleyball", "Vía ferrata", "Barbacoa en la playa"],
+        image: "/images/filipinas/itinerary/6.jpg",
       },
       {
         day: 7,
-        title: "Coron Island Tour",
+        title: "Island Hopping y el espíritu filipino",
         description: [
-          "Dia completo explorando la mitica isla de Coron. Kayak en Kayangan Lake, considerado el lago mas limpio de Asia, y snorkel en Twin Lagoon con sus aguas termales.",
+          "Nos embarcamos en una ruta de <strong>Island Hopping</strong> que te dejará sin palabras, explorando lagunas de color turquesa imposible y playas de arena blanca. Para celebrar la belleza del entorno, terminaremos la jornada con una noche de <strong>karaoke</strong>, la actividad nacional por excelencia para reír y compartir con el grupo.",
         ],
-        highlights: [
-          "Kayangan Lake",
-          "Twin Lagoon",
-          "Aguas termales naturales",
-        ],
+        highlights: ["Island Hopping", "Lagunas turquesa", "Playas blancas", "Karaoke"],
+        image: "/images/filipinas/itinerary/7.jpg",
       },
       {
-        day: 8,
-        title: "Naufragios de la WWII",
+        day: [8, 9, 10],
+        title: "La gran travesía hacia Corón",
         description: [
-          "Snorkel en los famosos pecios japoneses de la Segunda Guerra Mundial. Los barcos hundidos ahora son arrecifes artificiales llenos de vida marina. Tarde en Malcapuya Island.",
+          "Iniciamos un <strong>crucero de 3 días</strong>, el verdadero corazón de la expedición, navegando desde El Nido hacia Corón. Dormiremos en <strong>islas remotas lejos de las rutas turísticas</strong>, viviendo la máxima expresión de libertad y \"fluir con el destino\" mientras descubrimos archipiélagos vírgenes donde muy pocos llegan.",
         ],
-        highlights: [
-          "Snorkel en naufragios",
-          "Historia WWII",
-          "Malcapuya Island",
-        ],
-      },
-      {
-        day: 9,
-        title: "Calauit Safari y playas",
-        description: [
-          "Excursion opcional al Calauit Safari Park para ver jirafas y cebras africanas en un entorno tropical unico. Alternativa: dia de relax en las playas de Busuanga.",
-        ],
-        highlights: ["Safari africano", "Animales exoticos", "Playas virgenes"],
-      },
-      {
-        day: 10,
-        title: "Pass Island y Banana Island",
-        description: [
-          "Ultimo dia de island hopping visitando Pass Island con su increible banco de arena y Banana Island para snorkel con tortugas marinas.",
-        ],
-        highlights: ["Pass Island", "Banco de arena", "Snorkel con tortugas"],
+        highlights: ["Crucero 3 días", "El Nido → Corón", "Islas remotas", "Archipiélagos vírgenes"],
+        image: "/images/filipinas/itinerary/8.jpg",
       },
       {
         day: 11,
-        title: "Vuelo a Boracay",
+        title: "Los secretos sumergidos de Corón",
         description: [
-          "Volamos a Boracay, la isla de la fiesta y las playas perfectas. Llegada y tiempo libre en White Beach, considerada una de las mejores playas de Asia.",
+          "Ya en <strong>Corón</strong>, dedicaremos el día a sus lagos interiores rodeados de murallas de caliza o a explorar barcos hundidos de la II Guerra Mundial en inmersiones opcionales. Este destino ofrece un <strong>paisaje dramático y submarino que no tiene rival en el mundo</strong>.",
         ],
-        highlights: ["Vuelo a Boracay", "White Beach", "Ambiente festivo"],
+        highlights: ["Corón", "Lagos interiores", "Naufragios WWII", "Inmersiones opcionales"],
+        image: "/images/filipinas/itinerary/11.jpg",
       },
       {
         day: 12,
-        title: "Boracay a tu ritmo",
+        title: "Calma y raíces isleñas",
         description: [
-          "Dia libre para disfrutar de la isla. Opciones: paddleboard, parasailing, buceo, masajes en la playa o simplemente relajarte con un coco fresco en la mano.",
+          "Es el momento de bajar el ritmo con una tarde de \"turisteo\" pausado, ideal para apoyar al comercio local comprando artesanías y asimilar las experiencias vividas. Una jornada de <strong>conexión final con la paz de la isla</strong> antes de emprender el regreso.",
         ],
-        highlights: [
-          "Actividades opcionales",
-          "Relax en la playa",
-          "Vida nocturna",
-        ],
+        highlights: ["Turismo local", "Artesanías", "Relax", "Comercio local"],
+        image: "/images/filipinas/itinerary/12.jpeg",
       },
       {
         day: 13,
-        title: "Ultimo dia en el paraiso",
+        title: "Regreso al punto de partida",
         description: [
-          "Manana libre para ultimas compras o fotos. Por la tarde, vuelo de regreso a Manila. Cena de despedida con el grupo recordando la aventura.",
+          "Iniciamos el camino de vuelta desde Corón hacia <strong>Manila</strong>, donde pasaremos nuestra última noche juntos. Es el momento perfecto para una última cena grupal y recordar los mejores momentos de estos 14 días.",
         ],
-        highlights: ["Tiempo libre", "Vuelo a Manila", "Cena de despedida"],
+        highlights: ["Corón → Manila", "Última cena grupal", "Mejores momentos"],
+        image: "/images/filipinas/itinerary/13.jpg",
       },
       {
         day: 14,
-        title: "Regreso a casa",
+        title: "¡Hasta pronto, paraíso!",
         description: [
-          "Traslado al aeropuerto para tomar el vuelo de regreso. Nos llevamos recuerdos increibles y nuevos amigos para siempre.",
+          "Traslado al aeropuerto para tu vuelo de regreso a España. Te vas con la mochila llena de historias, el alma renovada y un nuevo grupo de amigos con los que ya estarás planeando la próxima aventura Awayna.",
         ],
-        highlights: ["Traslado aeropuerto", "Vuelo de regreso"],
+        highlights: ["Traslado al aeropuerto", "Vuelo a España", "Hasta pronto"],
+        image: "/images/filipinas/itinerary/13.jpg",
       },
     ],
     included: [
-      "Vuelos internos (Manila-El Nido, Coron-Boracay, Boracay-Manila)",
-      "13 noches de alojamiento en hoteles/resorts seleccionados",
-      "Desayunos diarios + 3 almuerzos + 2 cenas",
-      "Todos los tours de island hopping mencionados",
-      "Entradas a parques y lagunas",
-      "Coordinador Awayna durante todo el viaje",
-      "Seguro de viaje completo",
+      "Recogida en el aeropuerto de Manila el día de la llegada",
+      "Asistencia del coordinador Awayna durante todo el viaje",
+      "Alojamiento en habitaciones compartidas (hoteles, guesthouses y noches en islas remotas)",
+      "Cena grupal filipina en Moalboal",
+      "Vuelo interno Manila–Cebú",
+      "Vuelo interno Cebú–Puerto Princesa (Palawan)",
+      "Vuelo interno Puerto Princesa–Manila",
+      "Traslados terrestres durante todo el recorrido",
+      "Bautizo de buceo en Moalboal (o dos fun dives con certificación)",
+      "Trekking al Pico Osmeña",
+      "Excursión a Bohol con snorkel junto a tiburones ballena y cascadas",
+      "Tour completo de Island Hopping en El Nido",
+      "Crucero de 3 días y 2 noches de El Nido a Corón",
+      "Excursión en Corón por lagos interiores y acantilados de caliza",
+      "Mochila Awayna",
       "Seguro médico durante todo el viaje",
-      "Traslados aeropuerto y entre islas",
-      "Equipo de snorkel",
       "Álbum videográfico del viaje",
     ],
     notIncluded: [
-      "Vuelos internacionales",
-      "Tasas de salida de algunas islas (aprox. 20€)",
-      "Comidas no especificadas",
-      "Actividades opcionales",
-      "Propinas",
-      "Gastos personales",
+      "Vuelos de ida y vuelta desde España",
+      "Comidas y bebidas no especificadas en el apartado anterior",
+      "Inmersiones adicionales en Corón para buceadores certificados",
+      "Cualquier otro servicio no especificado en el apartado anterior",
+      "Actividades opcionales fuera del itinerario",
       "Fondo común.",
     ],
     practicalInfo: {
@@ -263,26 +259,37 @@ export const destinations: Destination[] = [
     },
     faqs: [
       {
-        question: "Necesito saber nadar o bucear?",
+        question: "¿Qué tipo de experiencias viviremos en Filipinas?",
         answer:
-          "No es imprescindible saber nadar, aunque si muy recomendable para disfrutar al maximo. Siempre hay chalecos salvavidas disponibles y las actividades de snorkel son opcionales.",
+          "Aquí el plan es claro: naturaleza en modo wow.\n\nIsland hopping entre islas de agua cristalina, snorkel sobre arrecifes llenos de vida, playas que parecen irreales y atardeceres que bajan el volumen del mundo. También descubriremos pueblos locales, mercados y la parte más auténtica del país, más allá de la postal.\n\nNo es solo tumbarse al sol. Es explorar, saltar al agua, navegar y sentir que estás en un rincón del planeta donde todo vibra diferente.",
       },
       {
-        question: "Cual es el nivel fisico requerido?",
+        question: "¿Hay que vacunarse para viajar a Filipinas?",
         answer:
-          "Nivel bajo-medio. Las actividades principales son snorkel, kayak suave y caminar por playas. No hay trekkings exigentes.",
+          "No hay vacunas obligatorias para viajeros desde España.\n\nSe suelen recomendar Hepatitis A y tétanos, y dependiendo de la duración o zonas que se visiten, pueden aconsejar otras. Lo mejor es consultar con un centro de vacunación internacional unas semanas antes del viaje para valorar tu caso concreto.",
       },
       {
-        question: "Hay wifi en las islas?",
+        question: "¿Puedo alargar el viaje por mi cuenta?",
         answer:
-          "Si, en los hoteles y restaurantes de El Nido, Coron y Boracay. En las islas pequenas durante los tours, no hay conexion.",
+          "Sí, y en Filipinas siempre apetece quedarse más.\n\nPuedes añadir días en otra isla, hacer un curso de buceo, quedarte más tiempo en El Nido o descubrir zonas menos conocidas. Te ayudamos con recomendaciones y logística, pero las noches extra y cambios en vuelos no están incluidos en el precio del viaje.",
       },
       {
-        question: "Puedo viajar solo/a?",
+        question: "¿Necesito visado para este viaje?",
         answer:
-          "Por supuesto! La mayoria de nuestros viajeros vienen solos y es la mejor manera de conectar con el grupo. No hay suplemento individual.",
+          "Con pasaporte español no necesitas visado para estancias turísticas de hasta 30 días.\n\nSolo necesitas pasaporte en vigor con al menos 6 meses de validez y billete de salida del país. Aun así, recomendamos revisar la normativa oficial antes de viajar por si hubiera cambios.",
+      },
+      {
+        question: "¿Qué tipo de alojamientos utilizamos?",
+        answer:
+          "Hoteles y resorts boutique bien ubicados, priorizando comodidad, limpieza y ambiente viajero.\n\nEn algunas islas los alojamientos son más sencillos, pero siempre seleccionados para que estés cómodo y cerca de lo importante: el mar.\n\nHabitaciones dobles o triples compartidas, con opción de suplemento individual si está disponible.",
+      },
+      {
+        question: "¿Es un viaje muy físico?",
+        answer:
+          "No necesitas ser deportista, pero sí tener ganas de moverte.\n\nHabrá días activos con excursiones en barco, snorkel, caminatas suaves y traslados entre islas. El ritmo está pensado para disfrutar, no para agotarte.\n\nSi tienes alguna condición médica o limitación, coméntanoslo antes de reservar para valorar cómo adaptarlo.",
       },
     ],
+    faqsIntro: "Nos vamos a Filipinas versión AWAYNA: agua turquesa, selva salvaje, barcas que parecen sacadas de un sueño y ese grupo que empieza siendo desconocido y acaba brindando descalzo en la arena.",
     availableDates: [
       {
         id: "fil-mar-25",
@@ -316,7 +323,7 @@ export const destinations: Destination[] = [
     slug: "vietnam",
     name: "Vietnam",
     tagline:
-      "De Hanoi, recorriendo Ninh Binh, la provincia de la costura y Ha giang loop. ",
+      "Desde Hanoi, recorriendo Ninh Binh, la provincia de la costura y Ha giang loop. ",
     heroImage: "/images/vietnam/hero.jpg",
     galleryImages: [
       "/images/vietnam/vietnam-1.jpg",
@@ -331,7 +338,6 @@ export const destinations: Destination[] = [
       "/images/vietnam/vietnam-10.jpg",
       "/images/vietnam/vietnam-11.jpg",
       "/images/vietnam/vietnam-12.jpg",
-      "/images/vietnam/vietnam-13.jpg",
       "/images/vietnam/vietnam-14.jpg",
       "/images/vietnam/vietnam-15.jpg",
       "/images/vietnam/vietnam-16.jpg",

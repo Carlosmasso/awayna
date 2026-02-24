@@ -20,9 +20,15 @@ export function DestinationFaqs({ destination }: DestinationFaqsProps) {
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
             Preguntas frecuentes
           </h2>
-          <p className="text-muted-foreground">
-            Resolvemos tus dudas sobre este viaje
-          </p>
+          {destination.faqsIntro ? (
+            <p className="text-muted-foreground max-w-2xl mx-auto italic">
+              {destination.faqsIntro}
+            </p>
+          ) : (
+            <p className="text-muted-foreground">
+              Resolvemos tus dudas sobre este viaje
+            </p>
+          )}
         </div>
 
         <div className="max-w-3xl mx-auto">
@@ -37,7 +43,11 @@ export function DestinationFaqs({ destination }: DestinationFaqsProps) {
                   {faq.question}
                 </AccordionTrigger>
                 <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
-                  {faq.answer}
+                  <div className="space-y-3">
+                    {faq.answer.split("\n\n").map((para, i) => (
+                      <p key={i}>{para}</p>
+                    ))}
+                  </div>
                 </AccordionContent>
               </AccordionItem>
             ))}

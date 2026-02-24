@@ -117,7 +117,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
               onMouseLeave={() => setIsHovered(false)}
             >
               {/* Image Container with Animation */}
-              <div className="relative h-[400px] sm:h-[450px]">
+              <div className="relative h-[450px]">
                 {galleryImages.map((img, index) => (
                   <div
                     key={index}

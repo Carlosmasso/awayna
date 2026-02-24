@@ -10,7 +10,7 @@ const destinations = [
     name: "Filipinas",
     slug: "filipinas",
     trips: 4,
-    image: "/images/filipinas/trip-filipinas.jpg",
+    image: "/images/filipinas/card.jpg",
     featured: true,
   },
   {
@@ -52,7 +52,7 @@ const destinations = [
   },
 ]
 
-export function DestinationsGrid() {
+export function   DestinationsGrid() {
   useEffect(() => {
     // Verificar si hay un hash en la URL cuando el componente se monta
     if (window.location.hash === '#viajes') {
