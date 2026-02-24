@@ -604,7 +604,6 @@ export const destinations: Destination[] = [
     galleryImages: [
       "/images/thailand/thailand-1.jpg",
       "/images/thailand/thailand-2.jpg",
-      "/images/thailand/thailand-3.jpg",
       "/images/thailand/thailand-4.jpg",
       "/images/thailand/thailand-5.jpg",
       "/images/thailand/thailand-6.jpg",
@@ -628,15 +627,14 @@ export const destinations: Destination[] = [
       "Full moon party (opcional)",
     ],
     components: [
-      { name: "Cultura", rating: 5 },
-      { name: "Gastronomía", rating: 5 },
-      { name: "Playas", rating: 4.5 },
-      { name: "Aventura", rating: 4 },
-      { name: "Naturaleza", rating: 4 },
-      { name: "Relajación", rating: 4.5 },
+      { name: "Relax", rating: 3 },
+      { name: "Actividad física", rating: 3 },
+      { name: "Gastronómico", rating: 4 },
+      { name: "Cultural", rating: 5 },
+      { name: "Naturaleza", rating: 5 },
+      { name: "Nightlife", rating: 4 },
     ],
     description: [
-      "¿Qué vas a vivir?",
       "Tailandia es considerado uno de nuestros destinos top por la versatilidad con la que cuenta en cualquier ámbito. Si nunca has estado en Tailandia este viaje es perfecto para que descubras un poquito de cada parte del país de una forma en la que podamos exprimir 13 días al máximo, conociendo lugares a los que los turistas tradicionales no llegan.",
       "Este paraiso cuenta con una gastronomía increíble, una cultura muy amigable que te hace sentir cómodo en todo momento, una mezcla de paisajes irreales que van desde la selva tropical a playas de escenarios de películas.",
       "Todo esto podrás descubrirlo con nosotros y tu nuevo grupo de amigos, con muy buen rollo y con todas las ganas de profundizar y ver como vive la gente de aquí, conociendo la cultura desde dentro vamos a recorrer de norte a sur pasando por los escenarios mas increíbles del país.",
@@ -808,23 +806,29 @@ export const destinations: Destination[] = [
       },
     ],
     included: [
-      "Vuelos internos (Bangkok-Chiang Mai, Chiang Mai-Phuket/Krabi)",
-      "11 noches alojamiento hoteles 3-4* y resort",
-      "Desayunos diarios + 3 almuerzos + 3 cenas",
-      "Santuario de elefantes dia completo",
-      "Excursion Phi Phi Islands",
-      "Clase de cocina thai",
-      "Todas las entradas mencionadas",
-      "Coordinador Awayna",
-      "Seguro de viaje",
-      "Seguro médico durante todo el viaje",
-      "Álbum videográfico del viaje",
+      "Recogida en el aeropuerto de Bangkok el día de la llegada (los vuelos desde tu ciudad de origen no están incluidos, ¡pero nosotros estaremos esperándote en Bangkok a cualquier hora del día!).",
+      "Asistencia del coordinador durante todo el viaje.",
+      "Alojamiento en habitaciones compartidas durante todo el viaje.",
+      "Comida de bienvenida en un restaurante galardonado por la Guía Michelin.",
+      "Entrada y tasa turística para la visita del Gran Palace de Bangkok.",
+      "Vuelos internos: Bangkok–Krabi, Krabi–Chiang Mai, Chiang Rai–Bangkok.",
+      "Tour en barca tradicional tailandesa por las islas alrededor de Krabi.",
+      "Ferry ida y vuelta hacia las islas Phi Phi.",
+      "Bautizo de buceo en uno de los mejores lugares de Tailandia.",
+      "Barco privado alrededor de todas las playas de Phi Phi.",
+      "Transporte interno ida y vuelta desde Krabi al Parque Nacional de Khao Sok.",
+      "Tour alrededor del lago Cheow Lan.",
+      "Descenso en flotadores en medio de la jungla.",
+      "Cena temática tailandesa en Chiang Mai.",
+      "Transporte hacia Chiang Rai desde Chiang Mai.",
+      "Entrada y tasas turísticas al Templo Blanco de Chiang Rai.",
+      "Mochila Awayna.",
     ],
     notIncluded: [
-      "Vuelos internacionales",
-      "Comidas no especificadas",
-      "Actividades opcionales",
-      "Propinas",
+      "Vuelos ida y vuelta desde España.",
+      "Comidas y bebidas no especificadas.",
+      "Cualquier otro servicio no especificado en el apartado anterior.",
+      "Cualquier actividad que le apetezca a todo el grupo.",
       "Fondo común.",
     ],
     practicalInfo: {
@@ -837,19 +841,34 @@ export const destinations: Destination[] = [
     },
     faqs: [
       {
-        question: "Como es el santuario de elefantes?",
+        question: "¿Cómo es el santuario de elefantes?",
         answer:
-          "Trabajamos solo con santuarios eticos certificados donde los elefantes fueron rescatados de la industria turistica. No se monta a los elefantes.",
+          "Visitamos un santuario ético donde no se permite montar a los elefantes ni espectáculos con ellos. Pasarás el día observándolos, ayudando a preparar su comida y, si las condiciones lo permiten, acompañándolos mientras se bañan, siempre guiados por el equipo local y respetando su espacio.",
       },
       {
-        question: "Hay que vacunarse?",
+        question: "¿Hay que vacunarse para viajar a Tailandia?",
         answer:
-          "No hay vacunas obligatorias. Se recomienda tener al dia Hepatitis A/B y Tetanos.",
+          "No hay vacunas obligatorias para la mayoría de viajeros que lleguen desde España, pero se recomiendan Hepatitis A y tétanos; otras como Hepatitis B o fiebre tifoidea dependen de la duración y el tipo de viaje. Lo ideal es pedir cita en un centro de vacunación internacional al menos 4–6 semanas antes de la salida para que valoren tu caso concreto.",
       },
       {
-        question: "Puedo extender el viaje en las islas?",
+        question: "¿Puedo extender el viaje en las islas al terminar la ruta?",
         answer:
-          "Si! Muchos viajeros extienden unos dias en las islas. Te ayudamos con la logistica.",
+          "Sí, puedes alargar tu estancia por tu cuenta antes o después del viaje en grupo, por ejemplo quedándote más días en las islas del sur. Te ayudaremos con recomendaciones de zonas, alojamientos y traslados internos, pero las noches extra y cambios en los vuelos internacionales no están incluidos en el precio del viaje.",
+      },
+      {
+        question: "¿Necesito visado para este viaje de 13 días?",
+        answer:
+          "Para personas con pasaporte español no se necesita visado para este viaje, ya que la estancia es inferior al periodo de exención, que actualmente permite entrar sin visado hasta 60 días. Solo necesitas tu pasaporte con al menos 6 meses de validez desde la fecha de regreso y el billete de salida del país.",
+      },
+      {
+        question: "¿Qué tipo de alojamientos utilizamos?",
+        answer:
+          "Dormirás en hoteles de 3–4 estrellas y algún resort seleccionado por ubicación, limpieza y buen ambiente para viajeros jóvenes. Siempre priorizamos alojamientos bien situados para aprovechar el tiempo y con habitaciones compartidas en régimen doble o triple, salvo que elijas suplemento de habitación individual si está disponible.",
+      },
+      {
+        question: "¿Es un viaje muy físico? ¿Hace falta estar en gran forma?",
+        answer:
+          "No es necesario estar en una forma física excelente; el viaje incluye caminatas suaves, alguna excursión en barco y actividades como snorkel o bautizo de buceo aptas para personas sanas sin experiencia previa. Si tienes alguna condición médica específica, es importante que nos lo indiques antes de reservar para adaptar en lo posible tu experiencia.",
       },
     ],
     availableDates: [
