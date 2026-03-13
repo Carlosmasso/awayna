@@ -12,7 +12,7 @@ import { DestinationIncludes } from "@/components/destination/destination-includ
 import { DestinationFondoComun } from "@/components/destination/destination-fondo-comun";
 import { DestinationPracticalInfo } from "@/components/destination/destination-practical-info";
 import { DestinationDates } from "@/components/destination/destination-dates";
-import { DestinationFaqs } from "@/components/destination/destination-faqs";
+// import { DestinationFaqs } from "@/components/destination/destination-faqs";
 import { DestinationComponents } from "@/components/destination/destination-components";
 import { DestinationComingSoon } from "@/components/destination/destination-coming-soon";
 import { CookieBanner } from "@/components/cookie-banner";
@@ -98,7 +98,7 @@ export default async function DestinationPage({
         {!destination.comingSoon && (
           <>
             <DestinationPracticalInfo destination={destination} />
-            <DestinationFaqs destination={destination} />
+            {/* <DestinationFaqs destination={destination} /> */}
           </>
         )}
       </main>

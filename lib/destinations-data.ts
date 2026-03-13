@@ -1,5 +1,5 @@
 export interface Itinerary {
-  day: number | number[]; 
+  day: number | number[];
   title: string;
   description: string[];
   highlights: string[];
@@ -24,6 +24,7 @@ export interface TripComponent {
 export interface Destination {
   slug: string;
   name: string;
+  heroName: string;
   tagline: string;
   heroImage: string;
   galleryImages: string[];
@@ -47,7 +48,7 @@ export interface Destination {
     language: string;
     timeZone: string;
   };
-  faqs: { question: string; answer: string }[];
+  // faqs: { question: string; answer: string }[];
   faqsIntro?: string;
   availableDates: TripDate[];
   comingSoon?: boolean;
@@ -57,7 +58,9 @@ export const destinations: Destination[] = [
   {
     slug: "filipinas",
     name: "Filipinas",
-    tagline: "El Nido, Coron y las playas mas bonitas del mundo",
+    heroName: "Filipinas inmersiva",
+    tagline:
+      "Sumergiéndonos en Cebu, recorriendo Palawan y navegando por Coron",
     heroImage: "/images/filipinas/hero.jpg",
     galleryImages: [
       "/images/filipinas/filipinas-1.jpg",
@@ -72,7 +75,7 @@ export const destinations: Destination[] = [
       "/images/filipinas/filipinas-10.jpg",
       "/images/filipinas/filipinas-11.jpg",
       "/images/filipinas/filipinas-12.jpg",
-      "/images/filipinas/filipinas-13.jpg", 
+      "/images/filipinas/filipinas-13.jpg",
     ],
     duration: "14 dias",
     rating: 4.9,
@@ -97,7 +100,11 @@ export const destinations: Destination[] = [
       { name: "Nightlife", rating: 3 },
     ],
     description: [
-      "Filipinas es un archipiélago de más de 7.000 islas con algunas de las playas más espectaculares del planeta. En este viaje exploraremos Palawan, votada como la isla más bonita del mundo, navegando entre acantilados de caliza, lagunas turquesas y playas de arena blanca. Desde El Nido hasta Coron, descubriremos pecios de la Segunda Guerra Mundial, nadaremos con tortugas y viviremos la hospitalidad filipina en su máxima expresión.",
+      "¡Hola! Si buscas algo más que un simple tour, esta expedición a Filipinas es tu oportunidad para conectar de verdad con la raíz del archipiélago. Durante 14 días, nos olvidaremos de las rutas masificadas para apoyar al pequeño comercio local y vivir aventuras auténticas de la mano de un coordinador que será uno más del grupo",
+      "Empezaremos fuerte con un bautismo de buceo en las aguas cristalinas de Moalboal y conquistando las vistas del Pico Osmeña, para luego vivir la magia de nadar con tiburones ballena en Bohol.",
+      "Continuamos con Palawan, de las islas mas espectaculares de todo Filipinas, donde exploraremos El Nido y sus alrededores en barquitas típicas Filipinas.",
+      "Pero el verdadero plato fuerte es nuestra expedición de 3 días en barco entre El Nido y Coron: una travesía épica donde dormiremos en islas remotas bajo las estrellas, fluyendo totalmente con el destino.",
+      "Es el viaje perfecto para bajar pulsaciones, descubrir paraísos vírgenes y volver con la mochila llena de historias y amigos nuevos. ¡El paraíso real te está esperando!",
     ],
     itinerary: [
       {
@@ -117,13 +124,9 @@ export const destinations: Destination[] = [
         day: 2,
         title: "Del bullicio al relax de Moalboal",
         description: [
-          "Volamos temprano hacia <strong>Cebú</strong> y nos trasladamos a <strong>Moalboal</strong>, un rincón donde el tiempo parece detenerse. Es el lugar ideal para \"bajar pulsaciones\" y conectar con tus compañeros en nuestra <strong>cena grupal Filipina</strong>, perfecta para romper el hielo y empezar a conocernos más como grupo.",
+          'Volamos temprano hacia <strong>Cebú</strong> y nos trasladamos a <strong>Moalboal</strong>, un rincón donde el tiempo parece detenerse. Es el lugar ideal para "bajar pulsaciones" y conectar con tus compañeros en nuestra <strong>cena grupal Filipina</strong>, perfecta para romper el hielo y empezar a conocernos más como grupo.',
         ],
-        highlights: [
-          "Vuelo a Cebú",
-          "Moalboal",
-          "Cena grupal filipina",
-        ],
+        highlights: ["Vuelo a Cebú", "Moalboal", "Cena grupal filipina"],
         image: "/images/filipinas/itinerary/2.jpg",
       },
       {
@@ -146,7 +149,12 @@ export const destinations: Destination[] = [
         description: [
           "Cruzamos a la vecina <strong>Bohol</strong> para vivir una de las experiencias más emocionantes del planeta: nadar cerca de los majestuosos <strong>tiburones ballena</strong>. El día se completa explorando cascadas escondidas en un entorno de naturaleza exuberante, regresando a Cebú con la sensación de haber presenciado un <strong>espectáculo natural único</strong>.",
         ],
-        highlights: ["Bohol", "Tiburones ballena", "Cascadas", "Naturaleza exuberante"],
+        highlights: [
+          "Bohol",
+          "Tiburones ballena",
+          "Cascadas",
+          "Naturaleza exuberante",
+        ],
         image: "/images/filipinas/itinerary/4.jpg",
       },
       {
@@ -155,16 +163,26 @@ export const destinations: Destination[] = [
         description: [
           "Volamos a <strong>Palawan</strong> y recorremos por carretera el camino hacia el norte desde Puerto Princesa. Buscaremos que el trayecto se haga menos pesado presenciando cascadas y pueblos tradicionales filipinos durante todo el viaje hacia <strong>El Nido</strong>, donde cenaremos y conoceremos la vibra nocturna que tiene este pequeño pueblo costero.",
         ],
-        highlights: ["Vuelo a Palawan", "Puerto Princesa", "Cascadas", "El Nido"],
+        highlights: [
+          "Vuelo a Palawan",
+          "Puerto Princesa",
+          "Cascadas",
+          "El Nido",
+        ],
         image: "/images/filipinas/itinerary/5.jpg",
       },
       {
         day: 6,
-        title: "El Nido a tu aire: adrenalina o \"chill\"",
+        title: 'El Nido a tu aire: adrenalina o "chill"',
         description: [
           "Amanecemos en un escenario de película donde tú eliges el ritmo: relajarte haciendo snorkel y jugando volleyball, o desafiar tus límites en una <strong>vía ferrata sobre acantilados de piedra caliza</strong>. Cerramos el día con una <strong>barbacoa en la playa y cervezas bajo las estrellas</strong>, la definición pura de la vida isleña.",
         ],
-        highlights: ["Snorkel", "Volleyball", "Vía ferrata", "Barbacoa en la playa"],
+        highlights: [
+          "Snorkel",
+          "Volleyball",
+          "Vía ferrata",
+          "Barbacoa en la playa",
+        ],
         image: "/images/filipinas/itinerary/6.jpg",
       },
       {
@@ -173,16 +191,26 @@ export const destinations: Destination[] = [
         description: [
           "Nos embarcamos en una ruta de <strong>Island Hopping</strong> que te dejará sin palabras, explorando lagunas de color turquesa imposible y playas de arena blanca. Para celebrar la belleza del entorno, terminaremos la jornada con una noche de <strong>karaoke</strong>, la actividad nacional por excelencia para reír y compartir con el grupo.",
         ],
-        highlights: ["Island Hopping", "Lagunas turquesa", "Playas blancas", "Karaoke"],
+        highlights: [
+          "Island Hopping",
+          "Lagunas turquesa",
+          "Playas blancas",
+          "Karaoke",
+        ],
         image: "/images/filipinas/itinerary/7.jpg",
       },
       {
         day: [8, 9, 10],
         title: "La gran travesía hacia Corón",
         description: [
-          "Iniciamos un <strong>crucero de 3 días</strong>, el verdadero corazón de la expedición, navegando desde El Nido hacia Corón. Dormiremos en <strong>islas remotas lejos de las rutas turísticas</strong>, viviendo la máxima expresión de libertad y \"fluir con el destino\" mientras descubrimos archipiélagos vírgenes donde muy pocos llegan.",
+          'Iniciamos un <strong>crucero de 3 días</strong>, el verdadero corazón de la expedición, navegando desde El Nido hacia Corón. Dormiremos en <strong>islas remotas lejos de las rutas turísticas</strong>, viviendo la máxima expresión de libertad y "fluir con el destino" mientras descubrimos archipiélagos vírgenes donde muy pocos llegan.',
         ],
-        highlights: ["Crucero 3 días", "El Nido → Corón", "Islas remotas", "Archipiélagos vírgenes"],
+        highlights: [
+          "Crucero 3 días",
+          "El Nido → Corón",
+          "Islas remotas",
+          "Archipiélagos vírgenes",
+        ],
         image: "/images/filipinas/itinerary/8.jpg",
       },
       {
@@ -191,14 +219,19 @@ export const destinations: Destination[] = [
         description: [
           "Ya en <strong>Corón</strong>, dedicaremos el día a sus lagos interiores rodeados de murallas de caliza o a explorar barcos hundidos de la II Guerra Mundial en inmersiones opcionales. Este destino ofrece un <strong>paisaje dramático y submarino que no tiene rival en el mundo</strong>.",
         ],
-        highlights: ["Corón", "Lagos interiores", "Naufragios WWII", "Inmersiones opcionales"],
+        highlights: [
+          "Corón",
+          "Lagos interiores",
+          "Naufragios WWII",
+          "Inmersiones opcionales",
+        ],
         image: "/images/filipinas/itinerary/11.jpg",
       },
       {
         day: 12,
         title: "Calma y raíces isleñas",
         description: [
-          "Es el momento de bajar el ritmo con una tarde de \"turisteo\" pausado, ideal para apoyar al comercio local comprando artesanías y asimilar las experiencias vividas. Una jornada de <strong>conexión final con la paz de la isla</strong> antes de emprender el regreso.",
+          'Es el momento de bajar el ritmo con una tarde de "turisteo" pausado, ideal para apoyar al comercio local comprando artesanías y asimilar las experiencias vividas. Una jornada de <strong>conexión final con la paz de la isla</strong> antes de emprender el regreso.',
         ],
         highlights: ["Turismo local", "Artesanías", "Relax", "Comercio local"],
         image: "/images/filipinas/itinerary/12.jpeg",
@@ -209,7 +242,11 @@ export const destinations: Destination[] = [
         description: [
           "Iniciamos el camino de vuelta desde Corón hacia <strong>Manila</strong>, donde pasaremos nuestra última noche juntos. Es el momento perfecto para una última cena grupal y recordar los mejores momentos de estos 14 días.",
         ],
-        highlights: ["Corón → Manila", "Última cena grupal", "Mejores momentos"],
+        highlights: [
+          "Corón → Manila",
+          "Última cena grupal",
+          "Mejores momentos",
+        ],
         image: "/images/filipinas/itinerary/13.jpg",
       },
       {
@@ -218,8 +255,12 @@ export const destinations: Destination[] = [
         description: [
           "Traslado al aeropuerto para tu vuelo de regreso a España. Te vas con la mochila llena de historias, el alma renovada y un nuevo grupo de amigos con los que ya estarás planeando la próxima aventura Awayna.",
         ],
-        highlights: ["Traslado al aeropuerto", "Vuelo a España", "Hasta pronto"],
-        image: "/images/filipinas/itinerary/13.jpg",
+        highlights: [
+          "Traslado al aeropuerto",
+          "Vuelo a España",
+          "Hasta pronto",
+        ],
+        image: "/images/filipinas/itinerary/14.jpg",
       },
     ],
     included: [
@@ -257,71 +298,55 @@ export const destinations: Destination[] = [
       language: "Filipino e Ingles (ampliamente hablado)",
       timeZone: "UTC+8 (7 horas mas que Espana)",
     },
-    faqs: [
-      {
-        question: "¿Qué tipo de experiencias viviremos en Filipinas?",
-        answer:
-          "Aquí el plan es claro: naturaleza en modo wow.\n\nIsland hopping entre islas de agua cristalina, snorkel sobre arrecifes llenos de vida, playas que parecen irreales y atardeceres que bajan el volumen del mundo. También descubriremos pueblos locales, mercados y la parte más auténtica del país, más allá de la postal.\n\nNo es solo tumbarse al sol. Es explorar, saltar al agua, navegar y sentir que estás en un rincón del planeta donde todo vibra diferente.",
-      },
-      {
-        question: "¿Hay que vacunarse para viajar a Filipinas?",
-        answer:
-          "No hay vacunas obligatorias para viajeros desde España.\n\nSe suelen recomendar Hepatitis A y tétanos, y dependiendo de la duración o zonas que se visiten, pueden aconsejar otras. Lo mejor es consultar con un centro de vacunación internacional unas semanas antes del viaje para valorar tu caso concreto.",
-      },
-      {
-        question: "¿Puedo alargar el viaje por mi cuenta?",
-        answer:
-          "Sí, y en Filipinas siempre apetece quedarse más.\n\nPuedes añadir días en otra isla, hacer un curso de buceo, quedarte más tiempo en El Nido o descubrir zonas menos conocidas. Te ayudamos con recomendaciones y logística, pero las noches extra y cambios en vuelos no están incluidos en el precio del viaje.",
-      },
-      {
-        question: "¿Necesito visado para este viaje?",
-        answer:
-          "Con pasaporte español no necesitas visado para estancias turísticas de hasta 30 días.\n\nSolo necesitas pasaporte en vigor con al menos 6 meses de validez y billete de salida del país. Aun así, recomendamos revisar la normativa oficial antes de viajar por si hubiera cambios.",
-      },
-      {
-        question: "¿Qué tipo de alojamientos utilizamos?",
-        answer:
-          "Hoteles y resorts boutique bien ubicados, priorizando comodidad, limpieza y ambiente viajero.\n\nEn algunas islas los alojamientos son más sencillos, pero siempre seleccionados para que estés cómodo y cerca de lo importante: el mar.\n\nHabitaciones dobles o triples compartidas, con opción de suplemento individual si está disponible.",
-      },
-      {
-        question: "¿Es un viaje muy físico?",
-        answer:
-          "No necesitas ser deportista, pero sí tener ganas de moverte.\n\nHabrá días activos con excursiones en barco, snorkel, caminatas suaves y traslados entre islas. El ritmo está pensado para disfrutar, no para agotarte.\n\nSi tienes alguna condición médica o limitación, coméntanoslo antes de reservar para valorar cómo adaptarlo.",
-      },
-    ],
-    faqsIntro: "Nos vamos a Filipinas versión AWAYNA: agua turquesa, selva salvaje, barcas que parecen sacadas de un sueño y ese grupo que empieza siendo desconocido y acaba brindando descalzo en la arena.",
+    // faqs: [
+    //   {
+    //     question: "¿Qué tipo de experiencias viviremos en Filipinas?",
+    //     answer:
+    //       "Aquí el plan es claro: naturaleza en modo wow.\n\nIsland hopping entre islas de agua cristalina, snorkel sobre arrecifes llenos de vida, playas que parecen irreales y atardeceres que bajan el volumen del mundo. También descubriremos pueblos locales, mercados y la parte más auténtica del país, más allá de la postal.\n\nNo es solo tumbarse al sol. Es explorar, saltar al agua, navegar y sentir que estás en un rincón del planeta donde todo vibra diferente.",
+    //   },
+    //   {
+    //     question: "¿Hay que vacunarse para viajar a Filipinas?",
+    //     answer:
+    //       "No hay vacunas obligatorias para viajeros desde España.\n\nSe suelen recomendar Hepatitis A y tétanos, y dependiendo de la duración o zonas que se visiten, pueden aconsejar otras. Lo mejor es consultar con un centro de vacunación internacional unas semanas antes del viaje para valorar tu caso concreto.",
+    //   },
+    //   {
+    //     question: "¿Puedo alargar el viaje por mi cuenta?",
+    //     answer:
+    //       "Sí, y en Filipinas siempre apetece quedarse más.\n\nPuedes añadir días en otra isla, hacer un curso de buceo, quedarte más tiempo en El Nido o descubrir zonas menos conocidas. Te ayudamos con recomendaciones y logística, pero las noches extra y cambios en vuelos no están incluidos en el precio del viaje.",
+    //   },
+    //   {
+    //     question: "¿Necesito visado para este viaje?",
+    //     answer:
+    //       "Con pasaporte español no necesitas visado para estancias turísticas de hasta 30 días.\n\nSolo necesitas pasaporte en vigor con al menos 6 meses de validez y billete de salida del país. Aun así, recomendamos revisar la normativa oficial antes de viajar por si hubiera cambios.",
+    //   },
+    //   {
+    //     question: "¿Qué tipo de alojamientos utilizamos?",
+    //     answer:
+    //       "Hoteles y resorts boutique bien ubicados, priorizando comodidad, limpieza y ambiente viajero.\n\nEn algunas islas los alojamientos son más sencillos, pero siempre seleccionados para que estés cómodo y cerca de lo importante: el mar.\n\nHabitaciones dobles o triples compartidas, con opción de suplemento individual si está disponible.",
+    //   },
+    //   {
+    //     question: "¿Es un viaje muy físico?",
+    //     answer:
+    //       "No necesitas ser deportista, pero sí tener ganas de moverte.\n\nHabrá días activos con excursiones en barco, snorkel, caminatas suaves y traslados entre islas. El ritmo está pensado para disfrutar, no para agotarte.\n\nSi tienes alguna condición médica o limitación, coméntanoslo antes de reservar para valorar cómo adaptarlo.",
+    //   },
+    // ],
+    faqsIntro:
+      "Nos vamos a Filipinas versión AWAYNA: agua turquesa, selva salvaje, barcas que parecen sacadas de un sueño y ese grupo que empieza siendo desconocido y acaba brindando descalzo en la arena.",
     availableDates: [
       {
-        id: "fil-mar-25",
-        startDate: "2026-03-15",
-        endDate: "2026-03-28",
-        spots: 3,
+        id: "fil-nov-26",
+        startDate: "2026-11-30",
+        endDate: "2026-12-13",
+        spots: 16,
         totalSpots: 16,
-        price: 1397,
-        originalPrice: 1597,
-      },
-      {
-        id: "fil-abr-25",
-        startDate: "2026-04-05",
-        endDate: "2026-04-18",
-        spots: 8,
-        totalSpots: 16,
-        price: 1397,
-        originalPrice: 1597,
-      },
-      {
-        id: "fil-may-25",
-        startDate: "2026-05-10",
-        endDate: "2026-05-23",
-        spots: 12,
-        totalSpots: 16,
-        price: 1297,
+        price: 1735,
       },
     ],
   },
   {
     slug: "vietnam",
     name: "Vietnam",
+    heroName: "Vietnam must",
     tagline:
       "Desde Hanoi, recorriendo Ninh Binh, la provincia de la costura y Ha giang loop. ",
     heroImage: "/images/vietnam/hero.jpg",
@@ -536,80 +561,77 @@ export const destinations: Destination[] = [
       language: "Vietnamita. Ingles en zonas turisticas",
       timeZone: "UTC+7 (6 horas mas que Espana)",
     },
-    faqs: [
-      {
-        question: "¿Qué tipo de experiencias viviremos en Vietnam?",
-        answer:
-          "Vietnam es contraste puro. Caos bonito en Hanoi, arrozales infinitos en el norte, bahías de película y ciudades con historia en cada esquina.\n\nDormiremos en barco en la Bahía de Ha Long, recorreremos pueblos entre montañas, probaremos street food que te vuela la cabeza y entenderemos la historia del país desde dentro.\n\nNo es solo ver Vietnam. Es sentirlo. Con contexto, con guía local y con respeto por la cultura que nos abre la puerta.",
-      },
-      {
-        question: "¿Hay que vacunarse para viajar a Vietnam?",
-        answer:
-          "No hay vacunas obligatorias para viajeros desde España.\n\nSe suelen recomendar Hepatitis A y tétanos, y dependiendo del tipo de viaje, duración o zonas rurales, podrían sugerirse otras. Lo mejor es consultar en un centro de vacunación internacional unas semanas antes de salir para viajar tranquilo.",
-      },
-      {
-        question: "¿Puedo alargar el viaje por mi cuenta?",
-        answer:
-          "Sí, y es muy buena idea.\n\nPuedes quedarte más días en el norte explorando más trekkings, bajar al sur para descubrir el Delta del Mekong o terminar en alguna isla como Phu Quoc.\n\nTe damos recomendaciones y tips para que lo organices fácil, pero las noches extra y cambios en vuelos no están incluidos en el precio del viaje.",
-      },
-      {
-        question: "¿Necesito visado para este viaje?",
-        answer:
-          "Actualmente, para pasaporte español, Vietnam permite la entrada sin visado para estancias cortas (según normativa vigente en el momento del viaje).\n\nLas condiciones pueden cambiar, así que siempre recomendamos revisar la información oficial antes de salir.\n\nNecesitarás pasaporte con al menos 6 meses de validez desde la fecha de entrada.",
-      },
-      {
-        question: "¿Qué tipo de alojamientos utilizamos?",
-        answer:
-          "Hoteles de 3–4 estrellas bien ubicados y seleccionados por comodidad, limpieza y buen ambiente.\n\nTambién incluimos experiencias especiales, como noche en barco en Ha Long o alojamientos con encanto en zonas rurales.\n\nHabitaciones dobles o triples compartidas, con opción de suplemento individual si está disponible.",
-      },
-      {
-        question: "¿Es un viaje muy físico?",
-        answer:
-          "No necesitas estar en modo ultramaratón.\n\nIncluye caminatas suaves, algún trekking sencillo entre arrozales, paseos en barco y días activos, pero está pensado para personas sanas con condición física normal.\n\nSi tienes alguna condición médica específica, avísanos antes de reservar para adaptarlo en lo posible.",
-      },
-    ],
+    // faqs: [
+    //   {
+    //     question: "¿Qué tipo de experiencias viviremos en Vietnam?",
+    //     answer:
+    //       "Vietnam es contraste puro. Caos bonito en Hanoi, arrozales infinitos en el norte, bahías de película y ciudades con historia en cada esquina.\n\nDormiremos en barco en la Bahía de Ha Long, recorreremos pueblos entre montañas, probaremos street food que te vuela la cabeza y entenderemos la historia del país desde dentro.\n\nNo es solo ver Vietnam. Es sentirlo. Con contexto, con guía local y con respeto por la cultura que nos abre la puerta.",
+    //   },
+    //   {
+    //     question: "¿Hay que vacunarse para viajar a Vietnam?",
+    //     answer:
+    //       "No hay vacunas obligatorias para viajeros desde España.\n\nSe suelen recomendar Hepatitis A y tétanos, y dependiendo del tipo de viaje, duración o zonas rurales, podrían sugerirse otras. Lo mejor es consultar en un centro de vacunación internacional unas semanas antes de salir para viajar tranquilo.",
+    //   },
+    //   {
+    //     question: "¿Puedo alargar el viaje por mi cuenta?",
+    //     answer:
+    //       "Sí, y es muy buena idea.\n\nPuedes quedarte más días en el norte explorando más trekkings, bajar al sur para descubrir el Delta del Mekong o terminar en alguna isla como Phu Quoc.\n\nTe damos recomendaciones y tips para que lo organices fácil, pero las noches extra y cambios en vuelos no están incluidos en el precio del viaje.",
+    //   },
+    //   {
+    //     question: "¿Necesito visado para este viaje?",
+    //     answer:
+    //       "Actualmente, para pasaporte español, Vietnam permite la entrada sin visado para estancias cortas (según normativa vigente en el momento del viaje).\n\nLas condiciones pueden cambiar, así que siempre recomendamos revisar la información oficial antes de salir.\n\nNecesitarás pasaporte con al menos 6 meses de validez desde la fecha de entrada.",
+    //   },
+    //   {
+    //     question: "¿Qué tipo de alojamientos utilizamos?",
+    //     answer:
+    //       "Hoteles de 3–4 estrellas bien ubicados y seleccionados por comodidad, limpieza y buen ambiente.\n\nTambién incluimos experiencias especiales, como noche en barco en Ha Long o alojamientos con encanto en zonas rurales.\n\nHabitaciones dobles o triples compartidas, con opción de suplemento individual si está disponible.",
+    //   },
+    //   {
+    //     question: "¿Es un viaje muy físico?",
+    //     answer:
+    //       "No necesitas estar en modo ultramaratón.\n\nIncluye caminatas suaves, algún trekking sencillo entre arrozales, paseos en barco y días activos, pero está pensado para personas sanas con condición física normal.\n\nSi tienes alguna condición médica específica, avísanos antes de reservar para adaptarlo en lo posible.",
+    //   },
+    // ],
     availableDates: [
       {
-        id: "vn-mar-25",
-        startDate: "2026-03-08",
-        endDate: "2026-03-20",
-        spots: 4,
+        id: "vn-oct-26-1",
+        startDate: "2026-10-01",
+        endDate: "2026-10-13",
+        spots: 16,
         totalSpots: 16,
-        price: 1299,
+        price: 1339,
       },
       {
-        id: "vn-abr-25",
-        startDate: "2026-04-12",
-        endDate: "2026-04-24",
-        spots: 10,
+        id: "vn-oct-26-2",
+        startDate: "2026-10-14",
+        endDate: "2026-10-27",
+        spots: 16,
         totalSpots: 16,
-        price: 1299,
-      },
-      {
-        id: "vn-oct-25",
-        startDate: "2026-10-03",
-        endDate: "2026-10-15",
-        spots: 14,
-        totalSpots: 16,
-        price: 1199,
+        price: 1339,
       },
     ],
   },
   {
     slug: "tailandia",
     name: "Tailandia",
+    heroName: "Tailandia esencial",
     tagline: "Bangkok, islas paradisiacas y el Norte del Pais.",
     heroImage: "/images/thailand/hero.jpg",
     galleryImages: [
       "/images/thailand/thailand-1.jpg",
       "/images/thailand/thailand-2.jpg",
+      "/images/thailand/thailand-7.jpg",
       "/images/thailand/thailand-4.jpg",
       "/images/thailand/thailand-5.jpg",
       "/images/thailand/thailand-6.jpg",
-      "/images/thailand/thailand-7.jpg",
       "/images/thailand/thailand-8.jpeg",
       "/images/thailand/thailand-9.jpg",
       "/images/thailand/thailand-10.jpg",
+      "/images/thailand/thailand-11.jpg",
+      "/images/thailand/thailand-12.jpg",
+      "/images/thailand/thailand-13.jpg",
+      "/images/thailand/thailand-14.jpg",
     ],
     duration: "13 dias",
     rating: 4.9,
@@ -838,70 +860,61 @@ export const destinations: Destination[] = [
       language: "Thai. Ingles turistico ampliamente hablado",
       timeZone: "UTC+7 (6 horas mas que Espana)",
     },
-    faqs: [
-      {
-        question: "¿Cómo es el santuario de elefantes?",
-        answer:
-          "Visitamos un santuario ético donde no se permite montar a los elefantes ni espectáculos con ellos. Pasarás el día observándolos, ayudando a preparar su comida y, si las condiciones lo permiten, acompañándolos mientras se bañan, siempre guiados por el equipo local y respetando su espacio.",
-      },
-      {
-        question: "¿Hay que vacunarse para viajar a Tailandia?",
-        answer:
-          "No hay vacunas obligatorias para la mayoría de viajeros que lleguen desde España, pero se recomiendan Hepatitis A y tétanos; otras como Hepatitis B o fiebre tifoidea dependen de la duración y el tipo de viaje. Lo ideal es pedir cita en un centro de vacunación internacional al menos 4–6 semanas antes de la salida para que valoren tu caso concreto.",
-      },
-      {
-        question: "¿Puedo extender el viaje en las islas al terminar la ruta?",
-        answer:
-          "Sí, puedes alargar tu estancia por tu cuenta antes o después del viaje en grupo, por ejemplo quedándote más días en las islas del sur. Te ayudaremos con recomendaciones de zonas, alojamientos y traslados internos, pero las noches extra y cambios en los vuelos internacionales no están incluidos en el precio del viaje.",
-      },
-      {
-        question: "¿Necesito visado para este viaje de 13 días?",
-        answer:
-          "Para personas con pasaporte español no se necesita visado para este viaje, ya que la estancia es inferior al periodo de exención, que actualmente permite entrar sin visado hasta 60 días. Solo necesitas tu pasaporte con al menos 6 meses de validez desde la fecha de regreso y el billete de salida del país.",
-      },
-      {
-        question: "¿Qué tipo de alojamientos utilizamos?",
-        answer:
-          "Dormirás en hoteles de 3–4 estrellas y algún resort seleccionado por ubicación, limpieza y buen ambiente para viajeros jóvenes. Siempre priorizamos alojamientos bien situados para aprovechar el tiempo y con habitaciones compartidas en régimen doble o triple, salvo que elijas suplemento de habitación individual si está disponible.",
-      },
-      {
-        question: "¿Es un viaje muy físico? ¿Hace falta estar en gran forma?",
-        answer:
-          "No es necesario estar en una forma física excelente; el viaje incluye caminatas suaves, alguna excursión en barco y actividades como snorkel o bautizo de buceo aptas para personas sanas sin experiencia previa. Si tienes alguna condición médica específica, es importante que nos lo indiques antes de reservar para adaptar en lo posible tu experiencia.",
-      },
-    ],
+    // faqs: [
+    //   {
+    //     question: "¿Cómo es el santuario de elefantes?",
+    //     answer:
+    //       "Visitamos un santuario ético donde no se permite montar a los elefantes ni espectáculos con ellos. Pasarás el día observándolos, ayudando a preparar su comida y, si las condiciones lo permiten, acompañándolos mientras se bañan, siempre guiados por el equipo local y respetando su espacio.",
+    //   },
+    //   {
+    //     question: "¿Hay que vacunarse para viajar a Tailandia?",
+    //     answer:
+    //       "No hay vacunas obligatorias para la mayoría de viajeros que lleguen desde España, pero se recomiendan Hepatitis A y tétanos; otras como Hepatitis B o fiebre tifoidea dependen de la duración y el tipo de viaje. Lo ideal es pedir cita en un centro de vacunación internacional al menos 4–6 semanas antes de la salida para que valoren tu caso concreto.",
+    //   },
+    //   {
+    //     question: "¿Puedo extender el viaje en las islas al terminar la ruta?",
+    //     answer:
+    //       "Sí, puedes alargar tu estancia por tu cuenta antes o después del viaje en grupo, por ejemplo quedándote más días en las islas del sur. Te ayudaremos con recomendaciones de zonas, alojamientos y traslados internos, pero las noches extra y cambios en los vuelos internacionales no están incluidos en el precio del viaje.",
+    //   },
+    //   {
+    //     question: "¿Necesito visado para este viaje de 13 días?",
+    //     answer:
+    //       "Para personas con pasaporte español no se necesita visado para este viaje, ya que la estancia es inferior al periodo de exención, que actualmente permite entrar sin visado hasta 60 días. Solo necesitas tu pasaporte con al menos 6 meses de validez desde la fecha de regreso y el billete de salida del país.",
+    //   },
+    //   {
+    //     question: "¿Qué tipo de alojamientos utilizamos?",
+    //     answer:
+    //       "Dormirás en hoteles de 3–4 estrellas y algún resort seleccionado por ubicación, limpieza y buen ambiente para viajeros jóvenes. Siempre priorizamos alojamientos bien situados para aprovechar el tiempo y con habitaciones compartidas en régimen doble o triple, salvo que elijas suplemento de habitación individual si está disponible.",
+    //   },
+    //   {
+    //     question: "¿Es un viaje muy físico? ¿Hace falta estar en gran forma?",
+    //     answer:
+    //       "No es necesario estar en una forma física excelente; el viaje incluye caminatas suaves, alguna excursión en barco y actividades como snorkel o bautizo de buceo aptas para personas sanas sin experiencia previa. Si tienes alguna condición médica específica, es importante que nos lo indiques antes de reservar para adaptar en lo posible tu experiencia.",
+    //   },
+    // ],
     availableDates: [
       {
-        id: "th-mar-25",
-        startDate: "2026-03-01",
-        endDate: "2026-03-12",
-        spots: 2,
-        totalSpots: 14,
-        price: 1197,
-        originalPrice: 1397,
-      },
-      {
-        id: "th-abr-25",
-        startDate: "2026-04-18",
-        endDate: "2026-04-29",
-        spots: 6,
-        totalSpots: 14,
-        price: 1197,
-        originalPrice: 1397,
-      },
-      {
-        id: "th-nov-25",
-        startDate: "2026-11-14",
-        endDate: "2026-11-25",
+        id: "th-oct-26",
+        startDate: "2026-10-31",
+        endDate: "2026-11-13",
         spots: 14,
         totalSpots: 14,
-        price: 1097,
+        price: 1498,
+      },
+      {
+        id: "th-nov-26",
+        startDate: "2026-11-15",
+        endDate: "2026-11-27",
+        spots: 14,
+        totalSpots: 14,
+        price: 1498,
       },
     ],
   },
   {
     slug: "japon",
     name: "Japón",
+    heroName: "Japón de contrastes",
     tagline:
       "Del caos perfecto de Tokio a la calma de Nara, atravesando el oeste japonés",
     heroImage: "/images/japan/japonportada.jpeg",
@@ -963,7 +976,7 @@ export const destinations: Destination[] = [
           "Cena sencilla para romper el hielo, primeras conversaciones largas y esa sensación de ‘ya estamos aquí’. Hoy no se trata de hacer mucho, sino de empezar a vivirlo juntos.",
         ],
         highlights: ["Llegada Tokio", "Hotel Shinjuku", "Shibuya crossing"],
-        image: "/images/japan/itinerary/1.jpeg",
+        image: "/images/japan/itinerary/1.jpg",
       },
       {
         day: 2,
@@ -974,7 +987,7 @@ export const destinations: Destination[] = [
           "Un día de contrastes brutales que nos recuerda por qué Japón es tan especial.",
         ],
         highlights: ["Senso-ji", "Nakamise", "Matsu", "Tokio nocturno"],
-        image: "/images/japan/itinerary/2.jpeg",
+        image: "/images/japan/itinerary/2.jpg",
       },
       {
         day: 3,
@@ -984,7 +997,13 @@ export const destinations: Destination[] = [
           "Después cruzamos al santuario Meiji, donde el ruido desaparece y todo se vuelve verde y silencioso. Ese contraste constante es parte del encanto. En los alrededores, disfrutaremos de uno de los mejores ramen de la ciudad, perfecto para coger fuerzas y seguir con el día.",
           "Por la tarde Shibuya, su cruce mítico y sus miradores. Nos mezclamos con la gente local, paseamos sin prisa y cerramos la noche deleitando sushi y sake, celebrando que el grupo ya empieza a sentirse como equipo.",
         ],
-        highlights: ["Harajuku", "Santuario Meiji", "Ramen", "Shibuya", "Sushi y sake"],
+        highlights: [
+          "Harajuku",
+          "Santuario Meiji",
+          "Ramen",
+          "Shibuya",
+          "Sushi y sake",
+        ],
         image: "/images/japan/itinerary/3.jpg",
       },
       {
@@ -1017,8 +1036,14 @@ export const destinations: Destination[] = [
           "Salimos hacia Dotonbori y nos dejamos guiar por el olor a comida y los carteles gigantes iluminando el canal. En este barrio donde no falta gente, buscaremos una pastelería donde puedas abrir estómago probando las deliciosas tartas de queso que preparan aquí, para seguir deleitándonos con los típicos takoyaki, okonomiyaki y todo lo que se cruce en el camino. Spoiler: no has probado cosa así en tu vida.",
           "Osaka se disfruta compartiendo platos y riendo sin mirar el reloj.",
         ],
-        highlights: ["Osaka", "Dotonbori", "Tartas de queso", "Takoyaki", "Okonomiyaki"],
-        image: "/images/japan/itinerary/6.jpeg",
+        highlights: [
+          "Osaka",
+          "Dotonbori",
+          "Tartas de queso",
+          "Takoyaki",
+          "Okonomiyaki",
+        ],
+        image: "/images/japan/itinerary/6.jpg",
       },
       {
         day: 7,
@@ -1028,7 +1053,13 @@ export const destinations: Destination[] = [
           "Alrededor de estos mercados visitamos algo que caracteriza mucho a Japón: sus pequeñas pero eficientes cuchillerías, donde podremos aprender más sobre cómo fabrican, afilan y decoran los que son considerados los mejores cuchillos del mundo.",
           "Por la tarde exploramos Shinsekai, un barrio con carácter propio, menos pulido y más real, donde descubriréis lo que es un Izakaya: bar tradicional japonés donde las apariencias no importan, de lo que trata es de comer y beber alrededor de una barra, donde el dueño del local sonríe y elige a su gusto el menú de la noche.",
         ],
-        highlights: ["Castillo de Osaka", "Mercado Kuromon", "Cuchillerías", "Shinsekai", "Izakaya"],
+        highlights: [
+          "Castillo de Osaka",
+          "Mercado Kuromon",
+          "Cuchillerías",
+          "Shinsekai",
+          "Izakaya",
+        ],
         image: "/images/japan/itinerary/7.jpeg",
       },
       {
@@ -1039,7 +1070,7 @@ export const destinations: Destination[] = [
           "Aquí no hay prisas. Solo caminar, observar y dejar que la ciudad se revele poco a poco, estamos en la zona más auténtica de Japón, por lo que prepárate para quedarte boquiabierto en varias ocasiones.",
         ],
         highlights: ["Kyoto", "Gion", "Kimono", "Casas tradicionales"],
-        image: "/images/japan/itinerary/8.jpeg",
+        image: "/images/japan/itinerary/8.jpg",
       },
       {
         day: 9,
@@ -1049,7 +1080,13 @@ export const destinations: Destination[] = [
           "Es uno de esos días que sabes que recordarás durante años.",
           "¿Qué os parece acabar el día cenando en uno de los restaurantes con más prestigio de Kyoto? Pues sí, a nosotros nos encanta comer, y si has venido a Japón con Awayna, esperamos que a ti también, por lo que creemos que no hay mejor opción para acabar un día perfecto que con buena comida.",
         ],
-        highlights: ["Fushimi Inari", "Torii rojos", "Higashiyama", "UNESCO", "Cena en Kyoto"],
+        highlights: [
+          "Fushimi Inari",
+          "Torii rojos",
+          "Higashiyama",
+          "UNESCO",
+          "Cena en Kyoto",
+        ],
         image: "/images/japan/itinerary/9.jpg",
       },
       {
@@ -1060,7 +1097,7 @@ export const destinations: Destination[] = [
           "Por la tarde hay tiempo libre para perderse, descansar o repetir ese rincón que te llamó la atención. Kyoto invita a disfrutar sin agenda rígida.",
         ],
         highlights: ["Arashiyama", "Bosque de bambú", "Pabellón Dorado"],
-        image: "/images/japan/itinerary/10.jpeg",
+        image: "/images/japan/itinerary/10.jpg",
       },
       {
         day: 11,
@@ -1070,7 +1107,7 @@ export const destinations: Destination[] = [
           "Es un día relajado, verde y muy equilibrado. Ideal para cerrar la parte más espiritual y cultural del viaje.",
         ],
         highlights: ["Nara", "Parque de ciervos", "Todai-ji", "Buda gigante"],
-        image: "/images/japan/itinerary/11.jpeg",
+        image: "/images/japan/itinerary/11.jpg",
       },
       {
         day: 12,
@@ -1118,7 +1155,7 @@ export const destinations: Destination[] = [
       "Vuelos de ida y vuelta desde España",
       "Comidas y bebidas no especificadas en el apartado anterior",
       "Entradas adicionales o actividades opcionales fuera del itinerario",
-      "Todo lo que no se menciona en la sección \"Qué está incluido\"",
+      'Todo lo que no se menciona en la sección "Qué está incluido"',
       "Fondo común.",
     ],
     practicalInfo: {
@@ -1129,71 +1166,55 @@ export const destinations: Destination[] = [
       language: "Japonés. Inglés limitado pero buena señalización",
       timeZone: "UTC+9 (8 horas más que España)",
     },
-    faqs: [
-      {
-        question: "¿Qué tipo de experiencias viviremos en Japón?",
-        answer:
-          "Aquí no venimos solo a hacer fotos, venimos a entender el lugar.\n\nTemplos al amanecer, barrios tradicionales donde el tiempo va más lento y calles futuristas que parecen otro planeta.\n\nPodrás pasear con kimono por calles históricas, probar comida local en mercados auténticos y dormir en un ryokan tradicional para sentir Japón desde dentro. Siempre con respeto por la cultura y con contexto, porque nos mola saber el “por qué” de lo que estamos viendo.",
-      },
-      {
-        question: "¿Hay que vacunarse para viajar a Japón?",
-        answer:
-          "No hay vacunas obligatorias para viajar desde España. Japón es un país súper seguro y con estándares sanitarios muy altos.\n\nEso sí, siempre recomendamos tener las vacunas básicas al día y consultar con tu médico si tienes alguna duda. Mejor viajar tranquilo que viajar rayado.",
-      },
-      {
-        question: "¿Puedo alargar el viaje por mi cuenta?",
-        answer:
-          "Claro que sí. Si te quedas con ganas de más (spoiler: pasa siempre), puedes ampliar antes o después del viaje en grupo.\n\nMás días en Tokio, perderte por zonas rurales, visitar alguna isla… te damos recomendaciones y tips para que lo montes fácil.\n\nLas noches extra y cambios en vuelos no están incluidos, pero te echamos un cable para que lo tengas todo claro.",
-      },
-      {
-        question: "¿Necesito visado para este viaje?",
-        answer:
-          "Con pasaporte español no necesitas visado para estancias turísticas de hasta 90 días.\n\nSolo asegúrate de que tu pasaporte esté en vigor durante el viaje y listo. Japón te abre la puerta sin papeleo extra.",
-      },
-      {
-        question: "¿Dónde dormimos?",
-        answer:
-          "Hoteles de 3–4 estrellas bien ubicados para aprovechar el tiempo al máximo.\n\nY sí, también incluimos alguna noche en ryokan tradicional, con futón y ese ambiente japonés que te hace sentir dentro de una peli.\n\nHabitaciones dobles o triples compartidas, con opción individual si está disponible.",
-      },
-      {
-        question: "¿Es un viaje muy físico?",
-        answer:
-          "No necesitas ser un atleta olímpico. Caminaremos bastante (Japón se vive a pie), haremos visitas culturales y alguna ruta sencilla en la naturaleza.\n\nEl ritmo está pensado para disfrutar, no para sobrevivir.\n\nSi tienes alguna condición médica, cuéntanoslo antes y vemos cómo adaptarlo.",
-      },
-    ],
-    faqsIntro: "Nos vamos a Japón versión AWAYNA: templos al amanecer, ramen en callejones sin nombre, tren bala, ryokans y ese grupo que acaba brindando con sake en algún izakaya que no aparece en ninguna guía.",
+    // faqs: [
+    //   {
+    //     question: "¿Qué tipo de experiencias viviremos en Japón?",
+    //     answer:
+    //       "Aquí no venimos solo a hacer fotos, venimos a entender el lugar.\n\nTemplos al amanecer, barrios tradicionales donde el tiempo va más lento y calles futuristas que parecen otro planeta.\n\nPodrás pasear con kimono por calles históricas, probar comida local en mercados auténticos y dormir en un ryokan tradicional para sentir Japón desde dentro. Siempre con respeto por la cultura y con contexto, porque nos mola saber el “por qué” de lo que estamos viendo.",
+    //   },
+    //   {
+    //     question: "¿Hay que vacunarse para viajar a Japón?",
+    //     answer:
+    //       "No hay vacunas obligatorias para viajar desde España. Japón es un país súper seguro y con estándares sanitarios muy altos.\n\nEso sí, siempre recomendamos tener las vacunas básicas al día y consultar con tu médico si tienes alguna duda. Mejor viajar tranquilo que viajar rayado.",
+    //   },
+    //   {
+    //     question: "¿Puedo alargar el viaje por mi cuenta?",
+    //     answer:
+    //       "Claro que sí. Si te quedas con ganas de más (spoiler: pasa siempre), puedes ampliar antes o después del viaje en grupo.\n\nMás días en Tokio, perderte por zonas rurales, visitar alguna isla… te damos recomendaciones y tips para que lo montes fácil.\n\nLas noches extra y cambios en vuelos no están incluidos, pero te echamos un cable para que lo tengas todo claro.",
+    //   },
+    //   {
+    //     question: "¿Necesito visado para este viaje?",
+    //     answer:
+    //       "Con pasaporte español no necesitas visado para estancias turísticas de hasta 90 días.\n\nSolo asegúrate de que tu pasaporte esté en vigor durante el viaje y listo. Japón te abre la puerta sin papeleo extra.",
+    //   },
+    //   {
+    //     question: "¿Dónde dormimos?",
+    //     answer:
+    //       "Hoteles de 3–4 estrellas bien ubicados para aprovechar el tiempo al máximo.\n\nY sí, también incluimos alguna noche en ryokan tradicional, con futón y ese ambiente japonés que te hace sentir dentro de una peli.\n\nHabitaciones dobles o triples compartidas, con opción individual si está disponible.",
+    //   },
+    //   {
+    //     question: "¿Es un viaje muy físico?",
+    //     answer:
+    //       "No necesitas ser un atleta olímpico. Caminaremos bastante (Japón se vive a pie), haremos visitas culturales y alguna ruta sencilla en la naturaleza.\n\nEl ritmo está pensado para disfrutar, no para sobrevivir.\n\nSi tienes alguna condición médica, cuéntanoslo antes y vemos cómo adaptarlo.",
+    //   },
+    // ],
+    faqsIntro:
+      "Nos vamos a Japón versión AWAYNA: templos al amanecer, ramen en callejones sin nombre, tren bala, ryokans y ese grupo que acaba brindando con sake en algún izakaya que no aparece en ninguna guía.",
     availableDates: [
       {
-        id: "jp-abr-25",
-        startDate: "2026-04-04",
-        endDate: "2026-04-14",
-        spots: 8,
-        totalSpots: 14,
-        price: 1759,
-        originalPrice: 1979,
-      },
-      {
-        id: "jp-may-25",
-        startDate: "2026-05-09",
-        endDate: "2026-05-19",
-        spots: 12,
-        totalSpots: 14,
-        price: 1659,
-      },
-      {
-        id: "jp-nov-25",
-        startDate: "2026-11-07",
-        endDate: "2026-11-17",
+        id: "jp-dic-26",
+        startDate: "2026-12-10",
+        endDate: "2026-12-23",
         spots: 14,
         totalSpots: 14,
-        price: 1759,
-        originalPrice: 1979,
+        price: 2149,
       },
     ],
   },
   {
     slug: "islandia",
     name: "Islandia",
+    heroName: "Islandia",
     comingSoon: true,
     tagline: "Aurora boreal, cascadas y paisajes de otro planeta",
     heroImage: "/images/iceland/hero.jpg",
@@ -1332,23 +1353,23 @@ export const destinations: Destination[] = [
       language: "Islandes. Ingles practicamente universal",
       timeZone: "UTC+0 (1-2 horas menos que Espana)",
     },
-    faqs: [
-      {
-        question: "Veremos auroras boreales seguro?",
-        answer:
-          "Las auroras dependen de la actividad solar y el clima. Tenemos 3 noches de caza y apps de prevision. La probabilidad en temporada es alta pero no garantizada.",
-      },
-      {
-        question: "Hace mucho frio?",
-        answer:
-          "En invierno la media es -1 a 5 grados, con viento. Llevando capas y buen equipamiento se esta bien. Te mandamos lista de equipaje.",
-      },
-      {
-        question: "Necesito experiencia para el glaciar?",
-        answer:
-          "No. El trekking es para todos los niveles con guia certificado y equipo proporcionado (crampones, piolet, arnes).",
-      },
-    ],
+    // faqs: [
+    //   {
+    //     question: "Veremos auroras boreales seguro?",
+    //     answer:
+    //       "Las auroras dependen de la actividad solar y el clima. Tenemos 3 noches de caza y apps de prevision. La probabilidad en temporada es alta pero no garantizada.",
+    //   },
+    //   {
+    //     question: "Hace mucho frio?",
+    //     answer:
+    //       "En invierno la media es -1 a 5 grados, con viento. Llevando capas y buen equipamiento se esta bien. Te mandamos lista de equipaje.",
+    //   },
+    //   {
+    //     question: "Necesito experiencia para el glaciar?",
+    //     answer:
+    //       "No. El trekking es para todos los niveles con guia certificado y equipo proporcionado (crampones, piolet, arnes).",
+    //   },
+    // ],
     availableDates: [
       {
         id: "is-feb-25",
@@ -1381,6 +1402,7 @@ export const destinations: Destination[] = [
   {
     slug: "honduras",
     name: "Honduras",
+    heroName: "Honduras",
     comingSoon: true,
     tagline: "Arrecifes de coral, selva virgen y cultura maya",
     heroImage: "/images/honduras/portada.jpeg",
@@ -1414,7 +1436,7 @@ export const destinations: Destination[] = [
       language: "",
       timeZone: "",
     },
-    faqs: [],
+    // faqs: [],
     availableDates: [],
   },
 ];

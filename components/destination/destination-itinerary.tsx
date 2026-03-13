@@ -84,7 +84,7 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
                       onClick={() => handleDayClick(dayKey)}
                       className="w-full text-left"
                     >
-                      <div className="flex items-center justify-between gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors">
+                      <div className="cursor-pointer flex items-center justify-between gap-4 p-4 rounded-xl bg-card border border-border hover:border-primary/30 transition-colors">
                         <div>
                           <span className="text-xs font-medium text-primary uppercase tracking-wider">
                             {getDayLabel(day.day)}

@@ -39,9 +39,9 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
 
   const scrollTo = (index: number) => {
     const container = scrollRef.current;
-    if (!container) return;
-    const item = container.children[index] as HTMLElement;
-    item?.scrollIntoView({ behavior: "smooth", block: "nearest", inline: "start" });
+    const item = container?.children?.[index] as HTMLElement;
+    if (!container || !item) return;
+    container.scrollTo({ left: item.offsetLeft, behavior: "smooth" });
   };
 
   const prev = () => { setIsUserInteracting(true); scrollTo(Math.max(0, currentIndex - 1)); };

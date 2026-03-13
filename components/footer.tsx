@@ -1,8 +1,8 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Instagram, Facebook, Youtube, Twitter, Mail, Phone, MapPin, Globe } from "lucide-react"
-import { phones } from "@/lib/info"
 import { destinations } from "@/lib/destinations-data"
+import { phones } from "@/lib/info"
+import { Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react"
+import Image from "next/image"
+import Link from "next/link"
 
 const footerLinks = {
   empresa: [
@@ -10,11 +10,11 @@ const footerLinks = {
     { name: "Cómo funciona Awayna", href: "/como-funciona" },
   ],
   soporte: [
-    { name: "FAQ", href: "#" },
+    { name: "FAQ", href: "/faq" },
     { name: "Contacto", href: "/contacto" },
-    { name: "Politica de cancelacion", href: "#" },
-    { name: "Terminos y condiciones", href: "#" },
-    { name: "Privacidad", href: "#" },
+    { name: "Politica de cancelacion", href: "/politica-de-cancelacion" },
+    // { name: "Terminos y condiciones", href: "#" },
+    // { name: "Privacidad", href: "#" },
   ],
 }
 

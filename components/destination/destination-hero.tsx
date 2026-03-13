@@ -18,7 +18,7 @@ export function DestinationHero({ destination }: DestinationHeroProps) {
       {/* Background Image */}
       <Image
         src={destination.heroImage || "/placeholder.svg"}
-        alt={destination.name}
+        alt={destination.heroName}
         fill
         className="object-cover"
         priority
@@ -57,7 +57,7 @@ export function DestinationHero({ destination }: DestinationHeroProps) {
 
             {/* Title */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-background mb-3 tracking-tight text-balance">
-              {destination.name}
+              {destination.heroName}
             </h1>
             <p className="text-xl sm:text-2xl text-background/90 font-medium">
               {destination.tagline}

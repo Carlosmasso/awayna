@@ -28,7 +28,6 @@ function StarRating({ rating }: { rating: number }) {
           </div>
         )
       })}
-      <span className="text-xs text-muted-foreground ml-1">{rating.toFixed(1)}</span>
     </div>
   )
 }
