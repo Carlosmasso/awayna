@@ -125,13 +125,13 @@ export function Footer() {
             © 2026 Awayna. Todos los derechos reservados.
           </p>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-background/60">
-            <Link href="#" className="hover:text-background transition-colors">
+            {/* <Link href="#" className="hover:text-background transition-colors">
               Terminos
             </Link>
             <Link href="#" className="hover:text-background transition-colors">
               Privacidad
-            </Link>
-            <Link href="#" className="hover:text-background transition-colors">
+            </Link> */}
+            <Link href="/cookies" className="hover:text-background transition-colors">
               Cookies
             </Link>
           </div>
