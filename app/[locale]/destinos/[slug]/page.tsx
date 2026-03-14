@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import {
   getDestinationBySlug,
   getAllDestinationSlugs,
+  getLocalizedDestination,
 } from "@/lib/destinations-data";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
@@ -12,30 +13,34 @@ import { DestinationIncludes } from "@/components/destination/destination-includ
 import { DestinationFondoComun } from "@/components/destination/destination-fondo-comun";
 import { DestinationPracticalInfo } from "@/components/destination/destination-practical-info";
 import { DestinationDates } from "@/components/destination/destination-dates";
-// import { DestinationFaqs } from "@/components/destination/destination-faqs";
 import { DestinationComponents } from "@/components/destination/destination-components";
 import { DestinationComingSoon } from "@/components/destination/destination-coming-soon";
 import { CookieBanner } from "@/components/cookie-banner";
 
 export async function generateStaticParams() {
   const slugs = getAllDestinationSlugs();
-  return slugs.map((slug) => ({ slug }));
+  const locales = ["es", "en"];
+  return locales.flatMap((locale) =>
+    slugs.map((slug) => ({ locale, slug }))
+  );
 }
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
-  const destination = getDestinationBySlug(slug);
+  const { slug, locale } = await params;
+  const raw = getDestinationBySlug(slug);
 
-  if (!destination) {
+  if (!raw) {
     return {
-      title: "Destino no encontrado | Awayna",
-      description: "El destino que buscas no existe.",
+      title: "Destination not found | Awayna",
+      description: "The destination you are looking for does not exist.",
     };
   }
+
+  const destination = getLocalizedDestination(raw, locale);
 
   return {
     title: `Viaje a ${destination.name} | Awayna - ${destination.duration} días desde ${destination.price}€`,
@@ -63,14 +68,16 @@ export async function generateMetadata({
 export default async function DestinationPage({
   params,
 }: {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: string; slug: string }>;
 }) {
-  const { slug } = await params;
-  const destination = getDestinationBySlug(slug);
+  const { slug, locale } = await params;
+  const raw = getDestinationBySlug(slug);
 
-  if (!destination) {
+  if (!raw) {
     notFound();
   }
+
+  const destination = getLocalizedDestination(raw, locale);
 
   return (
     <div className="min-h-screen bg-background font-sans">
@@ -96,10 +103,7 @@ export default async function DestinationPage({
           </div>
         )}
         {!destination.comingSoon && (
-          <>
-            <DestinationPracticalInfo destination={destination} />
-            {/* <DestinationFaqs destination={destination} /> */}
-          </>
+          <DestinationPracticalInfo destination={destination} />
         )}
       </main>
       <Footer />

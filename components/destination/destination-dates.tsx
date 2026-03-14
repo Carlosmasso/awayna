@@ -5,6 +5,7 @@ import { Calendar, Users, Check, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingModal } from "@/components/booking-modal";
 import type { Destination } from "@/lib/destinations-data";
+import { useTranslations } from "next-intl";
 
 interface DestinationDatesProps {
   destination: Destination;
@@ -20,6 +21,7 @@ function formatDate(dateString: string): string {
 }
 
 export function DestinationDates({ destination }: DestinationDatesProps) {
+  const t = useTranslations("destPage")
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [showModal, setShowModal] = useState<{
     destination: string;
@@ -42,7 +44,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
           <div className="px-3 sm:px-6">
             <div className="text-center mb-2 sm:mb-4">
               <h3 className="text-lg sm:text-xl font-bold text-foreground">
-              Fechas disponibles
+              {t("datesTitle")}
             </h3>
           </div>
 
@@ -112,7 +114,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
                     <span
                       className={`text-xs sm:text-sm ${isLowSpots ? "text-primary font-semibold" : "text-muted-foreground"}`}
                     >
-                      {isSoldOut ? "Completo" : `${tripDate.spots} plazas`}
+                      {isSoldOut ? t("soldOut") : t("spotsLeft", { spots: tripDate.spots })}
                     </span>
                   </div>
                 </button>
@@ -128,42 +130,24 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
               disabled={!selectedDate}
               onClick={handleReserve}
             >
-              {selectedDate ? "Reservar ahora" : "Selecciona una fecha"}
+              {selectedDate ? t("reserveNow") : t("selectDate")}
             </Button>
               <p className="text-xs sm:text-sm text-muted-foreground mt-2 font-medium">
-              Solo 200€ de señal • Resto 30 días antes
+              {t("depositNote")}
             </p>
           </div>
 
             <div className="mt-2.5 sm:mt-5 p-2.5 sm:p-4 bg-primary/5 border border-primary/20 rounded-lg">
             <p className="font-bold text-base sm:text-lg lg:text-xl text-primary mb-1.5 sm:mb-3">
-              ¿Por qué viajar con Awayna?
+              {t("whyAwayna")}
             </p>
             <ul>
-              <li className="text-sm sm:text-base text-foreground flex items-start gap-2">
-                <span className="text-primary mt-0.5 font-bold">•</span>
-                <span>Nos importa el cómo, no solo el dónde</span>
-              </li>
-              <li className="text-sm sm:text-base text-foreground flex items-start gap-2">
-                <span className="text-primary mt-0.5 font-bold">•</span>
-                <span>Somos personas, no una agencia</span>
-              </li>
-              <li className="text-sm sm:text-base text-foreground flex items-start gap-2">
-                <span className="text-primary mt-0.5 font-bold">•</span>
-                <span>Colaboramos con gente local</span>
-              </li>
-              <li className="text-sm sm:text-base text-foreground flex items-start gap-2">
-                <span className="text-primary mt-0.5 font-bold">•</span>
-                <span>Acompañamiento 24/7 durante el viaje</span>
-              </li>
-              <li className="text-sm sm:text-base text-foreground flex items-start gap-2">
-                <span className="text-primary mt-0.5 font-bold">•</span>
-                <span>Conocedores del destino</span>
-              </li>
-              <li className="text-sm sm:text-base text-foreground flex items-start gap-2">
-                <span className="text-primary mt-0.5 font-bold">•</span>
-                <span>Alojamientos cuidadosamente seleccionados</span>
-              </li>
+              {(["reason1","reason2","reason3","reason4","reason5","reason6"] as const).map((key) => (
+                <li key={key} className="text-sm sm:text-base text-foreground flex items-start gap-2">
+                  <span className="text-primary mt-0.5 font-bold">•</span>
+                  <span>{t(key)}</span>
+                </li>
+              ))}
               </ul>
             </div>
           </div>

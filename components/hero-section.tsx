@@ -1,6 +1,9 @@
 "use client";
 
+import { useTranslations } from "next-intl";
+
 export function HeroSection() {
+  const t = useTranslations("hero")
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
@@ -22,14 +25,14 @@ export function HeroSection() {
       <div className="relative z-10 mx-auto max-w-5xl px-4 sm:px-6 lg:px-8 text-center">
         {/* Headline */}
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-background leading-tight tracking-tight text-balance mb-6">
-          Tú eliges el destino,
+          {t("headline1")}
           <br />
-          <span className="text-primary">nosotros el plan</span>
+          <span className="text-primary">{t("headline2")}</span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-xl sm:text-2xl text-background/90 max-w-2xl mx-auto mb-10 text-pretty">
-          Sitios increíbles con gente que suma.
+          {t("sub")}
         </p>
       </div>
 

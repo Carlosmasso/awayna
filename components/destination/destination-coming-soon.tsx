@@ -1,10 +1,11 @@
 "use client"
 
 import Image from "next/image"
-import Link from "next/link"
 import { Clock, Mail, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import type { Destination } from "@/lib/destinations-data"
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/navigation"
 
 interface DestinationComingSoonProps {
   destination: Destination
@@ -18,21 +19,21 @@ export function DestinationComingSoon({ destination }: DestinationComingSoonProp
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 bg-primary/10 text-primary rounded-full px-4 py-2 text-sm font-medium mb-6">
             <Clock className="h-4 w-4" />
-            Próximamente
+            {t("comingSoonBadge")}
           </div>
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-4">
-            Fechas disponibles próximamente
+            {t("comingSoonTitle")}
           </h2>
           <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-            Estamos terminando de decidir la mejor opción para vosotros, pronto tendremos fechas, itinerarios y precios.
+            {t("comingSoonDesc")}
           </p>
           <p className="text-lg text-muted-foreground mb-10">
-            Si tienes cualquier duda, <span className="text-primary font-medium">¡Contáctanos!</span>
+            {t("comingSoonContact")}
           </p>
           <Link href="/contacto">
             <Button size="lg" className="gap-2 cursor-pointer">
               <Mail className="h-4 w-4" />
-              Contactar
+              {t("comingSoonButton")}
               <ArrowRight className="h-4 w-4" />
             </Button>
           </Link>

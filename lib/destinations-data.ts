@@ -52,6 +52,26 @@ export interface Destination {
   faqsIntro?: string;
   availableDates: TripDate[];
   comingSoon?: boolean;
+  en?: DestinationLocale;
+}
+
+export interface DestinationLocale {
+  tagline?: string;
+  duration?: string;
+  highlights?: string[];
+  components?: TripComponent[];
+  description?: string[];
+  itinerary?: Itinerary[];
+  included?: string[];
+  notIncluded?: string[];
+  practicalInfo?: {
+    bestTime?: string;
+    visa?: string;
+    vaccines?: string;
+    currency?: string;
+    language?: string;
+    timeZone?: string;
+  };
 }
 
 export const destinations: Destination[] = [
@@ -332,6 +352,166 @@ export const destinations: Destination[] = [
     // ],
     faqsIntro:
       "Nos vamos a Filipinas versión AWAYNA: agua turquesa, selva salvaje, barcas que parecen sacadas de un sueño y ese grupo que empieza siendo desconocido y acaba brindando descalzo en la arena.",
+    en: {
+      tagline: "Diving into Cebu, exploring Palawan and sailing through Coron",
+      duration: "14 days",
+      highlights: [
+        "Kayaking through the secret lagoons of El Nido",
+        "Island hopping among the most beautiful islands",
+        "Snorkeling on pristine coral reefs",
+        "Night in an overwater bungalow",
+        "Trekking to hidden waterfalls",
+        "Sunsets from traditional boats",
+      ],
+      components: [
+        { name: "Relaxation", rating: 4 },
+        { name: "Physical activity", rating: 3 },
+        { name: "Nature", rating: 4 },
+        { name: "Culture", rating: 2 },
+        { name: "Food & drinks", rating: 3 },
+        { name: "Nightlife", rating: 3 },
+      ],
+      description: [
+        "Hey! If you're looking for more than just a standard tour, this Philippines expedition is your chance to truly connect with the soul of the archipelago. Over 14 days, we'll skip the overcrowded routes, support local businesses and live authentic adventures guided by a coordinator who's just one of the gang.",
+        "We kick things off strong with a scuba diving baptism in the crystal-clear waters of Moalboal and conquering the views from Osmena Peak, before experiencing the magic of swimming with whale sharks in Bohol.",
+        "Next up is Palawan, one of the most spectacular islands in all of the Philippines, where we'll explore El Nido and its surroundings on traditional Filipino bangka boats.",
+        "But the real showstopper is our 3-day boat expedition between El Nido and Coron: an epic crossing where we'll sleep on remote islands under the stars, completely going with the flow.",
+        "It's the perfect trip to unwind, discover untouched paradises and come back with a backpack full of stories and new friends. Real paradise is waiting for you!",
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: "The Vibrant Capital",
+          description: [
+            "Your adventure begins as you land in the vibrant capital, where we'll greet you at the airport and transfer you to your accommodation. <strong>Manila is the perfect cultural shock</strong> to start feeling the energy of the archipelago before our first night together as a group.",
+          ],
+          highlights: ["Airport pickup", "First group night", "Manila"],
+        },
+        {
+          day: 2,
+          title: "From the City Buzz to Moalboal's Relaxed Vibes",
+          description: [
+            'We fly early to <strong>Cebu</strong> and head to <strong>Moalboal</strong>, a corner where time seems to stand still. It\'s the perfect place to unwind and connect with your travel companions over a <strong>Filipino group dinner</strong>, great for breaking the ice and getting to know each other.',
+          ],
+          highlights: ["Flight to Cebu", "Moalboal", "Filipino group dinner"],
+        },
+        {
+          day: 3,
+          title: "Diving Deep and Conquering Osmena Peak",
+          description: [
+            "Today you'll discover why the Philippines is an underwater paradise. We'll enjoy a scuba diving baptism in the best possible setting; if you're already certified, we'll do two <strong>Fun Dives</strong> in this aquatic paradise. After a feast of local beach food, we swap fins for sneakers to climb <strong>Osmena Peak</strong>; its rugged hills offer some of the <strong>most surreal and photogenic views on the entire island</strong>.",
+          ],
+          highlights: ["Scuba baptism", "Fun dives", "Osmena Peak", "Local beach lunch"],
+        },
+        {
+          day: 4,
+          title: "Breathtaking Encounters in Bohol",
+          description: [
+            "We cross over to neighboring <strong>Bohol</strong> for one of the most thrilling experiences on the planet: swimming near the majestic <strong>whale sharks</strong>. The day wraps up exploring hidden waterfalls in a lush natural setting, returning to Cebu with the feeling of having witnessed a <strong>one-of-a-kind natural spectacle</strong>.",
+          ],
+          highlights: ["Bohol", "Whale sharks", "Waterfalls", "Lush nature"],
+        },
+        {
+          day: 5,
+          title: "Palawan, the Last Frontier",
+          description: [
+            "We fly to <strong>Palawan</strong> and drive northward from Puerto Princesa. We make the journey more enjoyable with stops at waterfalls and traditional Filipino villages on the way to <strong>El Nido</strong>, where we'll have dinner and soak up the nighttime vibes of this charming coastal town.",
+          ],
+          highlights: ["Flight to Palawan", "Puerto Princesa", "Waterfalls", "El Nido"],
+        },
+        {
+          day: 6,
+          title: "El Nido Your Way: Adrenaline or Chill",
+          description: [
+            "We wake up to a movie-set backdrop where you choose the pace: relax with snorkeling and beach volleyball, or push your limits on a <strong>via ferrata over limestone cliffs</strong>. We close the day with a <strong>beach barbecue and beers under the stars</strong>, the purest definition of island life.",
+          ],
+          highlights: ["Snorkeling", "Beach volleyball", "Via ferrata", "Beach barbecue"],
+        },
+        {
+          day: 7,
+          title: "Island Hopping and the Filipino Spirit",
+          description: [
+            "We set out on an <strong>Island Hopping</strong> route that will leave you speechless, exploring turquoise lagoons and white sandy beaches. To celebrate the beauty of our surroundings, we end the day with a <strong>karaoke</strong> night, the national activity par excellence for laughing and bonding with the group.",
+          ],
+          highlights: ["Island Hopping", "Turquoise lagoons", "White beaches", "Karaoke"],
+        },
+        {
+          day: [8, 9, 10],
+          title: "The Great Crossing to Coron",
+          description: [
+            "We set off on a <strong>3-day cruise</strong>, the true heart of the expedition, sailing from El Nido to Coron. We'll sleep on <strong>remote islands far from tourist routes</strong>, living the ultimate expression of freedom and going with the flow as we discover virgin archipelagos that very few people ever reach.",
+          ],
+          highlights: ["3-day cruise", "El Nido → Coron", "Remote islands", "Virgin archipelagos"],
+        },
+        {
+          day: 11,
+          title: "The Submerged Secrets of Coron",
+          description: [
+            "Now in <strong>Coron</strong>, we dedicate the day to its inland lakes surrounded by limestone walls, or exploring WWII shipwrecks with optional dives. This destination offers a <strong>dramatic landscape above and below the water that is unrivaled anywhere in the world</strong>.",
+          ],
+          highlights: ["Coron", "Inland lakes", "WWII wrecks", "Optional dives"],
+        },
+        {
+          day: 12,
+          title: "Island Calm and Roots",
+          description: [
+            "Time to slow down with a relaxed afternoon of exploring, perfect for supporting local shops, picking up handcrafts and absorbing all the experiences we've had. A day of <strong>final connection with the peace of the island</strong> before heading home.",
+          ],
+          highlights: ["Local tourism", "Handicrafts", "Relaxation", "Local shops"],
+        },
+        {
+          day: 13,
+          title: "Return to the Starting Point",
+          description: [
+            "We begin the journey back from Coron to <strong>Manila</strong>, where we'll spend our last night together. The perfect moment for a final group dinner and reliving the best moments of these 14 days.",
+          ],
+          highlights: ["Coron → Manila", "Final group dinner", "Best memories"],
+        },
+        {
+          day: 14,
+          title: "So Long, Paradise!",
+          description: [
+            "Transfer to the airport for your return flight home. You leave with a backpack full of stories, a renewed soul and a new group of friends you'll already be planning the next Awayna adventure with.",
+          ],
+          highlights: ["Airport transfer", "Flight home", "So long"],
+        },
+      ],
+      included: [
+        "Airport pickup in Manila on arrival day",
+        "Awayna coordinator support throughout the entire trip",
+        "Accommodation in shared rooms (hotels, guesthouses and nights on remote islands)",
+        "Filipino group dinner in Moalboal",
+        "Domestic flight Manila–Cebu",
+        "Domestic flight Cebu–Puerto Princesa (Palawan)",
+        "Domestic flight Puerto Princesa–Manila",
+        "Ground transfers throughout the journey",
+        "Scuba diving baptism in Moalboal (or two fun dives with certification)",
+        "Osmena Peak trekking",
+        "Bohol excursion with whale shark snorkeling and waterfalls",
+        "Complete Island Hopping tour in El Nido",
+        "3-day/2-night cruise from El Nido to Coron",
+        "Coron excursion to inland lakes and limestone cliffs",
+        "Awayna backpack",
+        "Medical insurance for the entire trip",
+        "Trip video album",
+      ],
+      notIncluded: [
+        "Return flights from Spain",
+        "Meals and drinks not specified above",
+        "Additional dives in Coron for certified divers",
+        "Any other service not specified above",
+        "Optional activities outside the itinerary",
+        "Common fund.",
+      ],
+      practicalInfo: {
+        bestTime: "November to May (dry season)",
+        visa: "Not required for stays under 30 days",
+        vaccines: "None required. Recommended: Hepatitis A/B, Tetanus",
+        currency: "Philippine Peso (PHP). €1 ≈ 60 PHP",
+        language: "Filipino and English (widely spoken)",
+        timeZone: "UTC+8 (7 hours ahead of Spain)",
+      },
+    },
     availableDates: [
       {
         id: "fil-nov-26",
@@ -593,6 +773,164 @@ export const destinations: Destination[] = [
     //       "No necesitas estar en modo ultramaratón.\n\nIncluye caminatas suaves, algún trekking sencillo entre arrozales, paseos en barco y días activos, pero está pensado para personas sanas con condición física normal.\n\nSi tienes alguna condición médica específica, avísanos antes de reservar para adaptarlo en lo posible.",
     //   },
     // ],
+    en: {
+      tagline: "From Hanoi, through Ninh Binh, the embroidery province and the Ha Giang Loop",
+      duration: "13 days",
+      highlights: [
+        "Overnight cruise on Ha Long Bay",
+        "Motorbike through the rice paddies of Ninh Binh",
+        "Vietnamese cooking class in Hoi An",
+        "Cu Chi Tunnels",
+        "Mekong floating markets",
+        "Street food tour in Hanoi",
+      ],
+      components: [
+        { name: "Relaxation", rating: 2 },
+        { name: "Physical activity", rating: 4 },
+        { name: "Nature", rating: 5 },
+        { name: "Culture", rating: 5 },
+        { name: "Food & drinks", rating: 4 },
+        { name: "Nightlife", rating: 3 },
+      ],
+      description: [
+        "Vietnam always delivers with its mix of vibes — the contrast between Hanoi's wild traffic and the unexpected peace of Ninh Binh, where time slows down and a traditional boat glides silently between limestone mountains and endless rice paddies.",
+        "Vietnam means getting lost for three days on the Ha Giang Loop, crossing impossible mountain passes and villages where life beats to a different rhythm. It means waking up in Sapa surrounded by mist and green terraces, sharing a home-cooked dinner at a homestay and understanding that travel is also about connecting.",
+        "This trip is designed for those who want more than pretty landscapes. Here we hike, sail, live alongside local communities and let ourselves be moved by an intense, resilient and deeply human culture.",
+        "Over 14 days we'll explore northern Vietnam combining adventure, stunning nature and moments of calm that nourish the soul. You're not just coming to discover Vietnam. You're coming to feel it.",
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: "First Contact with Vietnam: Welcome to Hanoi",
+          description: [
+            "We land in Hanoi and from the very first moment, we start feeling how far from home we are. The Awayna team is waiting at the airport to get us organized, introduce ourselves and head to the accommodation. Once settled and freshened up, we head out for our first stroll through the city. Lively streets, motorbikes weaving through traffic, intense street food aromas and energy like nothing you've experienced before. We end the day with our first group dinner, breaking the ice and starting to build what will be a powerful shared experience.",
+          ],
+          highlights: ["Arrival in Hanoi", "Group dinner", "City stroll"],
+        },
+        {
+          day: 2,
+          title: "Hanoi Unfiltered, with Hung",
+          description: [
+            "Today we dive into the most authentic side of Hanoi alongside Hung, our local guide and partner in adventure. We walk through traditional markets, hidden temples and neighborhoods where life follows its own rhythm, far from mass tourism. Hung shares real stories of the country, personal anecdotes and details that help us understand Vietnam from the inside, not from a guidebook. That evening, Awayna treats us to dinner at a Michelin-recognized restaurant, where we toast to the group and enjoy cuisine that surprises with every dish.",
+          ],
+          highlights: ["Local guide Hung", "Traditional markets", "Michelin dinner"],
+        },
+        {
+          day: 3,
+          title: "Ninh Binh: The Dragon Awakens",
+          description: [
+            "We leave the city and head to Ninh Binh. Our goal is the famous Dragon viewpoint, a place that demands effort but rewards generously. We climb step by step, feeling the first physical challenge of the trip, until we reach a panorama that leaves us speechless: limestone mountains, winding rivers and a landscape that looks unreal. In the afternoon we shift gears with a gentle trek through ancient temples and quiet trails, connecting with the history of the place and a much more serene side of Vietnam.",
+          ],
+          highlights: ["Dragon Viewpoint", "Trekking", "Ancient temples"],
+        },
+        {
+          day: 4,
+          title: "Boats, Calm and Local Life",
+          description: [
+            "We wake up early to enjoy a traditional boat ride through one of the most impressive natural settings of the trip. We navigate between rock formations and rice paddies, in a landscape that feels like it was taken from a movie set (yes, King Kong was filmed here). We visit small local villages and learn about the cultural mix that defines this region. It's a day to slow down, observe and go with the flow. In the afternoon we head to the more modern area of Hoa Lu, perfect for more exploration of Vietnamese street food.",
+          ],
+          highlights: ["Traditional boat ride", "Local villages", "Hoa Lu"],
+        },
+        {
+          day: 5,
+          title: "Heading to the Wild North",
+          description: [
+            "Today is road day. We leave the tranquil landscapes behind and push north to the more remote parts of the country. Along the way, the scenery gradually shifts and we feel like we're entering a less-known, more authentic Vietnam. We arrive at night in the Ha Giang area, where we rest and mentally prepare for what's to come. Tomorrow something big starts.",
+          ],
+          highlights: ["Drive to Ha Giang", "Remote north", "Changing landscapes"],
+        },
+        {
+          day: [6, 7, 8],
+          title: "Ha Giang Loop: The Heart of the Trip",
+          description: [
+            "The legendary Ha Giang Loop begins, one of the most spectacular routes in Southeast Asia and the true heart of this expedition. Over three days we ride over impossible mountain passes, hidden valleys and ethnic minority villages where time seems to have stopped. Every bend gifts brutal landscapes and every stop is a lesson in humility. We sleep in simple, authentic, soul-filled accommodation, directly supporting local communities and sharing moments that stay with you forever.",
+          ],
+          highlights: ["Ha Giang Loop", "Mountains", "Ethnic villages", "Local accommodation"],
+        },
+        {
+          day: 9,
+          title: "Sapa and the Embrace of Mama Sumi",
+          description: [
+            "After completing the last leg of the loop, we head to Sapa. There Mama Sumi is waiting for us, a woman who embodies northern Vietnamese hospitality like few others. We settle into her traditional homestay, surrounded by mountains and silence. That night we share a home-cooked dinner, made with local ingredients and lots of love. It's not just a dinner — it's a deep human experience that connects the group in a very special way.",
+          ],
+          highlights: ["Sapa", "Mama Sumi", "Homestay", "Home-cooked dinner"],
+        },
+        {
+          day: 10,
+          title: "Walking Through Endless Rice Fields",
+          description: [
+            "Accompanied by Mama Sumi, we trek through valleys, rice terraces and traditional villages near Sapa. We walk the paths that locals use every day, far from crowded tourist trails. Every step brings us closer to the land, to the way of life of the northern ethnic groups and to a different way of understanding the world.",
+          ],
+          highlights: ["Rice field trekking", "Traditional villages", "Local life"],
+        },
+        {
+          day: 11,
+          title: "From the Roof of Indochina to Hanoi at Night",
+          description: [
+            "We say goodbye to beautiful Sapa, but not before visiting the famous Fansipan, the highest peak in Indochina — its incredible cable car takes us all the way to the summit. After this experience, we return to Hanoi. That night we celebrate everything we've lived at Beer Street, the perfect spot to toast, laugh and share stories over cold beer and Vietnamese street food.",
+          ],
+          highlights: ["Fansipan", "Cable car", "Beer Street", "Return to Hanoi"],
+        },
+        {
+          day: 12,
+          title: "Ha Long Bay: A Landscape That Stays With You",
+          description: [
+            "Today we visit one of the most iconic places on the planet, one of the seven natural wonders of the world. We sail through Ha Long Bay, surrounded by thousands of karst formations rising from emerald water. It's a day to gaze, breathe and be amazed. The landscape speaks for itself — after a beautiful sunset, we begin our return to Hanoi.",
+          ],
+          highlights: ["Ha Long Bay", "Karst formations", "Sunset"],
+        },
+        {
+          day: 13,
+          title: "Last Steps Through Hanoi",
+          description: [
+            "Our last day is spent getting lost in Hanoi one more time. We visit markets, local shops and spots we missed earlier. We'll discover the famous Train Street, where we'll take a breather just meters from the train tracks. It's the perfect time to buy meaningful souvenirs, support local artisans and sit down to absorb everything we've experienced. We close the trip with a final group dinner, bags packed and lots of knowing smiles.",
+          ],
+          highlights: ["Train Street", "Markets", "Final dinner", "Local shopping"],
+        },
+        {
+          day: 14,
+          title: "Goodbye, Vietnam",
+          description: [
+            "Transfer to the airport and flight back home. We leave with a backpack full of stories, lessons and shared moments. Vietnam is behind us, but the bond forged with the group and the essence of this trip will stay with us for a long time. And as always happens with Awayna, the next destination is already calling.",
+          ],
+          highlights: ["Return flight", "Farewell", "Shared memories"],
+        },
+      ],
+      included: [
+        "Airport pickup in Hanoi on arrival day (international flights not included)",
+        "Coordinator support throughout the entire trip",
+        "Accommodation in shared rooms throughout the trip (hotels and traditional homestay)",
+        "Breakfasts included throughout the itinerary",
+        "Welcome dinner at a Michelin-recognized restaurant in Hanoi",
+        "Local guide in Hanoi to discover the city from the inside",
+        "Private transport throughout the route: Hanoi–Ninh Binh–Ha Giang–Sapa–Hanoi–Ha Long–Hanoi",
+        "Complete Ha Giang Loop experience over 3 days with local riders, accommodation, transport, dinners, etc.",
+        "Traditional boat ride in Ninh Binh through rice paddies and karst formations",
+        "Trekking through temples and nature trails in Ninh Binh",
+        "Traditional homestay in Sapa",
+        "Home-cooked traditional dinner in Sapa with local produce for two nights",
+        "Trekking through rice paddies and ethnic villages in Sapa with local guide",
+        "Ha Long Bay excursion with boat ride included",
+        "Awayna backpack",
+        "Medical insurance for the entire trip",
+        "Trip video album",
+      ],
+      notIncluded: [
+        "Return flights from Spain.",
+        "Meals and drinks not specified above.",
+        "Any other service not specified above.",
+        "Cable car to Fansipan (a high-altitude activity we leave for the bravest).",
+        "Common fund.",
+      ],
+      practicalInfo: {
+        bestTime: "March to May and September to November",
+        visa: "E-visa required. Easy online process (approx. €25)",
+        vaccines: "None required. Recommended: Hepatitis A/B, Tetanus, Typhoid",
+        currency: "Vietnamese Dong (VND). €1 ≈ 26,000 VND",
+        language: "Vietnamese. English in tourist areas",
+        timeZone: "UTC+7 (6 hours ahead of Spain)",
+      },
+    },
     availableDates: [
       {
         id: "vn-oct-26-1",
@@ -892,6 +1230,172 @@ export const destinations: Destination[] = [
     //       "No es necesario estar en una forma física excelente; el viaje incluye caminatas suaves, alguna excursión en barco y actividades como snorkel o bautizo de buceo aptas para personas sanas sin experiencia previa. Si tienes alguna condición médica específica, es importante que nos lo indiques antes de reservar para adaptar en lo posible tu experiencia.",
     //   },
     // ],
+    en: {
+      tagline: "Bangkok, paradise islands and the north of the country",
+      duration: "13 days",
+      highlights: [
+        "Golden temples of Bangkok",
+        "Damnoen Saduak floating market",
+        "Ethical elephant sanctuary",
+        "Thai cooking class",
+        "Phi Phi Islands by boat",
+        "Full moon party (optional)",
+      ],
+      components: [
+        { name: "Relaxation", rating: 3 },
+        { name: "Physical activity", rating: 3 },
+        { name: "Food & drinks", rating: 4 },
+        { name: "Culture", rating: 5 },
+        { name: "Nature", rating: 5 },
+        { name: "Nightlife", rating: 4 },
+      ],
+      description: [
+        "Thailand is considered one of our top destinations because of its incredible versatility. If you've never been, this trip is perfect for discovering a little bit of every part of the country — making the most of 13 days and reaching places the typical tourist never gets to.",
+        "This paradise has incredible food, a warm and welcoming culture that makes you feel at home, and a mix of surreal landscapes ranging from tropical jungle to movie-set beaches.",
+        "You'll discover all of this with us and your new group of friends, with great energy and a genuine desire to go deep into how people live here — discovering the culture from the inside as we travel from north to south through the country's most breathtaking settings.",
+        "Are you ready?",
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: "Welcome to Paradise: Gastronomic Tour Through Chinatown and Khao San Road",
+          description: [
+            "Welcome to Thailand! 🇹🇭 When you land in Bangkok, we'll be waiting for you at the airport, so from the very first moment you can relax and go with the flow. Once the whole group is together, we head into the big city. After checking in and a refreshing shower, we head straight to the heart of Bangkok to kick off the trip properly: sampling Thai street food. We visit Chinatown, one of the most vibrant and authentic neighborhoods of the capital, famous for its street stalls, intense aromas and traditional Chinese and Thai recipes. After enjoying all kinds of Asian flavors, we hop in a tuk tuk toward Khao San Road, Bangkok's most lively street and meeting point for travelers from all over the world. The night continues… as long as the body holds up.",
+          ],
+          highlights: ["Bangkok arrival", "Chinatown", "Khao San Road", "Street food"],
+        },
+        {
+          day: 2,
+          title: "Bangkok Express",
+          description: [
+            "We wake up with energy to discover the most iconic temples and monuments of the Thai capital. We visit the impressive Grand Royal Palace, the former residence of the Siamese kings; the Reclining Buddha (Wat Pho), one of the largest in the country; and the quirky amulet markets, where we get lost among stalls full of history and symbolism. At midday, we enjoy local cuisine at a Michelin Guide-recognized restaurant, an experience that shows why Bangkok is one of the world's culinary capitals. We close with a bubble coffee and head to the airport to fly south to Krabi, the gateway to the Andaman Sea.",
+          ],
+          highlights: ["Grand Royal Palace", "Wat Pho", "Amulet markets", "Michelin restaurant"],
+        },
+        {
+          day: 3,
+          title: "First Day of Paradise Beaches in Railay",
+          description: [
+            "First day in the south and it's time to enjoy the heat, the sea and the nature. We board a traditional Thai boat with our trusted captain to explore the spectacular Andaman Sea coastline. Crystal-clear waters, snorkeling, limestone cliffs and movie-set beaches await us. After an unforgettable sunset, we return to Ao Nang, one of the liveliest areas in Southeast Asia. Clean and rested, it's the perfect time for a traditional Thai massage, a relaxed dinner and local desserts to recharge.",
+          ],
+          highlights: ["Railay Beach", "Snorkeling", "Andaman Sea", "Traditional massage"],
+        },
+        {
+          day: 4,
+          title: "Scuba Baptism Amid Colorful Coral",
+          description: [
+            "Good morning! Today we head to the famous Phi Phi Islands, one of Thailand's iconic landmarks. A very special experience awaits: a scuba diving baptism in some of the clearest waters in the country. No experience needed — our professional team will be with you every step of the way so you can safely enjoy the coral reefs and marine life. After the dive, we attend a Muay Thai fight, the Thai national sport. And for those with energy to spare, the night continues in what many call the 'Thai Ibiza'.",
+          ],
+          highlights: ["Phi Phi Islands", "Scuba baptism", "Muay Thai", "Nightlife"],
+        },
+        {
+          day: 5,
+          title: "Movie-Set Beaches on Koh Phi Phi",
+          description: [
+            "If yesterday left you wanting more, today we go further. We tour all the hidden corners of Koh Phi Phi on a private boat: beaches roamed by monkeys, natural turquoise lagoons and unreal landscapes. World-famous movies have been filmed here, and you'll understand why. After a perfect day, we return to Krabi to rest. We know it's hard to say goodbye to places like this… but the adventure goes on.",
+          ],
+          highlights: ["Koh Phi Phi", "Turquoise lagoons", "Maya Bay", "Private boat"],
+        },
+        {
+          day: 6,
+          title: "Journey Into the Jungle",
+          description: [
+            "We head to one of the most special places of the trip: Khao Sok National Park, one of the oldest and most extensive tropical forests in Southeast Asia. Pure jungle, wild nature and the possibility of crossing paths with monkeys, snakes or even elephants. Here everything is in the hands of destiny. Get ready to discover one of those places that stays with you forever.",
+          ],
+          highlights: ["Khao Sok", "Jungle", "Wildlife", "Adventure"],
+        },
+        {
+          day: 7,
+          title: "Khao Sok National Park and Cheow Lan Lake",
+          description: [
+            "We swap saltwater for the freshwater of the spectacular Cheow Lan Lake, surrounded by karst mountains draped in jungle. We explore the area like true adventurers, visiting hidden jungle temples with respect and curiosity, learning about the lives of Buddhist monks. Afterwards, we sail the lake with our local guide Peeranut, soaking in one of the most relaxing landscapes of the trip.",
+          ],
+          highlights: ["Cheow Lan Lake", "Jungle temples", "Buddhist monks", "Boat tour"],
+        },
+        {
+          day: 8,
+          title: "Farewell to Southern Thailand",
+          description: [
+            "Before saying goodbye to the south, we do some gentle rafting — a relaxed and fun experience drifting down a river surrounded by lush vegetation. A perfect activity for unwinding and soaking in the surroundings at leisure. After lunch and a refreshing shower, we head to Krabi airport to fly north.",
+          ],
+          highlights: ["Rafting", "Lush vegetation", "Flight north"],
+        },
+        {
+          day: 9,
+          title: "Good Morning, Chiang Mai!",
+          description: [
+            "We wake up in Chiang Mai, our favorite place of the trip. Culture, tradition, food and hospitality are multiplied here a hundredfold. We visit an ethical elephant sanctuary, learning how these animals are protected and cared for responsibly (optional activity). Those who prefer a different experience have equally special alternatives available. Back in the city, we explore some of the north's most impressive temples, very different from those in the south. That evening, dinner is included to try the famous Khao Soi, the north's signature dish… fair warning: you'll fall in love.",
+          ],
+          highlights: ["Chiang Mai", "Elephant sanctuary", "Northern temples", "Khao Soi"],
+        },
+        {
+          day: 10,
+          title: "Natural Hot Springs and the Road to Chiang Rai",
+          description: [
+            "We continue exploring Chiang Mai and visit one of its most iconic temples, with panoramic views over the whole city. After the visit, we head to Chiang Rai, but first stop to relax at natural hot springs — the perfect plan to decompress. In the afternoon, arrival and overnight in magical Chiang Rai.",
+          ],
+          highlights: ["Panoramic temple", "Natural hot springs", "Chiang Rai"],
+        },
+        {
+          day: 11,
+          title: "Chiang Rai's Famous Temples",
+          description: [
+            "Chiang Rai is small but culturally fascinating. We visit its most iconic temples: the Blue Temple (Wat Rong Suea Ten), a stunning blue building housing a Buddha over six meters tall inside. Then we head to the famous White Temple (Wat Rong Khun), the city's symbol, where we step inside to marvel at its decoration. Afterwards we visit the Great Buddha of Chiang Rai, a representation of Guanyin, the goddess of compassion in Buddhism. The seated statue stands 40 meters tall, is built on a lotus flower and can be seen from several kilometers away. We close the day with a traditional Thai massage and a good dinner.",
+          ],
+          highlights: ["Blue Temple", "White Temple", "Great Buddha", "Traditional massage"],
+        },
+        {
+          day: 12,
+          title: "Meeting the Buddhist Monks",
+          description: [
+            "Last day in the north and one of the most special. We get up early to make an offering to the monks, a simple but deeply meaningful gesture. We share time with them at a remote temple and then continue the day with a local family, enjoying simple, authentic food cooked with love. An experience that confirms this trip is unlike any other.",
+          ],
+          highlights: ["Monk offering", "Remote temple", "Local family", "Authentic food"],
+        },
+        {
+          day: 13,
+          title: "So Long, Thailand!",
+          description: [
+            "We return to Bangkok to connect with our international flights. Saying goodbye is never easy, but we leave with memories, friendships and the certainty that this won't be our last time in Thailand. For those with a later flight or flying the next day, there's the option of spending one last night in Bangkok with the group.",
+          ],
+          highlights: ["Return to Bangkok", "Farewell", "International flights"],
+        },
+      ],
+      included: [
+        "Airport pickup in Bangkok on arrival day (flights from your home city not included, but we'll be waiting in Bangkok at any time of day!).",
+        "Coordinator support throughout the entire trip.",
+        "Accommodation in shared rooms throughout the trip.",
+        "Welcome meal at a Michelin Guide-awarded restaurant.",
+        "Entry and tourist fees for the Grand Palace Bangkok.",
+        "Domestic flights: Bangkok–Krabi, Krabi–Chiang Mai, Chiang Rai–Bangkok.",
+        "Traditional Thai boat tour around the islands near Krabi.",
+        "Round-trip ferry to the Phi Phi Islands.",
+        "Scuba diving baptism in one of Thailand's best spots.",
+        "Private boat around all of Phi Phi's beaches.",
+        "Round-trip transport from Krabi to Khao Sok National Park.",
+        "Tour around Cheow Lan Lake.",
+        "Float tubing descent in the middle of the jungle.",
+        "Thai themed dinner in Chiang Mai.",
+        "Transport to Chiang Rai from Chiang Mai.",
+        "Entry and tourist fees to the White Temple in Chiang Rai.",
+        "Awayna backpack.",
+      ],
+      notIncluded: [
+        "Return flights from Spain.",
+        "Meals and drinks not specified above.",
+        "Any other service not specified above.",
+        "Any activity the whole group decides to add.",
+        "Common fund.",
+      ],
+      practicalInfo: {
+        bestTime: "November to March (dry season)",
+        visa: "Not required for stays under 30 days",
+        vaccines: "None required. Recommended: Hepatitis A/B, Tetanus",
+        currency: "Thai Baht (THB). €1 ≈ 38 THB",
+        language: "Thai. Tourist English widely spoken",
+        timeZone: "UTC+7 (6 hours ahead of Spain)",
+      },
+    },
     availableDates: [
       {
         id: "th-oct-26",
@@ -1200,6 +1704,199 @@ export const destinations: Destination[] = [
     // ],
     faqsIntro:
       "Nos vamos a Japón versión AWAYNA: templos al amanecer, ramen en callejones sin nombre, tren bala, ryokans y ese grupo que acaba brindando con sake en algún izakaya que no aparece en ninguna guía.",
+    en: {
+      tagline: "From the perfect chaos of Tokyo to the calm of Nara, crossing western Japan",
+      duration: "11 days",
+      highlights: [
+        "Tokyo: tradition and future",
+        "Kyoto and its geishas",
+        "Mount Fuji (depending on season)",
+        "Hiroshima and Miyajima",
+        "Tea ceremony",
+        "Night in a traditional ryokan",
+      ],
+      components: [
+        { name: "Relaxation", rating: 2 },
+        { name: "Physical activity", rating: 3 },
+        { name: "Nature", rating: 3 },
+        { name: "Culture", rating: 5 },
+        { name: "Food & drinks", rating: 5 },
+        { name: "Nightlife", rating: 2 },
+      ],
+      description: [
+        "If real travel is your thing — not just visiting places — this Japan trip is for you.",
+        "Over 13 nights we immerse ourselves in a country of brutal contrasts, where tradition and the future share the same street. We're not here to rush or tick off a checklist: we're here to live Japan from the inside, as a group, at our own pace and with a lot of curiosity.",
+        "We start in Tokyo, letting ourselves be swept up by its infinite energy, its impossible neighborhoods and its perfectly organized chaos. From there we make a complete turn toward nature: wild coastlines on the Izu Peninsula, onsen, silence and volcanic landscapes, before coming face to face with the legendary Fuji.",
+        "We then head to Kansai, where Osaka welcomes us with its street spirit and love of good food, Kyoto gifts us temples, rituals and strolls that feel frozen in time, and Nara slows us down even further with nature and spirituality.",
+        "This is a trip to explore without rushing, to share everyday moments that become special, to get lost on side streets and understand why Japan is felt as much as it is remembered.",
+        "Japan can't be explained.",
+        "Japan is lived.",
+        "And better, together.",
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: "We Land Together",
+          description: [
+            "We arrive in Tokyo and the adventure officially begins. Among backpacks, first glances and that mix of tiredness and excitement, we sense something big is starting.",
+            "We drop our things at the accommodation and head out for an aimless walk, simply to start understanding where we are. Lights, order, different sounds, signs we can't read — and yet everything flows.",
+            "Simple dinner to break the ice, first long conversations and that feeling of 'we're actually here'. Today isn't about doing much — it's about starting to live it together.",
+          ],
+          highlights: ["Tokyo arrival", "Hotel Shinjuku", "Shibuya crossing"],
+        },
+        {
+          day: 2,
+          title: "Traditional Japan to Vibrant Tokyo, with Matsu",
+          description: [
+            "We wake up in Tokyo and head to Asakusa, one of the most traditional neighborhoods in the city. We walk toward Senso-ji temple through incense, lanterns and small stalls on Nakamise street. We try local sweets and let the atmosphere wash over us.",
+            "In the afternoon we meet our friend Matsu, a Tokyo local, who will take us on a tour of the Japan that locals actually experience. When night falls, Tokyo changes its skin. Giant screens, neon lights, neighborhoods that pulse with energy. We let ourselves be carried along by that perfectly organized chaos that only exists here.",
+            "A day of brutal contrasts that reminds us why Japan is so special.",
+          ],
+          highlights: ["Senso-ji", "Nakamise", "Matsu", "Tokyo by night"],
+        },
+        {
+          day: 3,
+          title: "Tokyo Unfiltered",
+          description: [
+            "Today we explore the most creative side of the city. Harajuku shows us its free, different, ruleless aesthetic.",
+            "Afterwards we cross into the Meiji Shrine, where the noise disappears and everything turns green and silent. That constant contrast is part of the charm. Nearby, we enjoy some of the best ramen in the city — perfect fuel to keep the day going.",
+            "In the afternoon, Shibuya, its iconic crossing and its viewpoints. We blend in with locals, stroll at our own pace and close the night over sushi and sake, celebrating that the group is already starting to feel like a team.",
+          ],
+          highlights: ["Harajuku", "Meiji Shrine", "Ramen", "Shibuya", "Sushi and sake"],
+        },
+        {
+          day: 4,
+          title: "Natural Japan on the Izu Peninsula",
+          description: [
+            "We leave the big city behind and move to the Izu Peninsula. The landscape changes completely: volcanic coastline, cliffs, cleaner air and fewer tourists.",
+            "We walk along the ocean, stop at viewpoints and enjoy a quieter, more authentic Japan.",
+            "In the afternoon we check into a traditional ryokan. Tatami mats, sliding doors and onsen to relax body and mind. Elaborate Japanese dinner and unhurried conversation. This day invites us to slow down. You'll find that with just a smile, it's perfectly possible to understand what the person across from you wants to say.",
+          ],
+          highlights: ["Izu Peninsula", "Volcanic coastline", "Ryokan", "Onsen"],
+        },
+        {
+          day: 5,
+          title: "Encounter with Fuji",
+          description: [
+            "We continue toward the Kawaguchiko area. The day revolves around the landscape: Lake Ashi, gentle strolls and the possibility of seeing Mount Fuji looming majestically if the sky cooperates.",
+            "It's a contemplative, very visual day — perfect for connecting with the surroundings and observing how life works in Japan outside the city.",
+            "That evening, more onsen and rest. Japan is also lived in silence.",
+          ],
+          highlights: ["Kawaguchiko", "Lake Ashi", "Mount Fuji", "Onsen"],
+        },
+        {
+          day: 6,
+          title: "Osaka Street Mode: Flavors and Neon",
+          description: [
+            "We arrive in Osaka and the shift in energy is immediate. Everything here is more direct, more street-level, more spontaneous.",
+            "We head out to Dotonbori and let the smell of food and the giant illuminated signs guide us along the canal. In this always-buzzing neighborhood, we'll seek out a bakery to warm up your appetite with delicious cheesecakes, then keep going with the classic takoyaki, okonomiyaki and anything else that crosses our path. Spoiler: you've never tasted anything like it.",
+            "Osaka is best enjoyed sharing dishes and laughing without watching the clock.",
+          ],
+          highlights: ["Osaka", "Dotonbori", "Cheesecake", "Takoyaki", "Okonomiyaki"],
+        },
+        {
+          day: 7,
+          title: "Authentic Osaka",
+          description: [
+            "We start the day at Osaka Castle and stroll through its gardens, where we might find university students playing instruments to pay their tuition, locals out for a walk and those ponds full of colorful koi. Then we head to Kuromon Market to keep discovering local flavors.",
+            "Around these markets we visit something very characteristic of Japan: small but efficient cutlery shops, where we learn about how they make, sharpen and decorate what are considered the world's finest knives.",
+            "In the afternoon we explore Shinsekai, a neighborhood with its own personality — less polished and more real — where you'll discover what an Izakaya is: a traditional Japanese bar where appearances don't matter, it's all about eating and drinking around a counter, where the owner smiles and picks the night's menu at their own discretion.",
+          ],
+          highlights: ["Osaka Castle", "Kuromon Market", "Cutlery shops", "Shinsekai", "Izakaya"],
+        },
+        {
+          day: 8,
+          title: "The Japan You Imagined",
+          description: [
+            "We arrive in Kyoto and the pace drops automatically. We stroll through Gion, between traditional machiya houses and streets that feel frozen in time. If you're the type who likes getting into character, you can rent a traditional kimono and walk around here wearing it — we'll make sure to immortalize that moment.",
+            "There's no rush here. Just walking, observing and letting the city reveal itself little by little. We're in the most authentic area of Japan, so get ready to be left speechless on more than one occasion.",
+          ],
+          highlights: ["Kyoto", "Gion", "Kimono", "Traditional houses"],
+        },
+        {
+          day: 9,
+          title: "Temples and Real Postcards",
+          description: [
+            "Good morning Kyoto! We wake up with our sneakers on — it's the day to head up to Fushimi Inari, where we'll get lost beneath thousands of red torii gates. After emerging nearly overwhelmed by the views over Kyoto and capturing those incredible shots, we continue to Higashiyama, a vast area encompassing several UNESCO World Heritage temples and Kyoto's most pristine urban landscapes.",
+            "It's one of those days you know you'll remember for years.",
+            "How about ending the day dining at one of Kyoto's most prestigious restaurants? Yes, we love food — and if you came to Japan with Awayna, we hope you do too. We think there's no better way to end a perfect day than with great food.",
+          ],
+          highlights: ["Fushimi Inari", "Red torii", "Higashiyama", "UNESCO", "Dinner in Kyoto"],
+        },
+        {
+          day: 10,
+          title: "Nature and Freedom",
+          description: [
+            "We explore Arashiyama and its famous bamboo grove. We visit the Golden Pavilion, reflected in the water like an unreal scene — we'll try to capture your face when you first see it, because it's going to be quite a moment.",
+            "In the afternoon there's free time to get lost, rest or revisit that corner that caught your eye. Kyoto invites you to enjoy it without a rigid schedule.",
+          ],
+          highlights: ["Arashiyama", "Bamboo grove", "Golden Pavilion"],
+        },
+        {
+          day: 11,
+          title: "Nara and Its Tranquil Energy",
+          description: [
+            "We move to Nara. We stroll through its park among deer that roam freely throughout the whole area. On the way we visit the imposing Todai-ji temple, home to an incredible giant Buddha, adding even more cultural depth to this remarkable place.",
+            "It's a relaxed, green and very balanced day. The ideal way to close the most spiritual and cultural leg of the trip.",
+          ],
+          highlights: ["Nara", "Deer park", "Todai-ji", "Giant Buddha"],
+        },
+        {
+          day: 12,
+          title: "We Return Different",
+          description: [
+            "We return to Tokyo on the bullet train. The city is the same, but we are not.",
+            "Free afternoon for shopping, neighborhoods we still have pending, or simply strolling and remembering everything we've lived.",
+            "Farewell dinner, toasts and stories that are now part of the journey.",
+          ],
+          highlights: ["Bullet train", "Tokyo", "Shopping", "Farewell dinner"],
+        },
+        {
+          day: 13,
+          title: "See You Soon, Japan",
+          description: [
+            "Last stroll, last coffee and time to take stock.",
+            "We leave with a backpack full of memories, photos and real connections. This trip doesn't end here. It stays with us.",
+            "Our coordinator stays in Tokyo all day, so you have the option of catching your return flight during the day, or if you want to squeeze even more out of the vast city of Tokyo, you can stay until the following day.",
+          ],
+          highlights: ["Tokyo", "Farewell", "Memories"],
+        },
+      ],
+      included: [
+        "Airport pickup in Tokyo on arrival day",
+        "Awayna coordinator support throughout the entire trip",
+        "Trip video album",
+        "Accommodation in shared rooms (hotels, ryokan and guesthouses)",
+        "Group welcome dinner in Tokyo",
+        "Local guide to take us into the most authentic side of the capital",
+        "7-day Japan Rail Pass to travel Japan by bullet train",
+        "Remaining train tickets needed to reach all destinations",
+        "Guided visits to neighborhoods and temples at all destinations",
+        "Excursion to the Izu Peninsula with walks along the volcanic coastline",
+        "Strolls with views of Mount Fuji and surroundings",
+        "Visit to Osaka Castle and Kuromon Market",
+        "Guided Kyoto tour: Gion, Arashiyama, Bamboo Grove and Golden Pavilion",
+        "Nara excursion with deer park and Todai-ji temple entry",
+        "Farewell dinner in Tokyo",
+        "Medical insurance for the entire trip",
+        "Awayna backpack",
+      ],
+      notIncluded: [
+        "Return flights from Spain",
+        "Meals and drinks not specified above",
+        "Additional entry fees or optional activities outside the itinerary",
+        'Everything not mentioned in the "What\'s included" section',
+        "Common fund.",
+      ],
+      practicalInfo: {
+        bestTime: "March–May (cherry blossoms) and October–November (autumn leaves)",
+        visa: "Not required for stays under 90 days",
+        vaccines: "None required or specifically recommended",
+        currency: "Yen (JPY). €1 ≈ 160 JPY. Japan uses a lot of cash",
+        language: "Japanese. Limited English but good signage",
+        timeZone: "UTC+9 (8 hours ahead of Spain)",
+      },
+    },
     availableDates: [
       {
         id: "jp-dic-26",
@@ -1370,6 +2067,122 @@ export const destinations: Destination[] = [
     //       "No. El trekking es para todos los niveles con guia certificado y equipo proporcionado (crampones, piolet, arnes).",
     //   },
     // ],
+    en: {
+      tagline: "Northern lights, waterfalls and landscapes from another planet",
+      description: [
+        "Iceland is like visiting another planet without leaving Earth. Geysers, volcanoes, glaciers, northern lights, impossible waterfalls and breathtaking landscapes. This trip follows the iconic southern Ring Road, where every bend hides a postcard. Bring your camera and your sense of wonder.",
+      ],
+      highlights: [
+        "Northern lights hunting",
+        "Complete Golden Circle",
+        "Vatnajökull Glacier",
+        "Black sand beach at Vík",
+        "Jökulsárlón glacial lagoon",
+        "Spectacular waterfalls",
+      ],
+      components: [
+        { name: "Nature", rating: 5 },
+        { name: "Adventure", rating: 4.5 },
+        { name: "Photography", rating: 5 },
+        { name: "Relaxation", rating: 3.5 },
+        { name: "Food & drinks", rating: 3.5 },
+        { name: "Beaches", rating: 3.5 },
+      ],
+      itinerary: [
+        {
+          day: 1,
+          title: "Welcome to Iceland",
+          description: [
+            "Arrival at Keflavík. Transfer to Reykjavík with a stop at the Blue Lagoon to relax in its turquoise thermal waters. Check-in and welcome dinner.",
+          ],
+          highlights: ["Keflavík arrival", "Blue Lagoon", "Reykjavík"],
+        },
+        {
+          day: 2,
+          title: "Golden Circle",
+          description: [
+            "Iceland's most famous route: Þingvellir (where the tectonic plates separate), Geysir (active geysers) and Gullfoss (the golden waterfall). Northern lights hunt at night.",
+          ],
+          highlights: ["Þingvellir", "Geysir", "Gullfoss", "Northern lights"],
+        },
+        {
+          day: 3,
+          title: "South Coast – Waterfalls",
+          description: [
+            "Route along the south coast stopping at the Seljalandsfoss (you can walk behind it!) and Skógafoss waterfalls. Arrival in Vík and its famous black sand beach at Reynisfjara.",
+          ],
+          highlights: ["Seljalandsfoss", "Skógafoss", "Black sand beach Vík"],
+        },
+        {
+          day: 4,
+          title: "Glaciers and Icebergs",
+          description: [
+            "Vatnajökull National Park with Europe's largest glacier. Jökulsárlón glacial lagoon with its floating icebergs. Diamond Beach where ice glitters on the black sand.",
+          ],
+          highlights: ["Vatnajökull", "Jökulsárlón", "Diamond Beach"],
+        },
+        {
+          day: 5,
+          title: "Glacier Trekking",
+          description: [
+            "A unique experience: guided glacier trekking with crampons. Blue ice caves (subject to conditions). Afternoon exploring the area.",
+          ],
+          highlights: ["Glacier trek", "Crampons", "Ice caves"],
+        },
+        {
+          day: 6,
+          title: "Return to Reykjavík",
+          description: [
+            "Leisurely return, stopping at places we missed or new discoveries along the way. Arrival in Reykjavík for a free night in the capital.",
+          ],
+          highlights: ["Scenic drive", "Free stops", "Reykjavík night"],
+        },
+        {
+          day: 7,
+          title: "Reykjavík and Whales",
+          description: [
+            "Morning whale-watching in Reykjavík bay. Free afternoon to explore the city: Hallgrímskirkja, the old harbor, museums. Farewell dinner.",
+          ],
+          highlights: ["Whale watching", "Hallgrímskirkja", "Farewell dinner"],
+        },
+        {
+          day: 8,
+          title: "Bless Iceland",
+          description: [
+            "Transfer to Keflavík airport for the return flight. We leave with unforgettable landscapes and (hopefully) aurora photos.",
+          ],
+          highlights: ["Airport transfer", "Return flight"],
+        },
+      ],
+      included: [
+        "7 nights accommodation in hotels/guesthouses",
+        "Daily breakfasts + 2 dinners",
+        "4x4 minibus transport",
+        "Blue Lagoon entry with face mask",
+        "Glacier trekking with equipment",
+        "Whale watching tour",
+        "Northern lights hunting (3 nights)",
+        "Awayna coordinator",
+        "Travel insurance",
+        "Medical insurance for the entire trip",
+        "Trip video album",
+      ],
+      notIncluded: [
+        "International flights",
+        "Meals not specified",
+        "Optional activities (snowmobile, Silfra diving)",
+        "Tips",
+        "Common fund.",
+      ],
+      practicalInfo: {
+        bestTime: "September to March for northern lights. June–August midnight sun",
+        visa: "Not required (Schengen Area)",
+        vaccines: "None required",
+        currency: "Icelandic Króna (ISK). €1 ≈ 150 ISK. Card payments everywhere",
+        language: "Icelandic. English is practically universal",
+        timeZone: "UTC+0 (1–2 hours behind Spain)",
+      },
+    },
     availableDates: [
       {
         id: "is-feb-25",
@@ -1440,6 +2253,33 @@ export const destinations: Destination[] = [
     availableDates: [],
   },
 ];
+
+export function getLocalizedDestination(dest: Destination, locale: string): Destination {
+  if (locale === "en" && dest.en) {
+    const { en, ...base } = dest;
+    return {
+      ...base,
+      en,
+      tagline: en.tagline ?? base.tagline,
+      duration: en.duration ?? base.duration,
+      highlights: en.highlights ?? base.highlights,
+      components: en.components ?? base.components,
+      description: en.description ?? base.description,
+      itinerary: en.itinerary
+        ? en.itinerary.map((enDay, i) => ({
+            ...base.itinerary[i],
+            ...enDay,
+          }))
+        : base.itinerary,
+      included: en.included ?? base.included,
+      notIncluded: en.notIncluded ?? base.notIncluded,
+      practicalInfo: en.practicalInfo
+        ? { ...base.practicalInfo, ...en.practicalInfo }
+        : base.practicalInfo,
+    };
+  }
+  return dest;
+}
 
 export function getDestinationBySlug(slug: string): Destination | undefined {
   return destinations.find((d) => d.slug === slug);

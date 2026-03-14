@@ -3,8 +3,11 @@
 import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { X } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/navigation"
 
 export function CookieBanner() {
+  const t = useTranslations("cookieBanner")
   const [isVisible, setIsVisible] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
 
@@ -67,11 +70,10 @@ export function CookieBanner() {
             {/* Content */}
             <div className="flex-1 pr-8 md:pr-0">
               <h3 className="text-lg font-semibold mb-2">
-                Tu privacidad importa
+                {t("title")}
               </h3>
               <p className="text-sm text-background/70 leading-relaxed">
-                Usamos cookies para mejorar tu experiencia, analizar el trafico y personalizar el contenido. 
-                Al aceptar, nos ayudas a ofrecerte los mejores viajes.
+                {t("desc")}
               </p>
             </div>
 
@@ -82,25 +84,25 @@ export function CookieBanner() {
                 onClick={handleAcceptNecessary}
                 className="border-background/30 text-background hover:bg-background/10 bg-transparent"
               >
-                Solo necesarias
+                {t("necessary")}
               </Button>
               <Button
                 onClick={handleAcceptAll}
                 className="bg-primary hover:bg-primary/90 text-primary-foreground"
               >
-                Aceptar todas
+                {t("acceptAll")}
               </Button>
             </div>
           </div>
 
           {/* Minimal link */}
           <div className="mt-4 pt-4 border-t border-background/10">
-            <a 
-              href="/politica-cookies" 
+            <Link
+              href="/cookies"
               className="text-xs text-background/50 hover:text-background/70 transition-colors"
             >
-              Mas informacion sobre nuestra politica de cookies
-            </a>
+              {t("moreInfo")}
+            </Link>
           </div>
         </div>
       </div>

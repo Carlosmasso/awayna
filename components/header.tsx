@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import Link from "next/link"
 import Image from "next/image"
 import { Menu, X, ChevronDown, Compass } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -12,8 +11,14 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { destinations } from "@/lib/destinations-data"
+import { useTranslations, useLocale } from "next-intl"
+import { Link, usePathname } from "@/i18n/navigation"
 
 export function Header() {
+  const t = useTranslations("nav")
+  const locale = useLocale()
+  const pathname = usePathname()
+  const otherLocale = locale === "es" ? "en" : "es"
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
 
@@ -55,7 +60,7 @@ export function Header() {
                   variant="ghost" 
                   className={`flex items-center gap-1 ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : ""}`}
                 >
-                  <span>Destinos</span>
+                  <span>{t("destinations")}</span>
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -65,7 +70,7 @@ export function Header() {
                     <Link href={`/destinos/${dest.slug}`} className="flex items-center justify-between">
                       {dest.name}
                       {dest.comingSoon && (
-                        <span className="text-xs text-primary font-medium ml-2">Pronto</span>
+                        <span className="text-xs text-primary font-medium ml-2">{t("comingSoon")}</span>
                       )}
                     </Link>
                   </DropdownMenuItem>
@@ -74,12 +79,25 @@ export function Header() {
             </DropdownMenu>
 
             <Button variant="ghost" className={scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : ""} asChild>
-              <Link href="/sobre-nosotros">Conócenos</Link>
+              <Link href="/sobre-nosotros">{t("about")}</Link>
             </Button>
             
             <Button variant="ghost" className={scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : ""} asChild>
-              <Link href="/contacto">Contacto</Link>
+              <Link href="/contacto">{t("contact")}</Link>
             </Button>
+
+            {/* Language switcher */}
+            <Link
+              href={pathname}
+              locale={otherLocale}
+              className={`ml-1 flex items-center gap-1 text-sm font-semibold px-2.5 py-1.5 rounded-lg border transition-colors ${
+                scrolled
+                  ? "border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+                  : "border-border text-foreground hover:bg-muted"
+              }`}
+            >
+              {otherLocale.toUpperCase()}
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -96,7 +114,7 @@ export function Header() {
         {mobileMenuOpen && (
           <div className={`md:hidden py-4 border-t ${scrolled ? "border-primary-foreground/20" : "border-border/50"}`}>
             <div className="flex flex-col gap-2">
-              <div className={`px-3 py-2 text-sm font-medium ${scrolled ? "text-primary-foreground/70" : "text-muted-foreground"}`}>Destinos</div>
+              <div className={`px-3 py-2 text-sm font-medium ${scrolled ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{t("destinations")}</div>
               {destinations.map((dest) => (
                 <Link
                   key={dest.slug}
@@ -106,7 +124,7 @@ export function Header() {
                 >
                   {dest.name}
                   {dest.comingSoon && (
-                    <span className="text-xs text-primary font-medium">Pronto</span>
+                    <span className="text-xs text-primary font-medium">{t("comingSoon")}</span>
                   )}
                 </Link>
               ))}
@@ -116,10 +134,22 @@ export function Header() {
                 Viajar con nosotros
               </Link>
               <Link href="/sobre-nosotros" className={`px-3 py-2 text-sm font-medium rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>
-                Conócenos
+                {t("about")}
               </Link>
               <Link href="/contacto" className={`px-3 py-2 text-sm font-medium rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>
-                Contacto
+                {t("contact")}
+              </Link>
+              <div className={`border-t my-2 ${scrolled ? "border-primary-foreground/20" : "border-border/50"}`} />
+              <Link
+                href={pathname}
+                locale={otherLocale}
+                onClick={() => setMobileMenuOpen(false)}
+                className={`px-3 py-2 text-sm font-semibold rounded-lg flex items-center gap-2 ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`}
+              >
+                <span className={`text-xs px-2 py-0.5 rounded border font-bold ${scrolled ? "border-primary-foreground/40" : "border-border"}`}>
+                  {otherLocale.toUpperCase()}
+                </span>
+                {otherLocale === "en" ? "Switch to English" : "Cambiar a Español"}
               </Link>
             </div>
           </div>

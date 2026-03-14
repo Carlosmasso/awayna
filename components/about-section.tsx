@@ -1,15 +1,18 @@
 import { Heart, Users, Compass } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import Image from "next/image";
+import { getTranslations } from "next-intl/server";
+import { Link } from "@/i18n/navigation";
 
-export function AboutSection() {
+export async function AboutSection() {
+  const t = await getTranslations("about");
+
   return (
     <section className="py-16 sm:py-20 bg-secondary/30">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground mb-8 text-center">
-            Quiénes somos
+            {t("title")}
           </h2>
 
           {/* Founders */}
@@ -37,17 +40,10 @@ export function AboutSection() {
 
           <div className="text-center">
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Somos dos viajeros apasionados que transformaron su amor por
-              descubrir el mundo en una forma de viajar diferente. En Awayna
-              creamos experiencias auténticas donde lo importante no es solo el
-              destino, sino las personas que conoces y los momentos que
-              compartes.
+              {t("desc1")}
             </p>
             <p className="text-base text-muted-foreground leading-relaxed mb-8">
-              Viajamos con calma, mezclándonos con la gente local y buscando
-              esos pequeños detalles que hacen cada viaje único. Porque cuando
-              conectas con el lugar y con el grupo, el viaje se transforma en
-              algo que se queda contigo para siempre.
+              {t("desc2")}
             </p>
           </div>
 
@@ -58,10 +54,10 @@ export function AboutSection() {
               </div>
               <div className="text-center">
                 <h3 className="font-semibold text-foreground mb-1">
-                  Pasión por viajar
+                  {t("passion")}
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Experiencias auténticas y reales
+                  {t("passionSub")}
                 </p>
               </div>
             </div>
@@ -72,10 +68,10 @@ export function AboutSection() {
               </div>
               <div className="text-center">
                 <h3 className="font-semibold text-foreground mb-1">
-                  Grupos reducidos
+                  {t("groups")}
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Conexiones genuinas entre viajeros
+                  {t("groupsSub")}
                 </p>
               </div>
             </div>
@@ -86,10 +82,10 @@ export function AboutSection() {
               </div>
               <div className="text-center">
                 <h3 className="font-semibold text-foreground mb-1">
-                  Viaje responsable
+                  {t("responsible")}
                 </h3>
                 <p className="text-sm text-muted-foreground">
-                  Respeto por culturas locales
+                  {t("responsibleSub")}
                 </p>
               </div>
             </div>
@@ -97,7 +93,7 @@ export function AboutSection() {
 
           <div className="text-center">
             <Button variant="outline" size="lg" asChild>
-              <Link href="/sobre-nosotros">Conoce más sobre nosotros</Link>
+              <Link href="/sobre-nosotros">{t("cta")}</Link>
             </Button>
           </div>
         </div>

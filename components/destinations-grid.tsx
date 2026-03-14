@@ -2,8 +2,9 @@
 
 import { useEffect } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { Link } from "@/i18n/navigation"
 
 const destinations = [
   {
@@ -53,6 +54,7 @@ const destinations = [
 ]
 
 export function   DestinationsGrid() {
+  const t = useTranslations("destinationsGrid")
   useEffect(() => {
     // Verificar si hay un hash en la URL cuando el componente se monta
     if (window.location.hash === '#viajes') {
@@ -69,10 +71,10 @@ export function   DestinationsGrid() {
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-foreground tracking-tight mb-4">
-            ¿Dónde nos vamos?
+            {t("title")}
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto text-pretty">
-            Viajes en grupo a destinos auténticos, colaborando con la gente local para empaparnos de su cultura y tradiciones.
+            {t("subtitle")}
           </p>
         </div>
 
@@ -96,7 +98,7 @@ export function   DestinationsGrid() {
               <div className="absolute inset-0 flex flex-col justify-end p-4">
                 <h3 className="font-semibold text-background text-lg">{destination.name}</h3>
                 {destination.comingSoon ? (
-                  <span className="text-sm text-background/90 font-medium bg-primary/70 rounded-full px-2 py-0.5 mt-1 w-fit">Próximamente</span>
+                  <span className="text-sm text-background/90 font-medium bg-primary/70 rounded-full px-2 py-0.5 mt-1 w-fit">{t("comingSoon")}</span>
                 ) : (
                   <p className="text-sm text-background/80">{destination.trips} viajes</p>
                 )}

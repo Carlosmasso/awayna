@@ -5,22 +5,19 @@ import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "FAQ | Awayna - Preguntas Frecuentes",
-  description:
-    "Resolvemos todas tus dudas antes de viajar con Awayna. Grupos, alojamientos, visados, equipaje, seguro de viaje y mucho más.",
-  keywords:
-    "preguntas frecuentes awayna, faq viajes grupo, dudas viajes, info viajes awayna",
-  openGraph: {
-    title: "FAQ | Awayna - Preguntas Frecuentes",
-    description:
-      "Todo lo que necesitas saber antes de viajar con Awayna.",
-    type: "website",
-  },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "pages.faq" });
+  return { title: t("metaTitle"), description: t("metaDesc") };
+}
 
-const faqs = [
+const faqsEs = [
   {
     question: "¿Qué tipo de experiencias viviremos?",
     answer:
@@ -123,25 +120,132 @@ const faqs = [
   },
 ];
 
-export default function FaqPage() {
+const faqsEn = [
+  {
+    question: "What kind of experiences will we have?",
+    answer:
+      "We don't travel to check boxes. We travel to feel things.\n\nWe mix local culture, powerful nature, real gastronomy, and experiences you can't buy on a day tour. We'll sleep in special places, share moments that weren't on any script, and truly understand the destination.\n\nThis isn't tourism. It's living the journey from the inside. As a group.",
+  },
+  {
+    question: "Do I need vaccinations?",
+    answer:
+      "It depends on the destination and your personal health situation.\n\nGenerally there are no mandatory vaccines for travelers from Spain, but there may be recommendations depending on the route and duration. Our advice: visit a travel health clinic 4–6 weeks before departure and travel with peace of mind.",
+  },
+  {
+    question: "Can I extend the trip on my own?",
+    answer:
+      "Yes. And it almost always happens.\n\nYou can stay extra days before or after the group trip. We give you recommendations, areas worth visiting, and practical tips to make it easy to arrange.\n\nExtra nights and flight changes aren't included, but we won't leave you alone figuring it out.",
+  },
+  {
+    question: "Do I need a visa?",
+    answer:
+      "It depends on your nationality and the country we're traveling to.\n\nRules change, so we always recommend checking official information before departure. In almost all cases you'll need a passport valid for at least 6 months.\n\nIf you have questions, we'll guide you before you book.",
+  },
+  {
+    question: "What are the accommodations like?",
+    answer:
+      "We look for places with good energy.\n\nWell-located, comfortable hotels with personality. Nothing impersonal or overcrowded. And on many trips we include accommodations that are part of the experience themselves.\n\nShared rooms (double or triple). If you want a single room, you can request a supplement if available.",
+  },
+  {
+    question: "Is the trip very physically demanding?",
+    answer:
+      "It's active, but not extreme.\n\nThere will be hikes, intense days and action-packed experiences, but it's designed for people with normal physical fitness. You don't need to be an athlete, but you should come with energy.\n\nIf you have an injury or medical condition, let us know beforehand.",
+  },
+  {
+    question: "How large are the groups?",
+    answer:
+      "Small groups.\n\nThat means better logistics, deeper connections, more flexibility, and a more authentic experience. We don't travel in masses. We travel as a team.",
+  },
+  {
+    question: "Will I have free time?",
+    answer:
+      "Yes.\n\nThe trip is organized, but we always leave space for you to explore at your own pace, rest, or make alternative plans. It's a balance between experiencing things together and having your own moments.",
+  },
+  {
+    question: "What kind of people come on these trips?",
+    answer:
+      "People with a traveler's mindset.\n\nOpen, respectful people who want to share and step outside their comfort zone. Many come alone. Almost all leave as friends.",
+  },
+  {
+    question: "Is the travel responsible?",
+    answer:
+      "Yes.\n\nWe work with local providers, avoid activities involving animal exploitation, and aim for a positive impact. Traveling well also means traveling consciously.",
+  },
+  {
+    question: "What's included in the price?",
+    answer:
+      "We include the important things: accommodation, key activities, team support, part of the internal transport, and experiences that are core to the trip.\n\nInternational flights, some meals, and personal expenses are usually not included (we always detail this for each trip).",
+  },
+  {
+    question: "What are meals like during the trip?",
+    answer:
+      "Some meals are included and others are free choice.\n\nWe love for you to try real local food, both as a group and on your own. Eating well is part of the journey. And yes, we always recommend places worth visiting.",
+  },
+  {
+    question: "Can I join if I'm traveling solo?",
+    answer:
+      "Actually, that's the most common way.\n\nMost people sign up without knowing anyone. The group forms naturally when everyone shares the same vibe: discovering, sharing, and living the experience.",
+  },
+  {
+    question: "Is there a coordinator throughout the entire trip?",
+    answer:
+      "Yes.\n\nYou'll travel with someone from the Awayna team who accompanies the group, coordinates logistics, and looks after the experience. We also work with local guides for many activities.\n\nYou're not alone. You're accompanied.",
+  },
+  {
+    question: "What are internal transports like?",
+    answer:
+      "We use different modes depending on the destination: private vehicles, trains, boats, internal flights...\n\nWe look for a balance between comfort and authenticity. Sometimes there will be long journeys, but they're part of the adventure.",
+  },
+  {
+    question: "Is there an age limit?",
+    answer:
+      "We don't have a strict age requirement, but most travelers tend to be between 25 and 45 years old.\n\nMore than age, what matters is attitude.",
+  },
+  {
+    question: "Do I need travel insurance?",
+    answer:
+      "Yes, travel insurance is required.\n\nYou can get whichever you prefer or add the one we recommend. The important thing is that you travel covered against any unexpected events.",
+  },
+  {
+    question: "What if I don't know anyone in the group?",
+    answer:
+      "Perfect.\n\nYou come open, and so does everyone else. The trip is designed to build connection from day one. Not forming a group is the exception, not the rule.",
+  },
+  {
+    question: "What luggage do I need?",
+    answer:
+      "It depends on the destination, but we always send a practical guide before the trip with clear recommendations: type of clothing, footwear, useful accessories, and what you don't need to carry.\n\nLess luggage. More experience.",
+  },
+  {
+    question: "What if I have questions before booking?",
+    answer:
+      "Write to us.\n\nWe prefer to resolve everything before you sign up. We want you to come convinced, not with questions still in your head.",
+  },
+];
+
+export default async function FaqPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const t = await getTranslations({ locale, namespace: "pages.faq" });
+  const faqs = locale === "en" ? faqsEn : faqsEs;
+  const contactHref = locale === "en" ? "/en/contacto" : "/contacto";
+
   return (
     <div className="min-h-screen bg-background font-sans">
       <Header />
       <main>
-        {/* Hero */}
         <section className="pt-32 pb-16">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-3xl md:text-5xl font-bold text-foreground mb-4">
-              Preguntas frecuentes
+              {t("title")}
             </h1>
-            <p className="text-lg text-muted-foreground">
-              Todo lo que necesitas saber antes de viajar con Awayna.
-              Si no encuentras tu respuesta, escríbenos.
-            </p>
+            <p className="text-lg text-muted-foreground">{t("subtitle")}</p>
           </div>
         </section>
 
-        {/* FAQ List */}
         <section className="pb-20">
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <div className="space-y-3">
@@ -166,16 +270,13 @@ export default function FaqPage() {
               ))}
             </div>
 
-            {/* CTA */}
             <div className="mt-16 text-center rounded-2xl bg-secondary/40 border border-border px-8 py-12">
               <h2 className="text-2xl font-bold text-foreground mb-3">
-                ¿Tienes alguna otra pregunta?
+                {t("ctaTitle")}
               </h2>
-              <p className="text-muted-foreground mb-6">
-                Escríbenos y te respondemos antes de que te decidas.
-              </p>
+              <p className="text-muted-foreground mb-6">{t("ctaDesc")}</p>
               <Button asChild size="lg">
-                <Link href="/contacto">Contactar con Awayna</Link>
+                <Link href={contactHref}>{t("ctaButton")}</Link>
               </Button>
             </div>
           </div>

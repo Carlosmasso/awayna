@@ -2,21 +2,8 @@ import { destinations } from "@/lib/destinations-data"
 import { phones } from "@/lib/info"
 import { Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
-
-const footerLinks = {
-  empresa: [
-    { name: "Sobre nosotros", href: "/sobre-nosotros" },
-    { name: "Cómo funciona Awayna", href: "/como-funciona" },
-  ],
-  soporte: [
-    { name: "FAQ", href: "/faq" },
-    { name: "Contacto", href: "/contacto" },
-    { name: "Politica de cancelacion", href: "/politica-de-cancelacion" },
-    // { name: "Terminos y condiciones", href: "#" },
-    // { name: "Privacidad", href: "#" },
-  ],
-}
+import { getTranslations } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
 
 const socialLinks = [
   { name: "Instagram", icon: Instagram, href: "#" },
@@ -25,7 +12,8 @@ const socialLinks = [
   { name: "Twitter", icon: Twitter, href: "#" },
 ]
 
-export function Footer() {
+export async function Footer() {
+  const t = await getTranslations("footer")
   return (
     <footer className="bg-foreground text-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -43,7 +31,7 @@ export function Footer() {
               />
             </Link>
             <p className="text-background/70 mb-6 max-w-sm leading-relaxed">
-              Viajes en grupo para jovenes aventureros. Descubre el mundo con gente como tu y crea recuerdos que duraran toda la vida.
+              {t("tagline")}
             </p>
             
             {/* Contact Info */}
@@ -58,7 +46,7 @@ export function Footer() {
               </div>
               <div className="flex items-center gap-2">
                 <MapPin className="h-4 w-4" />
-                <span>Madrid, Espana</span>
+                <span>Madrid, España</span>
               </div>
             </div>
 
@@ -79,13 +67,13 @@ export function Footer() {
 
           {/* Links Columns */}
           <div>
-            <h3 className="font-semibold text-background mb-4">Destinos</h3>
+            <h3 className="font-semibold text-background mb-4">{t("destinationsCol")}</h3>
             <ul className="space-y-3">
               {destinations.map((dest) => (
                 <li key={dest.slug}>
                   <Link href={`/destinos/${dest.slug}`} className="text-background/70 hover:text-background transition-colors flex items-center gap-1.5">
                     {dest.name}
-                    {dest.comingSoon && <span className="text-xs text-primary/80">Pronto</span>}
+                    {dest.comingSoon && <span className="text-xs text-primary/80">{t("comingSoon")}</span>}
                   </Link>
                 </li>
               ))}
@@ -93,46 +81,47 @@ export function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-background mb-4">Empresa</h3>
+            <h3 className="font-semibold text-background mb-4">{t("companyCol")}</h3>
             <ul className="space-y-3">
-              {footerLinks.empresa.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/sobre-nosotros" className="text-background/70 hover:text-background transition-colors">
+                  {t("aboutLink")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/como-funciona" className="text-background/70 hover:text-background transition-colors">
+                  {t("howItWorksLink")}
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-background mb-4">Soporte</h3>
+            <h3 className="font-semibold text-background mb-4">{t("supportCol")}</h3>
             <ul className="space-y-3">
-              {footerLinks.soporte.map((link) => (
-                <li key={link.name}>
-                  <Link href={link.href} className="text-background/70 hover:text-background transition-colors">
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
+              <li>
+                <Link href="/faq" className="text-background/70 hover:text-background transition-colors">FAQ</Link>
+              </li>
+              <li>
+                <Link href="/contacto" className="text-background/70 hover:text-background transition-colors">
+                  {t("contactLink")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/politica-de-cancelacion" className="text-background/70 hover:text-background transition-colors">
+                  {t("cancellationLink")}
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="py-6 border-t border-background/10 flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-background/60">
-            © 2026 Awayna. Todos los derechos reservados.
-          </p>
+          <p className="text-sm text-background/60">{t("copyright")}</p>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-background/60">
-            {/* <Link href="#" className="hover:text-background transition-colors">
-              Terminos
-            </Link>
-            <Link href="#" className="hover:text-background transition-colors">
-              Privacidad
-            </Link> */}
             <Link href="/cookies" className="hover:text-background transition-colors">
-              Cookies
+              {t("cookies")}
             </Link>
           </div>
         </div>

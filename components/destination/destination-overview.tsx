@@ -4,12 +4,14 @@ import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import type { Destination } from "@/lib/destinations-data";
+import { useTranslations } from "next-intl";
 
 interface DestinationOverviewProps {
   destination: Destination;
 }
 
 export function DestinationOverview({ destination }: DestinationOverviewProps) {
+  const t = useTranslations("destPage")
   const galleryImages = destination.galleryImages || [];
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -72,7 +74,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
         {/* Left: Description (8 cols) */}
         <div className="lg:col-span-5">
           <h2 className="text-3xl font-bold text-foreground mb-6">
-            Sobre este viaje
+            {t("aboutTrip")}
           </h2>
           {Array.isArray(destination.description)
             ? destination.description.map((paragraph, idx) => (
@@ -96,7 +98,7 @@ export function DestinationOverview({ destination }: DestinationOverviewProps) {
             {/* Header */}
             <div className="flex items-center justify-between mb-4">
               <h3 className="text-xl font-bold text-foreground">
-                Galería del viaje
+                {t("gallery")}
               </h3>
               <div className="flex items-center gap-3">
                 <span className="text-sm text-muted-foreground">

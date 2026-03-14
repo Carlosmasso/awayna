@@ -1,6 +1,7 @@
 'use client'
 
 import { Star } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 
 interface Component {
   name: string
@@ -33,11 +34,12 @@ function StarRating({ rating }: { rating: number }) {
 }
 
 export function DestinationComponents({ components }: DestinationComponentsProps) {
+  const t = useTranslations('destPage')
   return (
     <section className="py-16">
       <div className="mx-auto max-w-7xl">
         <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-center mb-10">
-          ¿Es de mi rollo?
+          {t('componentsTitle')}
         </h2>
         <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {components.map((component, index) => (

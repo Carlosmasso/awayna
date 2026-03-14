@@ -1,14 +1,16 @@
 import Image from "next/image"
-import Link from "next/link"
 import { Star, Clock, MapPin, ChevronLeft } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import type { Destination } from "@/lib/destinations-data"
+import { getTranslations } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
 
 interface DestinationHeroProps {
   destination: Destination
 }
 
-export function DestinationHero({ destination }: DestinationHeroProps) {
+export async function DestinationHero({ destination }: DestinationHeroProps) {
+  const t = await getTranslations("destPage")
   const discount = destination.originalPrice 
     ? Math.round((1 - destination.price / destination.originalPrice) * 100) 
     : 0
@@ -34,7 +36,7 @@ export function DestinationHero({ destination }: DestinationHeroProps) {
           className="flex items-center gap-1 text-background/90 hover:text-background transition-colors text-sm font-medium"
         >
           <ChevronLeft className="h-4 w-4" />
-          Volver a viajes
+          {t("backToTrips")}
         </Link>
       </div>
 

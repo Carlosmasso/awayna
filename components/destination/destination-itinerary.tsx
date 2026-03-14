@@ -5,6 +5,7 @@ import Image from "next/image"
 import { ChevronDown, MapPin } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import type { Destination } from "@/lib/destinations-data"
+import { useTranslations } from "next-intl"
 
 interface DestinationItineraryProps {
   destination: Destination
@@ -14,15 +15,17 @@ function getDayKey(day: number | number[]): number {
   return Array.isArray(day) ? day[0] : day
 }
 
-function getDayLabel(day: number | number[]): string {
-  if (Array.isArray(day)) {
-    if (day.length === 1) return `Día ${day[0]}`
-    return `Días ${day[0]}-${day[day.length - 1]}`
-  }
-  return `Día ${day}`
-}
-
 export function DestinationItinerary({ destination }: DestinationItineraryProps) {
+  const t = useTranslations("destPage")
+
+  function getDayLabel(day: number | number[]): string {
+    if (Array.isArray(day)) {
+      if (day.length === 1) return `${t("day")} ${day[0]}`
+      return `${t("days")} ${day[0]}-${day[day.length - 1]}`
+    }
+    return `${t("day")} ${day}`
+  }
+
   const firstDayKey = getDayKey(destination.itinerary[0]?.day ?? 1)
   const [expandedDay, setExpandedDay] = useState<number | null>(firstDayKey)
   const dayRefs = useRef<{ [key: number]: HTMLDivElement | null }>({})
@@ -46,7 +49,7 @@ export function DestinationItinerary({ destination }: DestinationItineraryProps)
       <div>
         <div className="text-center mb-6 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
-            Itinerario día a día
+            {t("itineraryTitle")}
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             Un viaje cuidadosamente diseñado para que vivas experiencias únicas cada día

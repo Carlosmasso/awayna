@@ -1,5 +1,6 @@
 import { Check, X, Plane, BedDouble, UtensilsCrossed, Bus, Shield, Users, Map, Waves, Ticket, Backpack, Anchor, Coffee, Camera, TreePine, Bike, CreditCard, Wallet, Heart } from "lucide-react"
 import type { Destination } from "@/lib/destinations-data"
+import { getTranslations } from "next-intl/server"
 
 interface DestinationIncludesProps {
   destination: Destination
@@ -27,16 +28,17 @@ function getItemIcon(text: string) {
   return null
 }
 
-export function DestinationIncludes({ destination }: DestinationIncludesProps) {
+export async function DestinationIncludes({ destination }: DestinationIncludesProps) {
+  const t = await getTranslations("destPage")
   return (
     <section className="py-8 sm:py-16">
       <div>
         <div className="text-center mb-6 sm:mb-10">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground mb-3">
-            Que incluye el viaje
+            {t("includesTitle")}
           </h2>
           <p className="text-muted-foreground">
-            Todo lo que necesitas para disfrutar sin preocupaciones
+            {t("includesSubtitle")}
           </p>
         </div>
 
@@ -47,7 +49,7 @@ export function DestinationIncludes({ destination }: DestinationIncludesProps) {
               <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
                 <Check className="h-5 w-5 text-primary" />
               </div>
-              Incluido
+              {t("included")}
             </h3>
             <ul className="space-y-3">
               {destination.included.map((item, index) => {
@@ -70,7 +72,7 @@ export function DestinationIncludes({ destination }: DestinationIncludesProps) {
               <div className="w-8 h-8 rounded-full bg-muted flex items-center justify-center">
                 <X className="h-5 w-5 text-muted-foreground" />
               </div>
-              No incluido
+              {t("notIncluded")}
             </h3>
             <ul className="space-y-3">
               {destination.notIncluded.map((item, index) => {

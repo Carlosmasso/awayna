@@ -1,8 +1,9 @@
 import Image from "next/image"
-import Link from "next/link"
 import { Calendar, Users, Clock, Star, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { getTranslations } from "next-intl/server"
+import { Link } from "@/i18n/navigation"
 
 interface TripCardProps {
   image: string
@@ -19,7 +20,7 @@ interface TripCardProps {
   tags?: string[]
 }
 
-export function TripCard({
+export async function TripCard({
   image,
   destination,
   slug,
@@ -33,6 +34,7 @@ export function TripCard({
   dates,
   tags = [],
 }: TripCardProps) {
+  const t = await getTranslations("tripCard")
   const destinationSlug = slug || destination.toLowerCase().replace(/\s+/g, "-")
   const discount = originalPrice ? Math.round((1 - price / originalPrice) * 100) : 0
   const spotsPercentage = (spots / totalSpots) * 100
@@ -105,10 +107,10 @@ export function TripCard({
             <div className="flex items-center gap-1.5">
               <Users className={`h-4 w-4 ${isLowSpots ? "text-primary" : "text-muted-foreground"}`} />
               <span className={`text-sm font-medium ${isLowSpots ? "text-primary" : "text-foreground"}`}>
-                {isLowSpots ? `Ultimas ${spots} plazas!` : `${spots} plazas disponibles`}
+                {isLowSpots ? t("lastSpots", { spots }) : t("spotsAvailable", { spots })}
               </span>
             </div>
-            <span className="text-xs text-muted-foreground">{totalSpots - spots} reservadas</span>
+            <span className="text-xs text-muted-foreground">{t("reserved", { reserved: totalSpots - spots })}</span>
           </div>
           <div className="h-1.5 bg-muted rounded-full overflow-hidden">
             <div 
@@ -121,7 +123,7 @@ export function TripCard({
         {/* Price & CTA */}
         <div className="flex items-end justify-between pt-3 border-t border-border/50">
           <div>
-            <p className="text-xs text-muted-foreground">Desde</p>
+            <p className="text-xs text-muted-foreground">{t("from")}</p>
             <div className="flex items-baseline gap-2">
               <span className="text-2xl font-bold text-foreground">{price}€</span>
               {originalPrice && (
@@ -131,7 +133,7 @@ export function TripCard({
           </div>
           <Button variant="ghost" size="sm" className="text-primary hover:text-primary/80 hover:bg-primary/10 group/btn" asChild>
             <Link href={`/destinos/${destinationSlug}`}>
-              Ver viaje
+              {t("viewTrip")}
               <ArrowRight className="h-4 w-4 ml-1 group-hover/btn:translate-x-1 transition-transform" />
             </Link>
           </Button>
