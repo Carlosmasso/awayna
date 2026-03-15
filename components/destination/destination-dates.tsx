@@ -5,7 +5,7 @@ import { Calendar, Users, Check, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingModal } from "@/components/booking-modal";
 import { Link } from "@/i18n/navigation";
-import type { Destination } from "@/lib/destinations-data";
+import type { Destination, TripDate } from "@/lib/destinations-data";
 import { useTranslations } from "next-intl";
 
 interface DestinationDatesProps {
@@ -25,16 +25,17 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
   const t = useTranslations("destPage")
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [showModal, setShowModal] = useState<{
-    destination: string;
-    dateId: string;
+    destination: Destination;
+    tripDate: TripDate;
   } | null>(null);
 
   const handleReserve = () => {
     if (!selectedDate) return;
-
+    const tripDate = destination.availableDates.find((d) => d.id === selectedDate);
+    if (!tripDate) return;
     setShowModal({
-      destination: destination.name,
-      dateId: selectedDate,
+      destination,
+      tripDate,
     });
   };
 
@@ -163,7 +164,7 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
       {showModal && (
         <BookingModal
           destination={showModal.destination}
-          dateId={showModal.dateId}
+          tripDate={showModal.tripDate}
           onClose={() => setShowModal(null)}
         />
       )}

@@ -5,53 +5,7 @@ import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
-
-const destinations = [
-  {
-    name: "Filipinas",
-    slug: "filipinas",
-    trips: 4,
-    image: "/images/filipinas/card.jpg",
-    featured: true,
-  },
-  {
-    name: "Vietnam",
-    slug: "vietnam",
-    trips: 3,
-    image: "/images/vietnam/hero.jpg",
-    featured: true,
-  },
-  {
-    name: "Tailandia",
-    slug: "tailandia",
-    trips: 5,
-    image: "/images/thailand/card.jpg",
-    featured: true,
-  },
-  {
-    name: "Japon",
-    slug: "japon",
-    trips: 3,
-    image: "/images/japan/japonportada.jpeg",
-    featured: true,
-  },
-  {
-    name: "Islandia",
-    slug: "islandia",
-    trips: 2,
-    image: "/images/iceland/card.jpg",
-    featured: false,
-    comingSoon: true,
-  },
-  {
-    name: "Honduras",
-    slug: "honduras",
-    trips: 0,
-    image: "/images/honduras/portada.jpeg",
-    featured: false,
-    comingSoon: true,
-  },
-]
+import { destinations } from "@/lib/destinations-data"
 
 export function   DestinationsGrid() {
   const t = useTranslations("destinationsGrid")
@@ -87,7 +41,7 @@ export function   DestinationsGrid() {
               className="group relative aspect-[3/4] rounded-2xl overflow-hidden cursor-pointer bg-muted"
             >
               <Image
-                src={destination.image || "/placeholder.svg"}
+                src={destination.cardImage || "/placeholder.svg"}
                 alt={destination.name}
                 fill
                 className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
@@ -100,7 +54,7 @@ export function   DestinationsGrid() {
                 {destination.comingSoon ? (
                   <span className="text-sm text-background/90 font-medium bg-primary/70 rounded-full px-2 py-0.5 mt-1 w-fit">{t("comingSoon")}</span>
                 ) : (
-                  <p className="text-sm text-background/80">{destination.trips} viajes</p>
+                  <p className="text-sm text-background/80">{destination.availableDates.length} viajes</p>
                 )}
               </div>
 

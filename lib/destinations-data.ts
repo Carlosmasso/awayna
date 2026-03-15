@@ -27,6 +27,7 @@ export interface Destination {
   heroName: string;
   tagline: string;
   heroImage: string;
+  cardImage: string;
   galleryImages: string[];
   duration: string;
   rating: number;
@@ -82,6 +83,7 @@ export const destinations: Destination[] = [
     tagline:
       "Sumergiéndonos en Cebu, recorriendo Palawan y navegando por Coron",
     heroImage: "/images/filipinas/hero.jpg",
+    cardImage: "/images/filipinas/card.jpg",
     galleryImages: [
       "/images/filipinas/filipinas-1.jpg",
       "/images/filipinas/filipinas-2.jpg",
@@ -530,6 +532,7 @@ export const destinations: Destination[] = [
     tagline:
       "Desde Hanoi, recorriendo Ninh Binh, la provincia de la costura y Ha giang loop. ",
     heroImage: "/images/vietnam/hero.jpg",
+    cardImage: "/images/vietnam/hero.jpg",
     galleryImages: [
       "/images/vietnam/vietnam-1.jpg",
       "/images/vietnam/vietnam-3.jpg",
@@ -956,6 +959,7 @@ export const destinations: Destination[] = [
     heroName: "Tailandia esencial",
     tagline: "Bangkok, islas paradisiacas y el Norte del Pais.",
     heroImage: "/images/thailand/hero.jpg",
+    cardImage: "/images/thailand/card.jpg",
     galleryImages: [
       "/images/thailand/thailand-1.jpg",
       "/images/thailand/thailand-2.jpg",
@@ -1182,6 +1186,7 @@ export const destinations: Destination[] = [
       "Transporte hacia Chiang Rai desde Chiang Mai.",
       "Entrada y tasas turísticas al Templo Blanco de Chiang Rai.",
       "Mochila Awayna.",
+      "Álbum videográfico del viaje",
     ],
     notIncluded: [
       "Vuelos ida y vuelta desde España.",
@@ -1379,6 +1384,7 @@ export const destinations: Destination[] = [
         "Transport to Chiang Rai from Chiang Mai.",
         "Entry and tourist fees to the White Temple in Chiang Rai.",
         "Awayna backpack.",
+        "Trip video album"
       ],
       notIncluded: [
         "Return flights from Spain.",
@@ -1422,6 +1428,7 @@ export const destinations: Destination[] = [
     tagline:
       "Del caos perfecto de Tokio a la calma de Nara, atravesando el oeste japonés",
     heroImage: "/images/japan/japonportada.jpeg",
+    cardImage: "/images/japan/japonportada.jpeg",
     galleryImages: [
       "/images/japan/japon-01.jpg",
       "/images/japan/japon-02.jpg",
@@ -1915,6 +1922,7 @@ export const destinations: Destination[] = [
     comingSoon: true,
     tagline: "Aurora boreal, cascadas y paisajes de otro planeta",
     heroImage: "/images/iceland/hero.jpg",
+    cardImage: "/images/iceland/card.jpg",
     galleryImages: [
       "/images/iceland/1.jpg",
       "/images/iceland/2.jpg",
@@ -2219,6 +2227,7 @@ export const destinations: Destination[] = [
     comingSoon: true,
     tagline: "Arrecifes de coral, selva virgen y cultura maya",
     heroImage: "/images/honduras/portada.jpeg",
+    cardImage: "/images/honduras/portada.jpeg",
     galleryImages: [
       "/images/honduras/01.jpeg",
       "/images/honduras/02.jpeg",

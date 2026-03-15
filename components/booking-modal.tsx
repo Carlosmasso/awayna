@@ -5,21 +5,29 @@ import { X, Check } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { phones } from "@/lib/info"
+import type { Destination, TripDate } from "@/lib/destinations-data"
 
 interface BookingModalProps {
-  destination: string
-  dateId: string
+  destination: Destination
+  tripDate: TripDate
   onClose?: () => void
 }
 
-export function BookingModal({ destination, dateId, onClose }: BookingModalProps) {
+function formatDate(dateString: string): string {
+  const date = new Date(dateString)
+  return date.toLocaleDateString("es-ES", {
+    day: "numeric",
+    month: "short",
+    year: "numeric",
+  })
+}
+
+export function BookingModal({ destination, tripDate, onClose }: BookingModalProps) {
   const [step, setStep] = React.useState(1)
   const [formData, setFormData] = React.useState({
     fullName: "",
     email: "",
     phone: "",
-    destination: destination,
-    date: dateId,
     participants: "1",
     specialRequests: "",
   })
@@ -34,8 +42,10 @@ export function BookingModal({ destination, dateId, onClose }: BookingModalProps
     if (step < 3) {
       setStep(step + 1)
     } else {
-      // Enviar por WhatsApp
-      const message = `Hola! Me gustaría reservar un viaje con Awayna. Datos: ${formData.fullName}, ${formData.email}, ${formData.phone}, Destino: ${formData.destination}, Fecha: ${formData.date}, Participantes: ${formData.participants}`
+      const dateLabel = `${formatDate(tripDate.startDate)} → ${formatDate(tripDate.endDate)}`
+      const message = `Hola! Me gustaría reservar un viaje con Awayna. Datos: ${formData.fullName}, ${formData.email}, ${formData.phone}, Destino: ${destination.name}, Fecha: ${dateLabel}, Precio: ${tripDate.price}€, Participantes: ${formData.participants}${
+        formData.specialRequests ? `, Solicitudes: ${formData.specialRequests}` : ""
+      }`
       const whatsappUrl = `https://wa.me/${phones[0].number?.replace(/\s/g, "")}?text=${encodeURIComponent(message)}`
       window.open(whatsappUrl, "_blank")
       onClose?.()
@@ -147,7 +157,10 @@ export function BookingModal({ destination, dateId, onClose }: BookingModalProps
                   <p><strong>Nombre:</strong> {formData.fullName}</p>
                   <p><strong>Email:</strong> {formData.email}</p>
                   <p><strong>Teléfono:</strong> {formData.phone}</p>
-                  <p><strong>Destino:</strong> {formData.destination}</p>
+                  <p><strong>Destino:</strong> {destination.name}</p>
+                  <p><strong>Duración:</strong> {destination.duration}</p>
+                  <p><strong>Fecha:</strong> {formatDate(tripDate.startDate)} → {formatDate(tripDate.endDate)}</p>
+                  <p><strong>Precio:</strong> {tripDate.price}€{tripDate.originalPrice && <span className="ml-1.5 line-through opacity-60 text-muted-foreground">{tripDate.originalPrice}€</span>}</p>
                   <p><strong>Participantes:</strong> {formData.participants}</p>
                   {formData.specialRequests && (
                     <p><strong>Solicitudes:</strong> {formData.specialRequests}</p>
