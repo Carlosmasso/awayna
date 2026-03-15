@@ -2,7 +2,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { CookieBanner } from "@/components/cookie-banner";
 import { Button } from "@/components/ui/button";
-import { MapPin } from "lucide-react";
+import { Instagram, MapPin } from "lucide-react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -62,6 +62,15 @@ export default async function SobreNosotros({
                       <MapPin className="h-4 w-4" />
                       Albacete
                     </span>
+                    <a
+                      href="https://instagram.com/immtheartist"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 hover:text-primary transition-colors"
+                    >
+                      <Instagram className="h-4 w-4" />
+                      @immtheartist
+                    </a>
                   </div>
                 </div>
               </div>
@@ -85,6 +94,15 @@ export default async function SobreNosotros({
                       <MapPin className="h-4 w-4" />
                       Albacete
                     </span>
+                    <a
+                      href="https://instagram.com/_alexperez5"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-1 hover:text-primary transition-colors"
+                    >
+                      <Instagram className="h-4 w-4" />
+                      @_alexperez5
+                    </a>
                   </div>
                 </div>
               </div>

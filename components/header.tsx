@@ -129,9 +129,9 @@ export function Header() {
                 </Link>
               ))}
               <div className={`border-t my-2 ${scrolled ? "border-primary-foreground/20" : "border-border/50"}`} />
-              <Link href="/#como-funciona" className={`px-3 py-2 text-sm font-medium rounded-lg flex items-center gap-2 ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>
+              <Link href="/como-funciona" className={`px-3 py-2 text-sm font-medium rounded-lg flex items-center gap-2 ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>
                 <Compass className="h-4 w-4" />
-                Viajar con nosotros
+                Cómo funciona Awayna
               </Link>
               <Link href="/sobre-nosotros" className={`px-3 py-2 text-sm font-medium rounded-lg ${scrolled ? "text-primary-foreground hover:bg-primary-foreground/10" : "hover:bg-muted"}`} onClick={() => setMobileMenuOpen(false)}>
                 {t("about")}
