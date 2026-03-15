@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Calendar, Users, Check, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BookingModal } from "@/components/booking-modal";
+import { Link } from "@/i18n/navigation";
 import type { Destination } from "@/lib/destinations-data";
 import { useTranslations } from "next-intl";
 
@@ -132,9 +133,15 @@ export function DestinationDates({ destination }: DestinationDatesProps) {
             >
               {selectedDate ? t("reserveNow") : t("selectDate")}
             </Button>
-              <p className="text-xs sm:text-sm text-muted-foreground mt-2 font-medium">
+              {/* <p className="text-xs sm:text-sm text-muted-foreground mt-2 font-medium">
               {t("depositNote")}
-            </p>
+            </p> */}
+              <Link
+                href="/politica-de-cancelacion"
+                className="text-xs sm:text-sm mt-2 text-primary underline underline-offset-2 hover:text-primary/80 transition-colors mt-1 inline-block"
+              >
+                {t("cancellationLink")}
+              </Link>
           </div>
 
             <div className="mt-2.5 sm:mt-5 p-2.5 sm:p-4 bg-primary/5 border border-primary/20 rounded-lg">
