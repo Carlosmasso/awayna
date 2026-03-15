@@ -1,19 +1,26 @@
-import { destinations } from "@/lib/destinations-data"
-import { phones } from "@/lib/info"
-import { Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react"
-import Image from "next/image"
-import { getTranslations } from "next-intl/server"
-import { Link } from "@/i18n/navigation"
+import { Link } from "@/i18n/navigation";
+import { destinations } from "@/lib/destinations-data";
+import { phones } from "@/lib/info";
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  Phone,
+  Twitter,
+  Youtube
+} from "lucide-react";
+import { getTranslations } from "next-intl/server";
+import Image from "next/image";
 
 const socialLinks = [
   { name: "Instagram", icon: Instagram, href: "#" },
   { name: "Facebook", icon: Facebook, href: "#" },
   { name: "Youtube", icon: Youtube, href: "#" },
   { name: "Twitter", icon: Twitter, href: "#" },
-]
+];
 
 export async function Footer() {
-  const t = await getTranslations("footer")
+  const t = await getTranslations("footer");
   return (
     <footer className="bg-foreground text-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -33,16 +40,32 @@ export async function Footer() {
             <p className="text-background/70 mb-6 max-w-sm leading-relaxed">
               {t("tagline")}
             </p>
-            
+
             {/* Contact Info */}
             <div className="space-y-3 text-sm text-background/70">
               <div className="flex items-center gap-2">
                 <Mail className="h-4 w-4" />
-                <span>info@awayna.com</span>
+                <a
+                  href="mailto:info@awayna.com"
+                  className="text-sm hover:text-primary transition-colors"
+                >
+                  info@awayna.com
+                </a>
               </div>
               <div className="flex items-center gap-2">
                 <Phone className="h-4 w-4" />
-                <span>{phones.map(({number}) => number).join(", ")}</span>
+                {phones.map(({ number }) => (
+                  <a
+                    key={number}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href={`https://wa.me/${number.replace(/\s/g, "")}`}
+                    className="text-sm hover:text-primary transition-colors"
+                  >
+                    {number}
+                  </a>
+                ))}
+                {/* <span>{phones.map(({ number }) => number).join(", ")}</span> */}
               </div>
             </div>
 
@@ -63,13 +86,22 @@ export async function Footer() {
 
           {/* Links Columns */}
           <div>
-            <h3 className="font-semibold text-background mb-4">{t("destinationsCol")}</h3>
+            <h3 className="font-semibold text-background mb-4">
+              {t("destinationsCol")}
+            </h3>
             <ul className="space-y-3">
               {destinations.map((dest) => (
                 <li key={dest.slug}>
-                  <Link href={`/destinos/${dest.slug}`} className="text-background/70 hover:text-background transition-colors flex items-center gap-1.5">
+                  <Link
+                    href={`/destinos/${dest.slug}`}
+                    className="text-background/70 hover:text-background transition-colors flex items-center gap-1.5"
+                  >
                     {dest.name}
-                    {dest.comingSoon && <span className="text-xs text-primary/80">{t("comingSoon")}</span>}
+                    {dest.comingSoon && (
+                      <span className="text-xs text-primary/80">
+                        {t("comingSoon")}
+                      </span>
+                    )}
                   </Link>
                 </li>
               ))}
@@ -77,15 +109,23 @@ export async function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-background mb-4">{t("companyCol")}</h3>
+            <h3 className="font-semibold text-background mb-4">
+              {t("companyCol")}
+            </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/sobre-nosotros" className="text-background/70 hover:text-background transition-colors">
+                <Link
+                  href="/sobre-nosotros"
+                  className="text-background/70 hover:text-background transition-colors"
+                >
                   {t("aboutLink")}
                 </Link>
               </li>
               <li>
-                <Link href="/como-funciona" className="text-background/70 hover:text-background transition-colors">
+                <Link
+                  href="/como-funciona"
+                  className="text-background/70 hover:text-background transition-colors"
+                >
                   {t("howItWorksLink")}
                 </Link>
               </li>
@@ -93,18 +133,31 @@ export async function Footer() {
           </div>
 
           <div>
-            <h3 className="font-semibold text-background mb-4">{t("supportCol")}</h3>
+            <h3 className="font-semibold text-background mb-4">
+              {t("supportCol")}
+            </h3>
             <ul className="space-y-3">
               <li>
-                <Link href="/faq" className="text-background/70 hover:text-background transition-colors">FAQ</Link>
+                <Link
+                  href="/faq"
+                  className="text-background/70 hover:text-background transition-colors"
+                >
+                  FAQ
+                </Link>
               </li>
               <li>
-                <Link href="/contacto" className="text-background/70 hover:text-background transition-colors">
+                <Link
+                  href="/contacto"
+                  className="text-background/70 hover:text-background transition-colors"
+                >
                   {t("contactLink")}
                 </Link>
               </li>
               <li>
-                <Link href="/politica-de-cancelacion" className="text-background/70 hover:text-background transition-colors">
+                <Link
+                  href="/politica-de-cancelacion"
+                  className="text-background/70 hover:text-background transition-colors"
+                >
                   {t("cancellationLink")}
                 </Link>
               </li>
@@ -116,12 +169,15 @@ export async function Footer() {
         <div className="py-6 border-t border-background/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-background/60">{t("copyright")}</p>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-background/60">
-            <Link href="/cookies" className="hover:text-background transition-colors">
+            <Link
+              href="/cookies"
+              className="hover:text-background transition-colors"
+            >
               {t("cookies")}
             </Link>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
