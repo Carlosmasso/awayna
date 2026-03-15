@@ -1,17 +1,17 @@
-"use client"
-
-import Image from "next/image"
-import { Clock, Mail, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import type { Destination } from "@/lib/destinations-data"
-import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
+import type { Destination } from "@/lib/destinations-data"
+import { ArrowRight, Clock, Mail } from "lucide-react"
+import { getTranslations } from "next-intl/server"
+import Image from "next/image"
 
 interface DestinationComingSoonProps {
   destination: Destination
 }
 
-export function DestinationComingSoon({ destination }: DestinationComingSoonProps) {
+export async function DestinationComingSoon({ destination }: DestinationComingSoonProps) {
+  const t = await getTranslations("destPage");
+
   return (
     <div className="min-h-screen bg-background">
       {/* Coming soon banner */}

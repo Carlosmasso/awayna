@@ -44,10 +44,6 @@ export async function Footer() {
                 <Phone className="h-4 w-4" />
                 <span>{phones.map(({number}) => number).join(", ")}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <MapPin className="h-4 w-4" />
-                <span>Madrid, España</span>
-              </div>
             </div>
 
             {/* Social Links */}
