@@ -3,12 +3,15 @@
 import { useEffect } from "react"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
-import { useTranslations } from "next-intl"
 import { Link } from "@/i18n/navigation"
-import { destinations } from "@/lib/destinations-data"
+import { getLocalizedDestinations } from "@/lib/destinations-data"
+import { useTranslations, useLocale } from "next-intl";
 
-export function   DestinationsGrid() {
+export function DestinationsGrid() {
   const t = useTranslations("destinationsGrid")
+  const locale = useLocale();
+  const destinations = getLocalizedDestinations(locale);
+
   useEffect(() => {
     // Verificar si hay un hash en la URL cuando el componente se monta
     if (window.location.hash === '#viajes') {
