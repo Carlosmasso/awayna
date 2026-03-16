@@ -3,7 +3,8 @@
     "destinations": "Destinations",
     "comingSoon": "Soon",
     "about": "About Us",
-    "contact": "Contact"
+    "contact": "Contact",
+    "howItWorks": "How Awayna works"
   },
   "hero": {
     "headline1": "You choose the destination,",
@@ -38,7 +39,8 @@
     "contactLink": "Contact",
     "cancellationLink": "Cancellation policy",
     "copyright": "© 2026 Awayna. All rights reserved.",
-    "cookies": "Cookies"
+    "cookies": "Cookies",
+    "devCredit": "Developed by"
   },
   "cookieBanner": {
     "title": "Your privacy matters",

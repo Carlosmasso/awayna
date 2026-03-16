@@ -171,6 +171,17 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="py-6 border-t border-background/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-background/60">{t("copyright")}</p>
+          <p className="text-sm text-background/40">
+            {t("devCredit")}{" "}
+            <a
+              href="https://www.linkedin.com/in/carlosmassoarjona/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-background/70 underline underline-offset-2 transition-colors"
+            >
+              Carlos Massó
+            </a>
+          </p>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-background/60">
             <Link
               href="/cookies"
