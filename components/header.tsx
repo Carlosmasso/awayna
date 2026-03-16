@@ -10,7 +10,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-import { destinations } from "@/lib/destinations-data"
+import { getLocalizedDestinations } from "@/lib/destinations-data"
 import { useTranslations, useLocale } from "next-intl"
 import { Link, usePathname } from "@/i18n/navigation"
 
@@ -21,6 +21,7 @@ export function Header() {
   const otherLocale = locale === "es" ? "en" : "es"
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const destinations = getLocalizedDestinations(locale)
 
   useEffect(() => {
     const handleScroll = () => {

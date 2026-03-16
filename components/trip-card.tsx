@@ -30,7 +30,7 @@ export async function TripCard({
   originalPrice,
   rating,
   spots,
-  totalSpots = 16,
+  totalSpots = 12,
   dates,
   tags = [],
 }: TripCardProps) {

@@ -57,6 +57,8 @@ export interface Destination {
 }
 
 export interface DestinationLocale {
+  name?: string;
+  heroName?: string;
   tagline?: string;
   duration?: string;
   highlights?: string[];
@@ -355,6 +357,8 @@ export const destinations: Destination[] = [
     faqsIntro:
       "Nos vamos a Filipinas versión AWAYNA: agua turquesa, selva salvaje, barcas que parecen sacadas de un sueño y ese grupo que empieza siendo desconocido y acaba brindando descalzo en la arena.",
     en: {
+      name: "Philippines",
+      heroName: "Immersive Philippines",
       tagline: "Diving into Cebu, exploring Palawan and sailing through Coron",
       duration: "14 days",
       highlights: [
@@ -777,6 +781,8 @@ export const destinations: Destination[] = [
     //   },
     // ],
     en: {
+      name: "Vietnam",
+      heroName: "Vietnam must",
       tagline: "From Hanoi, through Ninh Binh, the embroidery province and the Ha Giang Loop",
       duration: "13 days",
       highlights: [
@@ -1236,6 +1242,8 @@ export const destinations: Destination[] = [
     //   },
     // ],
     en: {
+      name: "Thailand",
+      heroName: "Essential Thailand",
       tagline: "Bangkok, paradise islands and the north of the country",
       duration: "13 days",
       highlights: [
@@ -1407,16 +1415,16 @@ export const destinations: Destination[] = [
         id: "th-oct-26",
         startDate: "2026-10-31",
         endDate: "2026-11-13",
-        spots: 14,
-        totalSpots: 14,
+        spots: 12,
+        totalSpots: 12,
         price: 1498,
       },
       {
         id: "th-nov-26",
         startDate: "2026-11-15",
         endDate: "2026-11-27",
-        spots: 14,
-        totalSpots: 14,
+        spots: 12,
+        totalSpots: 12,
         price: 1498,
       },
     ],
@@ -1712,6 +1720,8 @@ export const destinations: Destination[] = [
     faqsIntro:
       "Nos vamos a Japón versión AWAYNA: templos al amanecer, ramen en callejones sin nombre, tren bala, ryokans y ese grupo que acaba brindando con sake en algún izakaya que no aparece en ninguna guía.",
     en: {
+      name: "Japan",
+      heroName: "Japan of contrasts",
       tagline: "From the perfect chaos of Tokyo to the calm of Nara, crossing western Japan",
       duration: "11 days",
       highlights: [
@@ -1909,8 +1919,8 @@ export const destinations: Destination[] = [
         id: "jp-dic-26",
         startDate: "2026-12-10",
         endDate: "2026-12-23",
-        spots: 14,
-        totalSpots: 14,
+        spots: 12,
+        totalSpots: 12,
         price: 2149,
       },
     ],
@@ -2076,6 +2086,8 @@ export const destinations: Destination[] = [
     //   },
     // ],
     en: {
+      name: "Iceland",
+      heroName: "Iceland",
       tagline: "Northern lights, waterfalls and landscapes from another planet",
       description: [
         "Iceland is like visiting another planet without leaving Earth. Geysers, volcanoes, glaciers, northern lights, impossible waterfalls and breathtaking landscapes. This trip follows the iconic southern Ring Road, where every bend hides a postcard. Bring your camera and your sense of wonder.",
@@ -2260,8 +2272,17 @@ export const destinations: Destination[] = [
     },
     // faqs: [],
     availableDates: [],
+    en: {
+      name: "Honduras",
+      heroName: "Honduras",
+      tagline: "Coral reefs, virgin jungle and Mayan culture",
+    },
   },
 ];
+
+export function getLocalizedDestinations(locale: string): Destination[] {
+  return destinations.map((dest) => getLocalizedDestination(dest, locale));
+}
 
 export function getLocalizedDestination(dest: Destination, locale: string): Destination {
   if (locale === "en" && dest.en) {
@@ -2269,6 +2290,8 @@ export function getLocalizedDestination(dest: Destination, locale: string): Dest
     return {
       ...base,
       en,
+      name: en.name ?? base.name,
+      heroName: en.heroName ?? base.heroName,
       tagline: en.tagline ?? base.tagline,
       duration: en.duration ?? base.duration,
       highlights: en.highlights ?? base.highlights,

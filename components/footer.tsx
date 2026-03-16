@@ -1,5 +1,5 @@
 import { Link } from "@/i18n/navigation";
-import { destinations } from "@/lib/destinations-data";
+import { getLocalizedDestinations } from "@/lib/destinations-data";
 import { phones } from "@/lib/info";
 import {
   Facebook,
@@ -7,10 +7,10 @@ import {
   Mail,
   Phone,
   Twitter,
-  Youtube
+  Youtube,
 } from "lucide-react";
-import { getTranslations } from "next-intl/server";
 import Image from "next/image";
+import { useTranslations, useLocale } from "next-intl";
 
 const socialLinks = [
   { name: "Instagram", icon: Instagram, href: "#" },
@@ -19,8 +19,11 @@ const socialLinks = [
   { name: "Twitter", icon: Twitter, href: "#" },
 ];
 
-export async function Footer() {
-  const t = await getTranslations("footer");
+export function Footer() {
+  const t = useTranslations("footer");
+  const locale = useLocale();
+  const destinations = getLocalizedDestinations(locale);
+
   return (
     <footer className="bg-foreground text-background">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
