@@ -1,6 +1,7 @@
 import React from "react"
 import { getLocale } from "next-intl/server"
 import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Toaster } from "sonner"
 import "./globals.css"
 
@@ -31,6 +32,7 @@ export default async function RootLayout({
         {children}
         <Toaster richColors position="bottom-right" />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
