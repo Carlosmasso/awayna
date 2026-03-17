@@ -148,7 +148,12 @@
       "messageLabel": "Mensaje *",
       "messagePlaceholder": "Cuéntanos qué necesitas...",
       "sendButton": "Enviar mensaje",
-      "privacyNote": "Al enviar este formulario aceptas nuestra política de privacidad"
+      "sendingButton": "Enviando...",
+      "privacyNote": "Al enviar este formulario aceptas nuestra política de privacidad",
+      "successTitle": "¡Mensaje enviado!",
+      "successMessage": "Te responderemos lo antes posible.",
+      "errorTitle": "Error al enviar",
+      "errorMessage": "Hubo un problema al enviar tu mensaje. Inténtalo de nuevo."
     },
     "about": {
       "metaTitle": "Sobre Nosotros | Awayna - Fundadores de Viajes Auténticos",

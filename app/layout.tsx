@@ -1,6 +1,7 @@
 import React from "react"
 import { getLocale } from "next-intl/server"
 import { Analytics } from "@vercel/analytics/next"
+import { Toaster } from "sonner"
 import "./globals.css"
 
 export default async function RootLayout({
@@ -16,8 +17,8 @@ export default async function RootLayout({
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#000000" />
-        <link rel="alternate" hrefLang="es" href="https://awayna.com" />
-        <link rel="alternate" hrefLang="en" href="https://awayna.com/en" />
+        <link rel="alternate" hrefLang="es" href="https://awayna.es" />
+        <link rel="alternate" hrefLang="en" href="https://awayna.es/en" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="icon" type="image/png" href="/favicon/-96x96.png" sizes="96x96" />
@@ -28,6 +29,7 @@ export default async function RootLayout({
       </head>
       <body className="font-sans antialiased">
         {children}
+        <Toaster richColors position="bottom-right" />
         <Analytics />
       </body>
     </html>
