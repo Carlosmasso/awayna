@@ -1,29 +1,19 @@
-"use client"
-
-import { useEffect } from "react"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { Link } from "@/i18n/navigation"
 import { getLocalizedDestinations } from "@/lib/destinations-data"
-import { useTranslations, useLocale } from "next-intl";
+import { getTranslations } from "next-intl/server";
+import { getLocale } from "next-intl/server";
+import { HashScroll } from "@/components/hash-scroll";
 
-export function DestinationsGrid() {
-  const t = useTranslations("destinationsGrid")
-  const locale = useLocale();
+export async function DestinationsGrid() {
+  const locale = await getLocale();
+  const t = await getTranslations("destinationsGrid")
   const destinations = getLocalizedDestinations(locale);
-
-  useEffect(() => {
-    // Verificar si hay un hash en la URL cuando el componente se monta
-    if (window.location.hash === '#viajes') {
-      const element = document.getElementById('viajes')
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    }
-  }, [])
 
   return (
     <section id="viajes" className="py-20 bg-primary-foreground scroll-mt-20">
+      <HashScroll id="viajes" />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-12">

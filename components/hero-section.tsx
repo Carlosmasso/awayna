@@ -1,9 +1,7 @@
-"use client";
+import { getTranslations } from "next-intl/server";
 
-import { useTranslations } from "next-intl";
-
-export function HeroSection() {
-  const t = useTranslations("hero")
+export async function HeroSection() {
+  const t = await getTranslations("hero")
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video */}
@@ -13,7 +11,7 @@ export function HeroSection() {
           loop
           muted
           playsInline
-          preload="auto"
+          preload="none"
           className="w-full h-full object-cover"
         >
           <source src="/videos/awaynacabecera.mp4" type="video/mp4" />
