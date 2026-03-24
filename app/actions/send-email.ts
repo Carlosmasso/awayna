@@ -39,7 +39,7 @@ export async function sendContactEmail(formData: unknown) {
   try {
     await resend.emails.send({
       from: "Awayna Contacto <no-reply@awayna.es>",
-      to: ["info@awayna.com", "carlos.masso@hotmail.com"],
+      to: ["info@awayna.com"],
       replyTo: email,
       subject: `Nuevo mensaje de contacto de ${nombre} ${apellidos}`,
       html: `
@@ -75,7 +75,7 @@ export async function sendBookingEmail(formData: unknown) {
   try {
     await resend.emails.send({
       from: "Awayna Reservas <no-reply@awayna.es>",
-      to: ["info@awayna.com", "carlos.masso@hotmail.com"],
+      to: ["info@awayna.com"],
       replyTo: email,
       subject: `Nueva solicitud de reserva — ${destinationName} — ${fullName}`,
       html: `
